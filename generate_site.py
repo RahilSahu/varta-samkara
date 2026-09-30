@@ -165,6 +165,8 @@ def load_body_md(slug):
     blocks = [b.strip() for b in text.split("\n\n") if b.strip()]
     return blocks or None
 
+IMG_MD_RE = re.compile(r"^!\[(.*?)\]\((.*?)\)$")
+
 def render_body(blocks):
     out = []
     lede_done = False
@@ -173,6 +175,11 @@ def render_body(blocks):
             out.append(f"<h2>{html.escape(b[3:].strip())}</h2>")
         elif b.startswith("# "):
             continue  # title line, already rendered as h1
+        elif (m := IMG_MD_RE.match(b)):
+            alt, src = m.group(1).strip(), m.group(2).strip()
+            out.append(f"<figure><img src=\"{html.escape(src)}\" alt=\"{html.escape(alt)}\""
+                       f" loading=\"lazy\"><figcaption>{html.escape(alt)}</figcaption></figure>")
+            lede_done = True
         else:
             cls = "lede" if not lede_done else "body"
             lede_done = True
@@ -477,8 +484,10 @@ def head(title, desc, depth, og_image=""):
 def excerpt_of(blocks, story):
     if blocks:
         for b in blocks:
-            if not b.startswith("#"):
-                txt = re.sub(r"\s+", " ", b).strip()
+            if b.startswith("#") or IMG_MD_RE.match(b):
+                continue
+            txt = re.sub(r"\s+", " ", b).strip()
+            if txt:
                 return txt[:150] + ("..." if len(txt) > 150 else "")
     return story[:150]
 
@@ -563,7 +572,10 @@ def article_page(p, prev_p, next_p):
 </html>"""
 
 def blog_page_from_file(path):
-    """Parse blogs/<name>.md with frontmatter -> dict."""
+    """Parse blogs/<name>.md with frontmatter -> dict.
+    Supports frontmatter keys: title, date, image (hero file in blogs/),
+    source, visuals. Local ![alt](file) refs are copied to
+    assets/blogs/<slug>/ and rewritten to ../../-relative paths."""
     text = open(path, encoding="utf-8").read()
     m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
     meta, body = {}, text
@@ -576,15 +588,45 @@ def blog_page_from_file(path):
     name = os.path.splitext(os.path.basename(path))[0]
     date = meta.get("date", name[:10])
     title = meta.get("title", name)
+    slug = slugify(name)
+    adir = os.path.join(SITE, "assets", "blogs", slug)
+    os.makedirs(adir, exist_ok=True)
+
+    def use_local_image(src):
+        """Copy blogs/<src> into assets/blogs/<slug>/; return site-relative path."""
+        if src.startswith(("http://", "https://", "data:")):
+            return src
+        src_path = os.path.join(BLOGSDIR, src)
+        if not os.path.isfile(src_path):
+            return src
+        dest = os.path.join(adir, os.path.basename(src))
+        shutil.copy2(src_path, dest)
+        return f"assets/blogs/{slug}/{os.path.basename(src)}"
+
+    # rewrite ![alt](src) refs to copied asset paths (blog pages sit at depth 2)
+    def _rw_figure(mm):
+        p = use_local_image(mm.group(2).strip())
+        if not p.startswith(("http://", "https://", "data:", "../../")):
+            p = "../../" + p
+        return f"![{mm.group(1)}]({p})"
+    body = re.sub(r"!\[(.*?)\]\((.*?)\)", _rw_figure, body)
+
     blocks = [b.strip() for b in body.strip().split("\n\n") if b.strip()]
-    return {"slug": slugify(name), "date": date, "slot": "blog",
+    hero_img = meta.get("image", "").strip()
+    if hero_img:
+        hero_site = use_local_image(hero_img)
+        hero = hero_site
+        thumb = hero_site
+    else:
+        hero = thumb = "assets/placeholder.svg"
+    return {"slug": slug, "date": date, "slot": "blog",
             "format": "blog", "is_blog": True, "user_blog": True,
-            "art": {"title": title, "paras": [], "source": "Author's own analysis",
-                    "visuals": "AI-generated illustrations", "tags": []},
+            "art": {"title": title, "paras": [], "source": meta.get("source", "Author's own analysis"),
+                    "visuals": meta.get("visuals", "AI-generated illustrations"), "tags": []},
             "blocks": blocks,
             "excerpt": excerpt_of(blocks, title),
-            "url": IG, "hero": "assets/placeholder.svg",
-            "thumb": "assets/placeholder.svg", "gallery": []}
+            "url": IG, "hero": hero,
+            "thumb": thumb, "gallery": []}
 
 # ---------------------------------------------------------------- build
 
