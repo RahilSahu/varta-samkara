@@ -4,22 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&quot;A terrorist country is asking me that question.&quot; | Varta &amp; Samkara</title>
-<meta name="description" content="External Affairs Minister S. Jaishankar shut down a Pakistani journalist at the UN headquarters in New York on Sept 25, when he was asked: &quot;When will your gover">
+<meta name="description" content="External Affairs Minister S. Jaishankar delivered a sharp rebuttal to a Pakistani journalist at the United Nations headquarters in New York on Septemb...">
 <meta property="og:title" content="&quot;A terrorist country is asking me that question.&quot;">
-<meta property="og:description" content="External Affairs Minister S. Jaishankar shut down a Pakistani journalist at the UN headquarters in New York on Sept 25, when he was asked: &quot;When will your gover">
+<meta property="og:description" content="External Affairs Minister S. Jaishankar delivered a sharp rebuttal to a Pakistani journalist at the United Nations headquarters in New York on Septemb...">
 <meta property="og:type" content="article">
-<link rel="stylesheet" href="../styles.css">
+<meta property="og:image" content="https://rahilsahu.github.io/varta-samkara/assets/articles/2026-09-26-jaishankar-unga/hero.jpg">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 <body>
+<div class="progress" id="progress"></div>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav><a href="../index.html">Home</a><a href="../archive.html">Archive</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
+<nav class="navlinks" id="navlinks"><a href="../../index.html">Home</a><a href="../../archive.html" class="active">News</a><a href="../../blog.html">Blog</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 </header>
 <main class="wrap narrow article">
 <div class="meta" style="margin-top:1rem"><span class="tag">reel</span><span>2026-09-26</span><span>evening</span></div>
+
 <h1>&quot;A terrorist country is asking me that question.&quot;</h1>
-<img class="article-hero" src="../assets/articles/2026-09-26-jaishankar-unga/hero.jpg" alt="&quot;A terrorist country is asking me that question.&quot;">
-<p class='body'>External Affairs Minister S. Jaishankar shut down a Pakistani journalist at the UN headquarters in New York on Sept 25, when he was asked: &quot;When will your government stop sponsoring terrorism in Pakistan?&quot;</p><p class='body'>The exchange happened at a joint press briefing with Liberia&#x27;s foreign minister, where the two launched a new Group of Friends on the Safety and Security of Shipping and Seafarers.</p><p class='body'>India&#x27;s Permanent Representative to the UN, Harish Parvathaneni, backed the minister: &quot;You have heard your reply. You have heard your response, loud and clear.&quot;</p><p class='body'>A day earlier, an ANI reporter had asked Pakistan&#x27;s PM Shehbaz Sharif, &quot;When will you stop harbouring terrorists?&quot; He walked past without answering.</p>
+
+<img class="article-hero" src="../../assets/articles/2026-09-26-jaishankar-unga/hero.jpg" alt="&quot;A terrorist country is asking me that question.&quot;">
+<p class='lede'>External Affairs Minister S. Jaishankar delivered a sharp rebuttal to a Pakistani journalist at the United Nations headquarters in New York on September 25, after being asked when India would stop &quot;sponsoring terrorism&quot; in Pakistan.</p>
+<p class='body'>&quot;A terrorist country is asking me that question,&quot; Jaishankar said, cutting off the line of questioning during a joint press briefing with Liberia&#x27;s foreign minister. The two ministers were at the UN to launch a new Group of Friends on the Safety and Security of Shipping and Seafarers.</p>
+<h2>Backing from India&#x27;s UN envoy</h2>
+<p class='body'>India&#x27;s Permanent Representative to the UN, Harish Parvathaneni, stood firmly behind the minister. &quot;You have heard your reply. You have heard your response, loud and clear,&quot; he told the journalist, closing the exchange.</p>
+<p class='body'>The confrontation did not come out of nowhere. A day earlier, an ANI reporter had posed a mirror-image question to Pakistan&#x27;s Prime Minister Shehbaz Sharif, asking him when Pakistan would stop harbouring terrorists. Sharif walked past without answering.</p>
+<p class='body'>The exchange, which took place on the sidelines of the UN General Assembly session, quickly drew attention back home, with Jaishankar&#x27;s response being widely shared across Indian media and social platforms.</p>
 
 <div class="sourcebox">
 <div><span class="lbl">Source:</span> New Indian Express, ETV Bharat</div>
@@ -30,11 +40,30 @@
 <p>See the original reel / carousel with motion graphics on Instagram.</p>
 <a class="btn" href="https://www.instagram.com/reel/DdwBUAzD3aG/" target="_blank" rel="noopener">View on Instagram</a>
 </div>
-<div class='prevnext'><a href='../2026-09-26-coal-power-order/'><span class='dir'>&larr; Newer</span>India invokes emergency powers to run coal plants at full throttle</a><a href='../2026-09-26-galaxeye/' style='text-align:right'><span class='dir'>Older &rarr;</span>India is funding a startup building a satellite that can see through c</a></div>
+<div class='prevnext'><a href='../../posts/2026-09-26-coal-power-order/'><span class='dir'>&larr; Newer</span>India invokes emergency powers to run coal plants at full throttle</a><a href='../../posts/2026-09-26-galaxeye/' style='text-align:right'><span class='dir'>Older &rarr;</span>India is funding a startup building a satellite that can see through c</a></div>
 </main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
 <div><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+<script>
+(function(){
+  var nav=document.getElementById('navlinks'),burger=document.getElementById('burger');
+  if(burger&&nav){burger.addEventListener('click',function(){nav.classList.toggle('open')});}
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){if(io)io.observe(el);else el.classList.add('visible');});
+  var bar=document.getElementById('progress'),top=document.getElementById('totop');
+  function onScroll(){
+    var h=document.documentElement,sc=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    if(bar)bar.style.width=(sc*100)+'%';
+    if(top)top.classList.toggle('show',h.scrollTop>600);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+})();
+</script>
 </body>
 </html>
