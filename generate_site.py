@@ -26,7 +26,7 @@ Idempotent: assets are only recopied when the source is newer; stale
 article directories are removed. Safe to run on a schedule.
 """
 import os, re, shutil, html, json, urllib.parse, textwrap
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 from PIL import Image, ImageDraw, ImageFont
 
 WS = "/home/hatch/workspace/job-campaign"
@@ -523,6 +523,84 @@ html[data-theme="dark"] .byline{color:#9aa4bd}
 /* ---------- footer links ---------- */
 .foot-links{display:flex;gap:1.1rem;flex-wrap:wrap}
 @media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
+
+/* ---------- scores center ---------- */
+.scores-sub{color:var(--muted);font-size:.92rem;margin:-.6rem 0 1rem}
+.scores-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin:0 0 1.1rem}
+.scores-tab{background:var(--card);border:1px solid var(--line);color:var(--ink);
+  border-radius:999px;padding:.5rem 1.15rem;font-size:.9rem;font-weight:700;cursor:pointer;font-family:inherit;
+  transition:border-color .2s,color .2s,background .2s}
+.scores-tab:hover{border-color:var(--saffron);color:var(--saffron)}
+.scores-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.scores-bar{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.2rem}
+.scores-bar:empty{display:none}
+.league-select{padding:.5rem 1rem;border:1px solid var(--line);border-radius:999px;
+  font-size:.9rem;font-family:inherit;background:var(--card);color:var(--ink);
+  box-shadow:var(--shadow);outline:none;cursor:pointer}
+.league-select:focus{border-color:var(--saffron)}
+.updated{font-size:.82rem;color:var(--muted)}
+.score-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1.05rem 1.2rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.score-card.flash{border-color:var(--saffron)}
+.score-head{display:flex;justify-content:space-between;gap:.8rem;align-items:center;margin-bottom:.6rem;flex-wrap:wrap}
+.comp-name{font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.badge{font-size:.72rem;font-weight:800;border-radius:20px;padding:.24rem .8rem;
+  letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.badge.live{background:#d92d20;color:#fff;display:inline-flex;align-items:center;gap:.4rem}
+.badge.upcoming{background:#eef1f7;color:var(--navy2)}
+.badge.done{background:#e6f4ea;color:#1a7f37}
+.live-pulse{width:8px;height:8px;border-radius:50%;background:#fff;animation:pulse 1.2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.2}}
+.live-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff4d4d;
+  margin-left:.4rem;vertical-align:middle;animation:pulse 1.2s ease-in-out infinite}
+.team-row{display:flex;align-items:center;gap:.85rem;padding:.5rem 0;border-top:1px solid var(--line)}
+.team-row:first-of-type{border-top:0}
+.team-logo{width:40px;height:40px;flex-shrink:0;border-radius:50%;background:var(--navy);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid var(--line)}
+.team-logo img{width:100%;height:100%;object-fit:contain}
+.team-logo.noimg img{display:none}
+.team-init{display:none;color:#fff;font-weight:800;font-size:.8rem}
+.team-logo.noimg .team-init{display:flex}
+.team-name{flex:1;font-weight:600;font-size:.95rem}
+.team-score{font-weight:800;font-size:1.02rem;font-variant-numeric:tabular-nums;white-space:nowrap}
+.score-meta{font-size:.85rem;color:var(--muted);margin-top:.45rem}
+.score-result{font-size:.9rem;font-weight:700;color:var(--navy2);margin-top:.4rem}
+.session-row{display:flex;justify-content:space-between;gap:1rem;align-items:center;
+  padding:.5rem 0;border-top:1px solid var(--line);font-size:.9rem;flex-wrap:wrap}
+.session-row .sess{font-weight:700}
+.empty-note,.error-note{background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);
+  padding:2.2rem 1.2rem;text-align:center;color:var(--muted);margin-bottom:1rem}
+.empty-note strong,.error-note strong{color:var(--ink);display:block;margin-bottom:.4rem;font-size:1.02rem}
+.retry-btn{margin-top:1rem;background:linear-gradient(135deg,var(--saffron),var(--saffron2));color:var(--navy);
+  font-weight:700;border:0;border-radius:10px;padding:.6rem 1.4rem;cursor:pointer;font-family:inherit;font-size:.92rem}
+.scores-loading{text-align:center;color:var(--muted);padding:2rem 0}
+.scores-subhead{font-size:1.05rem;color:var(--navy);margin:1.6rem 0 .8rem;
+  display:flex;align-items:center;gap:.55rem}
+.scores-subhead::before{content:'';width:5px;height:1.2em;
+  background:linear-gradient(var(--saffron),var(--saffron2));border-radius:3px}
+.rider-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.9rem}
+.rider-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:.9rem 1rem;box-shadow:var(--shadow);display:flex;gap:.9rem;align-items:center}
+.rider-num{font-size:1.7rem;font-weight:800;color:var(--saffron);min-width:2.6rem;text-align:center;
+  font-variant-numeric:tabular-nums}
+.rider-name{font-weight:700;font-size:.95rem}
+.rider-team{font-size:.82rem;color:var(--muted)}
+.rider-country{font-size:.8rem;color:var(--muted);display:flex;align-items:center;gap:.4rem;margin-top:.15rem}
+.rider-country img{width:20px;height:14px;object-fit:cover;border-radius:2px}
+.honest-note{background:var(--card);border-left:5px solid var(--saffron);border-radius:10px;
+  padding:1rem 1.2rem;margin:0 0 1.2rem;box-shadow:var(--shadow);font-size:.9rem;color:var(--muted)}
+.wwe-card .score-result{color:var(--ink)}
+.countdown{font-size:.85rem;color:var(--muted);font-weight:600}
+@media(max-width:420px){
+  .team-name{font-size:.88rem}
+  .team-score{font-size:.94rem}
+  .scores-tab{padding:.45rem .95rem;font-size:.84rem}
+}
+html[data-theme="dark"] .badge.upcoming{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .scores-tab.active{background:#1b2a52;border-color:#1b2a52}
+html[data-theme="dark"] .score-result{color:#e9edf6}
+html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
+@media(prefers-reduced-motion:reduce){.live-pulse,.live-dot{animation:none}}
 """
 
 JS = """\
@@ -571,7 +649,275 @@ document.addEventListener('input',function(e){
     });
   }
 });
+/* Scores Center: pulsing dot on the Scores nav link when something is live.
+   Cheap by design: two small scoreboard fetches, once per page load. */
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    var link=document.querySelector('[data-scores-nav]');
+    if(!link||!('fetch' in window))return;
+    function anyLive(url){
+      return fetch(url).then(function(r){return r.json();}).then(function(d){
+        return (d.events||[]).some(function(e){
+          return e.status&&e.status.type&&e.status.type.state==='in';
+        });
+      }).catch(function(){return false;});
+    }
+    Promise.all([
+      anyLive('https://site.api.espn.com/apis/site/v2/sports/cricket/8048/scoreboard'),
+      anyLive('https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard')
+    ]).then(function(r){
+      if(r[0]||r[1]){
+        var s=document.createElement('span');
+        s.className='live-dot';s.title='Live now';
+        link.appendChild(s);
+      }
+    });
+  },1600);
+});
 </script>"""
+
+# ---------------------------------------------------------------- scores center JS
+
+SCORES_JS = """\
+(function(){
+'use strict';
+var ESPN='https://site.api.espn.com/apis/site/v2/sports';
+var IST=new Intl.DateTimeFormat('en-IN',{timeZone:'Asia/Kolkata',weekday:'short',day:'numeric',month:'short',hour:'numeric',minute:'2-digit',hour12:true});
+
+/* WWE Premium Live Events, verified against multiple reports (sportsbrackets.net,
+   khelnow.com, sacnilk.com, Sep-Oct 2026). Dates can shift; check wwe.com. */
+var WWE_EVENTS=[
+  {name:'Money in the Bank',date:'2026-10-10T22:00:00Z',venue:'Smoothie King Center, New Orleans, Louisiana'},
+  {name:'Crown Jewel',date:'2026-11-07T18:00:00Z',venue:'Riyadh Season Stadium at KAFD, Riyadh, Saudi Arabia'},
+  {name:'Survivor Series: WarGames',date:'2026-11-28T23:00:00Z',venue:'Daikin Park, Houston, Texas'}
+];
+/* Boxing has no free live-score feed. Next major bouts, verified from
+   Reuters, DAZN, Bad Left Hook and British Boxing News (Oct 2026). */
+var BOXING=[
+  {bout:'Daniel Dubois vs Fabio Wardley 2',title:'WBO heavyweight title rematch',date:'17 Oct 2026',venue:'O2 Arena, London',note:'DAZN PPV'},
+  {bout:'Canelo Alvarez vs Christian Mbilli',title:'WBC super middleweight title',date:'31 Oct 2026',venue:'Venue TBA',note:'Halloween night'},
+  {bout:'Agit Kabayel vs Nelson Hysa',title:'WBC heavyweight title',date:'28 Nov 2026',venue:'Merkur Spiel-Arena, Dusseldorf',note:'DAZN'}
+];
+
+var LEAGUES={
+  cricket:[{id:'8048',name:'IPL'},{id:'8044',name:'Big Bash League'},{id:'8046',name:'State League T20'},{id:'8043',name:'Sheffield Shield'}],
+  football:[{id:'ind.1',name:'Indian Super League'},{id:'eng.1',name:'Premier League'},{id:'esp.1',name:'La Liga'},{id:'uefa.champions',name:'Champions League'}]
+};
+var TAB_IDS=['cricket','football','f1','ufc','motogp','wwe'];
+var panel,bar,leagueSel,updatedEl;
+var current='cricket',leaguePick={},timer=null,lastFetch=0,lastAnyLive=false,agoTimer=null;
+
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function fmtIST(iso){try{return IST.format(new Date(iso));}catch(e){return '';}}
+function stateOf(e){return (e.status&&e.status.type)||{};}
+
+function badgeFor(st){
+  if(st.state==='in')return '<span class="badge live"><span class="live-pulse"></span>Live</span>';
+  if(st.state==='post')return '<span class="badge done">'+esc(st.description||'Final')+'</span>';
+  return '<span class="badge upcoming">'+esc(st.description||'Scheduled')+'</span>';
+}
+function teamRow(c){
+  var t=c.team||{},name=t.displayName||'TBD',abbr=t.abbreviation||'',
+      score=(c.score==null||c.score==='')?'':c.score,logo=t.logo||'',
+      init=esc((abbr||name).slice(0,2).toUpperCase());
+  return '<div class="team-row"><span class="team-logo'+(logo?'':' noimg')+'">'+
+    (logo?'<img src="'+esc(logo)+'" alt="" loading="lazy" onerror="this.parentNode.classList.add(\\'noimg\\');this.remove()">':'')+
+    '<span class="team-init">'+init+'</span></span>'+
+    '<span class="team-name">'+esc(name)+'</span>'+
+    '<span class="team-score">'+esc(String(score))+'</span></div>';
+}
+function emptyNote(){return '<div class="empty-note"><strong>No matches right now.</strong>Check back soon, the board refreshes automatically.</div>';}
+function errorNote(){return '<div class="error-note"><strong>Could not load scores.</strong>Check your connection and try again.<br><button class="retry-btn" id="scores-retry" type="button">Retry</button></div>';}
+
+function eventCard(e,compName){
+  var st=stateOf(e),comp=(e.competitions&&e.competitions[0])||{};
+  var rows=((comp.competitors)||[]).map(teamRow).join('');
+  var when=st.state==='pre'?'<div class="score-meta">'+esc(fmtIST(e.date))+' IST</div>':'';
+  var venue=(comp.venue&&comp.venue.fullName)?'<div class="score-meta">'+esc(comp.venue.fullName)+'</div>':'';
+  var result='';
+  if(st.state==='post'){
+    var w=(comp.competitors||[]).filter(function(c){return c.winner;})[0];
+    if(w&&w.team)result='<div class="score-result">'+esc(w.team.displayName)+' won</div>';
+  }
+  return '<article class="score-card"><div class="score-head"><span class="comp-name">'+
+    esc(compName||e.shortName||e.name||'')+'</span>'+badgeFor(st)+'</div>'+rows+result+when+venue+'</article>';
+}
+
+function renderGeneric(d){
+  var evs=d.events||[];
+  if(!evs.length)return emptyNote();
+  return evs.map(function(e){return eventCard(e,e.name);}).join('');
+}
+function renderF1(d){
+  var evs=d.events||[];
+  if(!evs.length)return emptyNote();
+  return evs.map(function(e){
+    var st=stateOf(e),cir=e.circuit||{},addr=cir.address||{};
+    var place=esc(cir.fullName||'')+((addr.city||addr.country)?', '+esc([addr.city,addr.country].filter(Boolean).join(', ')):'');
+    var sess=(e.competitions||[]).map(function(c){
+      var t=c.type||{},cst=(c.status&&c.status.type)||{};
+      return '<div class="session-row"><span class="sess">'+esc(t.abbreviation||'Session')+'</span><span>'+
+        esc(fmtIST(c.date))+' IST</span>'+badgeFor(cst)+'</div>';
+    }).join('');
+    return '<article class="score-card"><div class="score-head"><span class="comp-name">'+
+      esc(e.name||'Grand Prix')+'</span>'+badgeFor(st)+'</div><div class="score-meta">'+place+'</div>'+sess+'</article>';
+  }).join('');
+}
+function renderUFC(d){
+  var evs=d.events||[];
+  var out=evs.length?evs.map(function(e){
+    var st=stateOf(e),comp=(e.competitions&&e.competitions[0])||{};
+    var rows=(comp.competitors||[]).map(function(c){
+      var a=c.athlete||{},rec=(c.records&&c.records[0]&&c.records[0].summary)||'',
+          flag=(a.flag&&a.flag.href)||'',
+          init=esc((a.displayName||'?').slice(0,2).toUpperCase());
+      return '<div class="team-row"><span class="team-logo'+(flag?'':' noimg')+'">'+
+        (flag?'<img src="'+esc(flag)+'" alt="" loading="lazy" onerror="this.parentNode.classList.add(\\'noimg\\');this.remove()">':'')+
+        '<span class="team-init">'+init+'</span></span>'+
+        '<span class="team-name">'+esc(a.fullName||'TBD')+(c.winner?' <span class="badge done">Winner</span>':'')+'</span>'+
+        '<span class="team-score">'+esc(rec)+'</span></div>';
+    }).join('');
+    var when=st.state==='pre'?'<div class="score-meta">'+esc(fmtIST(e.date))+' IST</div>':'';
+    var venue=(comp.venue&&comp.venue.fullName)?'<div class="score-meta">'+esc(comp.venue.fullName)+'</div>':'';
+    return '<article class="score-card"><div class="score-head"><span class="comp-name">'+
+      esc(e.name||'UFC')+'</span>'+badgeFor(st)+'</div>'+rows+when+venue+'</article>';
+  }).join(''):emptyNote();
+  out+='<h3 class="scores-subhead">Boxing: next major bouts</h3>'+
+    '<div class="honest-note">Boxing has no free live-score feed, so these are the next big fights as reported, not live results.</div>'+
+    BOXING.map(function(b){
+      return '<article class="score-card"><div class="score-head"><span class="comp-name">'+
+        esc(b.title)+'</span><span class="badge upcoming">'+esc(b.date)+'</span></div>'+
+        '<div class="score-result">'+esc(b.bout)+'</div>'+
+        '<div class="score-meta">'+esc(b.venue)+' &middot; '+esc(b.note)+'</div></article>';
+    }).join('');
+  return out;
+}
+function renderMotoGP(d){
+  var riders=d.riders||[];
+  var head='<div class="honest-note">'+esc(d.note||'2026 MotoGP rider lineup.')+
+    ' <span class="countdown">Updated '+(d.updated?esc(d.updated):'daily')+'.</span></div>';
+  if(!riders.length)return head+emptyNote();
+  return head+'<div class="rider-grid">'+riders.map(function(r){
+    return '<div class="rider-card"><div class="rider-num">'+esc(String(r.number==null?'':r.number))+'</div><div>'+
+      '<div class="rider-name">'+esc(r.name)+'</div><div class="rider-team">'+esc(r.team)+'</div>'+
+      '<div class="rider-country">'+(r.flag?'<img src="'+esc(r.flag)+'" alt="" loading="lazy">':'')+esc(r.country)+'</div></div></div>';
+  }).join('')+'</div>';
+}
+function daysUntil(iso){return Math.max(0,Math.ceil((new Date(iso).getTime()-Date.now())/864e5));}
+function renderWWE(){
+  var cards=WWE_EVENTS.map(function(w){
+    var n=daysUntil(w.date);
+    var when=n===0?'Today':(n===1?'Tomorrow':'In '+n+' days');
+    return '<article class="score-card wwe-card"><div class="score-head"><span class="comp-name">Premium Live Event</span>'+
+      '<span class="badge upcoming">'+esc(when)+'</span></div>'+
+      '<div class="score-result">'+esc(w.name)+'</div>'+
+      '<div class="score-meta">'+esc(fmtIST(w.date))+' IST &middot; '+esc(w.venue)+'</div></article>';
+  }).join('');
+  return '<div class="honest-note">WWE is scripted entertainment, so there are no live scores anywhere. '+
+    'These are the next confirmed Premium Live Events; dates can shift, check <a href="https://www.wwe.com" target="_blank" rel="noopener">wwe.com</a>.</div>'+cards;
+}
+
+function endpointFor(tab){
+  if(tab==='cricket'){var l=leaguePick.cricket||LEAGUES.cricket[0];return {url:ESPN+'/cricket/'+l.id+'/scoreboard',label:l.name};}
+  if(tab==='football'){var f=leaguePick.football||LEAGUES.football[0];return {url:ESPN+'/soccer/'+f.id+'/scoreboard',label:f.name};}
+  if(tab==='f1')return {url:ESPN+'/racing/f1/scoreboard',label:'Formula 1'};
+  if(tab==='ufc')return {url:ESPN+'/mma/ufc/scoreboard',label:'UFC'};
+  return null;
+}
+
+function paintUpdated(){
+  if(!lastFetch){updatedEl.textContent='';return;}
+  var s=Math.max(0,Math.round((Date.now()-lastFetch)/1000));
+  updatedEl.textContent=s<10?'Updated just now':'Updated '+(s<60?s+' sec':Math.round(s/60)+' min')+' ago';
+}
+function scheduleNext(){
+  clearTimeout(timer);
+  timer=setTimeout(function(){
+    if(document.hidden){scheduleNext();return;}
+    load(current,true);
+  },lastAnyLive?30000:60000);
+}
+
+function load(tab,silent){
+  var ep=endpointFor(tab);
+  if(!ep){ /* static tabs */
+    panel.innerHTML=tab==='motogp'?'<div class="scores-loading">Loading MotoGP lineup...</div>':'';
+    if(tab==='motogp'){
+      fetch('assets/motogp.json').then(function(r){return r.json();}).then(function(d){
+        panel.innerHTML=renderMotoGP(d);lastFetch=Date.now();paintUpdated();
+      }).catch(function(){panel.innerHTML=errorNote();});
+    }else if(tab==='wwe'){
+      panel.innerHTML=renderWWE();lastFetch=Date.now();paintUpdated();
+    }
+    clearTimeout(timer);
+    return;
+  }
+  if(!silent)panel.innerHTML='<div class="scores-loading">Loading '+esc(ep.label)+'...</div>';
+  fetch(ep.url).then(function(r){
+    if(!r.ok)throw new Error('http '+r.status);
+    return r.json();
+  }).then(function(d){
+    var evs=d.events||[];
+    lastAnyLive=evs.some(function(e){return stateOf(e).state==='in';});
+    var html=tab==='f1'?renderF1(d):(tab==='ufc'?renderUFC(d):renderGeneric(d));
+    panel.innerHTML=html;
+    lastFetch=Date.now();paintUpdated();scheduleNext();
+  }).catch(function(){
+    panel.innerHTML=errorNote();clearTimeout(timer);
+  });
+}
+
+function showLeagueBar(tab){
+  var leagues=LEAGUES[tab];
+  if(!leagues){bar.style.display='none';return;}
+  bar.style.display='flex';
+  leagueSel.innerHTML=leagues.map(function(l,i){
+    var cur=leaguePick[tab]||leagues[0];
+    return '<option value="'+esc(l.id)+'"'+(l.id===cur.id?' selected':'')+'>'+esc(l.name)+'</option>';
+  }).join('');
+}
+function activate(tab,push){
+  if(TAB_IDS.indexOf(tab)<0)tab='cricket';
+  current=tab;lastAnyLive=false;clearTimeout(timer);
+  document.querySelectorAll('.scores-tab').forEach(function(b){
+    var on=b.getAttribute('data-tab')===tab;
+    b.classList.toggle('active',on);b.setAttribute('aria-selected',on?'true':'false');
+  });
+  showLeagueBar(tab);load(tab,false);
+  if(push!==false&&location.hash!=='#'+tab)location.hash=tab;
+}
+
+function init(){
+  panel=document.getElementById('scores-panel');
+  bar=document.getElementById('scores-bar');
+  leagueSel=document.getElementById('league-select');
+  updatedEl=document.getElementById('scores-updated');
+  if(!panel)return;
+  document.querySelectorAll('.scores-tab').forEach(function(b){
+    b.addEventListener('click',function(){activate(b.getAttribute('data-tab'));});
+  });
+  leagueSel.addEventListener('change',function(){
+    var leagues=LEAGUES[current]||[];
+    var pick=leagues.filter(function(l){return l.id===leagueSel.value;})[0];
+    if(pick){leaguePick[current]=pick;load(current,false);}
+  });
+  panel.addEventListener('click',function(e){
+    if(e.target&&e.target.id==='scores-retry')load(current,false);
+  });
+  document.addEventListener('visibilitychange',function(){
+    if(!document.hidden)load(current,true);
+  });
+  agoTimer=setInterval(paintUpdated,20000);
+  window.addEventListener('hashchange',function(){
+    var h=location.hash.replace('#','');
+    if(h&&h!==current)activate(h,false);
+  });
+  var start=location.hash.replace('#','');
+  activate(TAB_IDS.indexOf(start)>=0?start:'cricket',false);
+}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+else init();
+})();"""
 
 # ---------------------------------------------------------------- templates
 
@@ -580,12 +926,12 @@ def rel(depth):
 
 def topbar(depth, active):
     r = rel(depth)
-    def link(href, label, key):
+    def link(href, label, key, extra=""):
         cls = ' class="active"' if active == key else ""
-        return f'<a href="{r}{href}"{cls}>{label}</a>'
+        return f'<a href="{r}{href}"{cls}{extra}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
@@ -596,7 +942,7 @@ def footer(depth):
     r = rel(depth)
     return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="{r}scores.html">Scores</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
 def head(title, desc, depth, og_image="", extra_jsonld=""):
@@ -823,6 +1169,65 @@ def make_icon(size):
     d.text((size / 2, size / 2), "VS", font=fnt, fill="#ffffff", anchor="mm")
     im.save(dst)
 
+# ---------------------------------------------------------------- motogp data (server-side; api.motogp.com sends no CORS headers)
+
+def fetch_motogp():
+    """Bake the 2026 MotoGP premier-class rider lineup into assets/motogp.json.
+
+    The MotoGP API has no CORS headers, so browsers cannot fetch it directly;
+    this runs server-side at build time instead. The championship standings and
+    calendar endpoints return 403, so only the rider lineup is available.
+    Graceful: keep the previous file if the fetch fails."""
+    import urllib.request
+    dst = os.path.join(SITE, "assets", "motogp.json")
+    empty = {"updated": "", "riders": [],
+             "note": "2026 MotoGP premier-class rider lineup."}
+    try:
+        req = urllib.request.Request(
+            "https://api.motogp.com/riders-api/season/2026/riders",
+            headers={"User-Agent": "Mozilla/5.0",
+                     "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            riders = json.load(resp)
+        out = []
+        for r in riders:
+            step = r.get("current_career_step") or {}
+            cat = (step.get("category") or {}).get("name")
+            # Official = full-time grid; skip Substitute/Wildcard test riders
+            if cat != "MotoGP" or step.get("type") != "Official":
+                continue
+            team = step.get("sponsored_team") or (step.get("team") or {}).get("name") or ""
+            country = (r.get("country") or {}).get("name") or ""
+            flag = (r.get("country") or {}).get("flag") or ""
+            out.append({
+                "number": step.get("number"),
+                "name": f"{r.get('name', '')} {r.get('surname', '')}".strip(),
+                "team": team,
+                "country": country,
+                "flag": flag,
+            })
+        out.sort(key=lambda x: (x["number"] is None, x["number"] or 0))
+        data = {
+            "updated": datetime.now(timezone.utc).astimezone(
+                timezone(timedelta(hours=5, minutes=30))).strftime("%Y-%m-%d %H:%M IST"),
+            "riders": out,
+            "note": ("2026 MotoGP premier-class rider lineup. Championship "
+                     "standings are not published through a free data feed, "
+                     "so points are not shown here."),
+        }
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        with open(dst, "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+        print(f"motogp.json baked: {len(out)} riders")
+    except Exception as e:
+        if os.path.exists(dst):
+            print(f"motogp fetch failed ({e}); kept previous motogp.json")
+        else:
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            with open(dst, "w", encoding="utf-8") as f:
+                json.dump(empty, f, ensure_ascii=False, indent=2)
+            print(f"motogp fetch failed ({e}); wrote empty placeholder")
+
 def card_html(p, depth=0):
     r = rel(depth)
     tag = ('<span class="tag opinion">Opinion</span>' if p["is_blog"]
@@ -1018,12 +1423,50 @@ def blog_page_from_file(path):
             "url": IG, "hero": hero,
             "thumb": thumb, "gallery": [], "og_srcs": [path]}
 
+def jsonld_scores():
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Varta & Samkara Scores Center",
+        "url": f"{SITE_URL}scores.html",
+        "description": ("Live scores and results: cricket, football, F1, UFC, "
+                        "MotoGP and WWE. All times in IST."),
+    }, ensure_ascii=False)
+
+def scores_page():
+    tabs = "".join(
+        f'<button class="scores-tab" data-tab="{tid}" role="tab" aria-selected="false">{label}</button>'
+        for tid, label in [
+            ("cricket", "Cricket"), ("football", "Football"), ("f1", "F1"),
+            ("ufc", "UFC & Boxing"), ("motogp", "MotoGP"), ("wwe", "WWE")])
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head('Scores Center', 'Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST.', 0, '', jsonld_scores())}
+</head>
+<body>
+{topbar(0, 'scores')}
+<main class="wrap">
+<div class="sec-head"><h2 class="sec-title">Scores Center</h2><span class="updated" id="scores-updated"></span></div>
+<p class="scores-sub">Live scores refresh automatically every minute (every 30 seconds when something is live). All times in IST.</p>
+<div class="scores-tabs" role="tablist">{tabs}</div>
+<div class="scores-bar" id="scores-bar"><select class="league-select" id="league-select" aria-label="Choose league"></select></div>
+<div id="scores-panel" aria-live="polite"></div>
+</main>
+{footer(0)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+<script src="assets/scores.js"></script>
+</body>
+</html>"""
+
 # ---------------------------------------------------------------- build
 
 def build():
     os.makedirs(SITE, exist_ok=True)
     os.makedirs(CONTENT, exist_ok=True)
     os.makedirs(BLOGSDIR, exist_ok=True)
+    fetch_motogp()  # server-side; api.motogp.com has no CORS headers for browsers
     rows = parse_log()
     posts = []
     used_slugs = set()
@@ -1275,6 +1718,12 @@ def build():
     with open(os.path.join(SITE, "blog.html"), "w", encoding="utf-8") as f:
         f.write(blogidx)
 
+    # ---------- scores center ----------
+    with open(os.path.join(SITE, "assets", "scores.js"), "w", encoding="utf-8") as f:
+        f.write(SCORES_JS)
+    with open(os.path.join(SITE, "scores.html"), "w", encoding="utf-8") as f:
+        f.write(scores_page())
+
     # ---------- tag pages ----------
     tag_map = {}
     for p in news + blog_posts:
@@ -1359,9 +1808,10 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v2";
+    sw = """const CACHE = "vs-cache-v3";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
-              "manifest.json", "assets/placeholder.svg"];
+              "manifest.json", "assets/placeholder.svg",
+              "scores.html", "assets/scores.js", "assets/motogp.json"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE))
     .then(() => self.skipWaiting()));
@@ -1468,7 +1918,7 @@ self.addEventListener("fetch", (e) => {
     with open(os.path.join(SITE, "feed.xml"), "w", encoding="utf-8") as f:
         f.write(feed)
 
-    sm_urls = (["", "archive.html", "blog.html", "feed.xml", "tags/"]
+    sm_urls = (["", "archive.html", "blog.html", "scores.html", "feed.xml", "tags/"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts])

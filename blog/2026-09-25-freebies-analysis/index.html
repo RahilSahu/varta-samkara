@@ -25,7 +25,7 @@
 <div class="progress" id="progress"></div>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks"><a href="../../index.html">Home</a><a href="../../archive.html">News</a><a href="../../blog.html" class="active">Blog</a><a href="../../tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks"><a href="../../index.html">Home</a><a href="../../archive.html">News</a><a href="../../blog.html" class="active">Blog</a><a href="../../scores.html" data-scores-nav>Scores</a><a href="../../tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
@@ -94,7 +94,7 @@
 </main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="../../tags/">Tags</a><a href="../../archive.html">Archive</a><a href="../../feed.xml">RSS</a><a href="../../sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="../../scores.html">Scores</a><a href="../../tags/">Tags</a><a href="../../archive.html">Archive</a><a href="../../feed.xml">RSS</a><a href="../../sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 <script>
@@ -141,6 +141,31 @@ document.addEventListener('input',function(e){
       el.style.display=(!q||t.indexOf(q)>-1)?'':'none';
     });
   }
+});
+/* Scores Center: pulsing dot on the Scores nav link when something is live.
+   Cheap by design: two small scoreboard fetches, once per page load. */
+window.addEventListener('load',function(){
+  setTimeout(function(){
+    var link=document.querySelector('[data-scores-nav]');
+    if(!link||!('fetch' in window))return;
+    function anyLive(url){
+      return fetch(url).then(function(r){return r.json();}).then(function(d){
+        return (d.events||[]).some(function(e){
+          return e.status&&e.status.type&&e.status.type.state==='in';
+        });
+      }).catch(function(){return false;});
+    }
+    Promise.all([
+      anyLive('https://site.api.espn.com/apis/site/v2/sports/cricket/8048/scoreboard'),
+      anyLive('https://site.api.espn.com/apis/site/v2/sports/soccer/ind.1/scoreboard')
+    ]).then(function(r){
+      if(r[0]||r[1]){
+        var s=document.createElement('span');
+        s.className='live-dot';s.title='Live now';
+        link.appendChild(s);
+      }
+    });
+  },1600);
 });
 </script>
 </body>

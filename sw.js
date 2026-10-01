@@ -1,6 +1,7 @@
-const CACHE = "vs-cache-v2";
+const CACHE = "vs-cache-v3";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
-              "manifest.json", "assets/placeholder.svg"];
+              "manifest.json", "assets/placeholder.svg",
+              "scores.html", "assets/scores.js", "assets/motogp.json"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE))
     .then(() => self.skipWaiting()));

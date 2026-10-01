@@ -1,0 +1,160 @@
+{
+  "updated": "2026-10-02 00:36 IST",
+  "riders": [
+    {
+      "number": 5,
+      "name": "Johann Zarco",
+      "team": "CASTROL Honda LCR",
+      "country": "France",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/FR.svg"
+    },
+    {
+      "number": 7,
+      "name": "Toprak Razgatlioglu",
+      "team": "Prima Pramac Yamaha MotoGP",
+      "country": "Türkiye",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/TR.svg"
+    },
+    {
+      "number": 10,
+      "name": "Luca Marini",
+      "team": "Honda HRC Castrol",
+      "country": "Italy",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/IT.svg"
+    },
+    {
+      "number": 11,
+      "name": "Diogo Moreira",
+      "team": "Pro Honda LCR",
+      "country": "Brazil",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/BR.svg"
+    },
+    {
+      "number": 12,
+      "name": "Maverick Viñales",
+      "team": "Red Bull KTM Tech3",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 20,
+      "name": "Fabio Quartararo",
+      "team": "Monster Energy Yamaha MotoGP",
+      "country": "France",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/FR.svg"
+    },
+    {
+      "number": 21,
+      "name": "Franco Morbidelli",
+      "team": "Pertamina Enduro VR46 Racing Team",
+      "country": "Italy",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/IT.svg"
+    },
+    {
+      "number": 23,
+      "name": "Enea Bastianini",
+      "team": "Red Bull KTM Tech3",
+      "country": "Italy",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/IT.svg"
+    },
+    {
+      "number": 25,
+      "name": "Raul Fernandez",
+      "team": "SuperFile Trackhouse MotoGP Team",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 33,
+      "name": "Brad Binder",
+      "team": "Red Bull KTM Factory Racing",
+      "country": "South Africa",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ZA.svg"
+    },
+    {
+      "number": 36,
+      "name": "Joan Mir",
+      "team": "Honda HRC Castrol",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 37,
+      "name": "Pedro Acosta",
+      "team": "Red Bull KTM Factory Racing",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 42,
+      "name": "Alex Rins",
+      "team": "Monster Energy Yamaha MotoGP",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 43,
+      "name": "Jack Miller",
+      "team": "Prima Pramac Yamaha MotoGP",
+      "country": "Australia",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/AU.svg"
+    },
+    {
+      "number": 49,
+      "name": "Fabio Di Giannantonio",
+      "team": "Pertamina Enduro VR46 Racing Team",
+      "country": "Italy",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/IT.svg"
+    },
+    {
+      "number": 54,
+      "name": "Fermin Aldeguer",
+      "team": "BK8 Gresini Racing MotoGP",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 63,
+      "name": "Francesco Bagnaia",
+      "team": "Ducati Lenovo Team",
+      "country": "Italy",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/IT.svg"
+    },
+    {
+      "number": 72,
+      "name": "Marco Bezzecchi",
+      "team": "Aprilia Racing",
+      "country": "Italy",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/IT.svg"
+    },
+    {
+      "number": 73,
+      "name": "Alex Marquez",
+      "team": "BK8 Gresini Racing MotoGP",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 79,
+      "name": "Ai Ogura",
+      "team": "SuperFile Trackhouse MotoGP Team",
+      "country": "Japan",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/JP.svg"
+    },
+    {
+      "number": 89,
+      "name": "Jorge Martin",
+      "team": "Aprilia Racing",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    },
+    {
+      "number": 93,
+      "name": "Marc Marquez",
+      "team": "Ducati Lenovo Team",
+      "country": "Spain",
+      "flag": "https://photos.motogp.com/countries/flags/iso2/ES.svg"
+    }
+  ],
+  "note": "2026 MotoGP premier-class rider lineup. Championship standings are not published through a free data feed, so points are not shown here."
+}

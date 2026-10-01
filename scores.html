@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a1a3c">
-<title>Page not found | Varta &amp; Samkara</title>
+<title>Scores Center | Varta &amp; Samkara</title>
 <script>(function(){try{var t=localStorage.getItem('vs-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta name="description" content="The page you are looking for does not exist.">
-<meta property="og:title" content="Page not found">
-<meta property="og:description" content="The page you are looking for does not exist.">
+<meta name="description" content="Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST.">
+<meta property="og:title" content="Scores Center">
+<meta property="og:description" content="Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST.">
 <meta property="og:type" content="article">
 
 
@@ -16,28 +16,24 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="feed.xml">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
-
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Varta & Samkara Scores Center", "url": "https://rahilsahu.github.io/varta-samkara/scores.html", "description": "Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST."}
 </head>
 <body>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="scores.html" data-scores-nav>Scores</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="scores.html" class="active" data-scores-nav>Scores</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
 </header>
-<section class="hero" style="padding:3rem 1.2rem">
-<div class="hero-inner">
-<div class="kicker">404</div>
-<h2>That page does not exist.</h2>
-<p>It may have moved, or the link may be wrong. Head back home or browse the full archive.</p>
-<div class="cta-row">
-<a class="btn" href="index.html">Go home</a>
-<a class="btn ghost" href="archive.html">Browse the archive</a>
-</div>
-</div>
-</section>
+<main class="wrap">
+<div class="sec-head"><h2 class="sec-title">Scores Center</h2><span class="updated" id="scores-updated"></span></div>
+<p class="scores-sub">Live scores refresh automatically every minute (every 30 seconds when something is live). All times in IST.</p>
+<div class="scores-tabs" role="tablist"><button class="scores-tab" data-tab="cricket" role="tab" aria-selected="false">Cricket</button><button class="scores-tab" data-tab="football" role="tab" aria-selected="false">Football</button><button class="scores-tab" data-tab="f1" role="tab" aria-selected="false">F1</button><button class="scores-tab" data-tab="ufc" role="tab" aria-selected="false">UFC & Boxing</button><button class="scores-tab" data-tab="motogp" role="tab" aria-selected="false">MotoGP</button><button class="scores-tab" data-tab="wwe" role="tab" aria-selected="false">WWE</button></div>
+<div class="scores-bar" id="scores-bar"><select class="league-select" id="league-select" aria-label="Choose league"></select></div>
+<div id="scores-panel" aria-live="polite"></div>
+</main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
 <div class="foot-links"><a href="scores.html">Scores</a><a href="tags/">Tags</a><a href="archive.html">Archive</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
@@ -114,5 +110,6 @@ window.addEventListener('load',function(){
   },1600);
 });
 </script>
+<script src="assets/scores.js"></script>
 </body>
 </html>
