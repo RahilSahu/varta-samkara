@@ -600,7 +600,58 @@ html[data-theme="dark"] .badge.upcoming{background:#1b2a52;color:#cfd7ec}
 html[data-theme="dark"] .scores-tab.active{background:#1b2a52;border-color:#1b2a52}
 html[data-theme="dark"] .score-result{color:#e9edf6}
 html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
+  .team-name{font-size:.88rem}
+  .team-score{font-size:.94rem}
+  .scores-tab{padding:.45rem .95rem;font-size:.84rem}
+}
+html[data-theme="dark"] .badge.upcoming{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .scores-tab.active{background:#1b2a52;border-color:#1b2a52}
+html[data-theme="dark"] .score-result{color:#e9edf6}
+html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
 @media(prefers-reduced-motion:reduce){.live-pulse,.live-dot{animation:none}}
+
+/* ---------- horoscope page ---------- */
+.sign-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.6rem;margin:1.2rem 0}
+.sign-card{border:1px solid var(--line,#e2e2e2);border-radius:12px;background:var(--card,#fff);padding:.7rem .4rem;text-align:center;cursor:pointer;transition:transform .15s,border-color .15s;font:inherit}
+.sign-card:hover{transform:translateY(-2px)}
+.sign-card.active{border-color:var(--saffron,#e07b00);box-shadow:0 0 0 2px var(--saffron,#e07b00) inset}
+.sign-card .sym{font-size:1.7rem;line-height:1}
+.sign-card .sname{font-size:.82rem;font-weight:700;margin-top:.25rem}
+.sign-card .sdates{font-size:.68rem;color:var(--muted,#666)}
+.day-tabs{display:flex;gap:.5rem;margin:1rem 0}
+.day-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);border-radius:999px;padding:.45rem 1.1rem;font:inherit;font-size:.88rem;cursor:pointer;color:inherit}
+.day-tab.active{background:var(--saffron,#e07b00);border-color:var(--saffron,#e07b00);color:#fff;font-weight:700}
+.horo-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.4rem;margin:1rem 0}
+.horo-card h2{margin:0 0 .3rem;font-size:1.5rem}
+.horo-card .horo-date{font-size:.85rem;color:var(--muted,#666);margin-bottom:.8rem}
+.horo-card p.horo-text{font-size:1.05rem;line-height:1.75}
+.horo-meta{font-size:.8rem;color:var(--muted,#666);margin-top:1rem}
+.horo-note{font-size:.82rem;color:var(--muted,#666);font-style:italic;margin-top:.4rem}
+html[data-theme="dark"] .sign-card,html[data-theme="dark"] .day-tab,html[data-theme="dark"] .horo-card{background:#131a2c;border-color:#263050}
+html[data-theme="dark"] .sign-card .sdates,html[data-theme="dark"] .horo-card .horo-date,html[data-theme="dark"] .horo-meta,html[data-theme="dark"] .horo-note{color:#9aa3b8}
+
+/* ---------- read-aloud player ---------- */
+.listen-cta{display:inline-flex;align-items:center;gap:.45rem;border:1px solid var(--saffron,#e07b00);background:transparent;color:var(--saffron,#e07b00);border-radius:999px;padding:.5rem 1.15rem;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer;margin:.6rem 0 0}
+.listen-cta:hover{background:var(--saffron,#e07b00);color:#fff}
+.listen-cta .spk{font-size:1.05rem}
+.readaloud{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--card,#fff);border-top:2px solid var(--saffron,#e07b00);box-shadow:0 -6px 24px rgba(0,0,0,.18);padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom));display:none}
+.readaloud.open{display:block}
+.ra-inner{max-width:720px;margin:0 auto}
+.ra-title{font-size:.82rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:.4rem}
+.ra-controls{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap}
+.ra-btn{border:1px solid var(--line,#e2e2e2);background:var(--bg,#f7f7f7);color:inherit;border-radius:50%;width:42px;height:42px;font-size:1.1rem;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex:none}
+.ra-btn.primary{background:var(--saffron,#e07b00);border-color:var(--saffron,#e07b00);color:#fff;width:52px;height:52px;font-size:1.35rem}
+.ra-select{font:inherit;font-size:.82rem;border:1px solid var(--line,#e2e2e2);border-radius:8px;padding:.35rem .5rem;background:var(--bg,#f7f7f7);color:inherit;max-width:170px}
+.ra-progress{flex:1 1 120px;height:6px;background:var(--line,#e2e2e2);border-radius:3px;overflow:hidden;min-width:90px}
+.ra-progress i{display:block;height:100%;width:0;background:var(--saffron,#e07b00);transition:width .3s}
+.ra-count{font-size:.78rem;color:var(--muted,#666);white-space:nowrap}
+.ra-close{margin-left:auto;border:none;background:transparent;font-size:1.2rem;cursor:pointer;color:var(--muted,#666)}
+.ra-sent{background:rgba(224,123,0,.18);border-radius:3px}
+html[data-theme="dark"] .readaloud{background:#131a2c;border-top-color:var(--saffron,#e07b00)}
+html[data-theme="dark"] .ra-btn{background:#0f1526;border-color:#263050;color:#e9edf6}
+html[data-theme="dark"] .ra-btn.primary{background:var(--saffron,#e07b00);border-color:var(--saffron,#e07b00);color:#fff}
+html[data-theme="dark"] .ra-select{background:#0f1526;border-color:#263050;color:#e9edf6}
+html[data-theme="dark"] .ra-sent{background:rgba(224,123,0,.32)}
 """
 
 JS = """\
@@ -919,6 +970,206 @@ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',
 else init();
 })();"""
 
+# ---------------------------------------------------------------- read-aloud JS
+
+READALOUD_JS = r"""(function(){
+'use strict';
+/* Read-aloud: text-to-speech for article pages using the browser's built-in
+   Web Speech API (no backend, works offline where voices are installed).
+   Background playback: tab-backgrounded playback keeps going; the Media
+   Session API wires lock-screen/notification controls on Android. Whether
+   audio continues with the screen fully locked depends on the browser and OS,
+   this integration is the supported route to enable it where available. */
+var btn=document.getElementById('listen-btn');
+if(!btn||!('speechSynthesis' in window)){if(btn)btn.style.display='none';return;}
+var synth=window.speechSynthesis;
+var article=document.querySelector('.article');
+if(!article){btn.style.display='none';return;}
+var paras=article.querySelectorAll('p.body,p.lede');
+if(!paras.length){btn.style.display='none';return;}
+
+/* Split paragraphs into sentences and wrap them for highlighting. */
+var sents=[];
+var SENT_RE=/[^.!?\u0964\u0965]+[.!?\u0964\u0965]+["\u201d']?|\S(?:.*\S)?$/g;
+paras.forEach(function(p){
+  var txt=p.textContent;
+  var parts=txt.match(SENT_RE)||[txt];
+  p.textContent='';
+  parts.forEach(function(part){
+    var s=document.createElement('span');
+    s.className='ra-sent-src';
+    s.textContent=part.trim();
+    p.appendChild(s);
+    p.appendChild(document.createTextNode(' '));
+    if(s.textContent)sents.push(s);
+  });
+});
+if(!sents.length){btn.style.display='none';return;}
+
+var idx=0,playing=false,rate=1,voice=null,voices=[];
+var title=(document.querySelector('.article h1')||{}).textContent||'Varta & Samkara';
+
+/* Player UI */
+var bar=document.createElement('div');
+bar.className='readaloud';
+bar.setAttribute('role','region');
+bar.setAttribute('aria-label','Audio player');
+bar.innerHTML=
+ '<div class="ra-inner">'+
+ '<div class="ra-title"></div>'+
+ '<div class="ra-controls">'+
+ '<button class="ra-btn" data-act="prev" aria-label="Previous sentence">&#9664;&#9664;</button>'+
+ '<button class="ra-btn primary" data-act="toggle" aria-label="Play or pause">&#9654;</button>'+
+ '<button class="ra-btn" data-act="next" aria-label="Next sentence">&#9654;&#9654;</button>'+
+ '<select class="ra-select" data-act="rate" aria-label="Playback speed">'+
+ '<option value="0.75">0.75x</option><option value="1" selected>1x</option>'+
+ '<option value="1.25">1.25x</option><option value="1.5">1.5x</option></select>'+
+ '<select class="ra-select" data-act="voice" aria-label="Voice"></select>'+
+ '<div class="ra-progress" aria-hidden="true"><i></i></div>'+
+ '<span class="ra-count"></span>'+
+ '<button class="ra-close" data-act="close" aria-label="Close player">&times;</button>'+
+ '</div></div>';
+document.body.appendChild(bar);
+var titleEl=bar.querySelector('.ra-title');
+var toggleBtn=bar.querySelector('[data-act="toggle"]');
+var prog=bar.querySelector('.ra-progress i');
+var count=bar.querySelector('.ra-count');
+var rateSel=bar.querySelector('[data-act="rate"]');
+var voiceSel=bar.querySelector('[data-act="voice"]');
+titleEl.textContent='Listening: '+title;
+
+function highlight(){
+  sents.forEach(function(s){s.classList.remove('ra-sent');});
+  if(sents[idx])sents[idx].classList.add('ra-sent');
+}
+function updateUI(){
+  toggleBtn.innerHTML=playing?'&#10074;&#10074;':'&#9654;';
+  toggleBtn.setAttribute('aria-label',playing?'Pause':'Play');
+  var pct=sents.length?Math.round(idx/sents.length*100):0;
+  prog.style.width=pct+'%';
+  count.textContent=sents.length?((playing||idx>0)?(Math.min(idx+1,sents.length)+' / '+sents.length):''):'' ;
+}
+function scrollInto(){
+  var el=sents[idx];
+  if(!el)return;
+  var r=el.getBoundingClientRect();
+  if(r.top<70||r.bottom>window.innerHeight-140){
+    el.scrollIntoView({block:'center',behavior:'smooth'});
+  }
+}
+function speakCurrent(){
+  if(idx>=sents.length){finish();return;}
+  var u=new SpeechSynthesisUtterance(sents[idx].textContent);
+  u.rate=rate;
+  if(voice)u.voice=voice;
+  u.onend=function(){
+    if(!playing)return;
+    idx++;
+    highlight();updateUI();scrollInto();
+    if(idx<sents.length)speakCurrent();else finish();
+  };
+  u.onerror=function(){if(playing){idx++;if(idx<sents.length){highlight();updateUI();speakCurrent();}else finish();}};
+  synth.speak(u);
+}
+function play(){
+  if(idx>=sents.length)idx=0;
+  synth.cancel();
+  playing=true;
+  bar.classList.add('open');
+  highlight();updateUI();scrollInto();
+  speakCurrent();
+  setMediaSession();
+}
+function pause(){
+  playing=false;
+  synth.cancel();
+  updateUI();
+}
+function stop(){
+  playing=false;
+  synth.cancel();
+  idx=0;
+  highlight();updateUI();
+}
+function finish(){
+  playing=false;
+  idx=sents.length;
+  highlight();updateUI();
+}
+function setMediaSession(){
+  if(!('mediaSession' in navigator))return;
+  try{
+    navigator.mediaSession.metadata=new MediaMetadata({
+      title:title,artist:'Varta & Samkara',album:'Varta & Samkara'
+    });
+    navigator.mediaSession.setActionHandler('play',play);
+    navigator.mediaSession.setActionHandler('pause',pause);
+    navigator.mediaSession.setActionHandler('stop',stop);
+    navigator.mediaSession.setActionHandler('previoustrack',function(){
+      idx=Math.max(0,idx-1);if(playing)play();else{highlight();updateUI();}
+    });
+    navigator.mediaSession.setActionHandler('nexttrack',function(){
+      idx=Math.min(sents.length-1,idx+1);if(playing)play();else{highlight();updateUI();}
+    });
+  }catch(e){}
+}
+function pickVoice(){
+  var saved=null;
+  try{saved=localStorage.getItem('vs-voice');}catch(e){}
+  if(saved){
+    var found=voices.filter(function(v){return v.voiceURI===saved;})[0];
+    if(found)return found;
+  }
+  var pref=voices.filter(function(v){return /^en[-_]IN/i.test(v.lang);})[0]
+    ||voices.filter(function(v){return /^en/i.test(v.lang);})[0]
+    ||voices[0];
+  return pref||null;
+}
+function loadVoices(){
+  voices=synth.getVoices();
+  if(!voices.length)return;
+  voice=pickVoice();
+  voiceSel.innerHTML='';
+  voices.forEach(function(v){
+    var o=document.createElement('option');
+    o.value=v.voiceURI;
+    o.textContent=v.name+' ('+v.lang+')';
+    if(voice&&v.voiceURI===voice.voiceURI)o.selected=true;
+    voiceSel.appendChild(o);
+  });
+}
+if(synth.onvoiceschanged!==undefined)synth.onvoiceschanged=loadVoices;
+loadVoices();
+
+bar.addEventListener('click',function(e){
+  var act=e.target.closest('[data-act]');
+  if(!act)return;
+  var a=act.getAttribute('data-act');
+  if(a==='toggle'){playing?pause():play();}
+  else if(a==='prev'){idx=Math.max(0,idx-1);if(playing)play();else{highlight();updateUI();}}
+  else if(a==='next'){idx=Math.min(sents.length-1,idx+1);if(playing)play();else{highlight();updateUI();}}
+  else if(a==='close'){stop();bar.classList.remove('open');}
+});
+rateSel.addEventListener('change',function(){
+  rate=parseFloat(rateSel.value)||1;
+  if(playing){synth.cancel();speakCurrent();}
+});
+voiceSel.addEventListener('change',function(){
+  var v=voices.filter(function(x){return x.voiceURI===voiceSel.value;})[0];
+  if(v){voice=v;try{localStorage.setItem('vs-voice',v.voiceURI);}catch(e){}}
+  if(playing){synth.cancel();speakCurrent();}
+});
+btn.addEventListener('click',function(){
+  if(bar.classList.contains('open')&&(playing||idx>0)){playing?pause():play();}
+  else{idx=0;play();}
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&bar.classList.contains('open')){stop();bar.classList.remove('open');}
+});
+window.addEventListener('beforeunload',function(){synth.cancel();});
+updateUI();
+})();"""
+
 # ---------------------------------------------------------------- templates
 
 def rel(depth):
@@ -931,7 +1182,7 @@ def topbar(depth, active):
         return f'<a href="{r}{href}"{cls}{extra}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
@@ -942,7 +1193,7 @@ def footer(depth):
     r = rel(depth)
     return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="{r}scores.html">Scores</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="{r}scores.html">Scores</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
 def head(title, desc, depth, og_image="", extra_jsonld=""):
@@ -1228,6 +1479,67 @@ def fetch_motogp():
                 json.dump(empty, f, ensure_ascii=False, indent=2)
             print(f"motogp fetch failed ({e}); wrote empty placeholder")
 
+SIGNS = [
+    ("aries", "Aries", "&#9800;", "Mar 21 - Apr 19"),
+    ("taurus", "Taurus", "&#9801;", "Apr 20 - May 20"),
+    ("gemini", "Gemini", "&#9802;", "May 21 - Jun 20"),
+    ("cancer", "Cancer", "&#9803;", "Jun 21 - Jul 22"),
+    ("leo", "Leo", "&#9804;", "Jul 23 - Aug 22"),
+    ("virgo", "Virgo", "&#9805;", "Aug 23 - Sep 22"),
+    ("libra", "Libra", "&#9806;", "Sep 23 - Oct 22"),
+    ("scorpio", "Scorpio", "&#9807;", "Oct 23 - Nov 21"),
+    ("sagittarius", "Sagittarius", "&#9808;", "Nov 22 - Dec 21"),
+    ("capricorn", "Capricorn", "&#9809;", "Dec 22 - Jan 19"),
+    ("aquarius", "Aquarius", "&#9810;", "Jan 20 - Feb 18"),
+    ("pisces", "Pisces", "&#9811;", "Feb 19 - Mar 20"),
+]
+
+def fetch_horoscope():
+    """Bake daily horoscopes (12 signs x yesterday/today/tomorrow) into
+    assets/horoscope.json.
+
+    freehoroscopeapi.com sends no CORS headers, so browsers cannot fetch it
+    directly; this runs server-side at build time instead. Graceful: keep the
+    previous file if the fetch fails."""
+    import urllib.request, time
+    dst = os.path.join(SITE, "assets", "horoscope.json")
+    sign_ids = [s for s, _, _, _ in SIGNS]
+    days = ["yesterday", "today", "tomorrow"]
+    try:
+        data = {}
+        for s in sign_ids:
+            data[s] = {}
+            for d in days:
+                url = (f"https://freehoroscopeapi.com/api/v1/get-horoscope/"
+                       f"daily?sign={s}&day={d}")
+                req = urllib.request.Request(
+                    url, headers={"User-Agent": "Mozilla/5.0",
+                                  "Accept": "application/json"})
+                with urllib.request.urlopen(req, timeout=20) as resp:
+                    payload = json.load(resp).get("data") or {}
+                data[s][d] = {"date": payload.get("date", ""),
+                              "horoscope": payload.get("horoscope", "")}
+                time.sleep(0.2)
+        if any(not data[s][d]["horoscope"] for s in sign_ids for d in days):
+            raise ValueError("incomplete horoscope payload")
+        out = {
+            "fetched_at": datetime.now(timezone.utc).astimezone(
+                timezone(timedelta(hours=5, minutes=30))).strftime("%Y-%m-%d %H:%M IST"),
+            "signs": data,
+        }
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        with open(dst, "w", encoding="utf-8") as f:
+            json.dump(out, f, ensure_ascii=False, indent=2)
+        print(f"horoscope.json baked: {len(sign_ids)} signs x {len(days)} days")
+    except Exception as e:
+        if os.path.exists(dst):
+            print(f"horoscope fetch failed ({e}); kept previous horoscope.json")
+        else:
+            os.makedirs(os.path.dirname(dst), exist_ok=True)
+            with open(dst, "w", encoding="utf-8") as f:
+                json.dump({"fetched_at": "", "signs": {}}, f, ensure_ascii=False)
+            print(f"horoscope fetch failed ({e}); wrote empty placeholder")
+
 def card_html(p, depth=0):
     r = rel(depth)
     tag = ('<span class="tag opinion">Opinion</span>' if p["is_blog"]
@@ -1344,6 +1656,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
 {badge}
 <h1>{html.escape(art['title'])}</h1>
 {byline}
+<button class="listen-cta" id="listen-btn" type="button"><span class="spk">&#9836;</span> Listen to this article</button>
 <img class="article-hero" src="{r}{p['hero']}" alt="{html.escape(art['title'])}" decoding="async">
 {toc_html}
 {body}
@@ -1362,6 +1675,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
 </main>
 {footer(2)}
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+<script src="{r}assets/readaloud.js" defer></script>
 {JS}
 </body>
 </html>"""
@@ -1462,11 +1776,127 @@ def scores_page():
 
 # ---------------------------------------------------------------- build
 
+def jsonld_horoscope():
+    return json.dumps({
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Daily Horoscope - Varta & Samkara",
+        "url": f"{SITE_URL}horoscope.html",
+        "description": ("Daily horoscope readings for all twelve zodiac signs, "
+                        "refreshed every day. For entertainment."),
+    }, ensure_ascii=False)
+
+HOROSCOPE_JS = """\
+<script>
+(function(){
+'use strict';
+var SIGNS={};
+try{SIGNS=JSON.parse(document.getElementById('sign-data').textContent);}catch(e){}
+var DAY_LABELS={yesterday:'Yesterday',today:'Today',tomorrow:'Tomorrow'};
+var state={sign:'aries',day:'today'};
+try{var s=localStorage.getItem('vs-horoscope-sign');if(s&&SIGNS[s])state.sign=s;}catch(e){}
+var data=null;
+var grid=document.getElementById('sign-grid');
+var tabs=document.getElementById('day-tabs');
+var card=document.getElementById('horo-card');
+var updated=document.getElementById('horo-updated');
+
+function signMeta(id){return SIGNS[id]||{name:id,dates:''};}
+function render(){
+  grid.querySelectorAll('.sign-card').forEach(function(b){
+    b.classList.toggle('active',b.getAttribute('data-sign')===state.sign);
+  });
+  tabs.querySelectorAll('.day-tab').forEach(function(b){
+    b.classList.toggle('active',b.getAttribute('data-day')===state.day);
+  });
+  var m=signMeta(state.sign);
+  if(!data||!data.signs||!data.signs[state.sign]||!data.signs[state.sign][state.day]
+     ||!data.signs[state.sign][state.day].horoscope){
+    card.innerHTML='<h2>'+m.name+'</h2><p class="horo-text">Today\\'s reading is not available right now. Please check back later.</p>';
+    return;
+  }
+  var entry=data.signs[state.sign][state.day];
+  var d=entry.date||'';
+  card.innerHTML='<h2>'+m.name+'</h2>'
+    +'<div class="horo-date">'+m.dates+(d?' &bull; '+d:'')+' &bull; '+DAY_LABELS[state.day]+'</div>'
+    +'<p class="horo-text"></p>';
+  card.querySelector('.horo-text').textContent=entry.horoscope;
+}
+grid.addEventListener('click',function(e){
+  var b=e.target.closest('.sign-card');
+  if(!b)return;
+  state.sign=b.getAttribute('data-sign');
+  try{localStorage.setItem('vs-horoscope-sign',state.sign);}catch(e2){}
+  render();
+});
+tabs.addEventListener('click',function(e){
+  var b=e.target.closest('.day-tab');
+  if(!b)return;
+  state.day=b.getAttribute('data-day');
+  render();
+});
+render();
+fetch('assets/horoscope.json',{cache:'no-cache'}).then(function(r){
+  if(!r.ok)throw new Error('http '+r.status);
+  return r.json();
+}).then(function(j){
+  data=j;
+  if(j&&j.fetched_at)updated.textContent='Updated '+j.fetched_at;
+  render();
+}).catch(function(){
+  card.innerHTML='<h2>'+signMeta(state.sign).name+'</h2><p class="horo-text">Could not load today\\'s readings. Please check your connection and try again.</p>';
+});
+})();
+</script>"""
+
+def horoscope_page():
+    cards = "".join(
+        f'<button class="sign-card" type="button" data-sign="{s}">'
+        f'<div class="sym">{sym}</div><div class="sname">{name}</div>'
+        f'<div class="sdates">{dr}</div></button>'
+        for s, name, sym, dr in SIGNS)
+    sign_data = json.dumps(
+        {s: {"name": name, "dates": dr} for s, name, sym, dr in SIGNS},
+        ensure_ascii=False)
+    tabs = "".join(
+        f'<button class="day-tab" type="button" data-day="{d}">{lbl}</button>'
+        for d, lbl in [("yesterday", "Yesterday"), ("today", "Today"),
+                       ("tomorrow", "Tomorrow")])
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head("Daily Horoscope", "Daily horoscope readings for all twelve zodiac signs, refreshed every day. For entertainment.", 0, "", f'<script type="application/ld+json">{jsonld_horoscope()}</script>')}
+</head>
+<body>
+{topbar(0, 'horoscope')}
+<section class="hero" style="padding:2.6rem 1.2rem">
+<div class="hero-inner">
+<div class="kicker">Stars &amp; Signs</div>
+<h2>Daily Horoscope</h2>
+<p>Pick your sign and see what the day holds. Refreshed every morning.</p>
+</div>
+</section>
+<main class="wrap">
+<script id="sign-data" type="application/json">{sign_data}</script>
+<div class="sign-grid" id="sign-grid">{cards}</div>
+<div class="day-tabs" id="day-tabs" role="tablist">{tabs}</div>
+<div class="horo-card" id="horo-card"><h2>Aries</h2><p class="horo-text">Loading today's reading...</p></div>
+<div class="horo-meta" id="horo-updated"></div>
+<p class="horo-note">For entertainment only.</p>
+</main>
+{footer(0)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+{HOROSCOPE_JS}
+</body>
+</html>"""
+
 def build():
     os.makedirs(SITE, exist_ok=True)
     os.makedirs(CONTENT, exist_ok=True)
     os.makedirs(BLOGSDIR, exist_ok=True)
     fetch_motogp()  # server-side; api.motogp.com has no CORS headers for browsers
+    fetch_horoscope()  # server-side; freehoroscopeapi.com has no CORS headers
     rows = parse_log()
     posts = []
     used_slugs = set()
@@ -1724,6 +2154,14 @@ def build():
     with open(os.path.join(SITE, "scores.html"), "w", encoding="utf-8") as f:
         f.write(scores_page())
 
+    # ---------- horoscope ----------
+    with open(os.path.join(SITE, "horoscope.html"), "w", encoding="utf-8") as f:
+        f.write(horoscope_page())
+
+    # ---------- read-aloud engine ----------
+    with open(os.path.join(SITE, "assets", "readaloud.js"), "w", encoding="utf-8") as f:
+        f.write(READALOUD_JS)
+
     # ---------- tag pages ----------
     tag_map = {}
     for p in news + blog_posts:
@@ -1808,10 +2246,12 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v3";
+    sw = """const CACHE = "vs-cache-v4";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg",
-              "scores.html", "assets/scores.js", "assets/motogp.json"];
+              "scores.html", "assets/scores.js", "assets/motogp.json",
+              "horoscope.html", "assets/horoscope.json",
+              "assets/readaloud.js"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE))
     .then(() => self.skipWaiting()));
@@ -1918,7 +2358,8 @@ self.addEventListener("fetch", (e) => {
     with open(os.path.join(SITE, "feed.xml"), "w", encoding="utf-8") as f:
         f.write(feed)
 
-    sm_urls = (["", "archive.html", "blog.html", "scores.html", "feed.xml", "tags/"]
+    sm_urls = (["", "archive.html", "blog.html", "scores.html", "horoscope.html",
+               "feed.xml", "tags/"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts])
