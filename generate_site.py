@@ -2424,10 +2424,10 @@ def study_hub_page(cards):
     quiz = ('<a class="study-card" href="quiz.html"><h3>Constitution Quiz</h3>'
             '<p>Test yourself with multiple-choice questions on the Constitution, with answers and explanations. Your best score is saved on this device.</p>'
             '<span class="go">Take the quiz &rarr;</span></a>')
-    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice for UPSC, SSC, Banking and state exams: the Constitution of India article by article, economics, geography, daily current affairs, and a practice quiz.</p></div><div class="study-grid">{grid}{quiz}</div>
-<p class="muted">Study summaries for exam preparation. For legal purposes always consult the official constitutional text.</p>"""
-    return page_shell("Study for Government Exams: Constitution, Economics, Geography, Current Affairs",
-        "Free study material for UPSC, SSC, Banking and state exams: Constitution articles, economics, geography, daily current affairs and a practice quiz.",
+    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice for UPSC, UPPSC, SSC, Banking and state exams: Indian history ancient to modern, the Constitution article by article, economics, geography, the complete UPPSC syllabus, daily current affairs, and a practice quiz.</p></div><div class="study-grid">{grid}{quiz}</div>
+<p class="muted">Study summaries for exam preparation. For legal purposes always consult the official constitutional text. For the UPPSC syllabus, always verify against the latest official notification.</p>"""
+    return page_shell("Study for Government Exams: History, Constitution, Economics, Geography, UPPSC Syllabus",
+        "Free study material for UPSC, UPPSC, SSC, Banking and state exams: Indian history, Constitution articles, economics, geography, complete UPPSC syllabus, daily current affairs and a practice quiz.",
         "study", body)
 
 def study_article_page(slug, title, desc, md_path):
@@ -2961,6 +2961,26 @@ def build():
          "content-study/geography.md",
          "Geography for Government Exams: Physical and Indian Geography",
          "Physical geography and Indian geography summarised for UPSC, SSC, Banking and state exam preparation."),
+        ("history-ancient.html", "Ancient Indian History",
+         "Harappa, the Vedas, Mahajanapadas, Buddhism and Jainism, Mauryas, Guptas and the southern kingdoms, with timelines and most-asked one-liners.",
+         "content-study/history-ancient.md",
+         "Ancient Indian History for Government Exams",
+         "Ancient Indian history from prehistory to the Cholas, summarised for UPSC, UPPSC, SSC and state exam preparation."),
+        ("history-medieval.html", "Medieval Indian History",
+         "Delhi Sultanate, Vijayanagara, the Mughals, Marathas, Bhakti and Sufi movements, with timelines and most-asked one-liners.",
+         "content-study/history-medieval.md",
+         "Medieval Indian History for Government Exams",
+         "Medieval Indian history from the Sultanate to the Marathas, summarised for UPSC, UPPSC, SSC and state exam preparation."),
+        ("history-modern.html", "Modern Indian History",
+         "British conquest, 1857, the freedom movement phase by phase, constitutional developments and independence, with timelines and most-asked one-liners.",
+         "content-study/history-modern.md",
+         "Modern Indian History for Government Exams",
+         "Modern Indian history from Plassey to independence, summarised for UPSC, UPPSC, SSC and state exam preparation."),
+        ("uppsc-syllabus.html", "UPPSC Syllabus: Complete",
+         "The full UP PCS syllabus: Prelims papers, all six Mains GS papers, essay, Hindi and interview, with marks, topics and a study-section map.",
+         "content-study/uppsc-syllabus.md",
+         "UPPSC Syllabus: Complete Prelims and Mains",
+         "The complete UPPSC PCS syllabus with paper-wise topics, marks and exam pattern, mapped to the Study section."),
     ]
     study_cards = []
     for fname, card_t, card_d, md_path, page_t, page_d in study_defs:
@@ -3098,6 +3118,7 @@ const CORE = ["./", "index.html", "offline.html", "styles.css",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
               "markets.html", "policy.html", "assets/policy.json", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
+              "history-ancient.html", "history-medieval.html", "history-modern.html", "uppsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
               "today.html",
@@ -3210,7 +3231,9 @@ self.addEventListener("fetch", (e) => {
 
     sm_urls = (["", "archive.html", "blog.html", "heroes.html", "scores.html", "horoscope.html",
                "markets.html", "policy.html", "study.html", "constitution.html",
-               "articles.html", "quiz.html", "today.html", "feed.xml", "tags/"]
+               "articles.html", "economics.html", "geography.html",
+               "history-ancient.html", "history-medieval.html", "history-modern.html",
+               "uppsc-syllabus.html", "quiz.html", "today.html", "feed.xml", "tags/"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts]
