@@ -2976,11 +2976,11 @@ def build():
          "content-study/history-modern.md",
          "Modern Indian History for Government Exams",
          "Modern Indian history from Plassey to independence, summarised for UPSC, UPPSC, SSC and state exam preparation."),
-        ("uppsc-syllabus.html", "UPPSC Syllabus: Complete",
-         "The full UP PCS syllabus: Prelims papers, all six Mains GS papers, essay, Hindi and interview, with marks, topics and a study-section map.",
-         "content-study/uppsc-syllabus.md",
-         "UPPSC Syllabus: Complete Prelims and Mains",
-         "The complete UPPSC PCS syllabus with paper-wise topics, marks and exam pattern, mapped to the Study section."),
+        ("upsc-syllabus.html", "UPSC Syllabus: Complete",
+         "The full CSE syllabus: Prelims papers, all nine Mains papers, interview, marks and qualifying rules, mapped to the Study section.",
+         "content-study/upsc-syllabus.md",
+         "UPSC Syllabus: Complete Prelims and Mains",
+         "The complete UPSC Civil Services syllabus with paper-wise topics, marks and exam pattern, mapped to the Study section."),
     ]
     study_cards = []
     for fname, card_t, card_d, md_path, page_t, page_d in study_defs:
@@ -3118,7 +3118,7 @@ const CORE = ["./", "index.html", "offline.html", "styles.css",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
               "markets.html", "policy.html", "assets/policy.json", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
-              "history-ancient.html", "history-medieval.html", "history-modern.html", "uppsc-syllabus.html",
+              "history-ancient.html", "history-medieval.html", "history-modern.html", "upsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
               "today.html",
@@ -3233,7 +3233,7 @@ self.addEventListener("fetch", (e) => {
                "markets.html", "policy.html", "study.html", "constitution.html",
                "articles.html", "economics.html", "geography.html",
                "history-ancient.html", "history-medieval.html", "history-modern.html",
-               "uppsc-syllabus.html", "quiz.html", "today.html", "feed.xml", "tags/"]
+               "upsc-syllabus.html", "quiz.html", "today.html", "feed.xml", "tags/"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts]
