@@ -25,7 +25,8 @@ User blogs: drop a markdown file in blogs/ with frontmatter:
 Idempotent: assets are only recopied when the source is newer; stale
 article directories are removed. Safe to run on a schedule.
 """
-import os, re, shutil, html
+import os, re, shutil, html, urllib.parse
+from datetime import datetime
 from PIL import Image
 
 WS = "/home/hatch/workspace/job-campaign"
@@ -170,9 +171,11 @@ IMG_MD_RE = re.compile(r"^!\[(.*?)\]\((.*?)\)$")
 def render_body(blocks):
     out = []
     lede_done = False
+    sec = 0
     for b in blocks:
         if b.startswith("## "):
-            out.append(f"<h2>{html.escape(b[3:].strip())}</h2>")
+            sec += 1
+            out.append(f"<h2 id=\"sec-{sec}\">{html.escape(b[3:].strip())}</h2>")
         elif b.startswith("# "):
             continue  # title line, already rendered as h1
         elif (m := IMG_MD_RE.match(b)):
@@ -425,6 +428,30 @@ footer a:hover{text-decoration:underline}
   .reveal{opacity:1;transform:none}
   html{scroll-behavior:auto}
 }
+
+/* ---------- toc / share / related / search ---------- */
+.toc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:1rem 1.3rem;margin:0 0 1.6rem;box-shadow:var(--shadow)}
+.toc strong{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;color:var(--saffron)}
+.toc ul{margin:.6rem 0 0;padding-left:1.2rem}
+.toc li{margin:.3rem 0;font-size:.95rem}
+.toc a{color:var(--navy3)}
+.toc a:hover{color:var(--saffron)}
+.share-row{display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;margin:1.8rem 0 0}
+.share-row .lbl{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+.share-btn{display:inline-block;padding:.42rem .9rem;border-radius:999px;border:1px solid var(--line);
+  background:var(--card);color:var(--navy);font-size:.88rem;font-weight:600;cursor:pointer;
+  font-family:inherit;transition:all .2s;box-shadow:var(--shadow)}
+.share-btn:hover{border-color:var(--saffron);color:var(--saffron);transform:translateY(-1px)}
+.related{margin:2.6rem 0 0}
+.related h2{font-size:1.35rem;margin-bottom:1rem;color:var(--navy)}
+.related .grid{grid-template-columns:repeat(3,1fr)}
+.search{margin-left:auto;padding:.55rem 1rem;border:1px solid var(--line);border-radius:999px;
+  font-size:.9rem;font-family:inherit;background:var(--card);color:var(--ink);min-width:220px;
+  box-shadow:var(--shadow);outline:none}
+.search:focus{border-color:var(--saffron)}
+.sec-head .search{margin-top:.4rem}
+@media(max-width:640px){.search{margin-left:0;width:100%}.sec-head{flex-wrap:wrap}.related .grid{grid-template-columns:1fr}}
 """
 
 JS = """\
@@ -445,6 +472,26 @@ JS = """\
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
+function copyPageLink(btn){
+  var done=function(){btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy link';},1500);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(location.href).then(done,function(){done();});
+  }else{
+    var t=document.createElement('textarea');t.value=location.href;
+    document.body.appendChild(t);t.select();
+    try{document.execCommand('copy');}catch(e){}
+    document.body.removeChild(t);done();
+  }
+}
+document.addEventListener('input',function(e){
+  if(e.target&&e.target.id==='sitesearch'){
+    var q=e.target.value.trim().toLowerCase();
+    document.querySelectorAll('.card,.list-item').forEach(function(el){
+      var t=(el.getAttribute('data-search')||el.textContent).toLowerCase();
+      el.style.display=(!q||t.indexOf(q)>-1)?'':'none';
+    });
+  }
+});
 </script>"""
 
 # ---------------------------------------------------------------- templates
@@ -479,7 +526,8 @@ def head(title, desc, depth, og_image=""):
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="article">
 {og}
-<link rel="stylesheet" href="{r}styles.css">"""
+<link rel="stylesheet" href="{r}styles.css">
+<link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="{r}feed.xml">"""
 
 def excerpt_of(blocks, story):
     if blocks:
@@ -491,27 +539,72 @@ def excerpt_of(blocks, story):
                 return txt[:150] + ("..." if len(txt) > 150 else "")
     return story[:150]
 
+def reading_time(blocks):
+    words = sum(len(re.findall(r"[A-Za-z0-9']+", b)) for b in (blocks or []))
+    return max(1, round(words / 200))
+
+def toc_of(blocks):
+    items = []
+    for b in (blocks or []):
+        if b.startswith("## "):
+            t = b[3:].strip()
+            if t:
+                items.append((f"sec-{len(items)+1}", t))
+    return items
+
+def related_posts(p, pool, n=3):
+    pk = keywords(p["art"]["title"])
+    scored, rest = [], []
+    for q in pool:
+        if q["slug"] == p["slug"]:
+            continue
+        s = len(pk & keywords(q["art"]["title"]))
+        (scored if s else rest).append((s, q["date"], q))
+    scored.sort(key=lambda x: (-x[0], x[1]), reverse=True)
+    rest.sort(key=lambda x: x[1], reverse=True)
+    out = [q for _, _, q in scored] + [q for _, _, q in rest]
+    return out[:n]
+
+def page_url(p):
+    section = "blog" if p["is_blog"] else "posts"
+    return f"https://rahilsahu.github.io/varta-samkara/{section}/{p['slug']}/"
+
 def card_html(p, depth=0):
     r = rel(depth)
     tag = ('<span class="tag opinion">Opinion</span>' if p["is_blog"]
            else f'<span class="tag">{html.escape(p["format"])}</span>')
     section = "blog" if p["is_blog"] else "posts"
-    return f"""<article class="card reveal">
+    rt = reading_time(p.get("blocks"))
+    return f"""<article class="card reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['excerpt'])}">
 <a class="thumb" href="{r}{section}/{p['slug']}/"><img src="{r}{p['thumb']}" alt="{html.escape(p['art']['title'])}" loading="lazy"></a>
 <div class="card-body">
-<div class="meta">{tag}<span>{p['date']}</span></div>
+<div class="meta">{tag}<span>{p['date']}</span><span>{rt} min read</span></div>
 <h3><a href="{r}{section}/{p['slug']}/">{html.escape(p['art']['title'])}</a></h3>
 <p>{html.escape(p['excerpt'])}</p>
 <a class="read" href="{r}{section}/{p['slug']}/">Read full story &rarr;</a>
 </div></article>"""
 
-def article_page(p, prev_p, next_p):
+def article_page(p, prev_p, next_p, related=None):
     art = p["art"]
     body = render_body(p["blocks"]) if p["blocks"] else "".join(
         f"<p class='body'>{html.escape(pa)}</p>" for pa in art["paras"])
     if not body.strip():
         body = f"<p class='body'>{html.escape(p['story'])}</p>"
     r = rel(2)
+    rt = reading_time(p.get("blocks"))
+    toc = toc_of(p["blocks"])
+    toc_html = ""
+    if len(toc) >= 3:
+        lis = "".join(f'<li><a href="#{a}">{html.escape(t)}</a></li>' for a, t in toc)
+        toc_html = f"""<nav class="toc" aria-label="On this page"><strong>On this page</strong><ul>{lis}</ul></nav>"""
+    purl = page_url(p)
+    share_txt = urllib.parse.quote(f"{art['title']} - Varta & Samkara")
+    share_url = urllib.parse.quote(purl, safe="")
+    share_html = f"""<div class="share-row"><span class="lbl">Share:</span>
+<a class="share-btn" href="https://wa.me/?text={share_txt}%20{share_url}" target="_blank" rel="noopener">WhatsApp</a>
+<a class="share-btn" href="https://twitter.com/intent/tweet?text={share_txt}&url={share_url}" target="_blank" rel="noopener">X</a>
+<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={share_url}" target="_blank" rel="noopener">Facebook</a>
+<button class="share-btn" type="button" onclick="copyPageLink(this)">Copy link</button></div>"""
     gallery = ""
     if p["gallery"]:
         figs = "".join(f'<img src="{r}{g}" alt="{html.escape(art["title"])}" loading="lazy">' for g in p["gallery"])
@@ -538,6 +631,26 @@ def article_page(p, prev_p, next_p):
     meta_tag = (f'<span class="tag opinion">Opinion</span>' if p["is_blog"]
                 else f'<span class="tag">{html.escape(p["format"])}</span>')
     og_img = f"https://rahilsahu.github.io/varta-samkara/{p['hero']}" if not p["hero"].endswith(".svg") else ""
+    if p["url"] and p["url"] != IG:
+        ig_cta = f"""<div class="ig-cta">
+<p>See the original reel / carousel with motion graphics on Instagram.</p>
+<a class="btn" href="{p['url']}" target="_blank" rel="noopener">View on Instagram</a>
+</div>"""
+    else:
+        ig_cta = f"""<div class="ig-cta">
+<p>Follow the daily five-post slate on Instagram.</p>
+<a class="btn" href="{IG}" target="_blank" rel="noopener">Follow on Instagram</a>
+</div>"""
+    related_html = ""
+    if related:
+        cards = []
+        for q in related:
+            qsec = "blog" if q["is_blog"] else "posts"
+            cards.append(f"""<article class="card">
+<a class="thumb" href="{r}{qsec}/{q['slug']}/"><img src="{r}{q['thumb']}" alt="{html.escape(q['art']['title'])}" loading="lazy"></a>
+<div class="card-body"><div class="meta"><span>{q['date']}</span></div>
+<h3><a href="{r}{qsec}/{q['slug']}/">{html.escape(q['art']['title'])}</a></h3></div></article>""")
+        related_html = f"""<section class="related"><h2>Keep reading</h2><div class="grid">{"".join(cards)}</div></section>"""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -547,22 +660,22 @@ def article_page(p, prev_p, next_p):
 <div class="progress" id="progress"></div>
 {topbar(2, 'blog' if p['is_blog'] else 'news')}
 <main class="wrap narrow article">
-<div class="meta" style="margin-top:1rem">{meta_tag}<span>{p['date']}</span><span>{html.escape(p['slot'])}</span></div>
+<div class="meta" style="margin-top:1rem">{meta_tag}<span>{p['date']}</span><span>{html.escape(p['slot'])}</span><span>{rt} min read</span></div>
 {badge}
 <h1>{html.escape(art['title'])}</h1>
 {byline}
 <img class="article-hero" src="{r}{p['hero']}" alt="{html.escape(art['title'])}">
+{toc_html}
 {body}
 {gallery}
+{share_html}
 <div class="sourcebox">
 <div><span class="lbl">Source:</span> {html.escape(art['source'])}</div>
 <div><span class="lbl">Visuals:</span> {html.escape(art['visuals'])}</div>
 </div>
 {tags}
-<div class="ig-cta">
-<p>See the original reel / carousel with motion graphics on Instagram.</p>
-<a class="btn" href="{p['url']}" target="_blank" rel="noopener">View on Instagram</a>
-</div>
+{ig_cta}
+{related_html}
 {nav}
 </main>
 {FOOTER}
@@ -637,10 +750,25 @@ def build():
     rows = parse_log()
     posts = []
     used_slugs = set()
+
+    # user blogs first: their file slugs, so caption-based duplicates can merge into them
+    def _file_slug(fn):
+        return slugify(os.path.splitext(fn)[0])
+    user_files = sorted(fn for fn in os.listdir(BLOGSDIR)
+                        if fn.endswith(".md") and not fn.upper().startswith("README"))
+    user_file_slugs = [_file_slug(fn) for fn in user_files]
+    # row slug -> user file slug it was absorbed into (full article replaces thin caption page)
+    absorbed = {}
     for r in rows:
         dname = find_post_dir(r)
         dpath = os.path.join(POSTS, dname) if dname else None
         slug = dname or (slugify(r["date"] + "-" + r["story"]) or "post")
+        if r["is_blog"] and dname:
+            merged_into = next((ufs for ufs in user_file_slugs
+                                if ufs.startswith(slug + "-")), None)
+            if merged_into:
+                absorbed[merged_into] = r["url"]
+                continue  # merged into the full user blog; skip the thin caption page
         base = slug
         n = 2
         while slug in used_slugs:
@@ -665,15 +793,16 @@ def build():
         posts.append({**r, "slug": slug, "art": art, "blocks": blocks,
                       "hero": hero, "thumb": thumb, "gallery": gallery,
                       "excerpt": excerpt_of(blocks, r["story"])})
-    # user blogs from blogs/*.md
+    # user blogs from blogs/*.md (full articles; absorb matching thin caption pages)
     user_blogs = []
-    for fn in sorted(os.listdir(BLOGSDIR)):
-        if fn.endswith(".md") and not fn.upper().startswith("README"):
-            b = blog_page_from_file(os.path.join(BLOGSDIR, fn))
-            if b["slug"] in used_slugs:
-                b["slug"] += "-blog"
-            used_slugs.add(b["slug"])
-            user_blogs.append(b)
+    for fn in user_files:
+        b = blog_page_from_file(os.path.join(BLOGSDIR, fn))
+        if b["slug"] in absorbed:
+            b["url"] = absorbed[b["slug"]]
+        if b["slug"] in used_slugs:
+            b["slug"] += "-blog"
+        used_slugs.add(b["slug"])
+        user_blogs.append(b)
 
     news = sorted([p for p in posts if not p["is_blog"]],
                   key=lambda p: (p["date"], p["slot"]), reverse=True)
@@ -692,7 +821,8 @@ def build():
         with open(os.path.join(adir, "index.html"), "w", encoding="utf-8") as f:
             f.write(article_page(p,
                                  news[i - 1] if i > 0 else None,
-                                 news[i + 1] if i < len(news) - 1 else None))
+                                 news[i + 1] if i < len(news) - 1 else None,
+                                 related_posts(p, news)))
     # blog pages
     blog_root = os.path.join(SITE, "blog")
     os.makedirs(blog_root, exist_ok=True)
@@ -705,7 +835,21 @@ def build():
         with open(os.path.join(adir, "index.html"), "w", encoding="utf-8") as f:
             f.write(article_page(p,
                                  blog_posts[i - 1] if i > 0 else None,
-                                 blog_posts[i + 1] if i < len(blog_posts) - 1 else None))
+                                 blog_posts[i + 1] if i < len(blog_posts) - 1 else None,
+                                 related_posts(p, blog_posts)))
+
+    # drop orphaned per-article assets (from merged/removed pages)
+    live_slugs = {p["slug"] for p in news} | {p["slug"] for p in blog_posts}
+    art_root = os.path.join(SITE, "assets", "articles")
+    if os.path.isdir(art_root):
+        for d in os.listdir(art_root):
+            if os.path.isdir(os.path.join(art_root, d)) and d not in live_slugs:
+                shutil.rmtree(os.path.join(art_root, d))
+    th_root = os.path.join(SITE, "assets", "thumbs")
+    if os.path.isdir(th_root):
+        for fn in os.listdir(th_root):
+            if fn.endswith(".jpg") and fn[:-4] not in live_slugs:
+                os.remove(os.path.join(th_root, fn))
 
     with open(os.path.join(SITE, "styles.css"), "w", encoding="utf-8") as f:
         f.write(BASE_CSS)
@@ -768,7 +912,7 @@ def build():
     for d in sorted(groups, reverse=True):
         items = []
         for p in groups[d]:
-            items.append(f"""<div class="list-item reveal">
+            items.append(f"""<div class="list-item reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['slot'])}">
 <a href="posts/{p['slug']}/"><img src="{p['thumb']}" alt="" loading="lazy"></a>
 <div class="li-body">
 <div class="meta"><span class="tag">{html.escape(p['format'])}</span><span>{html.escape(p['slot'])}</span></div>
@@ -783,7 +927,8 @@ def build():
 <body>
 {topbar(0, 'news')}
 <main class="wrap">
-<div class="sec-head"><h2 class="sec-title">News Archive ({len(news)} stories)</h2></div>
+<div class="sec-head"><h2 class="sec-title">News Archive ({len(news)} stories)</h2>
+<input class="search" id="sitesearch" type="search" placeholder="Search stories..." aria-label="Search stories"></div>
 {''.join(blocks)}
 </main>
 {FOOTER}
@@ -817,6 +962,8 @@ def build():
 </div>
 </section>
 <main class="wrap">
+<div class="sec-head"><h2 class="sec-title">All opinions ({len(blog_posts)})</h2>
+<input class="search" id="sitesearch" type="search" placeholder="Search opinions..." aria-label="Search opinions"></div>
 {''.join(bblocks)}
 </main>
 {FOOTER}
@@ -827,8 +974,50 @@ def build():
     with open(os.path.join(SITE, "blog.html"), "w", encoding="utf-8") as f:
         f.write(blogidx)
 
+    # ---------- rss feed + sitemap ----------
+    def rss_date(d):
+        try:
+            dt = datetime.strptime(d, "%Y-%m-%d")
+        except (ValueError, TypeError):
+            dt = datetime.now()
+        return dt.strftime("%a, %d %b %Y 06:00:00 +0530")
+
+    feed_items = []
+    for p in sorted(news + blog_posts, key=lambda p: p["date"], reverse=True)[:60]:
+        feed_items.append(f"""<item>
+<title>{html.escape(p['art']['title'])}</title>
+<link>{page_url(p)}</link>
+<guid>{page_url(p)}</guid>
+<pubDate>{rss_date(p['date'])}</pubDate>
+<description>{html.escape(p['excerpt'])}</description>
+</item>""")
+    feed = f"""<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel>
+<title>Varta &amp; Samkara</title>
+<link>https://rahilsahu.github.io/varta-samkara/</link>
+<description>Verified news, sharp explainers and honest opinion from India.</description>
+<language>en</language>
+{''.join(feed_items)}
+</channel></rss>"""
+    with open(os.path.join(SITE, "feed.xml"), "w", encoding="utf-8") as f:
+        f.write(feed)
+
+    sm_urls = (["", "archive.html", "blog.html", "feed.xml"]
+               + [f"posts/{p['slug']}/" for p in news]
+               + [f"blog/{p['slug']}/" for p in blog_posts])
+    sm = "".join(
+        f"<url><loc>https://rahilsahu.github.io/varta-samkara/{u}</loc></url>"
+        for u in sm_urls)
+    sitemap = (f'<?xml version="1.0" encoding="utf-8"?>\n'
+               f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
+    with open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8") as f:
+        f.write(sitemap)
+
     print(f"news: {len(news)}, blog: {len(blog_posts)} "
           f"({len(user_blogs)} user blogs)")
+    if absorbed:
+        print("merged caption pages into user blogs:",
+              ", ".join(f"{u} <- IG post" for u in sorted(absorbed)))
     print("site written to", SITE)
 
 if __name__ == "__main__":
