@@ -128,8 +128,9 @@ footer a:hover{text-decoration:underline}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
   background:linear-gradient(90deg,var(--saffron),var(--saffron2))}
 .article-hero{width:100%;max-height:480px;object-fit:cover;border-radius:16px;
-  background:var(--navy);margin:1.3rem 0 1.8rem;box-shadow:var(--shadow-lg);
+  background:var(--navy);margin:1.3rem 0 .6rem;box-shadow:var(--shadow-lg);
   animation:fadeUp .6s ease both}
+.photo-credit{font-size:.78rem;color:var(--muted);margin:0 0 1.4rem;text-align:right}
 .article h1{font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.28;margin:.7rem 0 1.1rem;
   color:var(--navy);animation:fadeUp .6s .1s ease both}
 .article h2{font-size:1.3rem;color:var(--navy);margin:1.9rem 0 .8rem;

@@ -1,0 +1,17 @@
+---
+title: "V.O. Chidambaram Pillai: The Tamil helmsman who fought the British on the seas"
+date: 2026-10-02
+image: vo-chidambaram-pillai.jpg
+photo: "Wikimedia Commons, public domain"
+source: "Wikipedia, Drishti IAS, GKToday"
+---
+
+Valliappan Olaganathan Chidambaram Pillai, known as V.O. Chidambaram Pillai or VOC, was born on 5 September 1872 at Ottapidaram in Tirunelveli district, in what is now Thoothukudi district of Tamil Nadu. A lawyer by training, he entered nationalist politics after the Partition of Bengal in 1905 and became one of the prominent leaders of the Swadeshi Movement in Tamil Nadu, closely associated with Bal Gangadhar Tilak, Subramania Bharati, and Subramania Siva.
+
+His historic gamble was economic. The British India Steam Navigation Company held a complete monopoly over shipping between Tuticorin and Colombo in Ceylon. On 16 October 1906, VOC registered the Swadeshi Steam Navigation Company with an authorised capital of ten lakh rupees, divided into 40,000 shares of twenty-five rupees each, restricted to Indians, Ceylonese, and other Asian nationals. He purchased two steamships, the S.S. Gallia and the S.S. Lavo, and ran the first indigenous Indian shipping service on the route. It was a practical act of economic nationalism, and it earned him the title Kappalottiya Tamizhan, the Tamil helmsman. He also promoted indigenous enterprise through the Swadeshi Prachar Sabha, a national godown, and weaving ventures.
+
+In February 1908, he and Subramania Siva led the workers of the foreign-owned Coral Mills in Tuticorin on strike, demanding better wages, shorter hours, and weekly holidays. The nine-day strike succeeded, and the management conceded. This made VOC, in colonial eyes, doubly dangerous: a nationalist who could organise both capital and labour.
+
+On 12 March 1908, VOC and Siva were arrested for organising public meetings to celebrate the release of Bipin Chandra Pal. The arrest triggered the Tinnevelly riots: shops, schools, and colleges closed, a general strike was declared in Thoothukudi, the first political strike in India, and police killed four protesters. Charged with sedition under sections 123-A and 153-A of the Indian Penal Code, VOC refused to take part in the proceedings and was sentenced to two life imprisonments, effectively forty years. The judgement was widely condemned, even by the British magazine The Statesman. On appeal the sentence was reduced, but he was treated as a hard-labour convict, not a political prisoner, in Coimbatore Central Prison from 9 July 1908 to 1 December 1910 and later at Kannanoor. There he was yoked in place of bulls to the oil press and made to work it in the hot sun, an ordeal that gave him the title Chekkiluththa Chemmal, the great one who pulled the oil press.
+
+He was released on 12 December 1912 to find the Swadeshi Steam Navigation Company liquidated in 1911 and his ships auctioned to his competitors. His barrister licence had been revoked. A Tamil scholar who wrote commentaries on the Thirukkural and the Tolkappiyam, he spent his later years in hardship and died in poverty on 18 November 1936. Recognition came late: Tuticorin Port was renamed the V.O. Chidambaranar Port Authority in 2022, and the 1961 film Kappalottiya Thamizhan, with Sivaji Ganesan in the lead, won a National Award. He had shown that swadeshi could be a company, not just a slogan, and paid for it with everything he had.

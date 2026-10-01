@@ -35,6 +35,9 @@ POSTS = os.path.join(WS, "varta-samkara", "posts")
 SITE = "/home/hatch/workspace/varta-samkara-website"
 CONTENT = os.path.join(SITE, "content")
 BLOGSDIR = os.path.join(SITE, "blogs")
+HEROESDIR = os.path.join(SITE, "heroes")
+IST = timezone(timedelta(hours=5, minutes=30))
+TODAY = datetime.now(IST).strftime("%Y-%m-%d")
 THUMBS = os.path.join(SITE, "assets", "thumbs")
 ARTICLES = os.path.join(SITE, "assets", "articles")
 IG = "https://www.instagram.com/vartaandsamkaraindia/"
@@ -362,8 +365,9 @@ footer a:hover{text-decoration:underline}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:60;
   background:linear-gradient(90deg,var(--saffron),var(--saffron2))}
 .article-hero{width:100%;max-height:480px;object-fit:cover;border-radius:16px;
-  background:var(--navy);margin:1.3rem 0 1.8rem;box-shadow:var(--shadow-lg);
+  background:var(--navy);margin:1.3rem 0 .6rem;box-shadow:var(--shadow-lg);
   animation:fadeUp .6s ease both}
+.photo-credit{font-size:.78rem;color:var(--muted);margin:0 0 1.4rem;text-align:right}
 .article h1{font-size:clamp(1.55rem,4vw,2.35rem);line-height:1.28;margin:.7rem 0 1.1rem;
   color:var(--navy);animation:fadeUp .6s .1s ease both}
 .article h2{font-size:1.3rem;color:var(--navy);margin:1.9rem 0 .8rem;
@@ -1294,7 +1298,7 @@ def footer(depth):
     r = rel(depth)
     return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="{r}scores.html">Scores</a><a href="{r}markets.html">Markets</a><a href="{r}policy.html">Policy</a><a href="{r}study.html">Study</a><a href="{r}today.html">Today</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="{r}heroes.html">Heroes</a><a href="{r}scores.html">Scores</a><a href="{r}markets.html">Markets</a><a href="{r}policy.html">Policy</a><a href="{r}study.html">Study</a><a href="{r}today.html">Today</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
 def head(title, desc, depth, og_image="", extra_jsonld=""):
@@ -1356,7 +1360,7 @@ def related_posts(p, pool, n=3):
     return out[:n]
 
 def page_url(p):
-    section = "blog" if p["is_blog"] else "posts"
+    section = sec_of(p)
     return f"https://rahilsahu.github.io/varta-samkara/{section}/{p['slug']}/"
 
 # ---------------------------------------------------------------- json-ld
@@ -1648,7 +1652,7 @@ def card_html(p, depth=0):
     chips = "".join(
         f'<a class="tagchip" href="{r}tags/{tag_slug(t)}/">{html.escape(t)}</a>'
         for t in p.get("topic_tags", [])[:2])
-    section = "blog" if p["is_blog"] else "posts"
+    section = sec_of(p)
     rt = reading_time(p.get("blocks"))
     return f"""<article class="card reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['excerpt'])}">
 <a class="thumb" href="{r}{section}/{p['slug']}/"><img src="{r}{p['thumb']}" alt="{html.escape(p['art']['title'])}" loading="lazy" decoding="async"></a>
@@ -1695,12 +1699,12 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
             if (topic_chips or hash_spans) else "")
     nav = "<div class='prevnext'>"
     if prev_p:
-        psec = "blog" if prev_p["is_blog"] else "posts"
+        psec = sec_of(prev_p)
         nav += f"<a href='{r}{psec}/{prev_p['slug']}/'><span class='dir'>&larr; Newer</span>{html.escape(prev_p['art']['title'][:70])}</a>"
     else:
         nav += "<span></span>"
     if next_p:
-        nsec = "blog" if next_p["is_blog"] else "posts"
+        nsec = sec_of(next_p)
         nav += f"<a href='{r}{nsec}/{next_p['slug']}/' style='text-align:right'><span class='dir'>Older &rarr;</span>{html.escape(next_p['art']['title'][:70])}</a>"
     else:
         nav += "<span></span>"
@@ -1731,7 +1735,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
     if related:
         cards = []
         for q in related:
-            qsec = "blog" if q["is_blog"] else "posts"
+            qsec = sec_of(q)
             cards.append(f"""<article class="card">
 <a class="thumb" href="{r}{qsec}/{q['slug']}/"><img src="{r}{q['thumb']}" alt="{html.escape(q['art']['title'])}" loading="lazy" decoding="async"></a>
 <div class="card-body"><div class="meta"><span>{q['date']}</span></div>
@@ -1741,7 +1745,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
     if latest:
         items = []
         for q in latest:
-            qsec = "blog" if q["is_blog"] else "posts"
+            qsec = sec_of(q)
             items.append(f"""<a class="side-item" href="{r}{qsec}/{q['slug']}/">
 <img src="{r}{q['thumb']}" alt="" loading="lazy" decoding="async">
 <div><h4>{html.escape(q['art']['title'])}</h4><span class="sdate">{q['date']}</span></div></a>""")
@@ -1753,7 +1757,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
 </head>
 <body>
 <div class="progress" id="progress"></div>
-{topbar(2, 'blog' if p['is_blog'] else 'news')}
+{topbar(2, 'heroes' if p.get('is_hero') else ('blog' if p['is_blog'] else 'news'))}
 <main class="wrap article-layout">
 <div class="article-col article">
 <div class="meta" style="margin-top:1rem">{meta_tag}<span>{p['date']}</span><span>{html.escape(p['slot'])}</span><span>{rt} min read</span></div>
@@ -1762,6 +1766,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
 {byline}
 <button class="listen-cta" id="listen-btn" type="button"><span class="spk">&#9836;</span> Listen to this article</button>
 <img class="article-hero" src="{r}{p['hero']}" alt="{html.escape(art['title'])}" decoding="async">
+{"<div class='photo-credit'>Portrait: " + html.escape(p['photo_credit']) + "</div>" if p.get('photo_credit') else ""}
 {toc_html}
 {body}
 {gallery}
@@ -1796,7 +1801,10 @@ def blog_page_from_file(path):
         for line in m.group(1).splitlines():
             if ":" in line:
                 k, v = line.split(":", 1)
-                meta[k.strip()] = v.strip()
+                v = v.strip()
+                if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+                    v = v[1:-1]
+                meta[k.strip()] = v
         body = m.group(2)
     name = os.path.splitext(os.path.basename(path))[0]
     date = meta.get("date", name[:10])
@@ -1840,6 +1848,90 @@ def blog_page_from_file(path):
             "excerpt": excerpt_of(blocks, title),
             "url": IG, "hero": hero,
             "thumb": thumb, "gallery": [], "og_srcs": [path]}
+
+def sec_of(p):
+    """Site section for an article dict: heroes / blog / posts."""
+    if p.get("is_hero"):
+        return "heroes"
+    return "blog" if p["is_blog"] else "posts"
+
+
+def hero_date_of(path):
+    """Publish date of a heroes/*.md file (frontmatter date, else filename)."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            head_txt = f.read(2000)
+        m = re.match(r"^---\n(.*?)\n---\n", head_txt, re.S)
+        if m:
+            for line in m.group(1).splitlines():
+                if line.startswith("date:"):
+                    return line.split(":", 1)[1].strip()
+    except OSError:
+        pass
+    return os.path.basename(path)[:10]
+
+
+def hero_page_from_file(path):
+    """Parse heroes/<name>.md with frontmatter -> dict.
+    Supports frontmatter keys: title, date, image (portrait file in heroes/),
+    photo (portrait credit), source, visuals. Local ![alt](file) refs are copied
+    to assets/heroes/<slug>/ and rewritten to ../../-relative paths."""
+    text = open(path, encoding="utf-8").read()
+    m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
+    meta, body = {}, text
+    if m:
+        for line in m.group(1).splitlines():
+            if ":" in line:
+                k, v = line.split(":", 1)
+                v = v.strip()
+                if len(v) >= 2 and v[0] == v[-1] and v[0] in "\"'":
+                    v = v[1:-1]
+                meta[k.strip()] = v
+        body = m.group(2)
+    name = os.path.splitext(os.path.basename(path))[0]
+    date = meta.get("date", name[:10])
+    title = meta.get("title", name)
+    slug = slugify(name)
+    adir = os.path.join(SITE, "assets", "heroes", slug)
+    os.makedirs(adir, exist_ok=True)
+
+    def use_local_image(src):
+        """Copy heroes/<src> into assets/heroes/<slug>/; return site-relative path."""
+        if src.startswith(("http://", "https://", "data:")):
+            return src
+        src_path = os.path.join(HEROESDIR, src)
+        if not os.path.isfile(src_path):
+            return src
+        dest = os.path.join(adir, os.path.basename(src))
+        shutil.copy2(src_path, dest)
+        return f"assets/heroes/{slug}/{os.path.basename(src)}"
+
+    # rewrite ![alt](src) refs to copied asset paths (hero pages sit at depth 2)
+    def _rw_figure(mm):
+        p = use_local_image(mm.group(2).strip())
+        if not p.startswith(("http://", "https://", "data:", "../../")):
+            p = "../../" + p
+        return f"![{mm.group(1)}]({p})"
+    body = re.sub(r"!\[(.*?)\]\((.*?)\)", _rw_figure, body)
+
+    blocks = [b.strip() for b in body.strip().split("\n\n") if b.strip()]
+    hero_img = meta.get("image", "").strip()
+    if hero_img:
+        hero_site = use_local_image(hero_img)
+        hero = hero_site
+        thumb = hero_site
+    else:
+        hero = thumb = "assets/hero-placeholder.jpg"
+    return {"slug": slug, "date": date, "slot": "Unforgotten Heroes",
+            "format": "Hero", "is_blog": False, "is_hero": True,
+            "photo_credit": meta.get("photo", "").strip(),
+            "art": {"title": title, "paras": [], "source": meta.get("source", "Author's own analysis"),
+                    "visuals": meta.get("visuals", "Archival portrait"), "tags": []},
+            "blocks": blocks,
+            "excerpt": excerpt_of(blocks, title),
+            "url": "", "hero": hero,
+            "thumb": thumb, "gallery": [], "og_srcs": [path]}
+
 
 def jsonld_scores():
     data = {
@@ -2619,6 +2711,73 @@ def build():
                                  blog_posts[i + 1] if i < len(blog_posts) - 1 else None,
                                  related_posts(p, blog_posts), latest_for(p)))
 
+    # unforgotten heroes (heroes/*.md; only those with date <= today publish)
+    hero_posts = []
+    if os.path.isdir(HEROESDIR):
+        for fn in sorted(os.listdir(HEROESDIR)):
+            if not fn.endswith(".md"):
+                continue
+            hpath = os.path.join(HEROESDIR, fn)
+            if hero_date_of(hpath) > TODAY:
+                continue
+            h = hero_page_from_file(hpath)
+            if h["slug"] in used_slugs:
+                h["slug"] += "-hero"
+            used_slugs.add(h["slug"])
+            hero_posts.append(h)
+    hero_posts.sort(key=lambda p: (p["date"], p["slug"]), reverse=True)
+    for p in hero_posts:
+        p["og"] = make_og_image(p)
+    hero_root = os.path.join(SITE, "heroes")
+    os.makedirs(hero_root, exist_ok=True)
+    for d in os.listdir(hero_root):
+        if os.path.isdir(os.path.join(hero_root, d)) and d not in {p["slug"] for p in hero_posts}:
+            shutil.rmtree(os.path.join(hero_root, d))
+    for i, p in enumerate(hero_posts):
+        adir = os.path.join(hero_root, p["slug"])
+        os.makedirs(adir, exist_ok=True)
+        latest_heroes = [q for q in hero_posts if q["slug"] != p["slug"]][:5]
+        with open(os.path.join(adir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(article_page(p,
+                                 hero_posts[i - 1] if i > 0 else None,
+                                 hero_posts[i + 1] if i < len(hero_posts) - 1 else None,
+                                 related_posts(p, hero_posts), latest_heroes))
+
+    # ---------- heroes index ----------
+    hgroups = {}
+    for p in hero_posts:
+        hgroups.setdefault(p["date"], []).append(p)
+    hblocks = []
+    for d in sorted(hgroups, reverse=True):
+        items = "".join(card_html(p) for p in hgroups[d])
+        hblocks.append(f'<div class="day-group"><h3>{d}</h3><div class="grid">{items}</div></div>')
+    heroidx = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head("Unforgotten Heroes", "One freedom fighter a day, whose name history forgot. Verified portraits and stories of India's unsung heroes.", 0)}
+</head>
+<body>
+{topbar(0, 'heroes')}
+<section class="hero" style="padding:2.6rem 1.2rem">
+<div class="hero-inner">
+<div class="kicker">Unforgotten Heroes</div>
+<h2>The names history forgot</h2>
+<p>One freedom fighter every day. Not the names in every textbook, but the ones who bled for India and were left out of the story. Every portrait and every fact verified.</p>
+</div>
+</section>
+<main class="wrap">
+<div class="sec-head"><h2 class="sec-title">All heroes ({len(hero_posts)})</h2>
+<input class="search" id="sitesearch" type="search" placeholder="Search heroes..." aria-label="Search heroes"></div>
+{''.join(hblocks)}
+</main>
+{footer(0)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+</body>
+</html>"""
+    with open(os.path.join(SITE, "heroes.html"), "w", encoding="utf-8") as f:
+        f.write(heroidx)
+
     # drop orphaned per-article assets (from merged/removed pages)
     live_slugs = {p["slug"] for p in news} | {p["slug"] for p in blog_posts}
     art_root = os.path.join(SITE, "assets", "articles")
@@ -2642,6 +2801,13 @@ def build():
     hero = news[0] if news else blog_posts[0]
     latest_news = news[1:10]
     latest_blog = blog_posts[:3]
+    if hero_posts:
+        doy = datetime.now(IST).timetuple().tm_yday
+        hp = hero_posts[doy % len(hero_posts)]
+        hero_spot = f"""<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title">Unforgotten Hero of the Day</h2><a class="sec-link" href="heroes.html">All heroes &rarr;</a></div>
+<div class="grid">{card_html(hp)}</div>"""
+    else:
+        hero_spot = ""
     hsec = "blog" if hero["is_blog"] else "posts"
     ht = html.escape(hero["art"]["title"])
     tick_seq = "".join(
@@ -2677,6 +2843,7 @@ def build():
 <div class="grid">
 {''.join(card_html(p) for p in latest_blog)}
 </div>
+{hero_spot}
 <section class="about reveal">
 <h2>About <span>Varta &amp; Samkara</span></h2>
 <p><strong>Varta</strong> means discourse, <strong>Samkara</strong> means impression. Verified news, sharp explainers and honest opinion from India, five posts a day.</p>
@@ -2750,7 +2917,10 @@ def build():
 </div>
 </section>
 <main class="wrap">
-<div class="sec-head"><h2 class="sec-title">All opinions ({len(blog_posts)})</h2>
+<div class="sec-head"><h2 class="sec-title">Unforgotten Heroes ({len(hero_posts)})</h2><a class="sec-link" href="heroes.html">All heroes &rarr;</a></div>
+<p class="scores-sub">One forgotten freedom fighter every day. Not the names in every textbook, but the ones who bled for India and were left out of the story. Every portrait and every fact verified.</p>
+<div class="grid">{''.join(card_html(p) for p in hero_posts[:6])}</div>
+<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title">All opinions ({len(blog_posts)})</h2>
 <input class="search" id="sitesearch" type="search" placeholder="Search opinions..." aria-label="Search opinions"></div>
 {''.join(bblocks)}
 </main>
@@ -3038,12 +3208,13 @@ self.addEventListener("fetch", (e) => {
     with open(os.path.join(SITE, "feed.xml"), "w", encoding="utf-8") as f:
         f.write(feed)
 
-    sm_urls = (["", "archive.html", "blog.html", "scores.html", "horoscope.html",
+    sm_urls = (["", "archive.html", "blog.html", "heroes.html", "scores.html", "horoscope.html",
                "markets.html", "policy.html", "study.html", "constitution.html",
                "articles.html", "quiz.html", "today.html", "feed.xml", "tags/"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
-               + [f"blog/{p['slug']}/" for p in blog_posts])
+               + [f"blog/{p['slug']}/" for p in blog_posts]
+               + [f"heroes/{p['slug']}/" for p in hero_posts])
     sm = "".join(
         f"<url><loc>https://rahilsahu.github.io/varta-samkara/{u}</loc></url>"
         for u in sm_urls)
@@ -3053,7 +3224,7 @@ self.addEventListener("fetch", (e) => {
         f.write(sitemap)
 
     print(f"news: {len(news)}, blog: {len(blog_posts)} "
-          f"({len(user_blogs)} user blogs)")
+          f"({len(user_blogs)} user blogs), heroes: {len(hero_posts)} published")
     if absorbed:
         print("merged caption pages into user blogs:",
               ", ".join(f"{u} <- IG post" for u in sorted(absorbed)))

@@ -1,0 +1,17 @@
+---
+title: "Taraknath Das: The fugitive who built a freedom press in America and ended up at Columbia"
+date: 2026-10-02
+image: taraknath-das.jpg
+photo: "Wikimedia Commons, public domain"
+source: "Times Now, Wikipedia, gktoday"
+---
+
+Taraknath Das was born on 15 June 1884 at Majupara, near Kanchrapara in the 24 Parganas of Bengal, into a lower-middle-class family. His father Kalimohan was a clerk at the Central Telegraph Office in Calcutta. A schoolboy essay on patriotism caught the eye of P. Mitter, the barrister who had founded the Anushilan Samiti, and Mitter asked his associate Satish Chandra Basu to recruit the boy. Taraknath went to Calcutta for his studies at the General Assembly's Institution, now Scottish Church College, with his elder sister Girija supporting his secret patriotic work.
+
+He threw himself into the Anushilan Samiti and the Jugantar party. To dodge mounting police surveillance in Bengal, he moved to Madras in 1905, gave patriotic speeches and inspired young activists, including Nilakanta Brahmachari, before fleeing India under the name Taraknath Brahmachari. He passed through Japan and reached Vancouver, Canada, in 1906. Working as a labourer and later as an interpreter for the Canadian immigration department, he saw the systematic discrimination faced by South Asian immigrants, mostly Punjabi Sikhs. He organised them, and with Pandurang Khankhoje founded the Indian Independence League in Vancouver in 1907.
+
+In April 1908 he launched Free Hindustan, the first South Asian political journal published in North America, first from Vancouver and later from Seattle and New York. Its pages exposed British economic exploitation in India, reported on political trials and called on Indians abroad to overthrow colonial rule by armed insurrection. He corresponded with Leo Tolstoy about his plans. Moving to the United States, he enrolled at Norwich University in Vermont, a military academy, for formal military training, until colonial pressure forced the institution to push him out in 1909. He set up revolutionary centres in Seattle and California on the model of Shyamji Krishna Varma's India House in London.
+
+Das laid much of the ideological groundwork for the Ghadar movement and helped Lala Har Dayal organise the Ghadar Party after its founding in San Francisco in 1913. When the First World War opened the prospect of a German-backed uprising in India, he was drawn into the Hindu-German conspiracy. In 1917 the American authorities, working with British intelligence, arrested the conspirators. Das was convicted in the San Francisco trial and sent to the federal penitentiary at Leavenworth, Kansas. The prosecutor denounced him in openly racist terms. He had become an American citizen only three years earlier, and now he sat in an American prison for the freedom of a country thousands of miles away.
+
+After his release, Das did not fade. He married Mary Keatinge Morse, an American reformer who had helped found the NAACP, and in 1935 the couple established the Taraknath Das Foundation, which supports Indian students in America to this day. He became a professor of political science at Columbia University in New York, a settled scholar who never stopped speaking for India's freedom, and he firmly opposed the partition of the country. He died in New York on 22 December 1958, the fugitive monk turned professor, remembered by few in the land whose liberty he had plotted across two continents.

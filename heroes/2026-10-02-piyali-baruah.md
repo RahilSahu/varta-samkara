@@ -1,0 +1,13 @@
+---
+title: "Piyali Baruah: The young Assamese strategist hanged with Maniram Dewan in 1858"
+date: 2026-10-02
+source: "The Assam Tribune, The Sentinel, The Telegraph"
+---
+
+Piyali Baruah, also written Piyali Barua, was a young revolutionary from Jorhat who became the trusted lieutenant of Maniram Dewan in Assam's chapter of the 1857 uprising. He belonged to the respected Bezbaruah lineage of Jorhat, a family whose standing went back to the Ahom era: one account traces the line to Kalibar, whom Ahom king Jayadhwaj Singha appointed as royal physician, or "Bej," in 1648, and notes that the celebrated Assamese writer Lakshminath Bezbaruah came from the same stock. Another records his grandfather, Jurai Gabhoru Melai Baruah, as an official at the court of Ahom king Kamaleswar Singha. Despite this influential background, Piyali chose the dangerous path of conspiracy against the British.
+
+When the revolt of 1857 reached Assam, Maniram Dewan drew the young Piyali into the plot to overthrow British rule and restore an Ahom king. Piyali became the plan's chief mobiliser and strategist. He travelled across Sibsagar district gathering support, and went to the camp of the Light Infantry sepoys at Nogora, about twelve kilometres south of Golaghat, where he addressed the soldiers with fiery speeches and won them to the cause. He coordinated supporters across communities, Hindus and Muslims alike, and the conspirators fixed their rising for the Durga Puja festivities, when the British would be off guard. Encouraged by Piyali and his associates, the Hindustani sepoys raised the first open banner of revolt in Assam on 29 August 1857.
+
+The plot did not survive British intelligence. Secret letters were intercepted, and Piyali was arrested and tried by Special Commissioner Charles John Holroyd. On 26 February 1858, he was publicly hanged at Jorhat, near Na-Ali, alongside Maniram Dewan, on the charge of inciting the sepoys against the British government.
+
+Piyali Baruah's memory has fared poorly. For decades historians confused him with the earlier rebel Piyoli Phukan, hanged at Sivasagar in 1830, and his story was submerged beneath the more flamboyant legend of Maniram Dewan. In his home district of Jorhat, no road bore his name and no government programme marked his sacrifice for over a century and a half; a state decision to install his statue remained incomplete. The Piyali Baruah Smriti Rakhya Samiti has pressed for a statue near Jorhat's western bypass, for renaming Tarun Ram Phookan Road as Swahid Piyali Baruah Path, and for memorial lectures on his life as part of academic activity, while civil society groups continue to demand that his role in 1857 be properly honoured.

@@ -1,0 +1,13 @@
+---
+title: "Maulvi Liaquat Ali: The scholar who governed liberated Allahabad in 1857"
+date: 2026-10-02
+source: "The Wire, The Times of India"
+---
+
+Maulvi Liaquat Ali (1817-1892) was the Muslim religious scholar who led the 1857 uprising in Allahabad, briefly governed the liberated city, and then evaded the British for fourteen years. He was born in 1817 at Mahgaon, also recorded as Mehndauri, a village in Chail pargana of Allahabad district, now in Kaushambi. His father is recorded as Syed Meer Ali in some accounts and Sheikh Meher Ali in others, and The Wire notes that when he was arrested in 1871 his age was recorded as 45, which would place his birth anywhere between 1810 and 1830. His uncle Dayam Ali served in the Company's army at Jhansi, and Ali himself briefly worked for the Company before being dismissed for protesting the ill-treatment of Indian soldiers. An eminent Islamic scholar, respected across his region, he had travelled to Delhi, Bhopal, and Tonk before returning to his village. The Times of India notes that he was active in the freedom struggle even before 1857 in Hardoi district, and describes him as a distant relative of Rani Lakshmibai of Jhansi.
+
+On the night of 6 June 1857, rebels from Banaras, with help from local infantry, attacked the mess of the Sixth Infantry Cantonment at Allahabad and shot their officers at close range. The city fell into anarchy. The next day Liaquat Ali took control, won the confidence of the rebel sepoys, and put an end to the looting and destruction. He made Khusro Bagh his operational headquarters, declared the independence of India, hoisted Bahadur Shah Zafar's flag, and took charge as governor of liberated Allahabad. Muslims, Brahmins, Pandas, and Pathans alike supported him, admiring his integrity and intellect. He held the city from 6 to 16 June 1857, until massive British reinforcements from Varanasi retook it within two weeks, and he fled.
+
+What followed was one of the longest evasions of any 1857 leader. He remained a fugitive for fourteen years until he was caught in September 1871 at Byculla railway station in Mumbai. Tried for his role in the revolt, he confessed. Accounts differ on whether he was sentenced to death or to transportation for life, but he died in captivity in Rangoon on 17 May 1892, at about 74. He left a wife and a daughter, Amtullah Bibi, whose descendants still live in and around Chail pargana.
+
+A scholar who briefly governed a free city and then vanished for fourteen years, Liaquat Ali is remembered in Allahabad's local history but has no national memorial, overshadowed by the military figures of the uprising.

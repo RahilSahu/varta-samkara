@@ -1,0 +1,13 @@
+---
+title: "Azizun Bai: The Kanpur tawaif who spied and fought in the 1857 uprising"
+date: 2026-10-02
+source: "Times Now News, DNA India"
+---
+
+Azizun Bai, also recorded as Azizan Bai or Azizun Nisa (1832-1857), was a tawaif of Kanpur who became a spy, organizer, and fighter in the 1857 uprising. She was born in 1832 in Lucknow, though some accounts give 1824 and a birth in Malwa under the name Anjula. Her mother, a courtesan, died when she was very young, and she was adopted by a kotha hostess, growing up in Satrangi Mahal in the company of performers like Umrao Jan. After coming of age she took charge of the kotha as its chief tawaif, later moving to Kanpur where she lived at Lurkee Mahal and performed mujra. She was highly educated in Urdu and Persian literature, and soldiers of Nana Sahib's army are said to have attended her mujra mehfils in Kanpur. The British annexation of Awadh in 1856 destroyed the royal patronage that sustained the courtesan tradition and reclassified tawaifs as social outcasts, so for Azizun the 1857 rebellion was both a patriotic struggle and a defense of her own world.
+
+In Kanpur her house became a clandestine nerve centre of the insurgency. Close to the sepoy Shamsuddin Sawar of the 42nd Cavalry, she was drawn into a rebel intelligence network that included Nana Sahib and Tantia Tope. British officers who frequented her salon spoke freely, and she passed military intelligence to rebel commanders. She dressed as a man to move among the sepoys, and she organized the "Mastani Toli," a women's unit whose members disguised themselves as men to collect information, nurse the wounded, and distribute arms. Exceptionally skilled in swordsmanship and horse riding, she trained other women in the use of arms, and she is also said to have indirectly saved the life of Tantia Tope. During the Siege of Cawnpore she fought beside the soldiers while her house served as the rebels' headquarters.
+
+What happened to her afterward is disputed. One account says that at 25 she faced a British firing squad laughing, and was shot dead for refusing to bow. Another notes that her trial is mentioned in colonial records but her execution is not confirmed. Either way, she did not survive the suppression of the revolt, dying at 24 or 25.
+
+No school textbook mentions her. After 1857, Victorian morality campaigns and anti-nautch movements reduced tawaifs in public memory to "mere prostitutes who also sang and danced," erasing their political role. She survives in Kanpur's local memory and in historians' work, notably Lata Singh's, as proof that the rebellion was planned, financed, and fought by people far outside its famous names.

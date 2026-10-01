@@ -1,0 +1,15 @@
+---
+title: "Keladi Chennamma: The Pepper Queen Who Defied Aurangzeb"
+date: 2026-10-02
+source: "Swarajya Magazine, News18"
+---
+
+Keladi Chennamma ruled the small coastal kingdom of Keladi in Karnataka for twenty-five years, from 1671 or 1672 until her death in 1696, and she is best remembered for a single act of defiance: she gave shelter to the fugitive Maratha king Rajaram, son of Shivaji, and refused to hand him over to Aurangzeb.
+
+She was born into the household of Siddappa Shetty, a merchant of Kundapur, and married King Somashekara Nayaka of Keladi in 1667. After the king's death in 1672, amid a court conspiracy involving his mistress and a scheming mahout, the widowed Chennamma took the throne and adopted her relative Basavappa Nayaka as heir. Her first test came quickly. The Sultan of Bijapur, which had coveted Keladi for a century, sent an agent as a ruse before an invasion. Chennamma bribed the agent with three lakh rupees to buy time, shifted her entire army and the royal treasury from Bidanur fort to Bhuvanagiri, and when the invasion came her outnumbered forces destroyed the Bijapuri army completely. The plotters were executed.
+
+She governed a prosperous trading kingdom, exporting pepper and rice through Keladi's ports. The Portuguese called her the Reina de Pimenta, the pepper queen. Her administration is remembered as a period of consolidation: she continued the Shist land revenue system of her predecessors and offered tax holidays to farmers clearing new forest lands in the Malnad region to expand cultivation, while her cabinet was headed by the minister Thimmanna Nayaka. She made a truce with Shivaji in 1675, and he offered her his protection against the Portuguese and the Adil Shahis. She dealt with the Portuguese, the Dutch, the newly arrived British, and the fall of her Bijapur neighbours to the Mughals in 1686, and held her kingdom together through all of it.
+
+Then came 1689. Aurangzeb had captured and tortured to death the Maratha king Sambhaji, and the nineteen-year-old Rajaram, Shivaji's younger son, fled south toward the fort of Jinji disguised as a pilgrim. He appeared at Chennamma's daily alms-giving as a supplicant and asked for shelter. She granted it. Aurangzeb demanded that she surrender him. She refused. A large Mughal force moved on Keladi, but her soldiers ambushed the Mughal columns in the thick monsoon jungles of the Malnad, terrain the northern troops could not handle. Keladi captured Mughal captains, horses and war material; Rajaram reached Jinji; and the Mughals withdrew. The confrontation ended in a treaty, with the queen unbeaten.
+
+Chennamma died in 1696 and handed the administration to her adopted son. Her kingdom survived until 1763, when it was overrun by Hyder Ali of Mysore. A queen who faced down the most powerful emperor of her age on a point of honour should need no further argument for remembrance, yet outside Karnataka she is little known. The shelter she gave Rajaram changed the course of the Maratha resistance; the history books simply forgot to credit the woman who made it possible.
