@@ -2065,6 +2065,19 @@ function card(e){
     +'<div class="p-sectors">'+sec+'</div>'
     +(src?'<div class="p-src">Sources: '+src+'</div>':'')+'</article>';
 }
+function counts(){
+  var n={all:data.length};
+  CATS.forEach(function(c){n[c[0]]=c[0]==='all'?data.length:data.filter(function(e){return e.cat===c[0];}).length;});
+  return n;
+}
+function paintTabs(){
+  var n=counts(), tabs=document.getElementById('p-tabs');
+  Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
+    var c=b.getAttribute('data-cat');
+    b.classList.toggle('active',cur===c);
+    b.innerHTML=esc(CATS.filter(function(x){return x[0]===c;})[0][1])+' ('+n[c]+')';
+  });
+}
 function render(){
   var list=data.filter(function(e){
     if(cur!=='all'&&e.cat!==cur)return false;
@@ -2073,18 +2086,30 @@ function render(){
   });
   document.getElementById('p-count').textContent=list.length+' entr'+(list.length===1?'y':'ies');
   document.getElementById('p-list').innerHTML=list.length?list.map(card).join(''):'<p class="muted">No entries match.</p>';
+  paintTabs();
+}
+function buildTabs(){
   var tabs=document.getElementById('p-tabs');
   tabs.innerHTML=CATS.map(function(c){
-    var n=c[0]==='all'?data.length:data.filter(function(e){return e.cat===c[0];}).length;
-    return '<button class="p-tab'+(cur===c[0]?' active':'')+'" data-cat="'+c[0]+'">'+c[1]+' ('+n+')</button>';
+    return '<button type="button" class="p-tab'+(cur===c[0]?' active':'')+'" data-cat="'+c[0]+'">'+esc(c[1])+' (0)</button>';
   }).join('');
   Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
     b.addEventListener('click',function(){cur=b.getAttribute('data-cat');render();});
   });
 }
-fetch('assets/policy.json').then(function(r){return r.json();}).then(function(j){data=j;render();})
-.catch(function(){document.getElementById('p-list').innerHTML='<p class="muted">Could not load the tracker data.</p>';});
+function load(){
+  fetch('assets/policy.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(function(j){data=j;render();})
+  .catch(function(){
+    document.getElementById('p-count').textContent='';
+    document.getElementById('p-list').innerHTML='<p class="muted">Could not load the tracker data. <button type="button" class="p-tab" id="p-retry">Tap to retry</button></p>';
+    document.getElementById('p-retry').addEventListener('click',function(){
+      document.getElementById('p-list').innerHTML='<p class="muted">Loading tracker...</p>';load();
+    });
+  });
+}
+buildTabs();
 document.getElementById('p-search').addEventListener('input',function(e){q=e.target.value.trim().toLowerCase();render();});
+load();
 })();"""
 
 def jsonld_page(name, desc, url):
