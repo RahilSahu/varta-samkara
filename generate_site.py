@@ -2166,7 +2166,7 @@ def study_article_page(slug, title, desc, md_path):
     if len(toc) >= 3:
         lis = "".join(f'<li><a href="#{a}">{html.escape(t)}</a></li>' for a, t in toc)
         toc_html = f"""<nav class="toc" aria-label="On this page"><strong>On this page</strong><ul>{lis}</ul></nav>"""
-    url = SITE + slug + ".html"
+    url = SITE_URL + slug + ".html"
     share_txt = urllib.parse.quote(title)
     share_url = urllib.parse.quote(url, safe="")
     share_html = f"""<div class="share-row"><span class="lbl">Share:</span>
@@ -2221,7 +2221,8 @@ Promise.all([
       +"</div>";
   }).join("");
 }).catch(function(){document.getElementById("wx-grid").innerHTML='<p class="muted">Weather feed unreachable right now.</p>';});
-var md=new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"}).slice(5);
+var dstr=new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"});
+var md=dstr.slice(5,7)+"/"+dstr.slice(8,10);
 fetch("https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/"+md).then(function(r){return r.json();}).then(function(j){
   var ev=(j.events||[]).slice(0,10);
   document.getElementById("otd-list").innerHTML=ev.map(function(e){
