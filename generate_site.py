@@ -1576,8 +1576,11 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
     share_url = urllib.parse.quote(purl, safe="")
     share_html = f"""<div class="share-row"><span class="lbl">Share:</span>
 <a class="share-btn" href="https://wa.me/?text={share_txt}%20{share_url}" target="_blank" rel="noopener">WhatsApp</a>
+<a class="share-btn" href="https://t.me/share/url?url={share_url}&text={share_txt}" target="_blank" rel="noopener">Telegram</a>
 <a class="share-btn" href="https://twitter.com/intent/tweet?text={share_txt}&url={share_url}" target="_blank" rel="noopener">X</a>
 <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={share_url}" target="_blank" rel="noopener">Facebook</a>
+<a class="share-btn" href="https://mail.google.com/mail/?view=cm&fs=1&su={share_txt}&body={share_txt}%20{share_url}" target="_blank" rel="noopener">Gmail</a>
+<a class="share-btn" href="{p['url'] if p['url'] and p['url'] != IG else IG}" target="_blank" rel="noopener" title="Open this story on Instagram">Instagram</a>
 <button class="share-btn" type="button" onclick="copyPageLink(this)">Copy link</button></div>"""
     gallery = ""
     if p["gallery"]:
@@ -1738,14 +1741,16 @@ def blog_page_from_file(path):
             "thumb": thumb, "gallery": [], "og_srcs": [path]}
 
 def jsonld_scores():
-    return json.dumps({
+    data = {
         "@context": "https://schema.org",
         "@type": "WebPage",
         "name": "Varta & Samkara Scores Center",
         "url": f"{SITE_URL}scores.html",
         "description": ("Live scores and results: cricket, football, F1, UFC, "
                         "MotoGP and WWE. All times in IST."),
-    }, ensure_ascii=False)
+    }
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, ensure_ascii=False) + '\n</script>')
 
 def scores_page():
     tabs = "".join(
