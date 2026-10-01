@@ -1,0 +1,222 @@
+[
+ {
+  "q": "The Preamble begins with 'We, the people of India'. This means the ultimate source of authority is",
+  "o": [
+   "The Parliament",
+   "The people of India",
+   "The President",
+   "The Supreme Court"
+  ],
+  "a": 1,
+  "e": "The Preamble declares the people as the source of the Constitution's authority."
+ },
+ {
+  "q": "The Constitution of India was adopted on",
+  "o": [
+   "26 January 1950",
+   "15 August 1947",
+   "26 November 1949",
+   "9 December 1946"
+  ],
+  "a": 2,
+  "e": "Adopted on 26 November 1949; it came into force on 26 January 1950."
+ },
+ {
+  "q": "Who chaired the Drafting Committee of the Constituent Assembly?",
+  "o": [
+   "Jawaharlal Nehru",
+   "Dr. Rajendra Prasad",
+   "Sardar Vallabhbhai Patel",
+   "Dr. B. R. Ambedkar"
+  ],
+  "a": 3,
+  "e": "Ambedkar chaired the seven-member Drafting Committee."
+ },
+ {
+  "q": "The words 'Socialist', 'Secular' and 'Integrity' were added to the Preamble by the",
+  "o": [
+   "44th Amendment, 1978",
+   "42nd Amendment, 1976",
+   "52nd Amendment, 1985",
+   "86th Amendment, 2002"
+  ],
+  "a": 1,
+  "e": "The 42nd Amendment (1976) is often called the mini-Constitution."
+ },
+ {
+  "q": "Article 14 guarantees",
+  "o": [
+   "Freedom of religion",
+   "Equality before law and equal protection of laws",
+   "Right against exploitation",
+   "Cultural and educational rights"
+  ],
+  "a": 1,
+  "e": "Article 14 is the foundation of the Right to Equality (Articles 14 to 18)."
+ },
+ {
+  "q": "Dr. Ambedkar called this Article the 'heart and soul' of the Constitution",
+  "o": [
+   "Article 32",
+   "Article 21",
+   "Article 14",
+   "Article 19"
+  ],
+  "a": 0,
+  "e": "Article 32 gives the Right to Constitutional Remedies."
+ },
+ {
+  "q": "Article 21 protects the",
+  "o": [
+   "Right to equality",
+   "Right to freedom of speech",
+   "Right to life and personal liberty",
+   "Right to property"
+  ],
+  "a": 2,
+  "e": "The Supreme Court has read dignity, privacy and livelihood into Article 21."
+ },
+ {
+  "q": "The Fundamental Duties are listed in",
+  "o": [
+   "Article 51",
+   "Article 51A",
+   "Article 48A",
+   "Article 39A"
+  ],
+  "a": 1,
+  "e": "Added by the 42nd Amendment; there are 11 duties today."
+ },
+ {
+  "q": "The Directive Principles of State Policy are",
+  "o": [
+   "Enforceable in courts",
+   "Non-justiciable guidelines for the state",
+   "Fundamental rights",
+   "Emergency provisions"
+  ],
+  "a": 1,
+  "e": "Part IV of the Constitution; fundamental in governance but not justiciable."
+ },
+ {
+  "q": "The anti-defection law is contained in the",
+  "o": [
+   "Ninth Schedule",
+   "Tenth Schedule",
+   "Eighth Schedule",
+   "Twelfth Schedule"
+  ],
+  "a": 1,
+  "e": "Added by the 52nd Amendment in 1985."
+ },
+ {
+  "q": "The voting age was lowered from 21 to 18 by the",
+  "o": [
+   "61st Amendment, 1989",
+   "42nd Amendment, 1976",
+   "73rd Amendment, 1992",
+   "86th Amendment, 2002"
+  ],
+  "a": 0,
+  "e": "The 61st Amendment (1989) amended Article 326."
+ },
+ {
+  "q": "Panchayati Raj institutions got constitutional status through the",
+  "o": [
+   "74th Amendment",
+   "73rd Amendment",
+   "72nd Amendment",
+   "71st Amendment"
+  ],
+  "a": 1,
+  "e": "The 73rd Amendment (1992) added Part IX."
+ },
+ {
+  "q": "The Right to Education (Article 21A) was added by the",
+  "o": [
+   "86th Amendment, 2002",
+   "93rd Amendment, 2005",
+   "97th Amendment, 2011",
+   "103rd Amendment, 2019"
+  ],
+  "a": 0,
+  "e": "Free and compulsory education for children aged 6 to 14."
+ },
+ {
+  "q": "The Goods and Services Tax was introduced by the",
+  "o": [
+   "100th Amendment",
+   "101st Amendment",
+   "102nd Amendment",
+   "103rd Amendment"
+  ],
+  "a": 1,
+  "e": "The 101st Amendment (2016) enabled GST."
+ },
+ {
+  "q": "The 10 percent reservation for Economically Weaker Sections came via the",
+  "o": [
+   "102nd Amendment",
+   "103rd Amendment",
+   "104th Amendment",
+   "105th Amendment"
+  ],
+  "a": 1,
+  "e": "The 103rd Amendment (2019) added Articles 15(6) and 16(6)."
+ },
+ {
+  "q": "One-third reservation for women in legislatures was provided by the",
+  "o": [
+   "105th Amendment",
+   "106th Amendment",
+   "107th Amendment",
+   "104th Amendment"
+  ],
+  "a": 1,
+  "e": "The 106th Amendment (2023), to take effect after delimitation."
+ },
+ {
+  "q": "The Constitution originally had how many Schedules?",
+  "o": [
+   "8",
+   "10",
+   "12",
+   "14"
+  ],
+  "a": 0,
+  "e": "It began with 8 Schedules; there are 12 today."
+ },
+ {
+  "q": "The Union, State and Concurrent Lists are in the",
+  "o": [
+   "Sixth Schedule",
+   "Seventh Schedule",
+   "Ninth Schedule",
+   "Tenth Schedule"
+  ],
+  "a": 1,
+  "e": "The Seventh Schedule distributes legislative subjects."
+ },
+ {
+  "q": "The procedure for amending the Constitution is laid down in",
+  "o": [
+   "Article 356",
+   "Article 360",
+   "Article 368",
+   "Article 370"
+  ],
+  "a": 2,
+  "e": "Article 368 provides for three types of amendment."
+ },
+ {
+  "q": "Article 17 deals with the",
+  "o": [
+   "Abolition of titles",
+   "Abolition of untouchability",
+   "Protection of life",
+   "Freedom of speech"
+  ],
+  "a": 1,
+  "e": "Untouchability is abolished and its practice forbidden."
+ }
+]

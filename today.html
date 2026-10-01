@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a1a3c">
-<title>Scores Center | Varta &amp; Samkara</title>
+<title>Today in India | Varta &amp; Samkara</title>
 <script>(function(){try{var t=localStorage.getItem('vs-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta name="description" content="Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST.">
-<meta property="og:title" content="Scores Center">
-<meta property="og:description" content="Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST.">
+<meta name="description" content="Live weather and air quality across Indian cities, plus on-this-day history.">
+<meta property="og:title" content="Today in India">
+<meta property="og:description" content="Live weather and air quality across Indian cities, plus on-this-day history.">
 <meta property="og:type" content="article">
 
 
@@ -17,25 +17,25 @@
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="feed.xml">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Varta & Samkara Scores Center", "url": "https://rahilsahu.github.io/varta-samkara/scores.html", "description": "Live scores and results: cricket, football, F1, UFC, MotoGP and WWE. All times in IST."}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Today in India", "url": "/home/hatch/workspace/varta-samkara-websitetoday.html", "description": "Live weather and air quality across Indian cities, plus on-this-day history.", "publisher": {"@type": "Organization", "name": "Varta & Samkara"}}
 </script>
 </head>
 <body>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="scores.html" class="active" data-scores-nav>Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="scores.html" data-scores-nav>Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html" class="active">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
 </header>
-<main class="wrap">
-<div class="sec-head"><h2 class="sec-title">Scores Center</h2><span class="updated" id="scores-updated"></span></div>
-<p class="scores-sub">Live scores refresh automatically every minute (every 30 seconds when something is live). All times in IST.</p>
-<div class="scores-tabs" role="tablist"><button class="scores-tab" data-tab="cricket" role="tab" aria-selected="false">Cricket</button><button class="scores-tab" data-tab="football" role="tab" aria-selected="false">Football</button><button class="scores-tab" data-tab="f1" role="tab" aria-selected="false">F1</button><button class="scores-tab" data-tab="ufc" role="tab" aria-selected="false">UFC & Boxing</button><button class="scores-tab" data-tab="motogp" role="tab" aria-selected="false">MotoGP</button><button class="scores-tab" data-tab="wwe" role="tab" aria-selected="false">WWE</button></div>
-<div class="scores-bar" id="scores-bar"><select class="league-select" id="league-select" aria-label="Choose league"></select></div>
-<div id="scores-panel" aria-live="polite"></div>
-</main>
+<main class="wrap"><div class="page-head"><h1>Today in India</h1><p class="lede">Live weather and air quality across major Indian cities, plus what happened on this day in history.</p></div>
+<h2>Weather and Air Quality <span class="live-dot"></span></h2>
+<div class="wx-grid" id="wx-grid"><p class="muted">Loading weather...</p></div>
+<p class="muted">Weather by Open-Meteo. AQI is the US EPA index.</p>
+<h2>On This Day</h2>
+<div class="otd-list" id="otd-list"><p class="muted">Loading history...</p></div>
+<p class="muted">Events via Wikipedia.</p></main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
 <div class="foot-links"><a href="scores.html">Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="archive.html">Archive</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
@@ -112,6 +112,38 @@ window.addEventListener('load',function(){
   },1600);
 });
 </script>
-<script src="assets/scores.js"></script>
+<script>(function(){
+var CITIES=[["Sagar",23.84,78.74],["Indore",22.72,75.86],["Bhopal",23.26,77.41],["Delhi",28.61,77.23],["Mumbai",19.07,72.87],["Kolkata",22.57,88.36],["Chennai",13.08,80.27],["Bengaluru",12.97,77.59],["Hyderabad",17.38,78.48],["Ahmedabad",23.03,72.58],["Pune",18.52,73.85],["Jaipur",26.91,75.79],["Lucknow",26.85,80.95],["Patna",25.59,85.13]];
+function wmo(c){if(c===0)return["\u2600","Clear sky"];if(c<=3)return["\u26C5","Partly cloudy"];if(c<=48)return["\uD83C\uDF2B","Fog"];if(c<=57)return["\uD83C\uDF26","Drizzle"];if(c<=67)return["\uD83C\uDF27","Rain"];if(c<=77)return["\uD83C\uDF28","Snow"];if(c<=82)return["\uD83C\uDF27","Showers"];if(c<=86)return["\uD83C\uDF28","Snow showers"];return["\u26C8","Thunderstorm"];}
+function aqiBand(a){if(a==null)return["",""];if(a<=50)return["good","Good"];if(a<=100)return["mod","Moderate"];if(a<=150)return["usg","Unhealthy (SG)"];if(a<=200)return["unh","Unhealthy"];if(a<=300)return["vun","Very unhealthy"];return["haz","Hazardous"];}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+var lat=CITIES.map(function(c){return c[1];}).join(","), lon=CITIES.map(function(c){return c[2];}).join(",");
+Promise.all([
+  fetch("https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FKolkata&forecast_days=1").then(function(r){return r.json();}),
+  fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude="+lat+"&longitude="+lon+"&current=us_aqi").then(function(r){return r.json();}).catch(function(){return null;})
+]).then(function(res){
+  var wx=res[0], aq=res[1], list=Array.isArray(wx)?wx:[wx];
+  document.getElementById("wx-grid").innerHTML=list.map(function(w,i){
+    var c=w.current||{}, d=(w.daily||{}), wm=wmo(c.weather_code||0);
+    var aqi=aq&&aq[i]&&aq[i].current?aq[i].current.us_aqi:null, band=aqiBand(aqi);
+    var hi=d.temperature_2m_max?d.temperature_2m_max[0]:"-", lo=d.temperature_2m_min?d.temperature_2m_min[0]:"-";
+    return '<div class="wx-card"><div class="wx-city">'+esc(CITIES[i][0])+'</div>'
+      +'<div class="wx-temp">'+wm[0]+" "+Math.round(c.temperature_2m||0)+"\u00B0C</div>"
+      +'<div class="wx-cond">'+wm[1]+" \u00B7 H:"+Math.round(hi)+"\u00B0 L:"+Math.round(lo)+"\u00B0</div>"
+      +'<div class="wx-meta">Humidity '+(c.relative_humidity_2m||"-")+"% \u00B7 Wind "+Math.round(c.wind_speed_10m||0)+" km/h</div>"
+      +(aqi!=null?'<div class="aqi '+band[0]+'">AQI '+aqi+" \u00B7 "+band[1]+"</div>":'<div class="wx-meta">AQI unavailable</div>')
+      +"</div>";
+  }).join("");
+}).catch(function(){document.getElementById("wx-grid").innerHTML='<p class="muted">Weather feed unreachable right now.</p>';});
+var md=new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"}).slice(5);
+fetch("https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/"+md).then(function(r){return r.json();}).then(function(j){
+  var ev=(j.events||[]).slice(0,10);
+  document.getElementById("otd-list").innerHTML=ev.map(function(e){
+    var title=e.pages&&e.pages[0]?e.pages[0].title:"";
+    var link=title?'<a href="https://en.wikipedia.org/wiki/'+encodeURIComponent(title.replace(/ /g,"_"))+'" target="_blank" rel="noopener">Read more</a>':"";
+    return '<div class="otd-item"><span class="otd-year">'+e.year+"</span><p>"+esc(e.text)+"</p>"+link+"</div>";
+  }).join("")||'<p class="muted">Nothing found for today.</p>';
+}).catch(function(){document.getElementById("otd-list").innerHTML='<p class="muted">History feed unreachable right now.</p>';});
+})();</script>
 </body>
 </html>

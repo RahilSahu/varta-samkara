@@ -1,8 +1,12 @@
-const CACHE = "vs-cache-v4";
+const CACHE = "vs-cache-v6";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
+              "markets.html", "policy.html", "assets/policy.json",
+              "study.html", "constitution.html", "articles.html",
+              "quiz.html", "assets/quiz.json",
+              "today.html",
               "assets/readaloud.js"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE))

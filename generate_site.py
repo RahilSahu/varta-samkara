@@ -259,7 +259,8 @@ a{color:inherit;text-decoration:none}
 .brand h1{font-size:1.05rem;letter-spacing:.08em;line-height:1.15}
 .brand h1 span{color:var(--saffron)}
 .navlinks{display:flex;align-items:center;gap:1.4rem}
-.navlinks a{font-size:.95rem;opacity:.92;position:relative;padding:.2rem 0;transition:color .2s}
+.navlinks a{font-size:.95rem;opacity:.92;position:relative;padding:.2rem 0;transition:color .2s;white-space:nowrap}
+@media(max-width:1100px){.navlinks{gap:.9rem;overflow-x:auto;scrollbar-width:none}.navlinks::-webkit-scrollbar{display:none}}
 .navlinks a::after{content:'';position:absolute;left:0;bottom:-2px;height:2px;width:0;
   background:var(--saffron);border-radius:2px;transition:width .25s}
 .navlinks a:hover{color:var(--saffron)}
@@ -491,6 +492,8 @@ html[data-theme="dark"] .byline{color:#9aa4bd}
 .ticker-track{display:inline-block;white-space:nowrap;max-width:max-content;
   padding:.5rem 0;animation:tickmove 25s linear infinite;color:#ffd9a3;font-size:.92rem;font-weight:600}
 .ticker-track:hover{animation-play-state:paused;color:var(--saffron)}
+.ticker-track a{color:inherit;text-decoration:none}
+.ticker-track a:hover{color:var(--saffron)}
 .tick-sep{color:var(--saffron);font-weight:800}
 @keyframes tickmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
@@ -609,6 +612,80 @@ html[data-theme="dark"] .scores-tab.active{background:#1b2a52;border-color:#1b2a
 html[data-theme="dark"] .score-result{color:#e9edf6}
 html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
 @media(prefers-reduced-motion:reduce){.live-pulse,.live-dot{animation:none}}
+
+/* ---------- markets page ---------- */
+.tv-wrap{background:#131722;border:1px solid var(--line,#e2e2e2);border-radius:14px;padding:.55rem .55rem .2rem;margin:1rem 0}
+.tv-cap{color:#9aa3b2;font-size:.75rem;text-align:right;padding:.15rem .3rem .4rem}
+.pm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.9rem;margin:1rem 0}
+.pm-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.2rem}
+.pm-name{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#666)}
+.pm-inr{font-size:1.7rem;font-weight:800;margin:.3rem 0 .1rem}
+.pm-usd{font-size:.85rem;color:var(--muted,#666)}
+.mkt-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:#eee;color:#555;vertical-align:middle}
+.mkt-badge.open{background:#e5f6ec;color:#0d7a3f}
+.mkt-badge.closed{background:#f3e8e8;color:#a33}
+html[data-theme="dark"] .mkt-badge.open{background:#123b26;color:#7be2a8}
+html[data-theme="dark"] .mkt-badge.closed{background:#3b1a1a;color:#e08a8a}
+.fx-box{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1rem 1.2rem;margin:1rem 0}
+.fx-box input,.fx-box select{font:inherit;padding:.5rem .8rem;border:1px solid var(--line,#e2e2e2);border-radius:10px;background:var(--bg,#fff);color:inherit}
+.fx-box input{width:120px}
+.fx-arrow{font-size:1.2rem;color:var(--muted,#666)}
+.fx-out{font-weight:800;font-size:1.1rem;flex-basis:100%}
+
+/* ---------- policy tracker ---------- */
+.p-tools{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1rem 0}
+.p-tabs{display:flex;flex-wrap:wrap;gap:.45rem}
+.p-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);color:inherit;border-radius:999px;padding:.4rem .9rem;font-size:.83rem;cursor:pointer;font-family:inherit}
+.p-tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+.p-search{margin-left:auto;border:1px solid var(--line,#e2e2e2);border-radius:999px;padding:.45rem 1rem;font-size:.85rem;background:var(--card,#fff);color:inherit;min-width:200px;font-family:inherit}
+.p-list{display:grid;gap:.9rem}
+.p-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.25rem}
+.p-card h3{margin:.4rem 0 .5rem;font-size:1.08rem}
+.p-card p{margin:.4rem 0;color:var(--ink,#222);line-height:1.6}
+.p-top{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.p-date{font-size:.78rem;color:var(--muted,#666)}
+.p-status{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#eef3ff;color:#2b4acb;border-radius:999px;padding:.18rem .7rem}
+.p-sectors{display:flex;flex-wrap:wrap;gap:.4rem;margin:.6rem 0 .2rem}
+.chip{font-size:.74rem;background:var(--chip,#f1f1f1);border-radius:999px;padding:.2rem .7rem;color:var(--muted,#555)}
+.p-src{font-size:.8rem;color:var(--muted,#666);margin-top:.4rem}
+.p-src a{margin-right:.6rem}
+html[data-theme="dark"] .p-tab.active{background:#e8e8e8;color:#111;border-color:#e8e8e8}
+html[data-theme="dark"] .p-status{background:#1b2a52;color:#cfd7ec}
+
+/* ---------- study hub ---------- */
+.study-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.2rem 0}
+.study-card{display:block;border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.3rem 1.4rem;text-decoration:none;color:inherit}
+.study-card h3{margin:.2rem 0 .6rem}
+.study-card p{color:var(--muted,#555);line-height:1.6;margin:.4rem 0 .8rem}
+.study-card .go{font-weight:700;font-size:.88rem}
+.study-card:hover{border-color:#999}
+/* ---------- today page ---------- */
+.wx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin:1.2rem 0}
+.wx-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1rem 1.1rem}
+.wx-city{font-weight:800}
+.wx-temp{font-size:1.6rem;font-weight:800;margin:.3rem 0}
+.wx-cond{font-size:.9rem;color:var(--muted,#666)}
+.wx-meta{font-size:.8rem;color:var(--muted,#666);margin-top:.3rem}
+.aqi{display:inline-block;margin-top:.5rem;font-size:.78rem;font-weight:700;padding:.2rem .6rem;border-radius:999px}
+.aqi.good{background:#dff5e1;color:#166534}.aqi.mod{background:#fef9c3;color:#854d0e}.aqi.usg{background:#ffedd5;color:#9a3412}.aqi.unh{background:#fecaca;color:#991b1b}.aqi.vun{background:#e9d5ff;color:#6b21a8}.aqi.haz{background:#7f1d1d;color:#fff}
+.otd-list{display:grid;gap:.9rem;margin:1.2rem 0}
+.otd-item{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1rem 1.2rem}
+.otd-year{font-weight:800;color:var(--saffron);font-size:1.05rem}
+.otd-item p{margin:.3rem 0 .5rem}
+/* ---------- quiz ---------- */
+.quiz-wrap{max-width:680px;margin:1.2rem 0;border:1px solid var(--line,#e2e2e2);border-radius:16px;background:var(--card,#fff);padding:1.6rem}
+.quiz-progress{font-size:.85rem;color:var(--muted,#666);margin-bottom:.4rem}
+.quiz-bar{height:8px;background:var(--line,#e2e2e2);border-radius:4px;overflow:hidden;margin-bottom:1rem}
+.quiz-bar i{display:block;height:100%;background:var(--saffron);transition:width .3s}
+.quiz-q{font-size:1.15rem;margin:.4rem 0 1rem}
+.quiz-opts{display:grid;gap:.6rem;margin-bottom:1rem}
+.quiz-opt{text-align:left;font:inherit;padding:.7rem 1rem;border:1px solid var(--line,#e2e2e2);border-radius:10px;background:var(--bg,#fff);color:inherit;cursor:pointer}
+.quiz-opt:hover:not(:disabled){border-color:var(--saffron)}
+.quiz-opt.correct{background:#dff5e1;border-color:#166534}
+.quiz-opt.wrong{background:#fecaca;border-color:#991b1b}
+.quiz-explain{background:var(--bg,#f7f7f7);border-radius:10px;padding:.8rem 1rem;font-size:.92rem}
+.quiz-done{text-align:center}
+.quiz-score{font-size:2.6rem;font-weight:800;color:var(--saffron)}
 
 /* ---------- horoscope page ---------- */
 .sign-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:.6rem;margin:1.2rem 0}
@@ -1182,7 +1259,7 @@ def topbar(depth, active):
         return f'<a href="{r}{href}"{cls}{extra}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('markets.html','Markets','markets')}{link('policy.html','Policy','policy')}{link('study.html','Study','study')}{link('today.html','Today','today')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
@@ -1193,7 +1270,7 @@ def footer(depth):
     r = rel(depth)
     return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="{r}scores.html">Scores</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="{r}scores.html">Scores</a><a href="{r}markets.html">Markets</a><a href="{r}policy.html">Policy</a><a href="{r}study.html">Study</a><a href="{r}today.html">Today</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
 def head(title, desc, depth, og_image="", extra_jsonld=""):
@@ -1896,6 +1973,352 @@ def horoscope_page():
 </body>
 </html>"""
 
+# ---------------------------------------------------------------- Policy tracker
+# Curated, source-linked entries. No public API exists for Indian bills,
+# compliances or judgments, so this dataset is maintained by hand and baked
+# into assets/policy.json at build time. Add new entries here; the page
+# renders them automatically with category tabs and search.
+POLICY_ENTRIES = [
+ {"cat":"compliance","date":"2026-04-01","title":"Income-tax Act, 2025 comes into force","summary":"Replaces the six-decade-old Income-tax Act, 1961. 536 sections and 23 chapters; a single \"Tax Year\" concept replaces the Previous Year and Assessment Year framework; Form 16 replaced by system-generated Form 130; CBDT notified the Income-tax Rules, 2026. Tax slabs and rates unchanged.","sectors":["All businesses","Individuals","Finance"],"status":"In force","sources":[["TaxGuru","https://taxguru.in/income-tax/income-tax-act-2025-key-features-effective-date.html"],["Drishti IAS","https://www.drishtiias.com/daily-updates/daily-news-analysis/income-tax-act-2025"]]},
+ {"cat":"compliance","date":"2026-05-08","title":"Central Rules under the four Labour Codes notified","summary":"Code on Wages 2019, Industrial Relations Code 2020, Social Security Code 2020 and the OSH Code 2020: 29 central laws consolidated into 4 codes, in force since 21 Nov 2025. Wages (basic plus DA) must be at least 50 percent of total remuneration; single registration, single return, 351 rules instead of 1,436. States must notify their own rules; the Centre expects all states and UTs done by 31 Oct 2026.","sectors":["Employers","HR","Manufacturing","IT services"],"status":"In force, states phasing in","sources":[["Business Standard","https://www.business-standard.com/india-news/all-states-uts-may-notify-labour-code-rules-by-oct-31-labour-secretary-126092401119_1.html"]]},
+ {"cat":"compliance","date":"2025-11-14","title":"DPDP Rules, 2025 notified; phased enforcement through 2026","summary":"Digital Personal Data Protection framework: the Data Protection Board of India is active; the Consent Manager framework becomes operational around 13 Nov 2026; full substantive obligations (consent, breach notification, data principal rights) become enforceable around May 2027. Penalties go up to Rs 250 crore. 2026 is the build year for compliance programmes.","sectors":["Technology","SaaS","D2C","BFSI"],"status":"Phased rollout","sources":[["Compliance guide","https://www.buildbyravirai.com/blog/dpdp-act-compliance-india-2026-website-saas-guide"]]},
+ {"cat":"law","date":"2026-07-31","title":"Public Examinations (Prevention of Unfair Means) Amendment Bill, 2026","summary":"Passed in the Monsoon Session and received presidential assent on 31 Jul 2026. Speedy investigations and time-bound trials for paper-leak offences, higher penalties, Special Fast Track Courts and Special Public Prosecutors. Debated for over 17 hours across both Houses, the longest debate of the session.","sectors":["Education","Students"],"status":"Act (assented)","sources":[["Business Standard","https://www.business-standard.com/india-news/parliament-monsoon-session-12-bills-introduced-11-passed-33-hrs-spent-126081300890_1.html"]]},
+ {"cat":"law","date":"2026-08-13","title":"MSME Development (Amendment) Bill, 2026","summary":"National digital platform for free and voluntary MSME registration; improves access to finance and speeds up resolution of delayed-payment disputes. Assented 13 Aug 2026.","sectors":["MSME","Banking"],"status":"Act (assented)","sources":[["Business Standard","https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"]]},
+ {"cat":"law","date":"2026-08-13","title":"Bankers' Books Evidence Bill, 2026","summary":"Expands the definition of bankers' books to cover physical, electronic, digital, virtual and cloud-based records. Assented 13 Aug 2026.","sectors":["Banking","Legal"],"status":"Act (assented)","sources":[["Business Standard","https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"]]},
+ {"cat":"law","date":"2026-08-01","title":"Tribunals Reforms Bill, 2026","summary":"Improves the independence, transparency and efficiency of tribunals; provides for a National Tribunals Commission. Passed by both Houses in the Monsoon Session (20 Jul to 13 Aug 2026).","sectors":["Legal","Governance"],"status":"Passed by Parliament","sources":[["Business Standard","https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"]]},
+ {"cat":"law","date":"2026-08-01","title":"Mines and Minerals (Development and Regulation) Amendment Bill, 2026","summary":"Brings greater certainty and predictability to the fiscal regime for the mineral sector. Passed by both Houses in the Monsoon Session.","sectors":["Mining","Industry"],"status":"Passed by Parliament","sources":[["Business Standard","https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"]]},
+ {"cat":"law","date":"2026-08-01","title":"Taxation and Other Laws (Amendment) Bill, 2026","summary":"Amendments to taxation and related laws. Passed by both Houses in the Monsoon Session.","sectors":["Finance","Tax"],"status":"Passed by Parliament","sources":[["Business Standard","https://www.business-standard.com/india-news/parliament-monsoon-session-12-bills-introduced-11-passed-33-hrs-spent-126081300890_1.html"]]},
+ {"cat":"law","date":"2026-08-01","title":"National Co-operative Development Corporation (Amendment) Bill, 2026","summary":"Amends the NCDC Act governing cooperative development. Passed by both Houses in the Monsoon Session.","sectors":["Co-operatives","Agriculture"],"status":"Passed by Parliament","sources":[["Deccan Herald","https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"]]},
+ {"cat":"law","date":"2026-08-07","title":"Prevention of Insults to National Honour (Amendment) Bill, 2026","summary":"Amendments to the 1971 Act dealing with insults to national honour. Assented 7 Aug 2026.","sectors":["Governance"],"status":"Act (assented)","sources":[["Deccan Herald","https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"]]},
+ {"cat":"law","date":"2026-08-06","title":"Registration of Births and Deaths (Amendment) Bill, 2026","summary":"Amends the 1969 Act governing birth and death registration. Assented 6 Aug 2026.","sectors":["Governance"],"status":"Act (assented)","sources":[["Deccan Herald","https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"]]},
+ {"cat":"law","date":"2026-08-11","title":"Supreme Court (Number of Judges) Amendment Bill, 2026","summary":"Amends the law fixing the number of judges of the Supreme Court. Assented 11 Aug 2026.","sectors":["Legal"],"status":"Act (assented)","sources":[["Sarkari List","https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"]]},
+ {"cat":"law","date":"2026-08-14","title":"Kerala (Alteration of Name) Bill, 2026","summary":"Concerns the alteration of the name of the state. Passed by both Houses in the Monsoon Session; assented 14 Aug 2026.","sectors":["Governance"],"status":"Act (assented)","sources":[["Sarkari List","https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"]]},
+ {"cat":"judgment","date":"2026-03-11","title":"Harish Rana v. Union of India: SC permits passive euthanasia","summary":"In a historic first, the Supreme Court allowed withdrawal of life-sustaining treatment, including clinically assisted nutrition and hydration, for a patient in a persistent vegetative state for 13 years, applying the Common Cause guidelines. The right to die with dignity was held inseparable from quality palliative and end-of-life care; the Court urged a legislative framework.","sectors":["Healthcare","Law"],"status":"Decided","sources":[["Legal Services India","https://www.legalservicesindia.com/harish-rana-v-union-of-india-2026-passive-euthanasia-canh-right-to-die-with-dignity/"]]},
+ {"cat":"judgment","date":"2026-07-02","title":"SC: AI-generated fake judgments are professional misconduct","summary":"Setting aside an NCLT order in the Essel Infraprojects insolvency case that relied on hallucinated precedents, the Court called fake citations catastrophic for justice delivery and directed zero tolerance for unverified AI-generated legal material.","sectors":["Law","Technology"],"status":"Decided","sources":[["Dynamite News","https://www.dynamitenews.com/technology/supreme-court-slams-ai-generated-fake-judgments-calls-unverified-citations-misconduct"]]},
+ {"cat":"judgment","date":"","title":"SC strikes down limits on maternity benefits for adoptive mothers","summary":"The Court struck down Section 60(4) of the Code on Social Security, 2020 to the extent it limited maternity benefits for adoptive mothers, and favoured legal recognition of paternity leave.","sectors":["Employment","Law"],"status":"Decided","sources":[["SCC Times","https://www.scconline.com/blog/post/2026/08/12/know-thy-judge-justice-jb-pardiwala-supreme-court-of-india/"]]},
+ {"cat":"policy","date":"2026-09-08","title":"SEBI eases FPI compliance for government securities","summary":"FPIs investing exclusively in government securities no longer need to furnish investor group details, effective immediately. Follows the RBI's 5 Jun 2026 circular withdrawing concentration limits for FPIs in G-Secs via the General Route, and the expansion of the Fully Accessible Route to 15, 30 and 40-year securities.","sectors":["BFSI","Capital markets"],"status":"In force","sources":[["Economic Times","https://economictimes.indiatimes.com/markets/bonds/sebi-eases-fpi-compliance-rules-for-g-sec-bets/articleshow/133902425.cms"]]},
+ {"cat":"licence","date":"","title":"FSSAI Food Licence","summary":"Mandatory for food businesses in India. Basic, State or Central licence depending on turnover and scale; applied through the FoSCoS portal with periodic renewal.","sectors":["Food","Retail"],"status":"Ongoing","sources":[["FSSAI","https://www.fssai.gov.in/"]]},
+ {"cat":"licence","date":"","title":"GST Registration","summary":"Mandatory above the turnover threshold (Rs 40 lakh for goods, Rs 20 lakh for services in most states; lower in special-category states). Applied on the GST portal.","sectors":["All businesses"],"status":"Ongoing","sources":[["GST Portal","https://www.gst.gov.in/"]]},
+ {"cat":"licence","date":"","title":"Shops and Establishment Registration","summary":"State-level registration for shops, offices and commercial establishments, governing working hours, leave and employment conditions. Applied through the respective state labour department.","sectors":["All businesses"],"status":"Ongoing","sources":[]},
+ {"cat":"licence","date":"","title":"Import Export Code (IEC)","summary":"Mandatory for any import or export business, issued by the Directorate General of Foreign Trade. One-time registration, valid for life of the entity.","sectors":["Trade","Manufacturing"],"status":"Ongoing","sources":[["DGFT","https://www.dgft.gov.in/"]]},
+ {"cat":"bill","date":"","title":"Winter Session 2026: legislative agenda awaited","summary":"The government's legislative agenda for the Winter Session is announced through the Parliamentary Bulletin before the session begins. This tracker will list bills for introduction, consideration and passing as soon as the bulletin is released.","sectors":["Governance"],"status":"To be announced","sources":[["PRS Legislative Research","https://prsindia.org/"]]},
+]
+
+# Live market data: gold-api.com (XAU/XAG, CORS-enabled) + frankfurter.dev
+# (USD/INR, CORS-enabled) + TradingView ticker-tape embed (no key needed).
+MARKETS_JS = r"""(function(){
+var OZ=31.1034768;
+function $(id){return document.getElementById(id);}
+function fmt(n,d){return Number(n).toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function setStatus(){
+  try{
+    var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
+    var d=now.getDay(), mins=now.getHours()*60+now.getMinutes();
+    var open=d>=1&&d<=5&&mins>=555&&mins<930;
+    var el=$('mkt-status');
+    el.textContent=open?'NSE/BSE open now':'Markets closed';
+    el.className='mkt-badge '+(open?'open':'closed');
+  }catch(e){}
+}
+function fail(msg){$('pm-note').textContent=msg;}
+async function load(){
+  try{
+    var r=await Promise.all([
+      fetch('https://api.gold-api.com/price/XAU').then(function(x){return x.json();}),
+      fetch('https://api.gold-api.com/price/XAG').then(function(x){return x.json();}),
+      fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=INR').then(function(x){return x.json();})
+    ]);
+    var xau=r[0].price, xag=r[1].price, usdinr=r[2].rates.INR;
+    $('gold-usd').textContent='$'+fmt(xau,2)+' / oz';
+    $('gold-inr').textContent='\u20B9'+fmt(xau/OZ*10*usdinr,0)+' / 10g';
+    $('silver-usd').textContent='$'+fmt(xag,2)+' / oz';
+    $('silver-inr').textContent='\u20B9'+fmt(xag/OZ*1000*usdinr,0)+' / kg';
+    $('fx-rate').textContent='1 USD = \u20B9'+fmt(usdinr,2);
+    var t=r[0].updatedAtReadable||'';
+    $('pm-note').textContent='Live from public feeds'+(t?' \u00B7 gold feed: '+t:'')+' \u00B7 refreshes every minute. Not investment advice.';
+  }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams.');}
+}
+setStatus(); setInterval(setStatus,60000); load(); setInterval(load,60000);
+var fxRates=null;
+function fxCalc(){
+  var amt=parseFloat($('fx-amt').value)||0, from=$('fx-from').value, to=$('fx-to').value;
+  if(!fxRates){$('fx-out').textContent='Loading rates...';return;}
+  var eur=fxRates.rates, out;
+  try{out=amt/eur[from]*eur[to];}catch(e){$('fx-out').textContent='Rate unavailable';return;}
+  $('fx-out').textContent=fmt(amt,2)+' '+from+' = '+fmt(out,2)+' '+to;
+}
+fetch('https://api.frankfurter.dev/v1/latest?from=EUR').then(function(r){return r.json();})
+.then(function(j){fxRates=j;['fx-amt','fx-from','fx-to'].forEach(function(id){$(id).addEventListener('input',fxCalc);$(id).addEventListener('change',fxCalc);});fxCalc();})
+.catch(function(){$('fx-out').textContent='Converter offline';});
+})();"""
+
+POLICY_JS = r"""(function(){
+var CATS=[['all','All'],['compliance','Compliances'],['licence','Licences'],['law','Laws & Bills'],['judgment','Court Judgments'],['policy','Policies'],['bill','Upcoming Bills']];
+var data=[], cur='all', q='';
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function card(e){
+  var src=(e.sources||[]).map(function(s){return '<a href="'+esc(s[1])+'" target="_blank" rel="noopener">'+esc(s[0])+'</a>';}).join(' ');
+  var sec=(e.sectors||[]).map(function(s){return '<span class="chip">'+esc(s)+'</span>';}).join('');
+  var dt=e.date?'<span class="p-date">'+esc(e.date)+'</span>':'';
+  return '<article class="p-card"><div class="p-top">'+dt+'<span class="p-status">'+esc(e.status)+'</span></div>'
+    +'<h3>'+esc(e.title)+'</h3><p>'+esc(e.summary)+'</p>'
+    +'<div class="p-sectors">'+sec+'</div>'
+    +(src?'<div class="p-src">Sources: '+src+'</div>':'')+'</article>';
+}
+function render(){
+  var list=data.filter(function(e){
+    if(cur!=='all'&&e.cat!==cur)return false;
+    if(q){var t=(e.title+' '+e.summary+' '+(e.sectors||[]).join(' ')).toLowerCase(); if(t.indexOf(q)<0)return false;}
+    return true;
+  });
+  document.getElementById('p-count').textContent=list.length+' entr'+(list.length===1?'y':'ies');
+  document.getElementById('p-list').innerHTML=list.length?list.map(card).join(''):'<p class="muted">No entries match.</p>';
+  var tabs=document.getElementById('p-tabs');
+  tabs.innerHTML=CATS.map(function(c){
+    var n=c[0]==='all'?data.length:data.filter(function(e){return e.cat===c[0];}).length;
+    return '<button class="p-tab'+(cur===c[0]?' active':'')+'" data-cat="'+c[0]+'">'+c[1]+' ('+n+')</button>';
+  }).join('');
+  Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
+    b.addEventListener('click',function(){cur=b.getAttribute('data-cat');render();});
+  });
+}
+fetch('assets/policy.json').then(function(r){return r.json();}).then(function(j){data=j;render();})
+.catch(function(){document.getElementById('p-list').innerHTML='<p class="muted">Could not load the tracker data.</p>';});
+document.getElementById('p-search').addEventListener('input',function(e){q=e.target.value.trim().toLowerCase();render();});
+})();"""
+
+def jsonld_page(name, desc, url):
+    data = {"@context": "https://schema.org", "@type": "WebPage",
+            "name": name, "url": url, "description": desc,
+            "publisher": {"@type": "Organization", "name": "Varta & Samkara"}}
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, ensure_ascii=False) + '\n</script>')
+
+def page_shell(title, desc, active, main_html, extra_js=""):
+    url = SITE + ("" if active == "home" else active + ".html")
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head(title, desc, 0, "", jsonld_page(title, desc, url))}
+</head>
+<body>
+{topbar(0, active)}
+<main class="wrap">{main_html}</main>
+{footer(0)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+{extra_js}
+</body>
+</html>"""
+
+def markets_page():
+    tape = """<div class="tv-wrap"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+{"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"TVC:SPX","title":"S&P 500"},{"proName":"TVC:NDX","title":"Nasdaq 100"},{"proName":"TVC:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
+</script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>"""
+    body = f"""<div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus gold and silver prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
+{tape}
+<h2>Gold and Silver <span class="live-dot"></span></h2>
+<div class="pm-grid">
+<div class="pm-card"><div class="pm-name">Gold</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
+<div class="pm-card"><div class="pm-name">Silver</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
+<div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">NSE currency market</div></div>
+</div>
+<p class="muted" id="pm-note">Loading live prices...</p>
+<h2>Currency Converter</h2>
+<div class="fx-box"><input id="fx-amt" type="number" value="100" min="0" aria-label="Amount">
+<select id="fx-from" aria-label="From currency"><option>USD</option><option>EUR</option><option>GBP</option><option selected>INR</option><option>JPY</option><option>AED</option></select>
+<span class="fx-arrow">&rarr;</span>
+<select id="fx-to" aria-label="To currency"><option selected>USD</option><option>EUR</option><option>GBP</option><option>INR</option><option>JPY</option><option>AED</option></select>
+<div class="fx-out" id="fx-out">...</div></div>
+<p class="muted">Rates via the European Central Bank feed, refreshed daily. Not investment advice.</p>"""
+    return page_shell("Markets",
+        "Live Sensex, Nifty and global indices with gold and silver prices in rupees.",
+        "markets", body, "<script>" + MARKETS_JS + "</script>")
+
+def policy_page():
+    body = """<div class="page-head"><h1>Law and Policy Tracker</h1><p class="lede">Compliances, licences, laws and bills, court judgments, policies and upcoming parliamentary business for 2026. Each entry carries its source; verify at the official source before acting on anything here.</p></div>
+<div class="p-tools"><div class="p-tabs" id="p-tabs"></div><input id="p-search" class="p-search" type="search" placeholder="Search the tracker..." aria-label="Search the tracker"></div>
+<p class="muted" id="p-count"></p><div class="p-list" id="p-list"><p class="muted">Loading tracker...</p></div>"""
+    return page_shell("Law and Policy Tracker 2026",
+        "Track 2026 compliances, licences, laws and bills, court judgments, policies and upcoming parliamentary bills.",
+        "policy", body, "<script>" + POLICY_JS + "</script>")
+
+def study_hub_page(cards):
+    grid = "".join(
+        f'<a class="study-card" href="{u}"><h3>{t}</h3><p>{d}</p><span class="go">Start reading &rarr;</span></a>'
+        for u, t, d in cards)
+    quiz = ('<a class="study-card" href="quiz.html"><h3>Constitution Quiz</h3>'
+            '<p>Test yourself with multiple-choice questions on the Constitution, with answers and explanations. Your best score is saved on this device.</p>'
+            '<span class="go">Take the quiz &rarr;</span></a>')
+    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice: the Constitution of India and its key articles, summarised simply for UPSC, law and school students.</p></div><div class="study-grid">{grid}{quiz}</div>
+<p class="muted">Study summaries for exam preparation. For legal purposes always consult the official constitutional text.</p>"""
+    return page_shell("Study: Constitution of India for Exams",
+        "Free summaries of the Constitution of India and its key articles for UPSC, law and student exam preparation.",
+        "study", body)
+
+def study_article_page(slug, title, desc, md_path):
+    blocks = [l for l in open(md_path, encoding="utf-8").read().splitlines()
+              if l.strip()]
+    body_html = render_body(blocks)
+    mins = reading_time(blocks)
+    toc = toc_of(blocks)
+    toc_html = ""
+    if len(toc) >= 3:
+        lis = "".join(f'<li><a href="#{a}">{html.escape(t)}</a></li>' for a, t in toc)
+        toc_html = f"""<nav class="toc" aria-label="On this page"><strong>On this page</strong><ul>{lis}</ul></nav>"""
+    url = SITE + slug + ".html"
+    share_txt = urllib.parse.quote(title)
+    share_url = urllib.parse.quote(url, safe="")
+    share_html = f"""<div class="share-row"><span class="lbl">Share:</span>
+<a class="share-btn" href="https://wa.me/?text={share_txt}%20{share_url}" target="_blank" rel="noopener">WhatsApp</a>
+<a class="share-btn" href="https://t.me/share/url?url={share_url}&text={share_txt}" target="_blank" rel="noopener">Telegram</a>
+<a class="share-btn" href="https://twitter.com/intent/tweet?text={share_txt}&url={share_url}" target="_blank" rel="noopener">X</a>
+<a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u={share_url}" target="_blank" rel="noopener">Facebook</a>
+<a class="share-btn" href="https://mail.google.com/mail/?view=cm&fs=1&su={share_txt}&body={share_txt}%20{share_url}" target="_blank" rel="noopener">Gmail</a>
+<a class="share-btn" href="{IG}" target="_blank" rel="noopener" title="Open on Instagram">Instagram</a>
+<button class="share-btn" type="button" onclick="copyPageLink(this)">Copy link</button></div>"""
+    content = f"""<article class="post"><p class="kicker">Study</p><h1>{html.escape(title)}</h1>
+<p class="meta"><span>{mins} min read</span></p>
+<button class="listen-cta" id="listen-btn" type="button"><span class="spk">&#9836;</span> Listen to this article</button>
+{toc_html}
+{body_html}
+{share_html}
+<p class="muted">Study summary for exam preparation. For legal purposes consult the official constitutional text.</p></article>
+<script src="assets/readaloud.js"></script>"""
+    return page_shell(title, desc, "study", content)
+
+# ---------------------------------------------------------------- Today page
+# Weather + AQI: Open-Meteo (free, no key, CORS-enabled). On-this-day:
+# Wikipedia REST API (free, no key, CORS-enabled).
+TODAY_CITIES = [
+    ("Sagar", 23.84, 78.74), ("Indore", 22.72, 75.86), ("Bhopal", 23.26, 77.41),
+    ("Delhi", 28.61, 77.23), ("Mumbai", 19.07, 72.87), ("Kolkata", 22.57, 88.36),
+    ("Chennai", 13.08, 80.27), ("Bengaluru", 12.97, 77.59), ("Hyderabad", 17.38, 78.48),
+    ("Ahmedabad", 23.03, 72.58), ("Pune", 18.52, 73.85), ("Jaipur", 26.91, 75.79),
+    ("Lucknow", 26.85, 80.95), ("Patna", 25.59, 85.13),
+]
+
+TODAY_JS = r"""(function(){
+var CITIES=[["Sagar",23.84,78.74],["Indore",22.72,75.86],["Bhopal",23.26,77.41],["Delhi",28.61,77.23],["Mumbai",19.07,72.87],["Kolkata",22.57,88.36],["Chennai",13.08,80.27],["Bengaluru",12.97,77.59],["Hyderabad",17.38,78.48],["Ahmedabad",23.03,72.58],["Pune",18.52,73.85],["Jaipur",26.91,75.79],["Lucknow",26.85,80.95],["Patna",25.59,85.13]];
+function wmo(c){if(c===0)return["\u2600","Clear sky"];if(c<=3)return["\u26C5","Partly cloudy"];if(c<=48)return["\uD83C\uDF2B","Fog"];if(c<=57)return["\uD83C\uDF26","Drizzle"];if(c<=67)return["\uD83C\uDF27","Rain"];if(c<=77)return["\uD83C\uDF28","Snow"];if(c<=82)return["\uD83C\uDF27","Showers"];if(c<=86)return["\uD83C\uDF28","Snow showers"];return["\u26C8","Thunderstorm"];}
+function aqiBand(a){if(a==null)return["",""];if(a<=50)return["good","Good"];if(a<=100)return["mod","Moderate"];if(a<=150)return["usg","Unhealthy (SG)"];if(a<=200)return["unh","Unhealthy"];if(a<=300)return["vun","Very unhealthy"];return["haz","Hazardous"];}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+var lat=CITIES.map(function(c){return c[1];}).join(","), lon=CITIES.map(function(c){return c[2];}).join(",");
+Promise.all([
+  fetch("https://api.open-meteo.com/v1/forecast?latitude="+lat+"&longitude="+lon+"&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FKolkata&forecast_days=1").then(function(r){return r.json();}),
+  fetch("https://air-quality-api.open-meteo.com/v1/air-quality?latitude="+lat+"&longitude="+lon+"&current=us_aqi").then(function(r){return r.json();}).catch(function(){return null;})
+]).then(function(res){
+  var wx=res[0], aq=res[1], list=Array.isArray(wx)?wx:[wx];
+  document.getElementById("wx-grid").innerHTML=list.map(function(w,i){
+    var c=w.current||{}, d=(w.daily||{}), wm=wmo(c.weather_code||0);
+    var aqi=aq&&aq[i]&&aq[i].current?aq[i].current.us_aqi:null, band=aqiBand(aqi);
+    var hi=d.temperature_2m_max?d.temperature_2m_max[0]:"-", lo=d.temperature_2m_min?d.temperature_2m_min[0]:"-";
+    return '<div class="wx-card"><div class="wx-city">'+esc(CITIES[i][0])+'</div>'
+      +'<div class="wx-temp">'+wm[0]+" "+Math.round(c.temperature_2m||0)+"\u00B0C</div>"
+      +'<div class="wx-cond">'+wm[1]+" \u00B7 H:"+Math.round(hi)+"\u00B0 L:"+Math.round(lo)+"\u00B0</div>"
+      +'<div class="wx-meta">Humidity '+(c.relative_humidity_2m||"-")+"% \u00B7 Wind "+Math.round(c.wind_speed_10m||0)+" km/h</div>"
+      +(aqi!=null?'<div class="aqi '+band[0]+'">AQI '+aqi+" \u00B7 "+band[1]+"</div>":'<div class="wx-meta">AQI unavailable</div>')
+      +"</div>";
+  }).join("");
+}).catch(function(){document.getElementById("wx-grid").innerHTML='<p class="muted">Weather feed unreachable right now.</p>';});
+var md=new Date().toLocaleDateString("en-CA",{timeZone:"Asia/Kolkata"}).slice(5);
+fetch("https://en.wikipedia.org/api/rest_v1/feed/onthisday/events/"+md).then(function(r){return r.json();}).then(function(j){
+  var ev=(j.events||[]).slice(0,10);
+  document.getElementById("otd-list").innerHTML=ev.map(function(e){
+    var title=e.pages&&e.pages[0]?e.pages[0].title:"";
+    var link=title?'<a href="https://en.wikipedia.org/wiki/'+encodeURIComponent(title.replace(/ /g,"_"))+'" target="_blank" rel="noopener">Read more</a>':"";
+    return '<div class="otd-item"><span class="otd-year">'+e.year+"</span><p>"+esc(e.text)+"</p>"+link+"</div>";
+  }).join("")||'<p class="muted">Nothing found for today.</p>';
+}).catch(function(){document.getElementById("otd-list").innerHTML='<p class="muted">History feed unreachable right now.</p>';});
+})();"""
+
+def today_page():
+    body = """<div class="page-head"><h1>Today in India</h1><p class="lede">Live weather and air quality across major Indian cities, plus what happened on this day in history.</p></div>
+<h2>Weather and Air Quality <span class="live-dot"></span></h2>
+<div class="wx-grid" id="wx-grid"><p class="muted">Loading weather...</p></div>
+<p class="muted">Weather by Open-Meteo. AQI is the US EPA index.</p>
+<h2>On This Day</h2>
+<div class="otd-list" id="otd-list"><p class="muted">Loading history...</p></div>
+<p class="muted">Events via Wikipedia.</p>"""
+    return page_shell("Today in India",
+        "Live weather and air quality across Indian cities, plus on-this-day history.",
+        "today", body, "<script>" + TODAY_JS + "</script>")
+
+# ---------------------------------------------------------------- Constitution quiz
+QUIZ_QUESTIONS = [
+ {"q":"The Preamble begins with 'We, the people of India'. This means the ultimate source of authority is","o":["The Parliament","The people of India","The President","The Supreme Court"],"a":1,"e":"The Preamble declares the people as the source of the Constitution's authority."},
+ {"q":"The Constitution of India was adopted on","o":["26 January 1950","15 August 1947","26 November 1949","9 December 1946"],"a":2,"e":"Adopted on 26 November 1949; it came into force on 26 January 1950."},
+ {"q":"Who chaired the Drafting Committee of the Constituent Assembly?","o":["Jawaharlal Nehru","Dr. Rajendra Prasad","Sardar Vallabhbhai Patel","Dr. B. R. Ambedkar"],"a":3,"e":"Ambedkar chaired the seven-member Drafting Committee."},
+ {"q":"The words 'Socialist', 'Secular' and 'Integrity' were added to the Preamble by the","o":["44th Amendment, 1978","42nd Amendment, 1976","52nd Amendment, 1985","86th Amendment, 2002"],"a":1,"e":"The 42nd Amendment (1976) is often called the mini-Constitution."},
+ {"q":"Article 14 guarantees","o":["Freedom of religion","Equality before law and equal protection of laws","Right against exploitation","Cultural and educational rights"],"a":1,"e":"Article 14 is the foundation of the Right to Equality (Articles 14 to 18)."},
+ {"q":"Dr. Ambedkar called this Article the 'heart and soul' of the Constitution","o":["Article 32","Article 21","Article 14","Article 19"],"a":0,"e":"Article 32 gives the Right to Constitutional Remedies."},
+ {"q":"Article 21 protects the","o":["Right to equality","Right to freedom of speech","Right to life and personal liberty","Right to property"],"a":2,"e":"The Supreme Court has read dignity, privacy and livelihood into Article 21."},
+ {"q":"The Fundamental Duties are listed in","o":["Article 51","Article 51A","Article 48A","Article 39A"],"a":1,"e":"Added by the 42nd Amendment; there are 11 duties today."},
+ {"q":"The Directive Principles of State Policy are","o":["Enforceable in courts","Non-justiciable guidelines for the state","Fundamental rights","Emergency provisions"],"a":1,"e":"Part IV of the Constitution; fundamental in governance but not justiciable."},
+ {"q":"The anti-defection law is contained in the","o":["Ninth Schedule","Tenth Schedule","Eighth Schedule","Twelfth Schedule"],"a":1,"e":"Added by the 52nd Amendment in 1985."},
+ {"q":"The voting age was lowered from 21 to 18 by the","o":["61st Amendment, 1989","42nd Amendment, 1976","73rd Amendment, 1992","86th Amendment, 2002"],"a":0,"e":"The 61st Amendment (1989) amended Article 326."},
+ {"q":"Panchayati Raj institutions got constitutional status through the","o":["74th Amendment","73rd Amendment","72nd Amendment","71st Amendment"],"a":1,"e":"The 73rd Amendment (1992) added Part IX."},
+ {"q":"The Right to Education (Article 21A) was added by the","o":["86th Amendment, 2002","93rd Amendment, 2005","97th Amendment, 2011","103rd Amendment, 2019"],"a":0,"e":"Free and compulsory education for children aged 6 to 14."},
+ {"q":"The Goods and Services Tax was introduced by the","o":["100th Amendment","101st Amendment","102nd Amendment","103rd Amendment"],"a":1,"e":"The 101st Amendment (2016) enabled GST."},
+ {"q":"The 10 percent reservation for Economically Weaker Sections came via the","o":["102nd Amendment","103rd Amendment","104th Amendment","105th Amendment"],"a":1,"e":"The 103rd Amendment (2019) added Articles 15(6) and 16(6)."},
+ {"q":"One-third reservation for women in legislatures was provided by the","o":["105th Amendment","106th Amendment","107th Amendment","104th Amendment"],"a":1,"e":"The 106th Amendment (2023), to take effect after delimitation."},
+ {"q":"The Constitution originally had how many Schedules?","o":["8","10","12","14"],"a":0,"e":"It began with 8 Schedules; there are 12 today."},
+ {"q":"The Union, State and Concurrent Lists are in the","o":["Sixth Schedule","Seventh Schedule","Ninth Schedule","Tenth Schedule"],"a":1,"e":"The Seventh Schedule distributes legislative subjects."},
+ {"q":"The procedure for amending the Constitution is laid down in","o":["Article 356","Article 360","Article 368","Article 370"],"a":2,"e":"Article 368 provides for three types of amendment."},
+ {"q":"Article 17 deals with the","o":["Abolition of titles","Abolition of untouchability","Protection of life","Freedom of speech"],"a":1,"e":"Untouchability is abolished and its practice forbidden."},
+]
+
+QUIZ_JS = r"""(function(){
+var qs=[],idx=0,score=0,answered=false;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function render(){
+  answered=false;
+  var q=qs[idx], box=document.getElementById("quiz-box");
+  box.innerHTML='<div class="quiz-progress">Question '+(idx+1)+" of "+qs.length+'</div>'
+    +'<div class="quiz-bar"><i style="width:'+Math.round(idx/qs.length*100)+'%"></i></div>'
+    +'<h3 class="quiz-q">'+esc(q.q)+"</h3>"
+    +'<div class="quiz-opts">'+q.o.map(function(o,i){return '<button class="quiz-opt" data-i="'+i+'">'+esc(o)+"</button>";}).join("")+"</div>"
+    +'<p class="quiz-explain" id="quiz-explain" hidden></p>'
+    +'<button class="btn" id="quiz-next" hidden>'+(idx+1===qs.length?"See result":"Next question")+"</button>";
+  Array.prototype.forEach.call(box.querySelectorAll(".quiz-opt"),function(b){
+    b.addEventListener("click",function(){
+      if(answered)return;answered=true;
+      var pick=parseInt(b.getAttribute("data-i"),10), ok=pick===q.a;
+      if(ok)score++;
+      Array.prototype.forEach.call(box.querySelectorAll(".quiz-opt"),function(x){
+        var i=parseInt(x.getAttribute("data-i"),10);
+        if(i===q.a)x.classList.add("correct");else if(i===pick)x.classList.add("wrong");
+        x.disabled=true;
+      });
+      var ex=document.getElementById("quiz-explain");
+      ex.hidden=false;ex.innerHTML=(ok?"Correct. ":"Not quite. ")+esc(q.e||"");
+      document.getElementById("quiz-next").hidden=false;
+    });
+  });
+  document.getElementById("quiz-next").addEventListener("click",function(){
+    idx++;if(idx<qs.length)render();else finish();
+  });
+}
+function finish(){
+  var best=0;try{best=parseInt(localStorage.getItem("vs-quiz-best")||"0",10)||0;}catch(e){}
+  if(score>best){best=score;try{localStorage.setItem("vs-quiz-best",String(best));}catch(e){}}
+  var msg=score===qs.length?"Perfect score. Constitution master.":score>=qs.length*0.7?"Strong. A little revision and you are exam-ready.":score>=qs.length*0.4?"Decent start. Read the summaries and try again.":"Start with the Constitution summary, then retry.";
+  document.getElementById("quiz-box").innerHTML='<div class="quiz-done"><div class="quiz-score">'+score+" / "+qs.length+'</div><p>'+msg+'</p><p class="muted">Best score on this device: '+best+" / "+qs.length+'</p><button class="btn" id="quiz-restart">Try again</button></div>';
+  document.getElementById("quiz-restart").addEventListener("click",function(){idx=0;score=0;qs=shuffle(qs.slice());render();});
+}
+fetch("assets/quiz.json").then(function(r){return r.json();}).then(function(j){qs=shuffle(j);render();})
+.catch(function(){document.getElementById("quiz-box").innerHTML='<p class="muted">Could not load the quiz.</p>';});
+})();"""
+
+def quiz_page():
+    body = """<div class="page-head"><h1>Constitution Quiz</h1><p class="lede">Twenty multiple-choice questions on the Constitution of India, with answers and explanations. Your best score is saved on this device.</p></div>
+<div class="quiz-wrap" id="quiz-box"><p class="muted">Loading quiz...</p></div>
+<p><a class="btn ghost" href="study.html">&larr; Back to Study</a></p>"""
+    return page_shell("Constitution Quiz",
+        "Test your knowledge of the Constitution of India with 20 multiple-choice questions and explanations.",
+        "study", body, "<script>" + QUIZ_JS + "</script>")
+
 def build():
     os.makedirs(SITE, exist_ok=True)
     os.makedirs(CONTENT, exist_ok=True)
@@ -2038,7 +2461,10 @@ def build():
     latest_blog = blog_posts[:3]
     hsec = "blog" if hero["is_blog"] else "posts"
     ht = html.escape(hero["art"]["title"])
-    ticker = f"""<div class="ticker" aria-label="Breaking news"><span class="ticker-label">Breaking</span><div class="ticker-view"><a class="ticker-track" href="{hsec}/{hero['slug']}/"><span>{ht}</span><span class="tick-sep">&nbsp;&bull;&nbsp;</span><span>{ht}</span><span class="tick-sep">&nbsp;&bull;&nbsp;</span></a></div></div>"""
+    tick_seq = "".join(
+        f"""<a href="{'blog' if p['is_blog'] else 'posts'}/{p['slug']}/">{html.escape(p['art']['title'])}</a><span class="tick-sep">&nbsp;&bull;&nbsp;</span>"""
+        for p in latest_news[:5])
+    ticker = f"""<div class="ticker" aria-label="Latest headlines"><span class="ticker-label">Latest</span><div class="ticker-view"><div class="ticker-track">{tick_seq}{tick_seq}</div></div></div>"""
     index = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -2159,6 +2585,43 @@ def build():
     with open(os.path.join(SITE, "scores.html"), "w", encoding="utf-8") as f:
         f.write(scores_page())
 
+    # ---------- markets, policy tracker, study ----------
+    with open(os.path.join(SITE, "assets", "policy.json"), "w", encoding="utf-8") as f:
+        json.dump(POLICY_ENTRIES, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(SITE, "markets.html"), "w", encoding="utf-8") as f:
+        f.write(markets_page())
+    with open(os.path.join(SITE, "policy.html"), "w", encoding="utf-8") as f:
+        f.write(policy_page())
+    study_defs = [
+        ("constitution.html", "Constitution of India: Complete Summary",
+         "Preamble, salient features, all 22 Parts, 12 Schedules, rights, duties and landmark amendments, summarised for UPSC and law aspirants.",
+         "content-study/constitution.md",
+         "Constitution of India: Complete Summary for UPSC and Law Aspirants",
+         "Preamble, salient features, Parts, Schedules, rights, duties and landmark amendments, summarised for UPSC and law aspirants."),
+        ("articles.html", "Key Articles: Simple Summaries",
+         "The important articles of the Indian Constitution explained in plain language, grouped by topic with exam-focused summaries.",
+         "content-study/articles.md",
+         "Key Articles of the Indian Constitution: Simple Summaries for Students",
+         "The important articles of the Indian Constitution explained in plain language for students and exam preparation."),
+    ]
+    study_cards = []
+    for fname, card_t, card_d, md_path, page_t, page_d in study_defs:
+        if os.path.exists(md_path):
+            slug = fname[:-5]
+            with open(os.path.join(SITE, fname), "w", encoding="utf-8") as f:
+                f.write(study_article_page(slug, page_t, page_d, md_path))
+            study_cards.append((fname, card_t, card_d))
+    with open(os.path.join(SITE, "study.html"), "w", encoding="utf-8") as f:
+        f.write(study_hub_page(study_cards))
+
+    # ---------- today page + constitution quiz ----------
+    with open(os.path.join(SITE, "assets", "quiz.json"), "w", encoding="utf-8") as f:
+        json.dump(QUIZ_QUESTIONS, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(SITE, "today.html"), "w", encoding="utf-8") as f:
+        f.write(today_page())
+    with open(os.path.join(SITE, "quiz.html"), "w", encoding="utf-8") as f:
+        f.write(quiz_page())
+
     # ---------- horoscope ----------
     with open(os.path.join(SITE, "horoscope.html"), "w", encoding="utf-8") as f:
         f.write(horoscope_page())
@@ -2251,11 +2714,15 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v4";
+    sw = """const CACHE = "vs-cache-v6";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
+              "markets.html", "policy.html", "assets/policy.json",
+              "study.html", "constitution.html", "articles.html",
+              "quiz.html", "assets/quiz.json",
+              "today.html",
               "assets/readaloud.js"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE))
@@ -2364,7 +2831,8 @@ self.addEventListener("fetch", (e) => {
         f.write(feed)
 
     sm_urls = (["", "archive.html", "blog.html", "scores.html", "horoscope.html",
-               "feed.xml", "tags/"]
+               "markets.html", "policy.html", "study.html", "constitution.html",
+               "articles.html", "quiz.html", "today.html", "feed.xml", "tags/"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts])

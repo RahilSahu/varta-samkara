@@ -1,0 +1,390 @@
+[
+ {
+  "cat": "compliance",
+  "date": "2026-04-01",
+  "title": "Income-tax Act, 2025 comes into force",
+  "summary": "Replaces the six-decade-old Income-tax Act, 1961. 536 sections and 23 chapters; a single \"Tax Year\" concept replaces the Previous Year and Assessment Year framework; Form 16 replaced by system-generated Form 130; CBDT notified the Income-tax Rules, 2026. Tax slabs and rates unchanged.",
+  "sectors": [
+   "All businesses",
+   "Individuals",
+   "Finance"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "TaxGuru",
+    "https://taxguru.in/income-tax/income-tax-act-2025-key-features-effective-date.html"
+   ],
+   [
+    "Drishti IAS",
+    "https://www.drishtiias.com/daily-updates/daily-news-analysis/income-tax-act-2025"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-05-08",
+  "title": "Central Rules under the four Labour Codes notified",
+  "summary": "Code on Wages 2019, Industrial Relations Code 2020, Social Security Code 2020 and the OSH Code 2020: 29 central laws consolidated into 4 codes, in force since 21 Nov 2025. Wages (basic plus DA) must be at least 50 percent of total remuneration; single registration, single return, 351 rules instead of 1,436. States must notify their own rules; the Centre expects all states and UTs done by 31 Oct 2026.",
+  "sectors": [
+   "Employers",
+   "HR",
+   "Manufacturing",
+   "IT services"
+  ],
+  "status": "In force, states phasing in",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/india-news/all-states-uts-may-notify-labour-code-rules-by-oct-31-labour-secretary-126092401119_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2025-11-14",
+  "title": "DPDP Rules, 2025 notified; phased enforcement through 2026",
+  "summary": "Digital Personal Data Protection framework: the Data Protection Board of India is active; the Consent Manager framework becomes operational around 13 Nov 2026; full substantive obligations (consent, breach notification, data principal rights) become enforceable around May 2027. Penalties go up to Rs 250 crore. 2026 is the build year for compliance programmes.",
+  "sectors": [
+   "Technology",
+   "SaaS",
+   "D2C",
+   "BFSI"
+  ],
+  "status": "Phased rollout",
+  "sources": [
+   [
+    "Compliance guide",
+    "https://www.buildbyravirai.com/blog/dpdp-act-compliance-india-2026-website-saas-guide"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-07-31",
+  "title": "Public Examinations (Prevention of Unfair Means) Amendment Bill, 2026",
+  "summary": "Passed in the Monsoon Session and received presidential assent on 31 Jul 2026. Speedy investigations and time-bound trials for paper-leak offences, higher penalties, Special Fast Track Courts and Special Public Prosecutors. Debated for over 17 hours across both Houses, the longest debate of the session.",
+  "sectors": [
+   "Education",
+   "Students"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/india-news/parliament-monsoon-session-12-bills-introduced-11-passed-33-hrs-spent-126081300890_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-13",
+  "title": "MSME Development (Amendment) Bill, 2026",
+  "summary": "National digital platform for free and voluntary MSME registration; improves access to finance and speeds up resolution of delayed-payment disputes. Assented 13 Aug 2026.",
+  "sectors": [
+   "MSME",
+   "Banking"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-13",
+  "title": "Bankers' Books Evidence Bill, 2026",
+  "summary": "Expands the definition of bankers' books to cover physical, electronic, digital, virtual and cloud-based records. Assented 13 Aug 2026.",
+  "sectors": [
+   "Banking",
+   "Legal"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-01",
+  "title": "Tribunals Reforms Bill, 2026",
+  "summary": "Improves the independence, transparency and efficiency of tribunals; provides for a National Tribunals Commission. Passed by both Houses in the Monsoon Session (20 Jul to 13 Aug 2026).",
+  "sectors": [
+   "Legal",
+   "Governance"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-01",
+  "title": "Mines and Minerals (Development and Regulation) Amendment Bill, 2026",
+  "summary": "Brings greater certainty and predictability to the fiscal regime for the mineral sector. Passed by both Houses in the Monsoon Session.",
+  "sectors": [
+   "Mining",
+   "Industry"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-01",
+  "title": "Taxation and Other Laws (Amendment) Bill, 2026",
+  "summary": "Amendments to taxation and related laws. Passed by both Houses in the Monsoon Session.",
+  "sectors": [
+   "Finance",
+   "Tax"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/india-news/parliament-monsoon-session-12-bills-introduced-11-passed-33-hrs-spent-126081300890_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-01",
+  "title": "National Co-operative Development Corporation (Amendment) Bill, 2026",
+  "summary": "Amends the NCDC Act governing cooperative development. Passed by both Houses in the Monsoon Session.",
+  "sectors": [
+   "Co-operatives",
+   "Agriculture"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "Deccan Herald",
+    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-07",
+  "title": "Prevention of Insults to National Honour (Amendment) Bill, 2026",
+  "summary": "Amendments to the 1971 Act dealing with insults to national honour. Assented 7 Aug 2026.",
+  "sectors": [
+   "Governance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Deccan Herald",
+    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-06",
+  "title": "Registration of Births and Deaths (Amendment) Bill, 2026",
+  "summary": "Amends the 1969 Act governing birth and death registration. Assented 6 Aug 2026.",
+  "sectors": [
+   "Governance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Deccan Herald",
+    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-11",
+  "title": "Supreme Court (Number of Judges) Amendment Bill, 2026",
+  "summary": "Amends the law fixing the number of judges of the Supreme Court. Assented 11 Aug 2026.",
+  "sectors": [
+   "Legal"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Sarkari List",
+    "https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-14",
+  "title": "Kerala (Alteration of Name) Bill, 2026",
+  "summary": "Concerns the alteration of the name of the state. Passed by both Houses in the Monsoon Session; assented 14 Aug 2026.",
+  "sectors": [
+   "Governance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Sarkari List",
+    "https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2026-03-11",
+  "title": "Harish Rana v. Union of India: SC permits passive euthanasia",
+  "summary": "In a historic first, the Supreme Court allowed withdrawal of life-sustaining treatment, including clinically assisted nutrition and hydration, for a patient in a persistent vegetative state for 13 years, applying the Common Cause guidelines. The right to die with dignity was held inseparable from quality palliative and end-of-life care; the Court urged a legislative framework.",
+  "sectors": [
+   "Healthcare",
+   "Law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Legal Services India",
+    "https://www.legalservicesindia.com/harish-rana-v-union-of-india-2026-passive-euthanasia-canh-right-to-die-with-dignity/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2026-07-02",
+  "title": "SC: AI-generated fake judgments are professional misconduct",
+  "summary": "Setting aside an NCLT order in the Essel Infraprojects insolvency case that relied on hallucinated precedents, the Court called fake citations catastrophic for justice delivery and directed zero tolerance for unverified AI-generated legal material.",
+  "sectors": [
+   "Law",
+   "Technology"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Dynamite News",
+    "https://www.dynamitenews.com/technology/supreme-court-slams-ai-generated-fake-judgments-calls-unverified-citations-misconduct"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "",
+  "title": "SC strikes down limits on maternity benefits for adoptive mothers",
+  "summary": "The Court struck down Section 60(4) of the Code on Social Security, 2020 to the extent it limited maternity benefits for adoptive mothers, and favoured legal recognition of paternity leave.",
+  "sectors": [
+   "Employment",
+   "Law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "SCC Times",
+    "https://www.scconline.com/blog/post/2026/08/12/know-thy-judge-justice-jb-pardiwala-supreme-court-of-india/"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2026-09-08",
+  "title": "SEBI eases FPI compliance for government securities",
+  "summary": "FPIs investing exclusively in government securities no longer need to furnish investor group details, effective immediately. Follows the RBI's 5 Jun 2026 circular withdrawing concentration limits for FPIs in G-Secs via the General Route, and the expansion of the Fully Accessible Route to 15, 30 and 40-year securities.",
+  "sectors": [
+   "BFSI",
+   "Capital markets"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Economic Times",
+    "https://economictimes.indiatimes.com/markets/bonds/sebi-eases-fpi-compliance-rules-for-g-sec-bets/articleshow/133902425.cms"
+   ]
+  ]
+ },
+ {
+  "cat": "licence",
+  "date": "",
+  "title": "FSSAI Food Licence",
+  "summary": "Mandatory for food businesses in India. Basic, State or Central licence depending on turnover and scale; applied through the FoSCoS portal with periodic renewal.",
+  "sectors": [
+   "Food",
+   "Retail"
+  ],
+  "status": "Ongoing",
+  "sources": [
+   [
+    "FSSAI",
+    "https://www.fssai.gov.in/"
+   ]
+  ]
+ },
+ {
+  "cat": "licence",
+  "date": "",
+  "title": "GST Registration",
+  "summary": "Mandatory above the turnover threshold (Rs 40 lakh for goods, Rs 20 lakh for services in most states; lower in special-category states). Applied on the GST portal.",
+  "sectors": [
+   "All businesses"
+  ],
+  "status": "Ongoing",
+  "sources": [
+   [
+    "GST Portal",
+    "https://www.gst.gov.in/"
+   ]
+  ]
+ },
+ {
+  "cat": "licence",
+  "date": "",
+  "title": "Shops and Establishment Registration",
+  "summary": "State-level registration for shops, offices and commercial establishments, governing working hours, leave and employment conditions. Applied through the respective state labour department.",
+  "sectors": [
+   "All businesses"
+  ],
+  "status": "Ongoing",
+  "sources": []
+ },
+ {
+  "cat": "licence",
+  "date": "",
+  "title": "Import Export Code (IEC)",
+  "summary": "Mandatory for any import or export business, issued by the Directorate General of Foreign Trade. One-time registration, valid for life of the entity.",
+  "sectors": [
+   "Trade",
+   "Manufacturing"
+  ],
+  "status": "Ongoing",
+  "sources": [
+   [
+    "DGFT",
+    "https://www.dgft.gov.in/"
+   ]
+  ]
+ },
+ {
+  "cat": "bill",
+  "date": "",
+  "title": "Winter Session 2026: legislative agenda awaited",
+  "summary": "The government's legislative agenda for the Winter Session is announced through the Parliamentary Bulletin before the session begins. This tracker will list bills for introduction, consideration and passing as soon as the bulletin is released.",
+  "sectors": [
+   "Governance"
+  ],
+  "status": "To be announced",
+  "sources": [
+   [
+    "PRS Legislative Research",
+    "https://prsindia.org/"
+   ]
+  ]
+ }
+]

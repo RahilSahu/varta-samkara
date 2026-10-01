@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a1a3c">
-<title>You are offline | Varta &amp; Samkara</title>
+<title>Constitution Quiz | Varta &amp; Samkara</title>
 <script>(function(){try{var t=localStorage.getItem('vs-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
-<meta name="description" content="Varta and Samkara offline page.">
-<meta property="og:title" content="You are offline">
-<meta property="og:description" content="Varta and Samkara offline page.">
+<meta name="description" content="Test your knowledge of the Constitution of India with 20 multiple-choice questions and explanations.">
+<meta property="og:title" content="Constitution Quiz">
+<meta property="og:description" content="Test your knowledge of the Constitution of India with 20 multiple-choice questions and explanations.">
 <meta property="og:type" content="article">
 
 
@@ -16,29 +16,27 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="feed.xml">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
-
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Constitution Quiz", "url": "/home/hatch/workspace/varta-samkara-websitestudy.html", "description": "Test your knowledge of the Constitution of India with 20 multiple-choice questions and explanations.", "publisher": {"@type": "Organization", "name": "Varta & Samkara"}}
+</script>
 </head>
 <body>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="scores.html" data-scores-nav>Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="scores.html" data-scores-nav>Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html" class="active">Study</a><a href="today.html">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
 </header>
-<section class="hero" style="padding:3rem 1.2rem">
-<div class="hero-inner">
-<div class="kicker">Offline</div>
-<h2>You are offline.</h2>
-<p>Check your connection and try again. Pages you have already visited may still be available from the cache.</p>
-<div class="cta-row"><a class="btn" href="index.html">Try the homepage</a></div>
-</div>
-</section>
+<main class="wrap"><div class="page-head"><h1>Constitution Quiz</h1><p class="lede">Twenty multiple-choice questions on the Constitution of India, with answers and explanations. Your best score is saved on this device.</p></div>
+<div class="quiz-wrap" id="quiz-box"><p class="muted">Loading quiz...</p></div>
+<p><a class="btn ghost" href="study.html">&larr; Back to Study</a></p></main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
 <div class="foot-links"><a href="scores.html">Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="archive.html">Archive</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 <script>
 (function(){
   var nav=document.getElementById('navlinks'),burger=document.getElementById('burger');
@@ -110,5 +108,47 @@ window.addEventListener('load',function(){
   },1600);
 });
 </script>
+<script>(function(){
+var qs=[],idx=0,score=0,answered=false;
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function shuffle(a){for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function render(){
+  answered=false;
+  var q=qs[idx], box=document.getElementById("quiz-box");
+  box.innerHTML='<div class="quiz-progress">Question '+(idx+1)+" of "+qs.length+'</div>'
+    +'<div class="quiz-bar"><i style="width:'+Math.round(idx/qs.length*100)+'%"></i></div>'
+    +'<h3 class="quiz-q">'+esc(q.q)+"</h3>"
+    +'<div class="quiz-opts">'+q.o.map(function(o,i){return '<button class="quiz-opt" data-i="'+i+'">'+esc(o)+"</button>";}).join("")+"</div>"
+    +'<p class="quiz-explain" id="quiz-explain" hidden></p>'
+    +'<button class="btn" id="quiz-next" hidden>'+(idx+1===qs.length?"See result":"Next question")+"</button>";
+  Array.prototype.forEach.call(box.querySelectorAll(".quiz-opt"),function(b){
+    b.addEventListener("click",function(){
+      if(answered)return;answered=true;
+      var pick=parseInt(b.getAttribute("data-i"),10), ok=pick===q.a;
+      if(ok)score++;
+      Array.prototype.forEach.call(box.querySelectorAll(".quiz-opt"),function(x){
+        var i=parseInt(x.getAttribute("data-i"),10);
+        if(i===q.a)x.classList.add("correct");else if(i===pick)x.classList.add("wrong");
+        x.disabled=true;
+      });
+      var ex=document.getElementById("quiz-explain");
+      ex.hidden=false;ex.innerHTML=(ok?"Correct. ":"Not quite. ")+esc(q.e||"");
+      document.getElementById("quiz-next").hidden=false;
+    });
+  });
+  document.getElementById("quiz-next").addEventListener("click",function(){
+    idx++;if(idx<qs.length)render();else finish();
+  });
+}
+function finish(){
+  var best=0;try{best=parseInt(localStorage.getItem("vs-quiz-best")||"0",10)||0;}catch(e){}
+  if(score>best){best=score;try{localStorage.setItem("vs-quiz-best",String(best));}catch(e){}}
+  var msg=score===qs.length?"Perfect score. Constitution master.":score>=qs.length*0.7?"Strong. A little revision and you are exam-ready.":score>=qs.length*0.4?"Decent start. Read the summaries and try again.":"Start with the Constitution summary, then retry.";
+  document.getElementById("quiz-box").innerHTML='<div class="quiz-done"><div class="quiz-score">'+score+" / "+qs.length+'</div><p>'+msg+'</p><p class="muted">Best score on this device: '+best+" / "+qs.length+'</p><button class="btn" id="quiz-restart">Try again</button></div>';
+  document.getElementById("quiz-restart").addEventListener("click",function(){idx=0;score=0;qs=shuffle(qs.slice());render();});
+}
+fetch("assets/quiz.json").then(function(r){return r.json();}).then(function(j){qs=shuffle(j);render();})
+.catch(function(){document.getElementById("quiz-box").innerHTML='<p class="muted">Could not load the quiz.</p>';});
+})();</script>
 </body>
 </html>
