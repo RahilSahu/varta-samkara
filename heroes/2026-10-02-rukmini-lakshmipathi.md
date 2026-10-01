@@ -1,6 +1,8 @@
 ---
 title: "Rukmini Lakshmipathi: First woman jailed in the Salt Satyagraha, and Madras Presidency's first woman minister"
 date: 2026-10-02
+image: rukmini-lakshmipathi.jpg
+photo: "India Post commemorative stamp (1997), Wikimedia Commons, GODL-India"
 source: Wikipedia, The Hindu, The Philatelist
 ---
 

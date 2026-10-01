@@ -1,6 +1,8 @@
 ---
 title: "Tirot Sing: The Khasi Chief Who Fought a Four-Year Guerrilla War"
 date: 2026-10-02
+image: tirot-sing.jpg
+photo: "India Post commemorative stamp (1988), Wikimedia Commons, GODL-India"
 source: "Wikipedia, India Today NE, The Shillong Times"
 ---
 

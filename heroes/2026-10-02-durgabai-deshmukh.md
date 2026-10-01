@@ -1,6 +1,8 @@
 ---
 title: "Durgabai Deshmukh: Freedom fighter at twelve, Constituent Assembly member, and builder of India's welfare state"
 date: 2026-10-02
+image: durgabai-deshmukh.jpg
+photo: "India Post commemorative stamp (1982), Wikimedia Commons, GODL-India"
 source: Wikipedia, The Civil India, Organiser
 ---
 

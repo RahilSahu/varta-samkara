@@ -1,6 +1,8 @@
 ---
 title: "Kittur Chennamma: The First Queen to Defeat the British in Battle"
 date: 2026-10-02
+image: kittur-chennamma.jpg
+photo: "India Post commemorative stamp (1977), Wikimedia Commons, GODL-India"
 source: "Oneindia, Hindustan Times"
 ---
 

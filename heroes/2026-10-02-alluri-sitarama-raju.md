@@ -1,6 +1,8 @@
 ---
 title: "Alluri Sitarama Raju: The Manyam Veerudu of the Rampa Rebellion"
 date: 2026-10-02
+image: alluri-sitarama-raju.jpg
+photo: "India Post commemorative stamp (1986), Wikimedia Commons, GODL-India"
 source: "News18, GKToday"
 ---
 
