@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a1a3c">
+<title>You are offline | Varta &amp; Samkara</title>
+<script>(function(){try{var t=localStorage.getItem('vs-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<meta name="description" content="Varta and Samkara offline page.">
+<meta property="og:title" content="You are offline">
+<meta property="og:description" content="Varta and Samkara offline page.">
+<meta property="og:type" content="article">
+
+
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="styles.css">
+<link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="feed.xml">
+<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+
+</head>
+<body>
+<header class="topbar">
+<div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
+<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="blog.html">Blog</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<div class="top-actions">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
+<button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
+</div>
+</header>
+<section class="hero" style="padding:3rem 1.2rem">
+<div class="hero-inner">
+<div class="kicker">Offline</div>
+<h2>You are offline.</h2>
+<p>Check your connection and try again. Pages you have already visited may still be available from the cache.</p>
+<div class="cta-row"><a class="btn" href="index.html">Try the homepage</a></div>
+</div>
+</section>
+<footer><div class="foot-inner">
+<div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
+<div class="foot-links"><a href="tags/">Tags</a><a href="archive.html">Archive</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
+</div></footer>
+<script>
+(function(){
+  var nav=document.getElementById('navlinks'),burger=document.getElementById('burger');
+  if(burger&&nav){burger.addEventListener('click',function(){nav.classList.toggle('open')});}
+  var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
+  },{threshold:.12}):null;
+  document.querySelectorAll('.reveal').forEach(function(el){if(io)io.observe(el);else el.classList.add('visible');});
+  var bar=document.getElementById('progress'),top=document.getElementById('totop');
+  function onScroll(){
+    var h=document.documentElement,sc=h.scrollTop/(h.scrollHeight-h.clientHeight||1);
+    if(bar)bar.style.width=(sc*100)+'%';
+    if(top)top.classList.toggle('show',h.scrollTop>600);
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  var themeBtn=document.getElementById('theme-toggle'),themeIcon=document.getElementById('theme-icon');
+  function paintThemeIcon(){var dark=document.documentElement.getAttribute('data-theme')==='dark';
+    if(themeIcon)themeIcon.innerHTML=dark?'&#9788;':'&#9789;';}
+  if(themeBtn){paintThemeIcon();themeBtn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',cur);
+    try{localStorage.setItem('vs-theme',cur);}catch(e){}
+    paintThemeIcon();});}
+})();
+function copyPageLink(btn){
+  var done=function(){btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy link';},1500);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(location.href).then(done,function(){done();});
+  }else{
+    var t=document.createElement('textarea');t.value=location.href;
+    document.body.appendChild(t);t.select();
+    try{document.execCommand('copy');}catch(e){}
+    document.body.removeChild(t);done();
+  }
+}
+document.addEventListener('input',function(e){
+  if(e.target&&e.target.id==='sitesearch'){
+    var q=e.target.value.trim().toLowerCase();
+    document.querySelectorAll('.card,.list-item').forEach(function(el){
+      var t=(el.getAttribute('data-search')||el.textContent).toLowerCase();
+      el.style.display=(!q||t.indexOf(q)>-1)?'':'none';
+    });
+  }
+});
+</script>
+</body>
+</html>

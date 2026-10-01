@@ -25,9 +25,9 @@ User blogs: drop a markdown file in blogs/ with frontmatter:
 Idempotent: assets are only recopied when the source is newer; stale
 article directories are removed. Safe to run on a schedule.
 """
-import os, re, shutil, html, urllib.parse
+import os, re, shutil, html, json, urllib.parse, textwrap
 from datetime import datetime
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 WS = "/home/hatch/workspace/job-campaign"
 LOG = os.path.join(WS, "varta-samkara-posts-log.md")
@@ -181,7 +181,7 @@ def render_body(blocks):
         elif (m := IMG_MD_RE.match(b)):
             alt, src = m.group(1).strip(), m.group(2).strip()
             out.append(f"<figure><img src=\"{html.escape(src)}\" alt=\"{html.escape(alt)}\""
-                       f" loading=\"lazy\"><figcaption>{html.escape(alt)}</figcaption></figure>")
+                       f" loading=\"lazy\" decoding=\"async\"><figcaption>{html.escape(alt)}</figcaption></figure>")
             lede_done = True
         else:
             cls = "lede" if not lede_done else "body"
@@ -452,6 +452,77 @@ footer a:hover{text-decoration:underline}
 .search:focus{border-color:var(--saffron)}
 .sec-head .search{margin-top:.4rem}
 @media(max-width:640px){.search{margin-left:0;width:100%}.sec-head{flex-wrap:wrap}.related .grid{grid-template-columns:1fr}}
+
+/* ---------- dark mode ---------- */
+html[data-theme="dark"]{
+  --bg:#0b1226; --card:#121b36; --ink:#e9edf6; --muted:#9aa4bd; --line:#223052;
+  --shadow:0 2px 12px rgba(0,0,0,.45); --shadow-lg:0 12px 32px rgba(0,0,0,.55);
+}
+html[data-theme="dark"] .article h1,html[data-theme="dark"] .article h2,
+html[data-theme="dark"] .sec-title,html[data-theme="dark"] .day-group h3,
+html[data-theme="dark"] .latest-sidebar h2{color:#f2f5fc}
+html[data-theme="dark"] .article p.lede{color:#cfd7ec}
+html[data-theme="dark"] .article p.body{color:#c2cadd}
+html[data-theme="dark"] .sourcebox{background:#121b36}
+html[data-theme="dark"] .prevnext a{background:#121b36}
+html[data-theme="dark"] .share-btn{background:#121b36;color:#e9edf6}
+html[data-theme="dark"] .toc a{color:#9db8e8}
+html[data-theme="dark"] .meta .tag{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .meta .tag.opinion{background:#3a2a12;color:#ffb35c}
+html[data-theme="dark"] .tagrow span,html[data-theme="dark"] .tagchip{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .search{background:#121b36;color:#e9edf6}
+html[data-theme="dark"] .opinion-badge{background:#3a2a12;color:#ffb35c}
+html[data-theme="dark"] .sec-link,html[data-theme="dark"] .read{color:#ffb35c}
+html[data-theme="dark"] .card p{color:#9aa4bd}
+html[data-theme="dark"] .byline{color:#9aa4bd}
+.theme-toggle{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
+  color:#fff;border-radius:50%;width:38px;height:38px;font-size:1.05rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.theme-toggle:hover{background:rgba(255,153,51,.25);transform:rotate(12deg)}
+.top-actions{display:flex;align-items:center;gap:.5rem}
+
+/* ---------- breaking news ticker ---------- */
+.ticker{display:flex;align-items:stretch;background:#060d20;color:#fff;overflow:hidden;
+  border-bottom:2px solid var(--saffron)}
+.ticker-label{background:var(--saffron);color:var(--navy);font-weight:800;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;
+  padding:.5rem .9rem;flex-shrink:0}
+.ticker-view{overflow:hidden;flex:1;display:flex;align-items:center}
+.ticker-track{display:inline-block;white-space:nowrap;max-width:max-content;
+  padding:.5rem 0;animation:tickmove 25s linear infinite;color:#ffd9a3;font-size:.92rem;font-weight:600}
+.ticker-track:hover{animation-play-state:paused;color:var(--saffron)}
+.tick-sep{color:var(--saffron);font-weight:800}
+@keyframes tickmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- topic tag chips ---------- */
+.tagchip{background:#eef1f7;color:var(--navy2);border-radius:20px;padding:.12rem .65rem;
+  font-size:.74rem;font-weight:700;letter-spacing:.04em}
+.tagchip:hover{background:var(--saffron);color:var(--navy)}
+.tagrow .tagchip{font-size:.82rem;padding:.28rem .85rem}
+
+/* ---------- article layout + latest sidebar ---------- */
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:2.4rem;align-items:start}
+.latest-sidebar{position:sticky;top:74px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:1.1rem 1.1rem .6rem;box-shadow:var(--shadow)}
+.latest-sidebar h2{font-size:1.02rem;color:var(--navy);margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.5rem}
+.latest-sidebar h2::before{content:'';width:5px;height:1.2em;
+  background:linear-gradient(var(--saffron),var(--saffron2));border-radius:3px}
+.side-item{display:flex;gap:.7rem;align-items:center;padding:.55rem 0;border-top:1px solid var(--line)}
+.side-item img{width:76px;height:56px;object-fit:cover;border-radius:8px;flex-shrink:0;background:var(--navy)}
+.side-item h4{font-size:.84rem;line-height:1.35;font-weight:600}
+.side-item a:hover h4{color:var(--saffron)}
+.side-item .sdate{font-size:.72rem;color:var(--muted)}
+@media(max-width:960px){.article-layout{grid-template-columns:1fr}.latest-sidebar{position:static}}
+
+/* ---------- tags pages ---------- */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.tag-cloud .tagchip{font-size:.95rem;padding:.5rem 1.1rem}
+.tag-count{opacity:.65;font-weight:400;font-size:.85em}
+
+/* ---------- footer links ---------- */
+.foot-links{display:flex;gap:1.1rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
 """
 
 JS = """\
@@ -471,6 +542,14 @@ JS = """\
   }
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
   if(top)top.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  var themeBtn=document.getElementById('theme-toggle'),themeIcon=document.getElementById('theme-icon');
+  function paintThemeIcon(){var dark=document.documentElement.getAttribute('data-theme')==='dark';
+    if(themeIcon)themeIcon.innerHTML=dark?'&#9788;':'&#9789;';}
+  if(themeBtn){paintThemeIcon();themeBtn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-theme',cur);
+    try{localStorage.setItem('vs-theme',cur);}catch(e){}
+    paintThemeIcon();});}
 })();
 function copyPageLink(btn){
   var done=function(){btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy link';},1500);};
@@ -506,28 +585,41 @@ def topbar(depth, active):
         return f'<a href="{r}{href}"{cls}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<div class="top-actions">
+<button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+</div>
 </header>"""
 
-FOOTER = f"""<footer><div class="foot-inner">
+def footer(depth):
+    r = rel(depth)
+    return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
-def head(title, desc, depth, og_image=""):
+def head(title, desc, depth, og_image="", extra_jsonld=""):
     r = rel(depth)
     og = (f'<meta property="og:image" content="{html.escape(og_image)}">' if og_image else "")
+    tw = (f'<meta name="twitter:card" content="summary_large_image">\n'
+          f'<meta name="twitter:image" content="{html.escape(og_image)}">' if og_image else "")
     return f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0a1a3c">
 <title>{html.escape(title)} | Varta &amp; Samkara</title>
+<script>(function(){{try{{var t=localStorage.getItem('vs-theme');if(!t){{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}}document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();</script>
 <meta name="description" content="{html.escape(desc)}">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
 <meta property="og:type" content="article">
 {og}
+{tw}
+<link rel="manifest" href="{r}manifest.json">
 <link rel="stylesheet" href="{r}styles.css">
-<link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="{r}feed.xml">"""
+<link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="{r}feed.xml">
+<script>if('serviceWorker' in navigator){{window.addEventListener('load',function(){{navigator.serviceWorker.register('{r}sw.js').catch(function(){{}});}});}}</script>
+{extra_jsonld}"""
 
 def excerpt_of(blocks, story):
     if blocks:
@@ -569,22 +661,187 @@ def page_url(p):
     section = "blog" if p["is_blog"] else "posts"
     return f"https://rahilsahu.github.io/varta-samkara/{section}/{p['slug']}/"
 
+# ---------------------------------------------------------------- json-ld
+
+SITE_URL = "https://rahilsahu.github.io/varta-samkara/"
+
+def jsonld_article(p):
+    atype = "BlogPosting" if p["is_blog"] else "NewsArticle"
+    img = f"{SITE_URL}{p['og']}" if p.get("og") else ""
+    data = {
+        "@context": "https://schema.org",
+        "@type": atype,
+        "headline": p["art"]["title"],
+        "datePublished": p["date"],
+        "author": {"@type": "Organization", "name": "Varta & Samkara"},
+        "publisher": {"@type": "Organization", "name": "Varta & Samkara"},
+        "description": p["excerpt"],
+        "mainEntityOfPage": page_url(p),
+    }
+    if img:
+        data["image"] = img
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, ensure_ascii=False) + '\n</script>')
+
+def jsonld_home():
+    data = [
+        {"@context": "https://schema.org", "@type": "WebSite",
+         "name": "Varta & Samkara", "url": SITE_URL,
+         "description": "Verified news, sharp explainers and honest opinion from India."},
+        {"@context": "https://schema.org", "@type": "Organization",
+         "name": "Varta & Samkara", "url": SITE_URL,
+         "sameAs": [IG]},
+    ]
+    return ('<script type="application/ld+json">\n'
+            + json.dumps(data, ensure_ascii=False) + '\n</script>')
+
+# ---------------------------------------------------------------- topic tags
+
+TAG_KEYWORDS = {
+    "History": ["history", "ancient", "harappan", "mohenjo-daro", "mohenjodaro",
+                "vedic", "rig veda", "rigveda", "sarasvati", "manusmriti",
+                "aryan", "invasion", "colonial", "british raj", "mughal", "sati",
+                "witch hunt", "civilization", "heritage", "manuscript",
+                "archaeology", "sultan", "empire"],
+    "Politics": ["modi", "trump", "election", "cabinet", "parliament",
+                 "minister", "government", "bjp", "congress", "policy",
+                 "president", "prime minister", "vote", "democracy"],
+    "World": ["america", "united states", "china", "pakistan", "syria",
+              "iraq", "russia", "ukraine", "israel", "iran", "europe",
+              "un general assembly", "unga", "global"],
+    "India": ["india", "indian", "bharat", "delhi", "mumbai", "bengaluru",
+              "kerala", "punjab", "gujarat"],
+    "Economy": ["economy", "gdp", "growth", "rupee", "oil", "trade",
+                "tariff", "msp", "rabi", "startup", "funding", "crore",
+                "lakh", "billion", "market", "stock", "investment", "budget",
+                "inflation"],
+    "Culture": ["culture", "festival", "diwali", "tradition", "yoga",
+                "temple", "music", "cinema", "film", "art"],
+    "Myth-busting": ["myth", "busted", "misinformation", "propaganda",
+                     "debunk", "fake news", "hoax"],
+    "Defence": ["iaf", "army", "navy", "defence", "defense", "missile",
+                "fighter", "pilot", "war", "armed forces", "tarang shakti",
+                "f-35"],
+    "Sports": ["cricket", "asian games", "olympics", "football", "match",
+               "final", "tournament", "medal", "gold"],
+    "Technology": [" ai ", "tech", "apple", "iphone", "satellite", "space",
+                   "galaxeye", "digital", "software", "internet"],
+    "Science": ["science", "research", "dna", "genome", "study",
+                "scientists", "discovery"],
+}
+
+_TAG_RES = {t: [re.compile(r"(?<![a-z])" + re.escape(k.strip()) + r"(?![a-z])")
+                for k in kws]
+            for t, kws in TAG_KEYWORDS.items()}
+
+def assign_topic_tags(p):
+    text = (p["art"]["title"] + " " + p.get("story", p.get("excerpt", ""))).lower()
+    scored = []
+    for tag, res in _TAG_RES.items():
+        s = sum(1 for rx in res if rx.search(text))
+        if s:
+            scored.append((s, tag))
+    scored.sort(key=lambda x: -x[0])
+    tags = [t for _, t in scored[:4]]
+    if p["is_blog"] and "Opinion" not in tags:
+        tags.insert(0, "Opinion")
+    fallbacks = ["India", "World"] if not p["is_blog"] else ["Opinion", "India"]
+    for fb in fallbacks:
+        if len(tags) < 2 and fb not in tags:
+            tags.append(fb)
+    return tags[:4]
+
+def tag_slug(t):
+    return slugify(t)
+
+# ---------------------------------------------------------------- og images
+
+def _og_font(size, bold=True):
+    name = "DejaVuSans-Bold.ttf" if bold else "DejaVuSans.ttf"
+    for p in (f"/usr/share/fonts/truetype/dejavu/{name}",
+              f"/usr/share/fonts/TTF/{name}"):
+        if os.path.exists(p):
+            return ImageFont.truetype(p, size)
+    return ImageFont.load_default()
+
+def make_og_image(p):
+    """Render a 1200x630 title card into assets/og/<slug>.png.
+    Returns the site-relative path, or '' if it could not be made."""
+    relp = f"assets/og/{p['slug']}.png"
+    dst = os.path.join(SITE, relp)
+    srcs = [s for s in p.get("og_srcs", []) if os.path.exists(s)]
+    if os.path.exists(dst) and srcs and \
+            os.path.getmtime(dst) >= max(os.path.getmtime(s) for s in srcs):
+        return relp
+    try:
+        W, H = 1200, 630
+        im = Image.new("RGB", (W, H), "#0a1a3c")
+        d = ImageDraw.Draw(im)
+        d.rectangle([0, 0, W, 30], fill="#ff9933")
+        d.rectangle([0, H - 30, W, H], fill="#ff9933")
+        d.ellipse([W - 240, -200, W + 40, 80], fill="#12295c")
+        d.ellipse([W - 200, -160, W, 40], outline="#ff9933", width=5)
+        fk, fb, fs = _og_font(34), _og_font(70), _og_font(38)
+        d.text((70, 72), "VARTA & SAMKARA", font=fk, fill="#ff9933")
+        max_w = W - 140
+        lines, cur = [], ""
+        for word in p["art"]["title"].split():
+            trial = (cur + " " + word).strip()
+            if d.textlength(trial, font=fb) <= max_w:
+                cur = trial
+            else:
+                if cur:
+                    lines.append(cur)
+                cur = word
+            if len(lines) == 4:
+                cur = ""
+                break
+        if cur and len(lines) < 4:
+            lines.append(cur)
+        y = 168
+        for ln in lines:
+            d.text((70, y), ln, font=fb, fill="#ffffff")
+            y += 88
+        d.text((70, H - 108), p["date"], font=fs, fill="#9aa4bd")
+        os.makedirs(os.path.dirname(dst), exist_ok=True)
+        im.save(dst)
+        return relp
+    except Exception as e:  # PIL present but something odd; keep the build going
+        print(f"OG image skipped for {p['slug']}: {e}")
+        return ""
+
+def make_icon(size):
+    dst = os.path.join(SITE, f"assets/icon-{size}.png")
+    if os.path.exists(dst):
+        return
+    im = Image.new("RGB", (size, size), "#0a1a3c")
+    d = ImageDraw.Draw(im)
+    pad = size // 7
+    d.ellipse([pad, pad, size - pad, size - pad],
+              outline="#ff9933", width=max(4, size // 18))
+    fnt = _og_font(size // 3)
+    d.text((size / 2, size / 2), "VS", font=fnt, fill="#ffffff", anchor="mm")
+    im.save(dst)
+
 def card_html(p, depth=0):
     r = rel(depth)
     tag = ('<span class="tag opinion">Opinion</span>' if p["is_blog"]
            else f'<span class="tag">{html.escape(p["format"])}</span>')
+    chips = "".join(
+        f'<a class="tagchip" href="{r}tags/{tag_slug(t)}/">{html.escape(t)}</a>'
+        for t in p.get("topic_tags", [])[:2])
     section = "blog" if p["is_blog"] else "posts"
     rt = reading_time(p.get("blocks"))
     return f"""<article class="card reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['excerpt'])}">
-<a class="thumb" href="{r}{section}/{p['slug']}/"><img src="{r}{p['thumb']}" alt="{html.escape(p['art']['title'])}" loading="lazy"></a>
+<a class="thumb" href="{r}{section}/{p['slug']}/"><img src="{r}{p['thumb']}" alt="{html.escape(p['art']['title'])}" loading="lazy" decoding="async"></a>
 <div class="card-body">
-<div class="meta">{tag}<span>{p['date']}</span><span>{rt} min read</span></div>
+<div class="meta">{tag}{chips}<span>{p['date']}</span><span>{rt} min read</span></div>
 <h3><a href="{r}{section}/{p['slug']}/">{html.escape(p['art']['title'])}</a></h3>
 <p>{html.escape(p['excerpt'])}</p>
 <a class="read" href="{r}{section}/{p['slug']}/">Read full story &rarr;</a>
 </div></article>"""
 
-def article_page(p, prev_p, next_p, related=None):
+def article_page(p, prev_p, next_p, related=None, latest=None):
     art = p["art"]
     body = render_body(p["blocks"]) if p["blocks"] else "".join(
         f"<p class='body'>{html.escape(pa)}</p>" for pa in art["paras"])
@@ -607,11 +864,14 @@ def article_page(p, prev_p, next_p, related=None):
 <button class="share-btn" type="button" onclick="copyPageLink(this)">Copy link</button></div>"""
     gallery = ""
     if p["gallery"]:
-        figs = "".join(f'<img src="{r}{g}" alt="{html.escape(art["title"])}" loading="lazy">' for g in p["gallery"])
+        figs = "".join(f'<img src="{r}{g}" alt="{html.escape(art["title"])}" loading="lazy" decoding="async">' for g in p["gallery"])
         gallery = f"<h2>In pictures</h2><div class='gallery'>{figs}</div>"
-    tags = ""
-    if art["tags"]:
-        tags = "<div class='tagrow'>" + "".join(f"<span>{html.escape(t)}</span>" for t in art["tags"][:12]) + "</div>"
+    topic_chips = "".join(
+        f'<a class="tagchip" href="{r}tags/{tag_slug(t)}/">{html.escape(t)}</a>'
+        for t in p.get("topic_tags", []))
+    hash_spans = "".join(f"<span>{html.escape(t)}</span>" for t in art["tags"][:12])
+    tags = (f"<div class='tagrow'>{topic_chips}{hash_spans}</div>"
+            if (topic_chips or hash_spans) else "")
     nav = "<div class='prevnext'>"
     if prev_p:
         psec = "blog" if prev_p["is_blog"] else "posts"
@@ -630,7 +890,12 @@ def article_page(p, prev_p, next_p, related=None):
               """<span style="font-size:.82rem">Founder, Varta &amp; Samkara</span></div></div>""" if p["is_blog"] else "")
     meta_tag = (f'<span class="tag opinion">Opinion</span>' if p["is_blog"]
                 else f'<span class="tag">{html.escape(p["format"])}</span>')
-    og_img = f"https://rahilsahu.github.io/varta-samkara/{p['hero']}" if not p["hero"].endswith(".svg") else ""
+    if p.get("og"):
+        og_img = f"{SITE_URL}{p['og']}"
+    elif not p["hero"].endswith(".svg"):
+        og_img = f"{SITE_URL}{p['hero']}"
+    else:
+        og_img = ""
     if p["url"] and p["url"] != IG:
         ig_cta = f"""<div class="ig-cta">
 <p>See the original reel / carousel with motion graphics on Instagram.</p>
@@ -647,24 +912,34 @@ def article_page(p, prev_p, next_p, related=None):
         for q in related:
             qsec = "blog" if q["is_blog"] else "posts"
             cards.append(f"""<article class="card">
-<a class="thumb" href="{r}{qsec}/{q['slug']}/"><img src="{r}{q['thumb']}" alt="{html.escape(q['art']['title'])}" loading="lazy"></a>
+<a class="thumb" href="{r}{qsec}/{q['slug']}/"><img src="{r}{q['thumb']}" alt="{html.escape(q['art']['title'])}" loading="lazy" decoding="async"></a>
 <div class="card-body"><div class="meta"><span>{q['date']}</span></div>
 <h3><a href="{r}{qsec}/{q['slug']}/">{html.escape(q['art']['title'])}</a></h3></div></article>""")
         related_html = f"""<section class="related"><h2>Keep reading</h2><div class="grid">{"".join(cards)}</div></section>"""
+    sidebar_html = ""
+    if latest:
+        items = []
+        for q in latest:
+            qsec = "blog" if q["is_blog"] else "posts"
+            items.append(f"""<a class="side-item" href="{r}{qsec}/{q['slug']}/">
+<img src="{r}{q['thumb']}" alt="" loading="lazy" decoding="async">
+<div><h4>{html.escape(q['art']['title'])}</h4><span class="sdate">{q['date']}</span></div></a>""")
+        sidebar_html = f"""<aside class="latest-sidebar"><h2>Latest stories</h2>{"".join(items)}</aside>"""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{head(art['title'], desc, 2, og_img)}
+{head(art['title'], desc, 2, og_img, jsonld_article(p))}
 </head>
 <body>
 <div class="progress" id="progress"></div>
 {topbar(2, 'blog' if p['is_blog'] else 'news')}
-<main class="wrap narrow article">
+<main class="wrap article-layout">
+<div class="article-col article">
 <div class="meta" style="margin-top:1rem">{meta_tag}<span>{p['date']}</span><span>{html.escape(p['slot'])}</span><span>{rt} min read</span></div>
 {badge}
 <h1>{html.escape(art['title'])}</h1>
 {byline}
-<img class="article-hero" src="{r}{p['hero']}" alt="{html.escape(art['title'])}">
+<img class="article-hero" src="{r}{p['hero']}" alt="{html.escape(art['title'])}" decoding="async">
 {toc_html}
 {body}
 {gallery}
@@ -677,8 +952,10 @@ def article_page(p, prev_p, next_p, related=None):
 {ig_cta}
 {related_html}
 {nav}
+</div>
+{sidebar_html}
 </main>
-{FOOTER}
+{footer(2)}
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 {JS}
 </body>
@@ -739,7 +1016,7 @@ def blog_page_from_file(path):
             "blocks": blocks,
             "excerpt": excerpt_of(blocks, title),
             "url": IG, "hero": hero,
-            "thumb": thumb, "gallery": []}
+            "thumb": thumb, "gallery": [], "og_srcs": [path]}
 
 # ---------------------------------------------------------------- build
 
@@ -790,9 +1067,19 @@ def build():
                    for g in gallery_srcs]
         if blocks is None:
             blocks = art["paras"]
+        og_srcs = []
+        if dpath:
+            cp = os.path.join(dpath, "caption.txt")
+            if os.path.exists(cp):
+                og_srcs.append(cp)
+        for mdp in (os.path.join(CONTENT, slug + ".md"),
+                    os.path.join(CONTENT, (dname or "") + ".md")):
+            if os.path.exists(mdp):
+                og_srcs.append(mdp)
         posts.append({**r, "slug": slug, "art": art, "blocks": blocks,
                       "hero": hero, "thumb": thumb, "gallery": gallery,
-                      "excerpt": excerpt_of(blocks, r["story"])})
+                      "excerpt": excerpt_of(blocks, r["story"]),
+                      "og_srcs": og_srcs})
     # user blogs from blogs/*.md (full articles; absorb matching thin caption pages)
     user_blogs = []
     for fn in user_files:
@@ -809,6 +1096,16 @@ def build():
     blog_posts = sorted([p for p in posts if p["is_blog"]] + user_blogs,
                         key=lambda p: (p["date"], p["slot"]), reverse=True)
 
+    # topic tags + og title cards for every article
+    for p in news + blog_posts:
+        p["topic_tags"] = assign_topic_tags(p)
+        p["og"] = make_og_image(p)
+    all_sorted = sorted(news + blog_posts,
+                        key=lambda p: (p["date"], p["slot"]), reverse=True)
+
+    def latest_for(p, n=5):
+        return [q for q in all_sorted if q["slug"] != p["slug"]][:n]
+
     # article pages (news)
     posts_root = os.path.join(SITE, "posts")
     os.makedirs(posts_root, exist_ok=True)
@@ -822,7 +1119,7 @@ def build():
             f.write(article_page(p,
                                  news[i - 1] if i > 0 else None,
                                  news[i + 1] if i < len(news) - 1 else None,
-                                 related_posts(p, news)))
+                                 related_posts(p, news), latest_for(p)))
     # blog pages
     blog_root = os.path.join(SITE, "blog")
     os.makedirs(blog_root, exist_ok=True)
@@ -836,7 +1133,7 @@ def build():
             f.write(article_page(p,
                                  blog_posts[i - 1] if i > 0 else None,
                                  blog_posts[i + 1] if i < len(blog_posts) - 1 else None,
-                                 related_posts(p, blog_posts)))
+                                 related_posts(p, blog_posts), latest_for(p)))
 
     # drop orphaned per-article assets (from merged/removed pages)
     live_slugs = {p["slug"] for p in news} | {p["slug"] for p in blog_posts}
@@ -861,14 +1158,18 @@ def build():
     hero = news[0] if news else blog_posts[0]
     latest_news = news[1:10]
     latest_blog = blog_posts[:3]
+    hsec = "blog" if hero["is_blog"] else "posts"
+    ht = html.escape(hero["art"]["title"])
+    ticker = f"""<div class="ticker" aria-label="Breaking news"><span class="ticker-label">Breaking</span><div class="ticker-view"><a class="ticker-track" href="{hsec}/{hero['slug']}/"><span>{ht}</span><span class="tick-sep">&nbsp;&bull;&nbsp;</span><span>{ht}</span><span class="tick-sep">&nbsp;&bull;&nbsp;</span></a></div></div>"""
     index = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 {head("News, Analysis & Opinions from India",
-      "Varta and Samkara: verified news reels, explainers and opinion pieces from India. Every story verified against at least two independent sources.", 0)}
+      "Varta and Samkara: verified news reels, explainers and opinion pieces from India. Every story verified against at least two independent sources.", 0, "", jsonld_home())}
 </head>
 <body>
 {topbar(0, 'home')}
+{ticker}
 <section class="hero">
 <div class="hero-inner">
 <div class="kicker">Top story &bull; {hero['date']}</div>
@@ -896,7 +1197,7 @@ def build():
 <p>Follow the daily slate on Instagram: <a href="{IG}" target="_blank" rel="noopener" style="color:var(--saffron);font-weight:700">@vartaandsamkaraindia</a></p>
 </section>
 </main>
-{FOOTER}
+{footer(0)}
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 {JS}
 </body>
@@ -913,7 +1214,7 @@ def build():
         items = []
         for p in groups[d]:
             items.append(f"""<div class="list-item reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['slot'])}">
-<a href="posts/{p['slug']}/"><img src="{p['thumb']}" alt="" loading="lazy"></a>
+<a href="posts/{p['slug']}/"><img src="{p['thumb']}" alt="" loading="lazy" decoding="async"></a>
 <div class="li-body">
 <div class="meta"><span class="tag">{html.escape(p['format'])}</span><span>{html.escape(p['slot'])}</span></div>
 <h4><a href="posts/{p['slug']}/">{html.escape(p['art']['title'])}</a></h4>
@@ -931,7 +1232,7 @@ def build():
 <input class="search" id="sitesearch" type="search" placeholder="Search stories..." aria-label="Search stories"></div>
 {''.join(blocks)}
 </main>
-{FOOTER}
+{footer(0)}
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 {JS}
 </body>
@@ -966,13 +1267,178 @@ def build():
 <input class="search" id="sitesearch" type="search" placeholder="Search opinions..." aria-label="Search opinions"></div>
 {''.join(bblocks)}
 </main>
-{FOOTER}
+{footer(0)}
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 {JS}
 </body>
 </html>"""
     with open(os.path.join(SITE, "blog.html"), "w", encoding="utf-8") as f:
         f.write(blogidx)
+
+    # ---------- tag pages ----------
+    tag_map = {}
+    for p in news + blog_posts:
+        for t in p["topic_tags"]:
+            tag_map.setdefault(t, []).append(p)
+    tags_root = os.path.join(SITE, "tags")
+    os.makedirs(tags_root, exist_ok=True)
+    # drop stale tag dirs
+    for d in os.listdir(tags_root):
+        if os.path.isdir(os.path.join(tags_root, d)) and \
+                d not in {tag_slug(t) for t in tag_map}:
+            shutil.rmtree(os.path.join(tags_root, d))
+    for t in sorted(tag_map):
+        tdir = os.path.join(tags_root, tag_slug(t))
+        os.makedirs(tdir, exist_ok=True)
+        tposts = sorted(tag_map[t], key=lambda p: (p["date"], p["slot"]),
+                        reverse=True)
+        cards = "".join(card_html(p, depth=2) for p in tposts)
+        tpage = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head(f"Stories tagged {t}", f"Every Varta and Samkara story tagged {t}.", 2)}
+</head>
+<body>
+{topbar(2, 'tags')}
+<main class="wrap">
+<div class="sec-head"><h2 class="sec-title">Tag: {html.escape(t)} ({len(tposts)})</h2>
+<a class="sec-link" href="../">All tags &rarr;</a></div>
+<div class="grid">
+{cards}
+</div>
+</main>
+{footer(2)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+</body>
+</html>"""
+        with open(os.path.join(tdir, "index.html"), "w", encoding="utf-8") as f:
+            f.write(tpage)
+    cloud = "".join(
+        f'<a class="tagchip" href="{tag_slug(t)}/">{html.escape(t)} '
+        f'<span class="tag-count">({len(tag_map[t])})</span></a>'
+        for t in sorted(tag_map))
+    tagsidx = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head("Browse by Tag", "Browse every Varta and Samkara story by topic tag.", 1)}
+</head>
+<body>
+{topbar(1, 'tags')}
+<main class="wrap">
+<div class="sec-head"><h2 class="sec-title">Browse by tag</h2></div>
+<div class="tag-cloud">
+{cloud}
+</div>
+</main>
+{footer(1)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+</body>
+</html>"""
+    with open(os.path.join(tags_root, "index.html"), "w", encoding="utf-8") as f:
+        f.write(tagsidx)
+
+    # ---------- pwa: manifest, service worker, offline page ----------
+    make_icon(192)
+    make_icon(512)
+    manifest = {
+        "name": "Varta & Samkara",
+        "short_name": "VartaSamkara",
+        "start_url": ".",
+        "display": "standalone",
+        "background_color": "#0a1a3c",
+        "theme_color": "#0a1a3c",
+        "description": "Verified news, sharp explainers and honest opinion from India.",
+        "icons": [
+            {"src": "assets/icon-192.png", "sizes": "192x192",
+             "type": "image/png"},
+            {"src": "assets/icon-512.png", "sizes": "512x512",
+             "type": "image/png"},
+        ],
+    }
+    with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+    sw = """const CACHE = "vs-cache-v2";
+const CORE = ["./", "index.html", "offline.html", "styles.css",
+              "manifest.json", "assets/placeholder.svg"];
+self.addEventListener("install", (e) => {
+  e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE))
+    .then(() => self.skipWaiting()));
+});
+self.addEventListener("activate", (e) => {
+  e.waitUntil(caches.keys()
+    .then((ks) => Promise.all(ks.filter((k) => k !== CACHE)
+      .map((k) => caches.delete(k))))
+    .then(() => self.clients.claim()));
+});
+self.addEventListener("fetch", (e) => {
+  if (e.request.method !== "GET") return;
+  e.respondWith(
+    caches.match(e.request).then((hit) => {
+      const net = fetch(e.request).then((res) => {
+        if (res && res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then((c) => c.put(e.request, copy));
+        }
+        return res;
+      }).catch(() => (e.request.mode === "navigate"
+        ? caches.match("offline.html") : undefined));
+      return hit || net;
+    })
+  );
+});
+"""
+    with open(os.path.join(SITE, "sw.js"), "w", encoding="utf-8") as f:
+        f.write(sw)
+    offline = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head("You are offline", "Varta and Samkara offline page.", 0)}
+</head>
+<body>
+{topbar(0, '')}
+<section class="hero" style="padding:3rem 1.2rem">
+<div class="hero-inner">
+<div class="kicker">Offline</div>
+<h2>You are offline.</h2>
+<p>Check your connection and try again. Pages you have already visited may still be available from the cache.</p>
+<div class="cta-row"><a class="btn" href="index.html">Try the homepage</a></div>
+</div>
+</section>
+{footer(0)}
+{JS}
+</body>
+</html>"""
+    with open(os.path.join(SITE, "offline.html"), "w", encoding="utf-8") as f:
+        f.write(offline)
+
+    # ---------- custom 404 ----------
+    notfound = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+{head("Page not found", "The page you are looking for does not exist.", 0)}
+</head>
+<body>
+{topbar(0, '')}
+<section class="hero" style="padding:3rem 1.2rem">
+<div class="hero-inner">
+<div class="kicker">404</div>
+<h2>That page does not exist.</h2>
+<p>It may have moved, or the link may be wrong. Head back home or browse the full archive.</p>
+<div class="cta-row">
+<a class="btn" href="index.html">Go home</a>
+<a class="btn ghost" href="archive.html">Browse the archive</a>
+</div>
+</div>
+</section>
+{footer(0)}
+<button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
+{JS}
+</body>
+</html>"""
+    with open(os.path.join(SITE, "404.html"), "w", encoding="utf-8") as f:
+        f.write(notfound)
 
     # ---------- rss feed + sitemap ----------
     def rss_date(d):
@@ -1002,7 +1468,8 @@ def build():
     with open(os.path.join(SITE, "feed.xml"), "w", encoding="utf-8") as f:
         f.write(feed)
 
-    sm_urls = (["", "archive.html", "blog.html", "feed.xml"]
+    sm_urls = (["", "archive.html", "blog.html", "feed.xml", "tags/"]
+               + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts])
     sm = "".join(

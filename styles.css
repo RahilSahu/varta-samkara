@@ -218,3 +218,74 @@ footer a:hover{text-decoration:underline}
 .search:focus{border-color:var(--saffron)}
 .sec-head .search{margin-top:.4rem}
 @media(max-width:640px){.search{margin-left:0;width:100%}.sec-head{flex-wrap:wrap}.related .grid{grid-template-columns:1fr}}
+
+/* ---------- dark mode ---------- */
+html[data-theme="dark"]{
+  --bg:#0b1226; --card:#121b36; --ink:#e9edf6; --muted:#9aa4bd; --line:#223052;
+  --shadow:0 2px 12px rgba(0,0,0,.45); --shadow-lg:0 12px 32px rgba(0,0,0,.55);
+}
+html[data-theme="dark"] .article h1,html[data-theme="dark"] .article h2,
+html[data-theme="dark"] .sec-title,html[data-theme="dark"] .day-group h3,
+html[data-theme="dark"] .latest-sidebar h2{color:#f2f5fc}
+html[data-theme="dark"] .article p.lede{color:#cfd7ec}
+html[data-theme="dark"] .article p.body{color:#c2cadd}
+html[data-theme="dark"] .sourcebox{background:#121b36}
+html[data-theme="dark"] .prevnext a{background:#121b36}
+html[data-theme="dark"] .share-btn{background:#121b36;color:#e9edf6}
+html[data-theme="dark"] .toc a{color:#9db8e8}
+html[data-theme="dark"] .meta .tag{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .meta .tag.opinion{background:#3a2a12;color:#ffb35c}
+html[data-theme="dark"] .tagrow span,html[data-theme="dark"] .tagchip{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .search{background:#121b36;color:#e9edf6}
+html[data-theme="dark"] .opinion-badge{background:#3a2a12;color:#ffb35c}
+html[data-theme="dark"] .sec-link,html[data-theme="dark"] .read{color:#ffb35c}
+html[data-theme="dark"] .card p{color:#9aa4bd}
+html[data-theme="dark"] .byline{color:#9aa4bd}
+.theme-toggle{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);
+  color:#fff;border-radius:50%;width:38px;height:38px;font-size:1.05rem;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s}
+.theme-toggle:hover{background:rgba(255,153,51,.25);transform:rotate(12deg)}
+.top-actions{display:flex;align-items:center;gap:.5rem}
+
+/* ---------- breaking news ticker ---------- */
+.ticker{display:flex;align-items:stretch;background:#060d20;color:#fff;overflow:hidden;
+  border-bottom:2px solid var(--saffron)}
+.ticker-label{background:var(--saffron);color:var(--navy);font-weight:800;font-size:.78rem;
+  text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;
+  padding:.5rem .9rem;flex-shrink:0}
+.ticker-view{overflow:hidden;flex:1;display:flex;align-items:center}
+.ticker-track{display:inline-block;white-space:nowrap;max-width:max-content;
+  padding:.5rem 0;animation:tickmove 25s linear infinite;color:#ffd9a3;font-size:.92rem;font-weight:600}
+.ticker-track:hover{animation-play-state:paused;color:var(--saffron)}
+.tick-sep{color:var(--saffron);font-weight:800}
+@keyframes tickmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ---------- topic tag chips ---------- */
+.tagchip{background:#eef1f7;color:var(--navy2);border-radius:20px;padding:.12rem .65rem;
+  font-size:.74rem;font-weight:700;letter-spacing:.04em}
+.tagchip:hover{background:var(--saffron);color:var(--navy)}
+.tagrow .tagchip{font-size:.82rem;padding:.28rem .85rem}
+
+/* ---------- article layout + latest sidebar ---------- */
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:2.4rem;align-items:start}
+.latest-sidebar{position:sticky;top:74px;background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:1.1rem 1.1rem .6rem;box-shadow:var(--shadow)}
+.latest-sidebar h2{font-size:1.02rem;color:var(--navy);margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.5rem}
+.latest-sidebar h2::before{content:'';width:5px;height:1.2em;
+  background:linear-gradient(var(--saffron),var(--saffron2));border-radius:3px}
+.side-item{display:flex;gap:.7rem;align-items:center;padding:.55rem 0;border-top:1px solid var(--line)}
+.side-item img{width:76px;height:56px;object-fit:cover;border-radius:8px;flex-shrink:0;background:var(--navy)}
+.side-item h4{font-size:.84rem;line-height:1.35;font-weight:600}
+.side-item a:hover h4{color:var(--saffron)}
+.side-item .sdate{font-size:.72rem;color:var(--muted)}
+@media(max-width:960px){.article-layout{grid-template-columns:1fr}.latest-sidebar{position:static}}
+
+/* ---------- tags pages ---------- */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1rem}
+.tag-cloud .tagchip{font-size:.95rem;padding:.5rem 1.1rem}
+.tag-count{opacity:.65;font-weight:400;font-size:.85em}
+
+/* ---------- footer links ---------- */
+.foot-links{display:flex;gap:1.1rem;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}}
