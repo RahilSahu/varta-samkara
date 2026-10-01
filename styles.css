@@ -401,7 +401,7 @@ html[data-theme="dark"] .mkt-badge.closed{background:#3b1a1a;color:#e08a8a}
 /* ---------- policy tracker ---------- */
 .p-tools{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1rem 0}
 .p-tabs{display:flex;flex-wrap:wrap;gap:.45rem}
-.p-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);color:inherit;border-radius:999px;padding:.4rem .9rem;font-size:.83rem;cursor:pointer;font-family:inherit}
+.p-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);color:inherit;border-radius:999px;padding:.4rem .9rem;font-size:.83rem;cursor:pointer;font-family:inherit;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .p-tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
 .p-search{margin-left:auto;border:1px solid var(--line,#e2e2e2);border-radius:999px;padding:.45rem 1rem;font-size:.85rem;background:var(--card,#fff);color:inherit;min-width:200px;font-family:inherit}
 .p-list{display:grid;gap:.9rem}
@@ -417,6 +417,30 @@ html[data-theme="dark"] .mkt-badge.closed{background:#3b1a1a;color:#e08a8a}
 .p-src a{margin-right:.6rem}
 html[data-theme="dark"] .p-tab.active{background:#e8e8e8;color:#111;border-color:#e8e8e8}
 html[data-theme="dark"] .p-status{background:#1b2a52;color:#cfd7ec}
+
+/* ---------- constitution articles browser ---------- */
+.a-list{display:grid;gap:.9rem}
+.a-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.25rem}
+.a-card h3{margin:.4rem 0 .5rem;font-size:1.08rem}
+.a-card p{margin:.4rem 0;color:var(--ink,#222);line-height:1.6}
+.a-top{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.a-num{font-size:.78rem;font-weight:700;color:#fff;background:var(--saffron,#e07b00);border-radius:999px;padding:.18rem .7rem}
+.a-part{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#eef3ff;color:#2b4acb;border-radius:999px;padding:.18rem .7rem}
+.a-rep{font-size:.72rem;font-weight:700;background:#fde8e8;color:#b3261e;border-radius:999px;padding:.18rem .7rem}
+.a-ver{font-size:.72rem;font-weight:700;background:#fff4d6;color:#8a5a00;border-radius:999px;padding:.18rem .7rem}
+.a-det{margin-top:.5rem}
+.a-det summary{cursor:pointer;color:var(--saffron,#e07b00);font-weight:700;font-size:.85rem}
+html[data-theme="dark"] .a-part{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .a-rep{background:#3a1d1d;color:#f2a8a0}
+html[data-theme="dark"] .a-ver{background:#3a2f14;color:#f2d38a}
+
+/* ---------- current affairs ---------- */
+.ca-day{font-size:.85rem;color:var(--muted,#666)}
+.ca-point{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1rem 1.25rem;margin-bottom:.8rem}
+.ca-point h3{margin:.2rem 0 .4rem;font-size:1.02rem}
+.ca-point p{margin:.3rem 0;color:var(--ink,#222);line-height:1.6;font-size:.94rem}
+.ca-why{font-size:.88rem;color:var(--muted,#555)}
+.ca-src{font-size:.8rem;margin-top:.3rem}
 
 /* ---------- study hub ---------- */
 .study-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.2rem 0}

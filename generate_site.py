@@ -635,7 +635,7 @@ html[data-theme="dark"] .mkt-badge.closed{background:#3b1a1a;color:#e08a8a}
 /* ---------- policy tracker ---------- */
 .p-tools{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:1rem 0}
 .p-tabs{display:flex;flex-wrap:wrap;gap:.45rem}
-.p-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);color:inherit;border-radius:999px;padding:.4rem .9rem;font-size:.83rem;cursor:pointer;font-family:inherit}
+.p-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);color:inherit;border-radius:999px;padding:.4rem .9rem;font-size:.83rem;cursor:pointer;font-family:inherit;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .p-tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
 .p-search{margin-left:auto;border:1px solid var(--line,#e2e2e2);border-radius:999px;padding:.45rem 1rem;font-size:.85rem;background:var(--card,#fff);color:inherit;min-width:200px;font-family:inherit}
 .p-list{display:grid;gap:.9rem}
@@ -651,6 +651,30 @@ html[data-theme="dark"] .mkt-badge.closed{background:#3b1a1a;color:#e08a8a}
 .p-src a{margin-right:.6rem}
 html[data-theme="dark"] .p-tab.active{background:#e8e8e8;color:#111;border-color:#e8e8e8}
 html[data-theme="dark"] .p-status{background:#1b2a52;color:#cfd7ec}
+
+/* ---------- constitution articles browser ---------- */
+.a-list{display:grid;gap:.9rem}
+.a-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.25rem}
+.a-card h3{margin:.4rem 0 .5rem;font-size:1.08rem}
+.a-card p{margin:.4rem 0;color:var(--ink,#222);line-height:1.6}
+.a-top{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.a-num{font-size:.78rem;font-weight:700;color:#fff;background:var(--saffron,#e07b00);border-radius:999px;padding:.18rem .7rem}
+.a-part{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;background:#eef3ff;color:#2b4acb;border-radius:999px;padding:.18rem .7rem}
+.a-rep{font-size:.72rem;font-weight:700;background:#fde8e8;color:#b3261e;border-radius:999px;padding:.18rem .7rem}
+.a-ver{font-size:.72rem;font-weight:700;background:#fff4d6;color:#8a5a00;border-radius:999px;padding:.18rem .7rem}
+.a-det{margin-top:.5rem}
+.a-det summary{cursor:pointer;color:var(--saffron,#e07b00);font-weight:700;font-size:.85rem}
+html[data-theme="dark"] .a-part{background:#1b2a52;color:#cfd7ec}
+html[data-theme="dark"] .a-rep{background:#3a1d1d;color:#f2a8a0}
+html[data-theme="dark"] .a-ver{background:#3a2f14;color:#f2d38a}
+
+/* ---------- current affairs ---------- */
+.ca-day{font-size:.85rem;color:var(--muted,#666)}
+.ca-point{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1rem 1.25rem;margin-bottom:.8rem}
+.ca-point h3{margin:.2rem 0 .4rem;font-size:1.02rem}
+.ca-point p{margin:.3rem 0;color:var(--ink,#222);line-height:1.6;font-size:.94rem}
+.ca-why{font-size:.88rem;color:var(--muted,#555)}
+.ca-src{font-size:.8rem;margin-top:.3rem}
 
 /* ---------- study hub ---------- */
 .study-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin:1.2rem 0}
@@ -2075,7 +2099,8 @@ function paintTabs(){
   Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
     var c=b.getAttribute('data-cat');
     b.classList.toggle('active',cur===c);
-    b.innerHTML=esc(CATS.filter(function(x){return x[0]===c;})[0][1])+' ('+n[c]+')';
+    var sp=b.querySelector('span');
+    if(sp)sp.textContent=CATS.filter(function(x){return x[0]===c;})[0][1]+' ('+n[c]+')';
   });
 }
 function render(){
@@ -2091,10 +2116,12 @@ function render(){
 function buildTabs(){
   var tabs=document.getElementById('p-tabs');
   tabs.innerHTML=CATS.map(function(c){
-    return '<button type="button" class="p-tab'+(cur===c[0]?' active':'')+'" data-cat="'+c[0]+'">'+esc(c[1])+' (0)</button>';
+    return '<button type="button" class="p-tab'+(cur===c[0]?' active':'')+'" data-cat="'+c[0]+'"><span>'+esc(c[1])+' (0)</span></button>';
   }).join('');
-  Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
-    b.addEventListener('click',function(){cur=b.getAttribute('data-cat');render();});
+  tabs.addEventListener('click',function(e){
+    var b=e.target.closest?e.target.closest('button'):null;
+    if(!b||!tabs.contains(b))return;
+    cur=b.getAttribute('data-cat');render();
   });
 }
 function load(){
@@ -2160,6 +2187,136 @@ def markets_page():
         "Live Sensex, Nifty and global indices with gold and silver prices in rupees.",
         "markets", body, "<script>" + MARKETS_JS + "</script>")
 
+ARTICLES_JS = r"""(function(){
+var DATA={articles:[],schedules:[]};
+var PART_ORDER=['I','II','III','IV','IVA','V','VI','VII','VIII','IX','IXA','IXB','X','XI','XII','XIII','XIV','XIVA','XV','XVI','XVII','XVIII','XIX','XX','XXI','XXII'];
+var state={view:'articles',part:'all',q:''};
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function artKey(n){var m=String(n).match(/^(\d+)(.*)$/);return [m?parseInt(m[1],10):0,m?m[2]:''];}
+function card(a){
+  var det=a.detail?'<details class="a-det"><summary>Read detailed note</summary><p>'+esc(a.detail)+'</p></details>':'';
+  var rep=a.repealed?' <span class="a-rep">Repealed</span>':'';
+  var ver=a.verify?' <span class="a-ver">Needs verification</span>':'';
+  return '<article class="a-card"><div class="a-top"><span class="a-num">Article '+esc(a.n)+'</span><span class="a-part">Part '+esc(a.part)+'</span>'+rep+ver+'</div>'
+    +'<h3>'+esc(a.title)+'</h3><p>'+esc(a.s)+'</p>'+det+'</article>';
+}
+function paintPartChips(){
+  var seen={},tabs=$('a-parts');PART_ORDER.forEach(function(p){seen[p]=false;});
+  DATA.articles.forEach(function(a){if(a.part in seen)seen[a.part]=true;});
+  var html='<button type="button" class="p-tab'+(state.part==='all'?' active':'')+'" data-part="all">All Parts</button>';
+  PART_ORDER.forEach(function(p){if(seen[p])html+='<button type="button" class="p-tab'+(state.part===p?' active':'')+'" data-part="'+p+'">Part '+p+'</button>';});
+  tabs.innerHTML=html;
+  Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
+    b.addEventListener('click',function(){state.part=b.getAttribute('data-part');render();});
+  });
+}
+function render(){
+  if(state.view==='schedules'){
+    $('a-list').innerHTML=DATA.schedules.map(function(s){
+      return '<article class="a-card"><div class="a-top"><span class="a-num">'+esc(s.n)+' Schedule</span></div><h3>'+esc(s.title)+'</h3><p>'+esc(s.s)+'</p></article>';
+    }).join('')||'<p class="muted">No schedules found.</p>';
+    $('a-count').textContent=DATA.schedules.length+' schedules';
+    $('a-parts').style.display='none';
+    return;
+  }
+  $('a-parts').style.display='';
+  var list=DATA.articles.filter(function(a){
+    if(state.part!=='all'&&a.part!==state.part)return false;
+    if(state.q){var t=(a.n+' '+a.title+' '+a.s).toLowerCase();if(t.indexOf(state.q)<0)return false;}
+    return true;
+  });
+  list.sort(function(x,y){var kx=artKey(x.n),ky=artKey(y.n);return kx[0]-ky[0]||(kx[1]<ky[1]?-1:kx[1]>ky[1]?1:0);});
+  $('a-count').textContent=list.length+' of '+DATA.articles.length+' articles';
+  $('a-list').innerHTML=list.length?list.map(card).join(''):'<p class="muted">No articles match.</p>';
+  paintPartChips();
+}
+function buildViewTabs(){
+  var tabs=$('a-views');
+  tabs.innerHTML='<button type="button" class="p-tab active" data-view="articles">Articles</button>'
+    +'<button type="button" class="p-tab" data-view="schedules">Schedules</button>';
+  Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(b){
+    b.addEventListener('click',function(){
+      state.view=b.getAttribute('data-view');
+      Array.prototype.forEach.call(tabs.querySelectorAll('button'),function(x){x.classList.toggle('active',x===b);});
+      render();
+    });
+  });
+}
+function load(){
+  fetch('assets/constitution-articles.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(function(j){DATA=j;render();})
+  .catch(function(){
+    $('a-count').textContent='';
+    $('a-list').innerHTML='<p class="muted">Could not load the articles data. <button type="button" class="p-tab" id="a-retry">Tap to retry</button></p>';
+    $('a-retry').addEventListener('click',function(){$('a-list').innerHTML='<p class="muted">Loading articles...</p>';load();});
+  });
+}
+buildViewTabs();
+$('a-search').addEventListener('input',function(e){state.q=e.target.value.trim().toLowerCase();if(state.view==='articles')render();});
+load();
+})();"""
+
+def articles_page():
+    body = """<div class="page-head"><h1>Constitution of India: All Articles</h1><p class="lede">Every article of the Constitution, in plain language, with its Part and short title. Search by article number or keyword, or filter by Part. For legal purposes always consult the official constitutional text.</p></div>
+<div class="p-tools"><div class="p-tabs" id="a-views"></div><input id="a-search" class="p-search" type="search" placeholder="Search articles: try 21, equality, governor..." aria-label="Search articles"></div>
+<div class="p-tabs" id="a-parts" style="margin-bottom:1rem"></div>
+<p class="muted" id="a-count"></p><div class="a-list" id="a-list"><p class="muted">Loading articles...</p></div>"""
+    return page_shell("Constitution of India: All Articles Explained Simply",
+        "All articles of the Indian Constitution explained in simple language, searchable and filterable by Part, for UPSC, law and student exam preparation.",
+        "study", body, "<script>" + ARTICLES_JS + "</script>")
+
+CA_JS = r"""(function(){
+function $(id){return document.getElementById(id);}
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function fmtDate(d){var p=d.split('-');var M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return p[2]+' '+M[parseInt(p[1],10)-1]+' '+p[0];}
+function pointHTML(p){
+  var src=p.src?'<div class="ca-src"><a href="'+esc(p.src[1])+'" target="_blank" rel="noopener">'+esc(p.src[0])+'</a></div>':'';
+  var why=p.why?'<p class="ca-why"><strong>Why it matters for exams:</strong> '+esc(p.why)+'</p>':'';
+  return '<div class="ca-point"><h3>'+esc(p.t)+'</h3><p>'+esc(p.s)+'</p>'+why+src+'</div>';
+}
+function renderDay(day){
+  $('ca-date').textContent=fmtDate(day.date);
+  $('ca-list').innerHTML=day.points.map(pointHTML).join('');
+}
+function load(){
+  fetch('assets/current-affairs.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(function(j){
+    var days=j.days||[];
+    if(!days.length){$('ca-list').innerHTML='<p class="muted">No briefs yet. Check back soon.</p>';return;}
+    var sel=$('ca-sel');
+    sel.innerHTML=days.map(function(d,i){return '<option value="'+i+'">'+fmtDate(d.date)+'</option>';}).join('');
+    sel.addEventListener('change',function(){renderDay(days[parseInt(sel.value,10)]);});
+    renderDay(days[0]);
+  }).catch(function(){
+    $('ca-list').innerHTML='<p class="muted">Could not load current affairs. <button type="button" class="p-tab" id="ca-retry">Tap to retry</button></p>';
+    $('ca-retry').addEventListener('click',function(){$('ca-list').innerHTML='<p class="muted">Loading...</p>';load();});
+  });
+}
+load();
+})();"""
+
+def ca_page():
+    body = """<div class="page-head"><h1>Current Affairs for Government Exams</h1><p class="lede">A fresh brief every day: the developments that matter for UPSC, SSC, Banking and state exams, each with a note on why it matters and a source link.</p></div>
+<div class="p-tools"><label class="ca-day" for="ca-sel">Brief for</label><select id="ca-sel" class="p-search" style="margin-left:0"></select></div>
+<h2 id="ca-date" style="margin-top:0"></h2><div id="ca-list"><p class="muted">Loading...</p></div>
+<p class="muted">Compiled for exam preparation from public reporting. Follow the source links for full stories.</p>"""
+    return page_shell("Daily Current Affairs for Government Exams",
+        "Daily current affairs brief for UPSC, SSC, Banking and state government exam preparation, with exam-relevance notes and sources.",
+        "study", body, "<script>" + CA_JS + "</script>")
+
+def parse_article_details(md_path):
+    """Parse 'Article N: ...' lines from content-study/articles.md into {number: text}."""
+    det, cur = {}, None
+    if not os.path.exists(md_path):
+        return det
+    for line in open(md_path, encoding="utf-8"):
+        m = re.match(r"Article\s+([0-9]+[A-Z]*)\s*:\s*(.*)", line.strip())
+        if m:
+            cur = m.group(1)
+            det[cur] = m.group(2).strip()
+        elif cur and line.strip() and not line.strip().startswith("#"):
+            det[cur] += " " + line.strip()
+    return det
+
 def policy_page():
     body = """<div class="page-head"><h1>Law and Policy Tracker</h1><p class="lede">Compliances, licences, laws and bills, court judgments, policies and upcoming parliamentary business for 2026. Each entry carries its source; verify at the official source before acting on anything here.</p></div>
 <div class="p-tools"><div class="p-tabs" id="p-tabs"></div><input id="p-search" class="p-search" type="search" placeholder="Search the tracker..." aria-label="Search the tracker"></div>
@@ -2175,10 +2332,10 @@ def study_hub_page(cards):
     quiz = ('<a class="study-card" href="quiz.html"><h3>Constitution Quiz</h3>'
             '<p>Test yourself with multiple-choice questions on the Constitution, with answers and explanations. Your best score is saved on this device.</p>'
             '<span class="go">Take the quiz &rarr;</span></a>')
-    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice: the Constitution of India and its key articles, summarised simply for UPSC, law and school students.</p></div><div class="study-grid">{grid}{quiz}</div>
+    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice for UPSC, SSC, Banking and state exams: the Constitution of India article by article, economics, geography, daily current affairs, and a practice quiz.</p></div><div class="study-grid">{grid}{quiz}</div>
 <p class="muted">Study summaries for exam preparation. For legal purposes always consult the official constitutional text.</p>"""
-    return page_shell("Study: Constitution of India for Exams",
-        "Free summaries of the Constitution of India and its key articles for UPSC, law and student exam preparation.",
+    return page_shell("Study for Government Exams: Constitution, Economics, Geography, Current Affairs",
+        "Free study material for UPSC, SSC, Banking and state exams: Constitution articles, economics, geography, daily current affairs and a practice quiz.",
         "study", body)
 
 def study_article_page(slug, title, desc, md_path):
@@ -2624,11 +2781,16 @@ def build():
          "content-study/constitution.md",
          "Constitution of India: Complete Summary for UPSC and Law Aspirants",
          "Preamble, salient features, Parts, Schedules, rights, duties and landmark amendments, summarised for UPSC and law aspirants."),
-        ("articles.html", "Key Articles: Simple Summaries",
-         "The important articles of the Indian Constitution explained in plain language, grouped by topic with exam-focused summaries.",
-         "content-study/articles.md",
-         "Key Articles of the Indian Constitution: Simple Summaries for Students",
-         "The important articles of the Indian Constitution explained in plain language for students and exam preparation."),
+        ("economics.html", "Economics: Fundamentals and Indian Economy",
+         "Micro and macro basics plus the Indian economy: RBI, inflation, budget, taxes, banking and key terms, built for government exams.",
+         "content-study/economics.md",
+         "Economics for Government Exams: Fundamentals and Indian Economy",
+         "Fundamentals of economics and the Indian economy summarised for UPSC, SSC, Banking and state exam preparation."),
+        ("geography.html", "Geography: Physical and Indian Geography",
+         "Earth, atmosphere, oceans, Indian rivers, soils, climate, agriculture and high-yield facts, built for government exams.",
+         "content-study/geography.md",
+         "Geography for Government Exams: Physical and Indian Geography",
+         "Physical geography and Indian geography summarised for UPSC, SSC, Banking and state exam preparation."),
     ]
     study_cards = []
     for fname, card_t, card_d, md_path, page_t, page_d in study_defs:
@@ -2637,6 +2799,26 @@ def build():
             with open(os.path.join(SITE, fname), "w", encoding="utf-8") as f:
                 f.write(study_article_page(slug, page_t, page_d, md_path))
             study_cards.append((fname, card_t, card_d))
+    ca_src = "assets-src/constitution-articles.json"
+    if os.path.exists(ca_src):
+        data = json.load(open(ca_src, encoding="utf-8"))
+        det = parse_article_details("content-study/articles.md")
+        for a in data.get("articles", []):
+            if a.get("n") in det:
+                a["detail"] = det[a["n"]]
+        with open(os.path.join(SITE, "assets", "constitution-articles.json"), "w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=1)
+        with open(os.path.join(SITE, "articles.html"), "w", encoding="utf-8") as f:
+            f.write(articles_page())
+        study_cards.append(("articles.html", "Constitution: All Articles",
+            "Every article of the Constitution in plain language. Search by number or keyword, filter by Part, with detailed notes on the most-asked articles."))
+    caf_src = "content-study/current-affairs.json"
+    if os.path.exists(caf_src):
+        shutil.copy2(caf_src, os.path.join(SITE, "assets", "current-affairs.json"))
+        with open(os.path.join(SITE, "current-affairs.html"), "w", encoding="utf-8") as f:
+            f.write(ca_page())
+        study_cards.append(("current-affairs.html", "Daily Current Affairs",
+            "A fresh exam-focused brief every morning: what happened, why it matters for your exam, and source links."))
     with open(os.path.join(SITE, "study.html"), "w", encoding="utf-8") as f:
         f.write(study_hub_page(study_cards))
 
@@ -2740,12 +2922,12 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v6";
+    sw = """const CACHE = "vs-cache-v7";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
-              "markets.html", "policy.html", "assets/policy.json",
+              "markets.html", "policy.html", "assets/policy.json", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
               "today.html",
