@@ -567,7 +567,7 @@ def related_posts(p, pool, n=3):
 
 def page_url(p):
     section = "blog" if p["is_blog"] else "posts"
-    return f"https://rahilsahu.github.io/varta-samkara/{section}/{p['slug']}/"
+    return f"https://varta-samkara.netlify.app/{section}/{p['slug']}/"
 
 def card_html(p, depth=0):
     r = rel(depth)
@@ -630,7 +630,7 @@ def article_page(p, prev_p, next_p, related=None):
               """<span style="font-size:.82rem">Founder, Varta &amp; Samkara</span></div></div>""" if p["is_blog"] else "")
     meta_tag = (f'<span class="tag opinion">Opinion</span>' if p["is_blog"]
                 else f'<span class="tag">{html.escape(p["format"])}</span>')
-    og_img = f"https://rahilsahu.github.io/varta-samkara/{p['hero']}" if not p["hero"].endswith(".svg") else ""
+    og_img = f"https://varta-samkara.netlify.app/{p['hero']}" if not p["hero"].endswith(".svg") else ""
     if p["url"] and p["url"] != IG:
         ig_cta = f"""<div class="ig-cta">
 <p>See the original reel / carousel with motion graphics on Instagram.</p>
@@ -994,7 +994,7 @@ def build():
     feed = f"""<?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"><channel>
 <title>Varta &amp; Samkara</title>
-<link>https://rahilsahu.github.io/varta-samkara/</link>
+<link>https://varta-samkara.netlify.app/</link>
 <description>Verified news, sharp explainers and honest opinion from India.</description>
 <language>en</language>
 {''.join(feed_items)}
@@ -1006,7 +1006,7 @@ def build():
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts])
     sm = "".join(
-        f"<url><loc>https://rahilsahu.github.io/varta-samkara/{u}</loc></url>"
+        f"<url><loc>https://varta-samkara.netlify.app/{u}</loc></url>"
         for u in sm_urls)
     sitemap = (f'<?xml version="1.0" encoding="utf-8"?>\n'
                f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
