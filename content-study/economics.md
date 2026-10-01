@@ -39,7 +39,7 @@ Related measures adjust GDP step by step. Gross National Product (GNP) = GDP + n
 
 Nominal GDP values output at current-year prices, so it rises when prices rise even if nothing more is produced. Real GDP values output at base-year prices, so it measures actual growth. The GDP deflator = (Nominal GDP / Real GDP) x 100; it is a broad measure of the price level. Per capita income = National Income / population, and it is the simplest indicator of average living standards.
 
-In India, national income is estimated by the National Statistical Office (NSO), which works under the Ministry of Statistics and Programme Implementation. The NSO was formed in 2019 by merging the Central Statistics Office (CSO) and the National Sample Survey Office (NSSO). The current base year for these estimates is 2011-12, meaning real GDP is measured in 2011-12 prices. A base-year revision is periodically done so the numbers reflect the modern economy.
+In India, national income is estimated by the National Statistical Office (NSO), which works under the Ministry of Statistics and Programme Implementation. The NSO was formed in 2019 by merging the Central Statistics Office (CSO) and the National Sample Survey Office (NSSO). The current base year for these estimates is 2022-23: MoSPI released the new GDP series with base 2022-23 on 27 February 2026, replacing the old 2011-12 base, meaning real GDP is now measured in 2022-23 prices. A base-year revision is periodically done so the numbers reflect the modern economy.
 
 The economy is divided into three sectors. The primary sector extracts from nature: agriculture, mining, fishing, and forestry. The secondary sector transforms raw materials: manufacturing, construction, and electricity. The tertiary sector provides services: banking, transport, education, health, IT, and tourism. In India the tertiary sector contributes the largest share of GDP (roughly half or more), while the primary sector still employs the most workers, a mismatch behind much of India's disguised unemployment.
 
@@ -47,7 +47,7 @@ The economy is divided into three sectors. The primary sector extracts from natu
 
 Inflation is a sustained rise in the general price level, which means the purchasing power of money falls. A little inflation is normal, but fast inflation hurts.
 
-India measures inflation with two main indices. The Consumer Price Index (CPI) tracks retail prices paid by households and is computed by the NSO with base year 2012; it covers both goods and services and is the index RBI targets. The Wholesale Price Index (WPI) tracks wholesale prices of goods only and is computed by the Office of the Economic Adviser under DPIIT with base year 2011-12. Headline inflation is the overall index number; core inflation strips out volatile food and fuel prices to show the underlying trend.
+India measures inflation with two main indices. The Consumer Price Index (CPI) tracks retail prices paid by households and is computed by the NSO with base year 2024 under the new series released in 2026 (earlier base 2012); it covers both goods and services and is the index RBI targets. The Wholesale Price Index (WPI) tracks wholesale prices of goods only and is computed by the Office of the Economic Adviser under DPIIT with base year 2011-12. Headline inflation is the overall index number; core inflation strips out volatile food and fuel prices to show the underlying trend.
 
 The types of inflation, each in one line: demand-pull inflation happens when too much money chases too few goods; cost-push inflation happens when production costs like oil or wages rise and firms pass them on; creeping inflation is mild, below about 3 percent a year; walking inflation is moderate, roughly 3 to 10 percent; galloping or running inflation is fast, in double digits; hyperinflation is out of control, above 50 percent a month, as defined by economist Phillip Cagan; stagflation is the painful mix of stagnant growth with high inflation; deflation is a general fall in prices, which sounds pleasant but discourages spending and deepens slowdowns; disinflation means the inflation rate is falling but still positive; reflation is deliberate government action to push the economy back up out of deflation; skewflation means some goods inflate sharply while others see prices fall.
 
@@ -137,8 +137,8 @@ Two schemes appear constantly in exams. MGNREGA (2005 Act, rolled out 2006) guar
 
 - The RBI was established on 1 April 1935 under the RBI Act, 1934, and was nationalised in 1949.
 - India's inflation target is 4 percent CPI with a band of plus or minus 2 percent, set by the six-member Monetary Policy Committee since 2016.
-- National income is estimated by the NSO under MoSPI, and the current base year is 2011-12.
-- CPI is computed by the NSO (base 2012); WPI is computed by the Office of the Economic Adviser under DPIIT (base 2011-12).
+- National income is estimated by the NSO under MoSPI, and the current base year is 2022-23 (revised in February 2026; earlier 2011-12).
+- CPI is computed by the NSO (base 2024 under the new series released in 2026; earlier 2012); WPI is computed by the Office of the Economic Adviser under DPIIT (base 2011-12).
 - Unemployment is measured by the Periodic Labour Force Survey (PLFS) of the NSO, running since 2017.
 - GST was launched on 1 July 2017 through the 101st Constitutional Amendment; the GST Council is created by Article 279A.
 - The FRBM Act, 2003 targets a fiscal deficit of 3 percent of GDP.
