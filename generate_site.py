@@ -29,6 +29,11 @@ import os, re, shutil, html, json, urllib.parse, textwrap
 from datetime import datetime, timezone, timedelta
 from PIL import Image, ImageDraw, ImageFont
 
+# Always run from the website root: many content lookups use relative paths
+# (content-study/, assets-src/, blogs/). Without this, a run from any other
+# working directory silently drops cards and pages that fail os.path.exists.
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
+
 WS = "/home/hatch/workspace/job-campaign"
 LOG = os.path.join(WS, "varta-samkara-posts-log.md")
 POSTS = os.path.join(WS, "varta-samkara", "posts")
@@ -2424,10 +2429,10 @@ def study_hub_page(cards):
     quiz = ('<a class="study-card" href="quiz.html"><h3>Constitution Quiz</h3>'
             '<p>Test yourself with multiple-choice questions on the Constitution, with answers and explanations. Your best score is saved on this device.</p>'
             '<span class="go">Take the quiz &rarr;</span></a>')
-    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice for UPSC, UPPSC, SSC, Banking and state exams: Indian history ancient to modern, the Constitution article by article, economics, geography, the complete UPPSC syllabus, daily current affairs, and a practice quiz.</p></div><div class="study-grid">{grid}{quiz}</div>
-<p class="muted">Study summaries for exam preparation. For legal purposes always consult the official constitutional text. For the UPPSC syllabus, always verify against the latest official notification.</p>"""
-    return page_shell("Study for Government Exams: History, Constitution, Economics, Geography, UPPSC Syllabus",
-        "Free study material for UPSC, UPPSC, SSC, Banking and state exams: Indian history, Constitution articles, economics, geography, complete UPPSC syllabus, daily current affairs and a practice quiz.",
+    body = f"""<div class="page-head"><h1>Study</h1><p class="lede">Free exam-prep reading and practice for UPSC, UPPSC, SSC, Banking and state exams: Indian history ancient to modern, the Constitution article by article, economics, geography, the complete UPSC syllabus, daily current affairs, and a practice quiz.</p></div><div class="study-grid">{grid}{quiz}</div>
+<p class="muted">Study summaries for exam preparation. For legal purposes always consult the official constitutional text. For the UPSC syllabus, always verify against the latest official notification.</p>"""
+    return page_shell("Study for Government Exams: History, Constitution, Economics, Geography, UPSC Syllabus",
+        "Free study material for UPSC, UPPSC, SSC, Banking and state exams: Indian history, Constitution articles, economics, geography, complete UPSC syllabus, daily current affairs and a practice quiz.",
         "study", body)
 
 def study_article_page(slug, title, desc, md_path):
@@ -3112,7 +3117,7 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v7";
+    sw = """const CACHE = "vs-cache-v8";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg",
               "scores.html", "assets/scores.js", "assets/motogp.json",

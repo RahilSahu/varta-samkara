@@ -1,4 +1,4 @@
-const CACHE = "vs-cache-v7";
+const CACHE = "vs-cache-v8";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg",
               "scores.html", "assets/scores.js", "assets/motogp.json",
