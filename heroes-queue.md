@@ -1,4 +1,4 @@
-# Unforgotten Heroes: upcoming queue
+# Forgotten Heroes: upcoming queue
 
 One name per day, in order. The daily hero cron takes the first name not already
 published in heroes/, researches and writes the article, then deletes the line.

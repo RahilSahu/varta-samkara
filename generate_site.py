@@ -1292,7 +1292,7 @@ def topbar(depth, active):
         return f'<a href="{r}{href}"{cls}{extra}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('markets.html','Markets','markets')}{link('policy.html','Policy','policy')}{link('study.html','Study','study')}{link('today.html','Today','today')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('heroes.html','Heroes','heroes')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('markets.html','Markets','markets')}{link('policy.html','Policy','policy')}{link('study.html','Study','study')}{link('today.html','Today','today')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
@@ -1927,7 +1927,7 @@ def hero_page_from_file(path):
         thumb = hero_site
     else:
         hero = thumb = "assets/hero-placeholder.jpg"
-    return {"slug": slug, "date": date, "slot": "Unforgotten Heroes",
+    return {"slug": slug, "date": date, "slot": "Forgotten Heroes",
             "format": "Hero", "is_blog": False, "is_hero": True,
             "photo_credit": meta.get("photo", "").strip(),
             "art": {"title": title, "paras": [], "source": meta.get("source", "Author's own analysis"),
@@ -2716,7 +2716,7 @@ def build():
                                  blog_posts[i + 1] if i < len(blog_posts) - 1 else None,
                                  related_posts(p, blog_posts), latest_for(p)))
 
-    # unforgotten heroes (heroes/*.md; only those with date <= today publish)
+    # forgotten heroes (heroes/*.md; only those with date <= today publish)
     hero_posts = []
     if os.path.isdir(HEROESDIR):
         for fn in sorted(os.listdir(HEROESDIR)):
@@ -2759,13 +2759,13 @@ def build():
     heroidx = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{head("Unforgotten Heroes", "One freedom fighter a day, whose name history forgot. Verified portraits and stories of India's unsung heroes.", 0)}
+{head("Forgotten Heroes", "One freedom fighter a day, whose name history forgot. Verified portraits and stories of India's unsung heroes.", 0)}
 </head>
 <body>
 {topbar(0, 'heroes')}
 <section class="hero" style="padding:2.6rem 1.2rem">
 <div class="hero-inner">
-<div class="kicker">Unforgotten Heroes</div>
+<div class="kicker">Forgotten Heroes</div>
 <h2>The names history forgot</h2>
 <p>One freedom fighter every day. Not the names in every textbook, but the ones who bled for India and were left out of the story. Every portrait and every fact verified.</p>
 </div>
@@ -2809,7 +2809,7 @@ def build():
     if hero_posts:
         doy = datetime.now(IST).timetuple().tm_yday
         hp = hero_posts[doy % len(hero_posts)]
-        hero_spot = f"""<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title">Unforgotten Hero of the Day</h2><a class="sec-link" href="heroes.html">All heroes &rarr;</a></div>
+        hero_spot = f"""<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title">Forgotten Hero of the Day</h2><a class="sec-link" href="heroes.html">All heroes &rarr;</a></div>
 <div class="grid">{card_html(hp)}</div>"""
     else:
         hero_spot = ""
@@ -2922,10 +2922,7 @@ def build():
 </div>
 </section>
 <main class="wrap">
-<div class="sec-head"><h2 class="sec-title">Unforgotten Heroes ({len(hero_posts)})</h2><a class="sec-link" href="heroes.html">All heroes &rarr;</a></div>
-<p class="scores-sub">One forgotten freedom fighter every day. Not the names in every textbook, but the ones who bled for India and were left out of the story. Every portrait and every fact verified.</p>
-<div class="grid">{''.join(card_html(p) for p in hero_posts[:6])}</div>
-<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title">All opinions ({len(blog_posts)})</h2>
+<div class="sec-head"><h2 class="sec-title">All opinions ({len(blog_posts)})</h2>
 <input class="search" id="sitesearch" type="search" placeholder="Search opinions..." aria-label="Search opinions"></div>
 {''.join(bblocks)}
 </main>
