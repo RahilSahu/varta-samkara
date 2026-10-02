@@ -404,6 +404,10 @@ html[data-theme="dark"] .mkt-badge.closed{background:#3b1a1a;color:#e08a8a}
 .p-tabs{display:flex;flex-wrap:wrap;gap:.45rem}
 .p-tab{border:1px solid var(--line,#e2e2e2);background:var(--card,#fff);color:inherit;border-radius:999px;padding:.4rem .9rem;font-size:.83rem;cursor:pointer;font-family:inherit;-webkit-user-select:none;user-select:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .p-tab.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
+@media (pointer:coarse){
+  .p-tab{min-height:44px;padding:.65rem 1.15rem;font-size:.92rem}
+  .p-tabs{touch-action:manipulation}
+}
 .p-search{margin-left:auto;border:1px solid var(--line,#e2e2e2);border-radius:999px;padding:.45rem 1rem;font-size:.85rem;background:var(--card,#fff);color:inherit;min-width:200px;font-family:inherit}
 .p-list{display:grid;gap:.9rem}
 .p-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.25rem}
