@@ -1,78 +1,87 @@
 [
  {
-  "cat": "compliance",
-  "date": "2026-04-01",
-  "title": "Income-tax Act, 2025 comes into force",
-  "summary": "Replaces the six-decade-old Income-tax Act, 1961. 536 sections and 23 chapters; a single \"Tax Year\" concept replaces the Previous Year and Assessment Year framework; Form 16 replaced by system-generated Form 130; CBDT notified the Income-tax Rules, 2026. Tax slabs and rates unchanged.",
+  "cat": "policy",
+  "date": "2026-09-30",
+  "title": "Cabinet approves Rs 1.86 lakh crore PM-DHARA green energy transmission scheme",
+  "summary": "The Union Cabinet approved the PM-DHARA (PM-Developing Harmonized and Accelerated Renewable-energy Access) scheme, effectively Green Energy Corridor Phase-III, to build intra-state transmission for evacuating 135 GW of renewable energy plus 50 GWh of battery storage by FY 2032-33. Total outlay Rs 1,86,405 crore with Rs 54,082 crore of central financial support, aimed at the 500 GW non-fossil target by 2030.",
   "sectors": [
-   "All businesses",
-   "Individuals",
-   "Finance"
+   "energy",
+   "infrastructure",
+   "climate"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "Millennium Post",
+    "https://www.millenniumpost.in/business/cabinet-approves-rs-186-lakh-crore-scheme-for-green-energy-evacuation-678054"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2026-09-24",
+  "title": "SC: praying for poll victory is not a corrupt religious appeal; AIMIM MLA's election upheld",
+  "summary": "A three-judge bench (Justices Vikram Nath, Augustine George Masih, Sandeep Mehta) dismissed the election petition against AIMIM MLA Mufti Mohammad Ismail from Malegaon Central, holding that saying a dua for electoral victory is communication with God, not solicitation of votes in the name of religion under Section 123(3) of the Representation of the People Act, 1951. The 72-vote victory stands.",
+  "sectors": [
+   "elections",
+   "judiciary"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "LawChakra",
+    "https://lawchakra.in/supreme-court/supreme-court-dua-poll-victory-not-soliciting-votes-religion-aimim-mla-election/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2026-09-23",
+  "title": "SC split verdict on challenge to CEC appointment law; matter to CJI for Constitution Bench",
+  "summary": "A bench of Justices Dipankar Datta and Satish Chandra Sharma split on whether petitions challenging the Chief Election Commissioner and Other Election Commissioners (Appointment, Conditions of Service and Term of Office) Act, 2023 should go to a Constitution Bench. Justice Datta rejected the reference plea and prima facie questioned whether the PM-plus-minister-plus-LoP selection panel inspires public confidence; Justice Sharma favoured reference. Papers placed before the CJI to consider a Constitution Bench.",
+  "sectors": [
+   "polity",
+   "elections",
+   "judiciary"
+  ],
+  "status": "Decided (split verdict)",
+  "sources": [
+   [
+    "Indian Express",
+    "https://indianexpress.com/article/legal-news/supreme-court-split-verdict-petition-election-commission-sir-chief-appointment-constitution-bench-10890533/"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2026-09-08",
+  "title": "SEBI eases FPI compliance for government securities",
+  "summary": "FPIs investing exclusively in government securities no longer need to furnish investor group details, effective immediately. Follows the RBI's 5 Jun 2026 circular withdrawing concentration limits for FPIs in G-Secs via the General Route, and the expansion of the Fully Accessible Route to 15, 30 and 40-year securities.",
+  "sectors": [
+   "BFSI",
+   "Capital markets"
   ],
   "status": "In force",
   "sources": [
    [
-    "TaxGuru",
-    "https://taxguru.in/income-tax/income-tax-act-2025-key-features-effective-date.html"
-   ],
-   [
-    "Drishti IAS",
-    "https://www.drishtiias.com/daily-updates/daily-news-analysis/income-tax-act-2025"
-   ]
-  ]
- },
- {
-  "cat": "compliance",
-  "date": "2026-05-08",
-  "title": "Central Rules under the four Labour Codes notified",
-  "summary": "Code on Wages 2019, Industrial Relations Code 2020, Social Security Code 2020 and the OSH Code 2020: 29 central laws consolidated into 4 codes, in force since 21 Nov 2025. Wages (basic plus DA) must be at least 50 percent of total remuneration; single registration, single return, 351 rules instead of 1,436. States must notify their own rules; the Centre expects all states and UTs done by 31 Oct 2026.",
-  "sectors": [
-   "Employers",
-   "HR",
-   "Manufacturing",
-   "IT services"
-  ],
-  "status": "In force, states phasing in",
-  "sources": [
-   [
-    "Business Standard",
-    "https://www.business-standard.com/india-news/all-states-uts-may-notify-labour-code-rules-by-oct-31-labour-secretary-126092401119_1.html"
-   ]
-  ]
- },
- {
-  "cat": "compliance",
-  "date": "2025-11-14",
-  "title": "DPDP Rules, 2025 notified; phased enforcement through 2026",
-  "summary": "Digital Personal Data Protection framework: the Data Protection Board of India is active; the Consent Manager framework becomes operational around 13 Nov 2026; full substantive obligations (consent, breach notification, data principal rights) become enforceable around May 2027. Penalties go up to Rs 250 crore. 2026 is the build year for compliance programmes.",
-  "sectors": [
-   "Technology",
-   "SaaS",
-   "D2C",
-   "BFSI"
-  ],
-  "status": "Phased rollout",
-  "sources": [
-   [
-    "Compliance guide",
-    "https://www.buildbyravirai.com/blog/dpdp-act-compliance-india-2026-website-saas-guide"
+    "Economic Times",
+    "https://economictimes.indiatimes.com/markets/bonds/sebi-eases-fpi-compliance-rules-for-g-sec-bets/articleshow/133902425.cms"
    ]
   ]
  },
  {
   "cat": "law",
-  "date": "2026-07-31",
-  "title": "Public Examinations (Prevention of Unfair Means) Amendment Bill, 2026",
-  "summary": "Passed in the Monsoon Session and received presidential assent on 31 Jul 2026. Speedy investigations and time-bound trials for paper-leak offences, higher penalties, Special Fast Track Courts and Special Public Prosecutors. Debated for over 17 hours across both Houses, the longest debate of the session.",
+  "date": "2026-08-14",
+  "title": "Kerala (Alteration of Name) Bill, 2026",
+  "summary": "Concerns the alteration of the name of the state. Passed by both Houses in the Monsoon Session; assented 14 Aug 2026.",
   "sectors": [
-   "Education",
-   "Students"
+   "Governance"
   ],
   "status": "Act (assented)",
   "sources": [
    [
-    "Business Standard",
-    "https://www.business-standard.com/india-news/parliament-monsoon-session-12-bills-introduced-11-passed-33-hrs-spent-126081300890_1.html"
+    "Sarkari List",
+    "https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"
    ]
   ]
  },
@@ -107,6 +116,54 @@
    [
     "Business Standard",
     "https://www.business-standard.com/markets/capital-market-news/parliament-monsoon-session-ends-with-12-bills-passed-amid-disruptions-126081400121_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-11",
+  "title": "Supreme Court (Number of Judges) Amendment Bill, 2026",
+  "summary": "Amends the law fixing the number of judges of the Supreme Court. Assented 11 Aug 2026.",
+  "sectors": [
+   "Legal"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Sarkari List",
+    "https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-07",
+  "title": "Prevention of Insults to National Honour (Amendment) Bill, 2026",
+  "summary": "Amendments to the 1971 Act dealing with insults to national honour. Assented 7 Aug 2026.",
+  "sectors": [
+   "Governance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Deccan Herald",
+    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-08-06",
+  "title": "Registration of Births and Deaths (Amendment) Bill, 2026",
+  "summary": "Amends the 1969 Act governing birth and death registration. Assented 6 Aug 2026.",
+  "sectors": [
+   "Governance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Deccan Herald",
+    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
    ]
   ]
  },
@@ -180,82 +237,35 @@
  },
  {
   "cat": "law",
-  "date": "2026-08-07",
-  "title": "Prevention of Insults to National Honour (Amendment) Bill, 2026",
-  "summary": "Amendments to the 1971 Act dealing with insults to national honour. Assented 7 Aug 2026.",
+  "date": "2026-07-31",
+  "title": "Public Examinations (Prevention of Unfair Means) Amendment Bill, 2026",
+  "summary": "Passed in the Monsoon Session and received presidential assent on 31 Jul 2026. Speedy investigations and time-bound trials for paper-leak offences, higher penalties, Special Fast Track Courts and Special Public Prosecutors. Debated for over 17 hours across both Houses, the longest debate of the session.",
   "sectors": [
-   "Governance"
+   "Education",
+   "Students"
   ],
   "status": "Act (assented)",
   "sources": [
    [
-    "Deccan Herald",
-    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
+    "Business Standard",
+    "https://www.business-standard.com/india-news/parliament-monsoon-session-12-bills-introduced-11-passed-33-hrs-spent-126081300890_1.html"
    ]
   ]
  },
  {
-  "cat": "law",
-  "date": "2026-08-06",
-  "title": "Registration of Births and Deaths (Amendment) Bill, 2026",
-  "summary": "Amends the 1969 Act governing birth and death registration. Assented 6 Aug 2026.",
+  "cat": "policy",
+  "date": "2026-07-31",
+  "title": "Samudra Manthan: Rs 84,084 crore national offshore exploration scheme approved",
+  "summary": "The Union Cabinet approved the Central Sector Scheme for offshore oil and gas exploration with a Phase-I outlay of Rs 84,084 crore up to FY 2030-31. Covers offshore seismic surveys, drilling of 60 deepwater exploration wells, common offshore infrastructure and oil and gas manufacturing/services zones, with government support up to 50% of eligible deepwater drilling cost subject to a Rs 675-crore-per-well ceiling.",
   "sectors": [
-   "Governance"
+   "energy",
+   "oil and gas"
   ],
-  "status": "Act (assented)",
+  "status": "Announced",
   "sources": [
    [
-    "Deccan Herald",
-    "https://www.deccanherald.com/india/parliament-monsoon-session-2026-12-bills-passed-in-both-houses-4110671"
-   ]
-  ]
- },
- {
-  "cat": "law",
-  "date": "2026-08-11",
-  "title": "Supreme Court (Number of Judges) Amendment Bill, 2026",
-  "summary": "Amends the law fixing the number of judges of the Supreme Court. Assented 11 Aug 2026.",
-  "sectors": [
-   "Legal"
-  ],
-  "status": "Act (assented)",
-  "sources": [
-   [
-    "Sarkari List",
-    "https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"
-   ]
-  ]
- },
- {
-  "cat": "law",
-  "date": "2026-08-14",
-  "title": "Kerala (Alteration of Name) Bill, 2026",
-  "summary": "Concerns the alteration of the name of the state. Passed by both Houses in the Monsoon Session; assented 14 Aug 2026.",
-  "sectors": [
-   "Governance"
-  ],
-  "status": "Act (assented)",
-  "sources": [
-   [
-    "Sarkari List",
-    "https://sarkarilist.in/list-of-recent-bills-passed-in-parliament/"
-   ]
-  ]
- },
- {
-  "cat": "judgment",
-  "date": "2026-03-11",
-  "title": "Harish Rana v. Union of India: SC permits passive euthanasia",
-  "summary": "In a historic first, the Supreme Court allowed withdrawal of life-sustaining treatment, including clinically assisted nutrition and hydration, for a patient in a persistent vegetative state for 13 years, applying the Common Cause guidelines. The right to die with dignity was held inseparable from quality palliative and end-of-life care; the Court urged a legislative framework.",
-  "sectors": [
-   "Healthcare",
-   "Law"
-  ],
-  "status": "Decided",
-  "sources": [
-   [
-    "Legal Services India",
-    "https://www.legalservicesindia.com/harish-rana-v-union-of-india-2026-passive-euthanasia-canh-right-to-die-with-dignity/"
+    "GKBooks (citing PIB)",
+    "https://gkbooks.in/central-government-scheme-current-affairs-latest-updates/"
    ]
   ]
  },
@@ -278,6 +288,895 @@
  },
  {
   "cat": "judgment",
+  "date": "2026-05-27",
+  "title": "Supreme Court upholds Special Intensive Revision of electoral rolls",
+  "summary": "A bench headed by CJI Surya Kant (with Justice Joymalya Bagchi) upheld the Election Commission's Special Intensive Revision of electoral rolls, holding it advances the constitutional imperative of free and fair elections and sits within ECI's powers under Article 324 and Section 21(3) of the Representation of the People Act, 1950. The Court clarified that being struck off the rolls does not terminate citizenship. The ruling stemmed from petitions against the Bihar SIR ordered on June 24, 2025.",
+  "sectors": [
+   "elections",
+   "polity"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/as-supreme-court-upholds-sirs-legality-chief-election-commissioner-says-eci-will-always-be-with-voters/article71029425.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-05-08",
+  "title": "Central Rules under the four Labour Codes notified",
+  "summary": "Code on Wages 2019, Industrial Relations Code 2020, Social Security Code 2020 and the OSH Code 2020: 29 central laws consolidated into 4 codes, in force since 21 Nov 2025. Wages (basic plus DA) must be at least 50 percent of total remuneration; single registration, single return, 351 rules instead of 1,436. States must notify their own rules; the Centre expects all states and UTs done by 31 Oct 2026.",
+  "sectors": [
+   "Employers",
+   "HR",
+   "Manufacturing",
+   "IT services"
+  ],
+  "status": "In force, states phasing in",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/india-news/all-states-uts-may-notify-labour-code-rules-by-oct-31-labour-secretary-126092401119_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-04-18",
+  "title": "Jan Vishwas (Amendment of Provisions) Bill, 2026 passed",
+  "summary": "Passed during the Budget Session 2026 (Jan 28 to Apr 18). Amends 80 central Acts to decriminalise minor offences and rationalise penalties, continuing the trust-based governance and ease-of-doing-business push. Businesses should review compliance exposure across the amended Acts as criminal provisions convert to civil penalties.",
+  "sectors": [
+   "business",
+   "compliance",
+   "ease of doing business"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "PRS India",
+    "https://prsindia.org/files/parliament/session_track/2026/session_wrap/Wrap_BS_2026.pdf"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-04-18",
+  "title": "Insolvency and Bankruptcy Code (Amendment) Bill, 2025 passed",
+  "summary": "Passed during the Budget Session 2026 after committee scrutiny; it was the only Bill of the session referred to a parliamentary committee. Introduces a framework for cross-border insolvency and group insolvency, plus a creditor-initiated insolvency resolution process. Significant for banks, NBFCs and corporate borrowers dealing with multinational defaults.",
+  "sectors": [
+   "banking",
+   "finance",
+   "corporate"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "PRS India",
+    "https://prsindia.org/files/parliament/session_track/2026/session_wrap/Wrap_BS_2026.pdf"
+   ],
+   [
+    "The Week",
+    "https://www.theweek.in/wire-updates/national/2026/04/02/unusual-extension-of-budget-session-that-saw-passage-of-key-bills-despite-oppn-uproar.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-04-18",
+  "title": "Transgender Persons (Protection of Rights) Amendment Bill, 2026 passed",
+  "summary": "Passed during the Budget Session 2026 amid opposition demands for select-committee scrutiny. Narrows the definition of transgender person to exclude persons with different sexual orientations and self-perceived identities, and requires a medical board's recommendation for a transgender certificate. Affects identity documentation and access to welfare benefits.",
+  "sectors": [
+   "social justice",
+   "rights"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "PRS India",
+    "https://prsindia.org/files/parliament/session_track/2026/session_wrap/Wrap_BS_2026.pdf"
+   ],
+   [
+    "The Week",
+    "https://www.theweek.in/wire-updates/national/2026/04/02/unusual-extension-of-budget-session-that-saw-passage-of-key-bills-despite-oppn-uproar.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-04-18",
+  "title": "Andhra Pradesh Reorganisation (Amendment) Bill, 2026 passed",
+  "summary": "Passed during the Budget Session 2026. Amends the 2014 parent Act to specify Amaravati as the official capital of Andhra Pradesh with effect from June 2, 2024, settling the state's decade-long capital dispute. Relevant for businesses and individuals dealing with AP government jurisdiction, registrations and filings.",
+  "sectors": [
+   "governance",
+   "states"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "PRS India",
+    "https://prsindia.org/files/parliament/session_track/2026/session_wrap/Wrap_BS_2026.pdf"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2026-04-18",
+  "title": "Finance Bill, 2026 passed: STT hiked on F&O, TCS rationalised",
+  "summary": "Gives effect to the Union Budget 2026-27 tax proposals. Securities Transaction Tax on futures raised from 0.02% to 0.05% and on options premium from 0.10% to 0.15%, with no change in STCG/LTCG rates or income tax slabs. TCS on overseas tour packages and on education/medical remittances under LRS cut to 2%. Interest awarded by Motor Accident Claims Tribunals made fully tax-exempt.",
+  "sectors": [
+   "taxation",
+   "markets",
+   "business"
+  ],
+  "status": "Passed by Parliament",
+  "sources": [
+   [
+    "PRS India",
+    "https://prsindia.org/files/parliament/session_track/2026/session_wrap/Wrap_BS_2026.pdf"
+   ],
+   [
+    "Economic Times",
+    "https://economictimes.indiatimes.com/news/economy/policy/budget-2026-highlights-nirmala-sitharaman-budget-speech-announcement-income-tax-middle-class-fiscal-deficit-jobs-subsidy-defence-tariff-msp-agri-trains-in-union-budget-2026-27/articleshow/127831266.cms"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-04-01",
+  "title": "Income-tax Act, 2025 comes into force",
+  "summary": "Replaces the six-decade-old Income-tax Act, 1961. 536 sections and 23 chapters; a single \"Tax Year\" concept replaces the Previous Year and Assessment Year framework; Form 16 replaced by system-generated Form 130; CBDT notified the Income-tax Rules, 2026. Tax slabs and rates unchanged.",
+  "sectors": [
+   "All businesses",
+   "Individuals",
+   "Finance"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "TaxGuru",
+    "https://taxguru.in/income-tax/income-tax-act-2025-key-features-effective-date.html"
+   ],
+   [
+    "Drishti IAS",
+    "https://www.drishtiias.com/daily-updates/daily-news-analysis/income-tax-act-2025"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2026-03-11",
+  "title": "Harish Rana v. Union of India: SC permits passive euthanasia",
+  "summary": "In a historic first, the Supreme Court allowed withdrawal of life-sustaining treatment, including clinically assisted nutrition and hydration, for a patient in a persistent vegetative state for 13 years, applying the Common Cause guidelines. The right to die with dignity was held inseparable from quality palliative and end-of-life care; the Court urged a legislative framework.",
+  "sectors": [
+   "Healthcare",
+   "Law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Legal Services India",
+    "https://www.legalservicesindia.com/harish-rana-v-union-of-india-2026-passive-euthanasia-canh-right-to-die-with-dignity/"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-02-06",
+  "title": "RBI February 2026 policy: digital fraud compensation up to Rs 25,000, mis-selling curbs",
+  "summary": "Keeping the repo rate at 5.25% with a neutral stance, the RBI's first 2026 policy centred on consumer protection. Proposed framework to compensate customers for losses up to Rs 25,000 from small-value digital frauds, tighter mis-selling norms, harmonised loan-recovery practices, and revised customer liability in unauthorised transactions. Collateral-free MSME loan limit raised from Rs 10 lakh to Rs 20 lakh; ECB framework overhauled with higher borrowing limits and the Rs 2.5 lakh crore VRR cap removed.",
+  "sectors": [
+   "banking",
+   "finance",
+   "consumer protection"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "Moneylife",
+    "https://Moneylife.in/article/rbi-keeps-repo-rate-unchanged-at-525-percentage-announces-digital-fraud-compensation-rules-against-misselling/79589.html"
+   ],
+   [
+    "TaxGuru",
+    "https://taxguru.in/rbi/repo-rate-unchanged-rbi-rolls-sweeping-financial-reforms.html"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2026-02-01",
+  "title": "Union Budget 2026-27: Rs 12.2 lakh crore capex, manufacturing push",
+  "summary": "Presented by Finance Minister Nirmala Sitharaman with fiscal deficit estimated at 4.3% of GDP and public capex raised to Rs 12.2 lakh crore. New schemes: Biopharma SHAKTI (Rs 10,000 crore over five years), India Semiconductor Mission 2.0, Electronics Components Manufacturing Scheme outlay raised to Rs 40,000 crore, Rs 10,000 crore SME Growth Fund, and a container manufacturing scheme. Seven high-speed rail corridors, one dedicated freight corridor and 20 new waterways announced.",
+  "sectors": [
+   "economy",
+   "infrastructure",
+   "manufacturing"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "The Hindu BusinessLine",
+    "https://www.thehindubusinessline.com/economy/budget/union-budget-2026-highlights-key-announcements-and-takeaways/article70577287.ece"
+   ],
+   [
+    "Economic Times",
+    "https://economictimes.indiatimes.com/news/economy/policy/budget-2026-highlights-nirmala-sitharaman-budget-speech-announcement-income-tax-middle-class-fiscal-deficit-jobs-subsidy-defence-tariff-msp-agri-trains-in-union-budget-2026-27/articleshow/127831266.cms"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2026-01-28",
+  "title": "SC: civil courts' jurisdiction not fully ousted under Waqf Act",
+  "summary": "A bench of Justices Sanjay Kumar and K. Vinod Chandran held there is no absolute ouster of civil court jurisdiction even under Section 85 of the Waqf Act, 1995. Disputes over whether a property is waqf vest in the Waqf Tribunal only for properties in the published list of auqaf; unlisted, unregistered properties can be agitated before civil courts. Relevant for property litigation involving claimed waqf assets.",
+  "sectors": [
+   "judiciary",
+   "property"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "New Indian Express",
+    "https://www.newindianexpress.com/nation/2026/Jan/28/civil-courts-jurisdiction-not-completely-barred-under-waqf-act-sc"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2025-11-14",
+  "title": "DPDP Rules, 2025 notified; phased enforcement through 2026",
+  "summary": "Digital Personal Data Protection framework: the Data Protection Board of India is active; the Consent Manager framework becomes operational around 13 Nov 2026; full substantive obligations (consent, breach notification, data principal rights) become enforceable around May 2027. Penalties go up to Rs 250 crore. 2026 is the build year for compliance programmes.",
+  "sectors": [
+   "Technology",
+   "SaaS",
+   "D2C",
+   "BFSI"
+  ],
+  "status": "Phased rollout",
+  "sources": [
+   [
+    "Compliance guide",
+    "https://www.buildbyravirai.com/blog/dpdp-act-compliance-india-2026-website-saas-guide"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-10-01",
+  "title": "India-EFTA Trade and Economic Partnership Agreement (TEPA) in force",
+  "summary": "Entered into force on 1 October 2025; India's first free trade agreement with four developed European nations (Iceland, Liechtenstein, Norway, Switzerland), signed 10 March 2024 after about 16 years of talks. First Indian trade deal with a dedicated investment and jobs chapter: EFTA states aim to invest $100 billion in India over 15 years and facilitate 1 million direct jobs. EFTA offered concessions on 92.2% of tariff lines covering 99.6% of India's export value.",
+  "sectors": [
+   "trade",
+   "investment",
+   "foreign policy"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/opinion/lead/the-india-efta-partnership-one-plus-one-equals-three/article71529585.ece"
+   ],
+   [
+    "The Tribune",
+    "https://www.tribuneindia.com/news/business/india-efta-trade-pact-completes-one-year-usd-100-bn-investment-commitment-to-support-jobs-growth-goyal/amp/"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-09-22",
+  "title": "GST rate rationalisation (GST 2.0)",
+  "summary": "At its 56th meeting on 3 September 2025, the GST Council merged the 5%, 12%, 18% and 28% slabs into two main slabs of 5% and 18%, plus a 40% rate for sin and luxury goods; effective 22 September 2025. Individual life and health insurance exempt; 33 lifesaving medicines exempt; small cars, ACs, TVs and cement moved to 18%.",
+  "sectors": [
+   "taxation",
+   "economy"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "ABP Live",
+    "https://news.abplive.com/business/gst-council-meet-october-7-penalties-refunds-1868743"
+   ],
+   [
+    "Economic Times",
+    "https://m.economictimes.com/opinion/et-commentary/gst-2-0-revived-demand-now-industry-wants-its-tax-credit-unstuck/amp_articleshow/134572203.cms"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2025-09-15",
+  "title": "Supreme Court interim order on Waqf (Amendment) Act, 2025",
+  "summary": "Bench of CJI B.R. Gavai and Justice A.G. Masih refused to stay the Waqf (Amendment) Act 2025 in its entirety, citing the presumption of constitutionality. Stayed the clause requiring five years of practicing Islam before creating a waqf (Section 3(r)) until states frame rules, and stayed the collector's power to adjudicate whether waqf property encroaches on government land. Capped non-Muslim members at 4 in the Central Waqf Council and 3 in state boards; CEO should 'as far as possible' be Muslim.",
+  "sectors": [
+   "religion",
+   "property",
+   "constitutional law"
+  ],
+  "status": "Decided (interim)",
+  "sources": [
+   [
+    "Akashvani",
+    "https://newsonair.gov.in/supreme-court-puts-stay-on-certain-provisions-of-waqf-amendment-act-2025/"
+   ],
+   [
+    "DT Next",
+    "https://www.dtnext.in/news/national/2025-waqf-law-sc-stalls-key-provisions-but-refuses-to-stay-entire-law-846658"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2025-09-01",
+  "title": "Immigration and Foreigners Act, 2025",
+  "summary": "Introduced in Lok Sabha on 11 March, passed by Lok Sabha on 27 March and Rajya Sabha on 2 April; presidential assent on 4 April; brought into force on 1 September 2025. Repeals four colonial-era laws: the Passport (Entry into India) Act 1920, Registration of Foreigners Act 1939, Foreigners Act 1946 and Immigration (Carriers Liability) Act 2000. Forged passports and visas punishable with 2 to 7 years jail and Rs 1 to 10 lakh fine. Mandates foreigner reporting by hotels, universities and hospitals; carriers must submit advance passenger manifests.",
+  "sectors": [
+   "immigration",
+   "borders",
+   "security"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "TaxTMI (PTI)",
+    "https://www.taxtmi.com/news?id=54235"
+   ],
+   [
+    "Ada Derana",
+    "http://www.adaderana.lk/news.php?nid=112089"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2025-08-22",
+  "title": "Promotion and Regulation of Online Gaming Act, 2025",
+  "summary": "Passed by Lok Sabha on 20 August and Rajya Sabha on 21 August (voice vote); presidential assent on 22 August 2025. Imposes a blanket ban on online money games, including fantasy sports, rummy and poker, while formally recognising esports as a sport. Penalties: up to 3 years jail plus Rs 1 crore fine for offering money games; up to 2 years plus Rs 50 lakh for advertising them; banks and payment systems barred from processing related transactions. Dream11, MPL, Zupee and PokerBaazi shut their real-money operations.",
+  "sectors": [
+   "gaming",
+   "technology",
+   "consumer"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Economic Times",
+    "https://economictimes.indiatimes.com/news/economy/policy/new-online-gaming-law-takes-effect-money-games-banned-from-today/articleshow/124255401.cms?from=mdr"
+   ],
+   [
+    "Business Standard",
+    "https://www.business-standard.com/industry/news/govt-blocks-242-illegal-betting-gaming-websites-7-800-banned-so-far-126011601235_1.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2025-08-18",
+  "title": "National Sports Governance Act, 2025",
+  "summary": "Passed by Lok Sabha on 11 August and Rajya Sabha on 12 August; presidential assent on 18 August 2025 (No. 25 of 2025). Creates a National Sports Board, a National Sports Tribunal and a National Sports Election Panel. RTI applies to sports bodies receiving government funding; the BCCI is effectively outside its ambit.",
+  "sectors": [
+   "sports",
+   "governance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/national-sports-governance-bill-gets-president-droupadi-murmus-assent/article69950568.ece"
+   ],
+   [
+    "NDTV",
+    "https://www.ndtv.com/india-news/national-sports-governance-bill-gets-presidents-nod-becomes-an-act-9114075.html"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2025-08-11",
+  "title": "Supreme Court stray dogs orders",
+  "summary": "On 11 August 2025, a two-judge bench (Justices Pardiwala and Mahadevan) ordered all stray dogs in Delhi-NCR to be picked up and moved to shelters within 8 weeks, triggering large public protests. On 22 August, a three-judge bench modified the order: dogs must be released after sterilisation and vaccination, with only aggressive or rabies-suspect dogs kept confined.",
+  "sectors": [
+   "animal welfare",
+   "public health",
+   "municipal"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Bhaskar English",
+    "https://www.bhaskarenglish.in/originals/news/supreme-court-stray-dogs-order-explained-shelter-home-delhi-noida-135740490.html?_branch_match_id=1493607294229995&utm_campaign=135740490&utm_medium=sharing&utm_source=braze"
+   ],
+   [
+    "CSR Journal",
+    "http://thecsrjournal.in/tag/stray-dogs-in-delhi"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-07-24",
+  "title": "India-UK Comprehensive Economic and Trade Agreement signed",
+  "summary": "Signed in London on 24 July 2025 by Commerce Minister Piyush Goyal and UK Business Secretary Jonathan Reynolds, in the presence of PM Narendra Modi and PM Keir Starmer, after 14 rounds of negotiation. 99% of Indian exports get zero-duty access to the UK; average UK import tariff into India falls from 15% to 3%; target of $120 billion bilateral trade by 2030.",
+  "sectors": [
+   "trade",
+   "economy",
+   "foreign policy"
+  ],
+  "status": "Signed",
+  "sources": [
+   [
+    "GOV.UK",
+    "https://www.gov.uk/government/news/historic-uk-india-free-trade-agreement-is-now-in-effect"
+   ],
+   [
+    "Hindustan Times",
+    "https://www.hindustantimes.com/india-news/pm-modi-uk-pm-andy-burnham-discuss-trade-deal-west-asia-crisis-101785515281875.html"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-07-01",
+  "title": "Employment Linked Incentive Scheme (Pradhan Mantri Viksit Bharat Rozgar Yojana)",
+  "summary": "Cabinet approved on 1 July 2025 with an outlay of Rs 99,446 crore, targeting 3.5 crore jobs between 1 August 2025 and 31 July 2027. Part A: first-time employees get one month's wage up to Rs 15,000 via DBT. Part B: employers get up to Rs 3,000 per month for two years for each additional hire (extended to the 3rd and 4th year in manufacturing). Implemented by the Ministry of Labour and Employment through EPFO.",
+  "sectors": [
+   "employment",
+   "labour",
+   "economy"
+  ],
+  "status": "Approved",
+  "sources": [
+   [
+    "DT Next",
+    "https://www.dtnext.in/news/national/cabinet-okays-rs-1-lakh-crore-employment-linked-incentive-scheme-to-create-35-crore-jobs-838799"
+   ],
+   [
+    "IMPRI Insights",
+    "https://impriinsights.in/pradhan-mantri-viksit-bharat-rozgar-yojana-pmvbry-one-year-of-employment-linked-incentives-under-ministry-of-labour-and-employment-impri-impact-and-policy-research-institute/"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-04-30",
+  "title": "Caste enumeration in Census 2027 approved",
+  "summary": "The Cabinet Committee on Political Affairs decided on 30 April 2025 to include caste enumeration in the upcoming decennial census, the first nationwide caste count since 1931. Census 2027 runs in two phases, house-listing then population enumeration, with a central outlay of Rs 11,718.24 crore. Reversed the government's earlier stand and conceded a long-pending demand.",
+  "sectors": [
+   "census",
+   "social justice",
+   "governance"
+  ],
+  "status": "Approved",
+  "sources": [
+   [
+    "Indian Express",
+    "https://indianexpress.com/article/political-pulse/note-on-caste-census-meeting-rewritten-after-social-justice-ministry-pushback-10860920/"
+   ],
+   [
+    "Asianet Newsable",
+    "https://newsable.asianetnews.com/india/census-2027-first-phase-almost-done-over-32-crore-families-recorded-articleshow-2g5dqlu"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2025-04-15",
+  "title": "Banking Laws (Amendment) Act, 2025",
+  "summary": "Act No. 16 of 2025; presidential assent on 15 April 2025. Amends the RBI Act 1934, Banking Regulation Act 1949, SBI Act 1955 and Banking Companies (Acquisition and Transfer of Undertakings) Acts of 1970 and 1980. Allows multiple and successive nominations for deposits and lockers; unclaimed dividends, shares and bonds transferred to the IEPF after 7 years; co-operative bank director tenure raised from 8 to 10 years; fortnightly reporting to RBI.",
+  "sectors": [
+   "banking",
+   "finance"
+  ],
+  "status": "Act (assented)",
+  "sources": [
+   [
+    "Gazette of India (via thc.nic.in)",
+    "https://thc.nic.in/Central%20Governmental%20Acts/Banking%20Laws%20(Amendment)%20Act,%202025.pdf"
+   ],
+   [
+    "TaxGuru",
+    "https://taxguru.in/rbi/banking-laws-amendment-act-2025.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2025-04-08",
+  "title": "Waqf (Amendment) Act, 2025",
+  "summary": "Lok Sabha passed it on 3 April (288 to 232) and Rajya Sabha on 4 April (128 to 95); presidential assent on 5 April; in force from 8 April 2025. Renames the parent law to the UWMEED Act 1995. Key changes: trusts separated from waqf entities, waqf dedication restricted to practicing Muslims, digital property management with a central portal, protection for 'waqf by user' properties, women's rights in family waqf, non-Muslim members in waqf bodies. Drew over 72 petitions challenging it before the Supreme Court.",
+  "sectors": [
+   "religion",
+   "property",
+   "minorities"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Moneycontrol (PTI)",
+    "https://www.moneycontrol.com/news/india/waqf-amendment-act-comes-into-force-from-april-8-12988903.html"
+   ],
+   [
+    "Akashvani",
+    "https://newsonair.gov.in/president-droupadi-murmu-gives-assent-to-waqf-amendment-act-2025/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2025-04-08",
+  "title": "State of Tamil Nadu v. Governor of Tamil Nadu",
+  "summary": "Two-judge bench (Justices J.B. Pardiwala and R. Mahadevan) held Governor R.N. Ravi's withholding of 10 state bills 'illegal and erroneous in law' and used Article 142 to deem them assented to. Laid down timelines for governors: 1 month to decide on assent or reservation on ministerial advice, 3 months against ministerial advice, and 1 month to grant assent after a bill is reconsidered by the legislature.",
+  "sectors": [
+   "constitutional law",
+   "federalism"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Supreme Court Observer",
+    "https://www.scobserver.in/reports/pendency-of-bills-before-tamil-nadu-governor-judgement-summary/"
+   ],
+   [
+    "Moneycontrol (PTI)",
+    "https://www.moneycontrol.com/news/india/supreme-court-slams-tamil-nadu-governor-for-sitting-on-bills-passed-by-assembly-illegal-erroneous-in-law-12988325.html"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-04-01",
+  "title": "Unified Pension Scheme (UPS) operational",
+  "summary": "Notified on 24 January 2025 and operational from 1 April 2025 as an option under NPS for central government employees. Assured pension of 50% of average basic pay for 25 years of service, Rs 10,000 per month minimum after 10 years, and family pension at 60% of the admissible payout. Expected to benefit 23 lakh employees; about 31,555 had opted in by July 2025; enrolment deadline extended to 30 November 2025.",
+  "sectors": [
+   "pensions",
+   "government employees"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "HRKatha",
+    "https://www.hrkatha.com/news/railways-notifies-unified-pension-scheme-rules-for-nps-covered-employees/"
+   ],
+   [
+    "Angel One",
+    "https://www.angelone.in/news/market-updates/unified-pension-scheme-sees-over-1-18-lakh-enrolments-government-says-no-plan-to-replace-it"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2025-01-16",
+  "title": "8th Central Pay Commission announced",
+  "summary": "Cabinet approved the formation of the 8th Central Pay Commission on 16 January 2025, announced by I&B Minister Ashwini Vaishnaw. Covers over 45 lakh central government employees and more than 68 lakh pensioners, as the 7th CPC tenure ends in 2026. Formally constituted on 3 November 2025 under chairperson Justice Ranjana Prakash Desai, with an 18-month deadline to submit recommendations.",
+  "sectors": [
+   "government employees",
+   "finance"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "Akashvani",
+    "https://newsonair.gov.in/ib-minister-ashwini-vaishnaw-briefing-media-about-cabinets-decisions/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-11-13",
+  "title": "Supreme Court lays down pan-India guidelines against 'bulldozer justice'",
+  "summary": "Justices B.R. Gavai and K.V. Viswanathan held that demolishing homes of accused or convicted persons without due process is totally unconstitutional and issued Article 142 guidelines applicable across India: 15-day show-cause notice, personal hearing, reasoned order, videography of demolitions, and contempt proceedings plus personal restitution costs for violations.",
+  "sectors": [
+   "Due process",
+   "Constitutional law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Indian Express",
+    "https://indianexpress.com/article/explained/explained-law/sc-guidelines-illegal-demolitions-9667414/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-11-08",
+  "title": "Supreme Court clears the decks for AMU to claim minority status",
+  "summary": "A seven-judge bench ruled 4:3 that institutions incorporated by statute can claim minority status under Article 30, overruling the 1967 Azeez Basha verdict. The Court held the test is who established the institution and sent the factual question of whether Aligarh Muslim University was established by Muslims to a regular three-judge bench.",
+  "sectors": [
+   "Education",
+   "Constitutional law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/how-the-supreme-court-cleared-the-decks-for-amu-to-claim-its-minority-status-explained/article68852808.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-11-06",
+  "title": "Supreme Court: LMV licence holders may drive transport vehicles up to 7,500 kg",
+  "summary": "A five-judge Constitution bench unanimously held that holders of light motor vehicle licences may drive transport vehicles with unladen weight up to 7,500 kg without a separate endorsement. The Court upheld its 2017 Mukund Dewangan ruling and found no empirical evidence linking LMV licence holders to higher road accident rates.",
+  "sectors": [
+   "Motor vehicles",
+   "Labour"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "Supreme Court Observer",
+    "https://www.scobserver.in/reports/separate-licence-for-light-motor-vehicles-and-transport-vehicles-judgement-summary/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-11-05",
+  "title": "Supreme Court rules not all private property is 'material resources of the community' under Article 39(b)",
+  "summary": "A nine-judge bench ruled 8:1 in Property Owners Association v. State of Maharashtra that the phrase in Article 39(b) does not cover all privately owned property, overruling socialist-leaning verdicts from after 1978. The Court held that whether a resource qualifies depends on factors like its nature, scarcity and effect on public welfare; Justice Sudhanshu Dhulia dissented.",
+  "sectors": [
+   "Property law",
+   "Constitutional law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/the-supreme-court-verdict-on-private-property-rights-and-its-implications-explained/article68835847.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-10-17",
+  "title": "Supreme Court upholds Section 6A of the Citizenship Act, 1955",
+  "summary": "A five-judge bench ruled 4:1 that Section 6A, which grants citizenship to migrants who entered Assam before the 25 March 1971 cut-off under the Assam Accord, is constitutionally valid. The majority found the cut-off reasonable given the Bangladesh liberation war context; Justice J.B. Pardiwala dissented, holding the provision unconstitutional with prospective effect.",
+  "sectors": [
+   "Citizenship",
+   "Constitutional law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/assam-accord-hearing-live-sc-verdict-on-pleas-challenging-section-6a-of-citizenship-act/article68763241.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2024-09-18",
+  "title": "Union Cabinet approves One Nation One Election proposal",
+  "summary": "The Union Cabinet unanimously approved the recommendations of the high-level committee led by former President Ram Nath Kovind, which submitted its report in March 2024. The panel recommended simultaneous Lok Sabha and Assembly elections as the first step, followed by synchronised local body polls within 100 days, along with up to 18 constitutional amendments and a common electoral roll.",
+  "sectors": [
+   "Electoral reforms"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "The Financial Express",
+    "https://www.financialexpress.com/india-news/one-nation-one-election-gets-union-cabinet-nod-kovind-report/3614451/"
+   ],
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/one-nation-one-election-the-kovind-panels-recommendations-explained/article67950654.ece/amp/"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2024-09-11",
+  "title": "Ayushman Bharat extended to all senior citizens aged 70 and above",
+  "summary": "The Union Cabinet approved health coverage under Ayushman Bharat PM-JAY for all senior citizens aged 70 and above irrespective of income. About 4.5 crore families with six crore senior citizens will get Rs 5 lakh free health insurance cover on a family basis, with an additional Rs 5 lakh top-up for those already covered; those on CGHS, ECHS or CAPF may choose either scheme.",
+  "sectors": [
+   "Health",
+   "Senior citizens"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "PIB",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2053881&reg=48&lang=2"
+   ],
+   [
+    "The Hindu",
+    "http://www.thehindu.com/sci-tech/health/all-senior-citizens-above-70-brought-under-ayushman-bharat/article68631362.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2024-08-24",
+  "title": "Unified Pension Scheme (UPS) approved for central government employees",
+  "summary": "The Union Cabinet approved the Unified Pension Scheme as an alternative to the National Pension System for about 23 lakh central government employees. UPS assures 50% of the average basic pay of the last 12 months as pension after 25 years of qualifying service, plus assured family pension at 60%, a minimum pension of Rs 10,000 per month, inflation indexation and a lump-sum superannuation payout.",
+  "sectors": [
+   "Pensions",
+   "Government employment"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "PIB",
+    "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2048607&s=09&reg=3&lang=3"
+   ],
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/union-cabinet-meeting-on-august-24-2024/article68563115.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2024-08-08",
+  "title": "Waqf (Amendment) Bill, 2024 introduced and referred to Joint Parliamentary Committee",
+  "summary": "Introduced in the Lok Sabha on 8 August 2024 by Minister Kiren Rijiju and referred the same day to a 31-member Joint Parliamentary Committee chaired by Jagdambika Pal. The Bill requires that only practising Muslims of five years standing may declare waqf, removes the concept of waqf by user, replaces the Survey Commissioner with the Collector, and provides that government property identified as waqf ceases to be waqf.",
+  "sectors": [
+   "Minority affairs",
+   "Property law"
+  ],
+  "status": "Bill (referred to JPC)",
+  "sources": [
+   [
+    "PRS India",
+    "https://prsindia.org/files/bills_acts/bills_parliament/2024/Legislative_Brief_Waqf_(Amendment)_Bill_2024.pdf"
+   ],
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/waqf-bill-referred-to-joint-parliamentary-panel-after-opposition-calls-it-draconian-and-an-attack-on-the-constitution/article68502262.ece/amp/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-08-01",
+  "title": "Supreme Court permits sub-classification of SCs and STs (State of Punjab v. Davinder Singh)",
+  "summary": "A seven-judge bench ruled 6:1 that states may sub-classify Scheduled Castes and Scheduled Tribes for reservation benefits, overruling the 2004 E.V. Chinnaiah verdict. The majority held that sub-classification does not tinker with the Presidential List and recognised that the creamy layer principle can apply, with Justice Bela Trivedi dissenting.",
+  "sectors": [
+   "Constitutional law",
+   "Reservation"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "LiveLaw",
+    "https://www.livelaw.in/articles/sub-classification-scheduled-castes-reservation-creamy-layer-debate-comment-state-punjab-davinder-singh-7-judge-bench-judgment-266418"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2024-07-23",
+  "title": "Union Budget 2024-25 presented",
+  "summary": "Finance Minister Nirmala Sitharaman presented the first Budget of the Modi 3.0 government on 23 July 2024. Key announcements: angel tax abolished for all investors, LTCG reduced to 12.5% with indexation removed for real estate, STCG on equities raised to 20%, STT hiked on F&O trades, standard deduction raised to Rs 75,000, customs duty cut to 6% on gold and silver, and nine priorities including the PM Internship scheme.",
+  "sectors": [
+   "Taxation",
+   "Economy"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "The Economic Times",
+    "https://economictimes.indiatimes.com/news/economy/policy/budget-2024-highlights-india-nirmala-sitharaman-capex-fiscal-deficit-tax-slab-key-announcement-in-union-budget-2024-25/articleshow/111942707.cms?from=mdr"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2024-07-01",
+  "title": "Bharatiya Nyaya Sanhita, Bharatiya Nagarik Suraksha Sanhita and Bharatiya Sakshya Adhiniyamam come into force",
+  "summary": "The three new criminal laws replaced the IPC, CrPC and Indian Evidence Act from 1 July 2024. The BNS has 358 sections and introduces offences of organised crime, terrorism and mob lynching plus community service as punishment. The BNSS mandates forensic investigation for offences punishable with seven or more years and allows e-FIRs, while the BSA treats electronic and digital records as equivalent to paper records.",
+  "sectors": [
+   "Criminal justice"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Frontline",
+    "https://frontline.thehindu.com/the-nation/indian-criminal-law-reform-criminal-justice-bns-bnss-bsa/article68397331.ece"
+   ],
+   [
+    "Hindustan Times",
+    "https://www.hindustantimes.com/india-news/new-criminal-laws-will-be-rolled-out-on-july-1-101708798320215.html"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2024-06-26",
+  "title": "Telecommunications Act, 2023 partially brought into force",
+  "summary": "Sections 1, 2, 10 to 30, 42 to 44, 46, 47, 50 to 58, 61 and 62 of the Telecommunications Act, 2023 came into force on 26 June 2024. The Act replaces the Indian Telegraph Act of 1885 and the Indian Wireless Telegraphy Act of 1933, creates an authorisation regime for telecom services, lets the government take control of networks in emergencies, and converts the Universal Service Obligation Fund into the Digital Bharat Nidhi.",
+  "sectors": [
+   "Telecom"
+  ],
+  "status": "In force (partial)",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/government-to-partially-implement-new-telecommunications-act-from-june-26/article68334870.ece/amp/"
+   ]
+  ]
+ },
+ {
+  "cat": "law",
+  "date": "2024-06-21",
+  "title": "Public Examinations (Prevention of Unfair Means) Act, 2024 comes into force",
+  "summary": "The anti-paper-leak law, passed by Parliament in February 2024 and assented on 12 February, came into force on 21 June 2024. It covers public examinations such as UPSC, SSC, NEET, JEE and CUET, with 3 to 5 years imprisonment and fines up to Rs 10 lakh, rising to 10 years and Rs 1 crore for organised crime, with offences made cognizable and non-bailable.",
+  "sectors": [
+   "Education",
+   "Employment",
+   "Criminal justice"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Bar & Bench",
+    "https://www.barandbench.com/news/centre-notifies-law-to-tackle-unfair-practices-punish-paper-leaks-public-exams"
+   ],
+   [
+    "LiveLaw",
+    "https://www.livelaw.in/amp/top-stories/law-punishing-paper-leak-unfair-means-from-june-21-public-examinations-prevention-of-unfair-means-act-261101"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-04-26",
+  "title": "Supreme Court rejects pleas for 100% VVPAT verification",
+  "summary": "Justices Sanjiv Khanna and Dipankar Datta rejected petitions seeking 100% cross-verification of EVM votes with VVPAT slips and a return to ballot papers. The Court issued two directions: Symbol Loading Units must be sealed for 45 days after elections, and candidates ranked second or third may seek verification of burnt microcontroller memory within seven days of results.",
+  "sectors": [
+   "Electoral law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "The Telegraph",
+    "https://www.telegraphindia.com/amp/india/supreme-court-dismisses-all-petitions-seeking-100-per-cent-verification-of-vvpat-slips-during-elections/cid/2015892"
+   ]
+  ]
+ },
+ {
+  "cat": "policy",
+  "date": "2024-02-29",
+  "title": "PM-Surya Ghar: Muft Bijli Yojana approved",
+  "summary": "The Union Cabinet approved the rooftop solar scheme with an outlay of Rs 75,021 crore to provide free electricity of up to 300 units per month to one crore households; the Prime Minister had launched it on 13 February 2024. Central financial assistance covers 60% of system cost for 2 kW systems and 40% of additional cost for 2 to 3 kW systems, meaning Rs 30,000, Rs 60,000 and Rs 78,000 subsidies for 1 kW, 2 kW and 3 kW systems.",
+  "sectors": [
+   "Energy",
+   "Solar"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "PIB",
+    "https://www.pib.gov.in/PressReleaseIframePage.aspx?PRID=2010130&reg=48&lang=2"
+   ],
+   [
+    "ThePrint",
+    "https://theprint.in/india/cabinet-okays-rs-75k-cr-rooftop-solar-scheme-1-cr-households-to-get-subsidy-of-up-to-rs-78k/1984237/"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
+  "date": "2024-02-15",
+  "title": "Supreme Court strikes down Electoral Bonds scheme",
+  "summary": "A five-judge Constitution bench unanimously held the anonymous electoral bonds scheme unconstitutional, ruling it violates voters' right to information under Article 19(1)(a). The Court quashed the related amendments to the Companies Act, Income Tax Act and Representation of the People Act, ordered SBI to stop issuing bonds and to disclose all donor and recipient details to the Election Commission of India.",
+  "sectors": [
+   "Electoral law",
+   "Constitutional law"
+  ],
+  "status": "Decided",
+  "sources": [
+   [
+    "The Hindu",
+    "https://www.thehindu.com/news/national/electoral-bonds-scheme-verdict-live-updates-february-15-2024/article67847980.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "judgment",
   "date": "",
   "title": "SC strikes down limits on maternity benefits for adoptive mothers",
   "summary": "The Court struck down Section 60(4) of the Code on Social Security, 2020 to the extent it limited maternity benefits for adoptive mothers, and favoured legal recognition of paternity leave.",
@@ -290,23 +1189,6 @@
    [
     "SCC Times",
     "https://www.scconline.com/blog/post/2026/08/12/know-thy-judge-justice-jb-pardiwala-supreme-court-of-india/"
-   ]
-  ]
- },
- {
-  "cat": "policy",
-  "date": "2026-09-08",
-  "title": "SEBI eases FPI compliance for government securities",
-  "summary": "FPIs investing exclusively in government securities no longer need to furnish investor group details, effective immediately. Follows the RBI's 5 Jun 2026 circular withdrawing concentration limits for FPIs in G-Secs via the General Route, and the expansion of the Fully Accessible Route to 15, 30 and 40-year securities.",
-  "sectors": [
-   "BFSI",
-   "Capital markets"
-  ],
-  "status": "In force",
-  "sources": [
-   [
-    "Economic Times",
-    "https://economictimes.indiatimes.com/markets/bonds/sebi-eases-fpi-compliance-rules-for-g-sec-bets/articleshow/133902425.cms"
    ]
   ]
  },
