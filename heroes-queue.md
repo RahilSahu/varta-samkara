@@ -5,7 +5,6 @@ published in heroes/, researches and writes the article, then deletes the line.
 Add new lesser-known names at the end as needed. Keep every entry verifiable:
 a real Indian freedom fighter with at least two independent sources.
 
-- Nana Patil (Maharashtra, Prati Sarkar 1943)
 - Yusuf Meherally (Mumbai, coined "Simon Go Back", 1928)
 - K. Kelappan (Kerala, Vaikom Satyagraha)
 - P. Krishna Pillai (Kerala, communist organiser)
