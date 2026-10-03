@@ -1,6 +1,119 @@
 {
  "days": [
   {
+   "date": "2026-10-03",
+   "points": [
+    {
+     "t": "Asian Games 2026: India finishes 4th with 85 medals after golden Day 15",
+     "s": "India closed the Aichi-Nagoya Asian Games on October 3 with 21 gold, 27 silver and 37 bronze (85 total), finishing fourth overall. Historic golds: 17-year-old Kumkum Mohod (first Indian woman to win individual recurve archery gold, beating South Korea's Oh Yejin 6-5 in a shoot-off, and an LA 2028 quota) and Pranavi Urs (first Indian woman to win individual Asian Games golf gold, 15-under 265, plus team silver with Aditi Ashok and Diksha Dagar). India retained the men's cricket gold, beating Pakistan by 19 runs (India 211/6; Abhishek Sharma 61 off 28, Tilak Varma 51* off 22), and the men's hockey gold, beating Malaysia 5-1 to secure direct qualification for the Los Angeles 2028 Olympics. Aman Sehrawat won wrestling gold and Antim Panghal took silver.",
+     "why": "Firsts are the most asked sports GK facts: first Indian woman individual recurve gold, first Indian woman golf gold, retained cricket and hockey titles, and the Olympic quota link for LA 2028.",
+     "src": [
+      "Outlook India",
+      "https://www.outlookindia.com/sports/others/asian-games-2026-day-15-wrap-october-3-india-mens-hockey-cricket-team-kumkum-mohod-aditi-ashok-aman-sehrawat-antim-panghal"
+     ]
+    },
+    {
+     "t": "Union Cabinet clears Green Energy Corridor Phase-III (PM Dhara), outlay Rs 1.86 lakh crore",
+     "s": "The Union Cabinet on September 30 approved the Green Energy Corridor Phase-III (GEC-III) scheme, branded PM Dhara (Developing Harmonised and Accelerated Renewable Energy Access). It strengthens India's Intra-State Transmission System (InSTS) to evacuate up to 135 GW of renewable energy across states and UTs, and deploys 50 GWh of Battery Energy Storage Systems (BESS) for grid flexibility. Total outlay: Rs 1,86,405 crore (Rs 1,36,378 crore for InSTS, Rs 50,000 crore for BESS), with Rs 54,082 crore of Central Financial Assistance, targeted for completion by FY 2032-33. Greenfield projects go through Tariff Based Competitive Bidding (TBCB), brownfield upgrades on cost-plus basis, with State Transmission Utilities as implementing agencies.",
+     "why": "Scheme-plus-numbers question: name, acronym PM Dhara, 135 GW, 50 GWh BESS, outlay, CFA, and target year; supports the 500 GW by 2030 and 900 GW non-fossil by 2035 goals.",
+     "src": [
+      "NDTV",
+      "https://www.ndtv.com/india-news/centre-approves-rs-1-86-lakh-crore-green-energy-corridor-phase-iii-12120013"
+     ]
+    },
+    {
+     "t": "Uttarakhand publishes final electoral roll after SIR: 71,58,949 voters",
+     "s": "The Election Commission published Uttarakhand's final electoral roll on October 3 after the Special Intensive Revision (SIR) that began June 8 with July 1, 2026 as the qualifying date. The final roll lists 71,58,949 electors (37,37,701 men, 34,21,036 women, 212 third gender) across 12,543 polling stations. During claims and objections, 1,29,872 new voters were added and 1,04,708 names deleted. It includes 72,656 voters aged 18-19 and 1,22,892 voters above 80. Those left out can still apply via Form 6 on the ECI Net app or through BLOs.",
+     "why": "SIR is the election-process theme of 2026: know the qualifying date, the draft-to-final timeline (July 14 draft, October 3 final), and Form 6 as the correction mechanism.",
+     "src": [
+      "ETV Bharat",
+      "https://www.etvbharat.com/en/bharat/uttarakhand-sir-campaign-adds-129-872-new-electors-removes-104-708-enn26100302873"
+     ]
+    },
+    {
+     "t": "Sitharaman at Kautilya Economic Conclave: fundamentals intact amid global shocks",
+     "s": "Finance Minister Nirmala Sitharaman said India has navigated recent global shocks with its fundamentals intact and strengthening, citing 7.8% real GDP growth in Q1 FY27, 4.82% CPI inflation in August, and $766 billion in forex reserves. She attributed the resilience to a decade of fiscal prudence, infrastructure creation, banking reforms and last-mile delivery, defining resilience as absorbing shocks while maintaining growth and retaining policy space for future disruptions.",
+     "why": "Macro-economy numbers are direct current-affairs targets: GDP 7.8%, CPI 4.82%, forex $766 billion, and the Kautilya Economic Conclave as the venue.",
+     "src": [
+      "Economic Times",
+      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+     ]
+    },
+    {
+     "t": "NCW submits 37-point report: gender-neutral child care leave, paid paternity leave, 5 lakh creches by 2030",
+     "s": "The National Commission for Women submitted a 37-point recommendatory report on laws relating to maternity and child care to the Department of Personnel and Training, the Ministry of Women and Child Development, and the Ministry of Labour and Employment. Key recommendations: extend gender-neutral Child Care Leave to the private sector, introduce mandatory paid paternity leave in the private and unorganised sectors, create 5 lakh creche seats by 2030 through a proposed National Childcare Infrastructure Mission, and extend maternity and childcare benefits to informal, gig and platform workers.",
+     "why": "Statutory-body recommendations feed social-policy questions: NCW's legal basis (NCW Act 1990, Section 10), the 5-lakh-creche mission, and the private-sector coverage push.",
+     "src": [
+      "Lokmat Times",
+      "https://www.lokmattimes.com/national/ncw-suggests-gender-neutral-child-care-leave-in-private-sector-5-lakh-new-creches/"
+     ]
+    },
+    {
+     "t": "Katra-Banihal rail speed raised to 100 kmph; Vande Bharat crosses Chenab and Anji bridges",
+     "s": "The Railway Ministry raised the maximum permissible speed on the 111-km Shri Mata Vaishno Devi Katra-Banihal broad-gauge section (part of the Udhampur-Srinagar-Baramulla Rail Link) from 75 kmph to 100 kmph, successfully tested on October 1. Vande Bharat Express (26401/26404) set a record by crossing both the world's highest railway arch bridge, the Chenab Bridge (359 metres above the riverbed), and India's first cable-stayed railway bridge, the Anji Khad Bridge, at 100 kmph.",
+     "why": "Infrastructure facts are fixed GK: Chenab Bridge's 359-metre height, Anji Khad as India's first cable-stayed rail bridge, and the USBRL connection to Kashmir Valley rail link.",
+     "src": [
+      "The Hindu",
+      "https://www.thehindu.com/news/national/vande-bharat-crosses-chenab-anji-bridges-at-100-kmph-as-katra-banihal-train-speed-limit-raised/article71539493.ece"
+     ]
+    },
+    {
+     "t": "Centre officially names 28 locations and features in Ladakh on Survey of India map",
+     "s": "The Government of India and the UT of Ladakh officially named 28 geographical locations and features in Ladakh according to standard place and feature names on the Survey of India map. The list includes areas such as Gogra and Hot Spring, which were associated with the India-China border tensions. The move aims at accurate identification and public awareness of strategically important geographical features.",
+     "why": "Official naming of strategic border geography is classic India-China border question fodder: note Gogra and Hot Spring and the Survey of India as the naming authority.",
+     "src": [
+      "CareerIndia",
+      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-3-2026-national-international-education-sports-066505.html"
+     ]
+    },
+    {
+     "t": "Taiwan receives first two F-16V Block 70 jets from the US",
+     "s": "Taiwan took delivery of the first two of 66 F-16V Block 70 fighter jets from the United States, landing at Chihhang Air Base in Taitung on October 2. The jets are part of a 2019-approved $8 billion deal for 66 new-build F-16s from Lockheed Martin, delayed by software and production issues. Taiwan's Defence Minister Wellington Koo said more will arrive before year-end; the delivery came about a week after US President Donald Trump met Chinese President Xi Jinping in Washington.",
+     "why": "Defence-procurement current affairs: order year (2019), deal value ($8 billion), manufacturer (Lockheed Martin), and the Taiwan-China-US strategic context.",
+     "src": [
+      "Al Jazeera",
+      "https://www.aljazeera.com/amp/news/2026/10/2/us-delivers-f-16v-fighter-jets-to-taiwan-as-island-eyes-threat-from-china"
+     ]
+    },
+    {
+     "t": "Over 700 detained at Jantar Mantar protest demanding CEC's ouster over SIR",
+     "s": "Delhi Police detained more than 700 protesters from Jantar Mantar and nearby areas on Gandhi Jayanti as opposition parties and student organisations demanded the resignation of Chief Election Commissioner Gyanesh Kumar over the Special Intensive Revision (SIR) of electoral rolls. Former Delhi Chief Minister Atishi was among those detained, and opposition leaders denounced the police action.",
+     "why": "Protest-and-commission questions tie together: the Election Commission's composition (CEC plus ECs), Article 324, and the controversy around SIR.",
+     "src": [
+      "Mathrubhumi",
+      "https://english.mathrubhumi.com/news/india/school-assembly-headlines-october-3-2026-tgtryay0"
+     ]
+    },
+    {
+     "t": "Gujarat UCC Bill gets presidential assent; BJP MP backs nationwide Uniform Civil Code",
+     "s": "BJP MP Rahul Sinha backed a nationwide Uniform Civil Code after the Gujarat UCC Bill, 2026 received presidential assent, saying it would first be implemented in BJP-ruled states and then extended. He argued that the country is one and laws should be uniform across it.",
+     "why": "UCC sits at the intersection of Directive Principles (Article 44) and current politics: know which states have enacted UCC-linked bills and the presidential-assent requirement for state bills.",
+     "src": [
+      "Economic Times",
+      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+     ]
+    },
+    {
+     "t": "IAF flies 15 sorties to air-drop 28 tonnes of food in Bihar's Saran amid floods",
+     "s": "The Indian Air Force flew 15 sorties to air-drop 28 tonnes of food packets in Saran district of Bihar as floods affected the region, part of ongoing disaster relief operations.",
+     "why": "Disaster-relief roles of the armed forces recur in exams: IAF's air-drop and HADR (Humanitarian Assistance and Disaster Relief) role, and flood-prone Bihar's river geography.",
+     "src": [
+      "Economic Times",
+      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+     ]
+    },
+    {
+     "t": "Pargat Singh appointed Punjab Congress president as Warring resigns",
+     "s": "Newly appointed Punjab Congress president Pargat Singh met Punjab in-charge Sachin Pilot at his Delhi residence. Outgoing chief Amarinder Singh Raja Warring handed his formal resignation to Rahul Gandhi, reportedly blaming Sachin Pilot for the change.",
+     "why": "State-unit leadership changes appear in polity current affairs: Pargat Singh is the new Punjab Congress chief, succeeding Amarinder Singh Raja Warring.",
+     "src": [
+      "Economic Times",
+      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+     ]
+    }
+   ]
+  },
+  {
    "date": "2026-10-02",
    "points": [
     {
