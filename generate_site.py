@@ -176,6 +176,57 @@ def load_body_md(slug):
     return blocks or None
 
 IMG_MD_RE = re.compile(r"^!\[(.*?)\]\((.*?)\)$")
+SEP_CELL_RE = re.compile(r"^:?-{1,}:?$")
+
+def _split_row(line):
+    s = line.strip()
+    if s.startswith("|"):
+        s = s[1:]
+    if s.endswith("|"):
+        s = s[:-1]
+    return [c.strip() for c in s.split("|")]
+
+def is_table_block(lines):
+    lines = [l for l in lines if l.strip()]
+    if len(lines) < 2:
+        return False
+    if not all(l.strip().startswith("|") for l in lines):
+        return False
+    sep = _split_row(lines[1])
+    return bool(sep) and all(SEP_CELL_RE.match(c) for c in sep)
+
+def render_table(lines):
+    rows = [_split_row(l) for l in lines if l.strip()]
+    header, sep, body = rows[0], rows[1], rows[2:]
+    n = len(header)
+    aligns = []
+    for c in sep:
+        if c.startswith(":") and c.endswith(":") and len(c) > 2:
+            aligns.append("center")
+        elif c.endswith(":"):
+            aligns.append("right")
+        else:
+            aligns.append("left")
+    def _cells(row, tag):
+        tds = []
+        for i in range(n):
+            v = html.escape(row[i]) if i < len(row) else ""
+            a = aligns[i] if i < len(aligns) else "left"
+            tds.append(f"<{tag} style=\"text-align:{a}\">{v}</{tag}>")
+        return "".join(tds)
+    thead = f"<thead><tr>{_cells(header, 'th')}</tr></thead>"
+    tbody = "".join(f"<tr>{_cells(r, 'td')}</tr>" for r in body)
+    return f"<div class=\"tbl-wrap\"><table>{thead}<tbody>{tbody}</tbody></table></div>"
+
+def is_list_block(lines):
+    lines = [l for l in lines if l.strip()]
+    return bool(lines) and all(re.match(r"^[-*]\s+", l.strip()) for l in lines)
+
+def render_list(lines):
+    items = "".join(
+        f"<li>{html.escape(re.sub(r'^[-*]\s+', '', l.strip(), count=1))}</li>"
+        for l in lines if l.strip())
+    return f"<ul class=\"md-list\">{items}</ul>"
 
 def render_body(blocks):
     out = []
@@ -192,6 +243,10 @@ def render_body(blocks):
             out.append(f"<figure><img src=\"{html.escape(src)}\" alt=\"{html.escape(alt)}\""
                        f" loading=\"lazy\" decoding=\"async\"><figcaption>{html.escape(alt)}</figcaption></figure>")
             lede_done = True
+        elif is_table_block(b.split("\n")):
+            out.append(render_table(b.split("\n")))
+        elif is_list_block(b.split("\n")):
+            out.append(render_list(b.split("\n")))
         else:
             cls = "lede" if not lede_done else "body"
             lede_done = True
@@ -380,6 +435,18 @@ footer a:hover{text-decoration:underline}
   padding-left:.7rem;border-left:4px solid var(--saffron)}
 .article p.lede{font-size:1.16rem;color:#2c3648;margin-bottom:1.3rem;font-weight:500}
 .article p.body{margin-bottom:1.15rem;font-size:1.03rem;color:#2a3342}
+.article .tbl-wrap{overflow-x:auto;margin:1.2rem 0;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+.article table{width:100%;border-collapse:collapse;font-size:.95rem;background:#fff}
+.article th{background:var(--navy);color:#fff;padding:.65rem .9rem;font-weight:700;white-space:nowrap}
+.article td{padding:.6rem .9rem;border-top:1px solid var(--line);vertical-align:top}
+.article tbody tr:nth-child(even) td{background:#f8fafd}
+.article ul.md-list{margin:0 0 1.15rem 1.2rem;font-size:1.03rem;color:#2a3342}
+.article ul.md-list li{margin-bottom:.45rem}
+html[data-theme="dark"] .article .tbl-wrap{border-color:#24355f}
+html[data-theme="dark"] .article table{background:#101c3a}
+html[data-theme="dark"] .article td{border-color:#24355f;color:#c2cadd}
+html[data-theme="dark"] .article tbody tr:nth-child(even) td{background:#0c1730}
+html[data-theme="dark"] .article ul.md-list{color:#c2cadd}
 .byline{display:flex;align-items:center;gap:.7rem;margin:1rem 0 0;color:var(--muted);font-size:.9rem}
 .byline .avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--saffron),var(--saffron2));
   color:var(--navy);display:flex;align-items:center;justify-content:center;font-weight:800}
@@ -2643,8 +2710,33 @@ def study_hub_page(cards):
         "study", body)
 
 def study_article_page(slug, title, desc, md_path):
-    blocks = [l for l in open(md_path, encoding="utf-8").read().splitlines()
-              if l.strip()]
+    raw = [l for l in open(md_path, encoding="utf-8").read().splitlines()
+           if l.strip()]
+    # Group consecutive table rows / list items into single blocks so
+    # render_body can detect them; every other line stays its own block
+    # (preserves existing paragraph rendering exactly).
+    blocks = []
+    buf, buf_kind = [], None
+    for l in raw:
+        s = l.strip()
+        if s.startswith("|"):
+            k = "table"
+        elif re.match(r"^[-*]\s+", s):
+            k = "list"
+        else:
+            k = None
+        if k is not None and k == buf_kind:
+            buf.append(l)
+            continue
+        if buf:
+            blocks.append("\n".join(buf))
+            buf, buf_kind = [], None
+        if k is not None:
+            buf, buf_kind = [l], k
+        else:
+            blocks.append(l)
+    if buf:
+        blocks.append("\n".join(buf))
     body_html = render_body(blocks)
     mins = reading_time(blocks)
     toc = toc_of(blocks)
