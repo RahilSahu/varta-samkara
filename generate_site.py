@@ -46,6 +46,7 @@ TODAY = datetime.now(IST).strftime("%Y-%m-%d")
 THUMBS = os.path.join(SITE, "assets", "thumbs")
 ARTICLES = os.path.join(SITE, "assets", "articles")
 IG = "https://www.instagram.com/vartaandsamkaraindia/"
+CONTACT_EMAIL = "rahilsahu2000@gmail.com"
 
 BLOG_PREFIXES = ("OPINION:", "ANALYSIS:", "FROM THE HEART:")
 
@@ -766,6 +767,91 @@ html[data-theme="dark"] .ra-btn{background:#0f1526;border-color:#263050;color:#e
 html[data-theme="dark"] .ra-btn.primary{background:var(--saffron,#e07b00);border-color:var(--saffron,#e07b00);color:#fff}
 html[data-theme="dark"] .ra-select{background:#0f1526;border-color:#263050;color:#e9edf6}
 html[data-theme="dark"] .ra-sent{background:rgba(224,123,0,.32)}
+
+/* ---------- 2026 redesign: typography, cards, hero, dark polish ---------- */
+h1,h2,h3{letter-spacing:-.015em;line-height:1.25;text-wrap:balance}
+body{font-size:1rem}
+.wrap{max-width:1120px}
+.hero{border-bottom:1px solid rgba(255,153,51,.25)}
+.hero::before{content:'';position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(255,153,51,.16),transparent 65%);pointer-events:none}
+.hero .kicker{display:flex;align-items:center;gap:.6rem}
+.hero .kicker::before{content:'';width:26px;height:2px;background:var(--saffron);border-radius:2px}
+.hero h2{font-weight:800;letter-spacing:-.02em}
+.card{border-top:3px solid transparent}
+.card:hover{border-color:var(--line);border-top-color:var(--saffron)}
+.card .thumb::after{content:'';position:absolute;inset:auto 0 0 0;height:38%;
+  background:linear-gradient(transparent,rgba(6,13,32,.28));opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover .thumb::after{opacity:1}
+.card h3{font-size:1.08rem;font-weight:700}
+.card p{line-height:1.6}
+.grid>.reveal:nth-child(2){transition-delay:.06s}
+.grid>.reveal:nth-child(3){transition-delay:.12s}
+.grid>.reveal:nth-child(4){transition-delay:.18s}
+.grid>.reveal:nth-child(5){transition-delay:.24s}
+.grid>.reveal:nth-child(6){transition-delay:.3s}
+.article p.body{font-size:1.05rem;line-height:1.78;color:#272f3e}
+.article p.lede{line-height:1.6}
+.sec-title{font-weight:800}
+html[data-theme="dark"] .card{border-color:#223052}
+html[data-theme="dark"] .card:hover{border-top-color:var(--saffron)}
+html[data-theme="dark"] .article p.body{color:#c9d1e4}
+html[data-theme="dark"] .hero{border-bottom-color:rgba(255,153,51,.2)}
+
+/* ---------- topbar search ---------- */
+.top-search{position:relative}
+.top-search input{width:170px;max-width:38vw;min-height:38px;padding:.45rem .9rem;border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;
+  font-size:.85rem;font-family:inherit;outline:none;transition:border-color .2s,background .2s}
+.top-search input::placeholder{color:rgba(255,255,255,.65)}
+.top-search input:focus{border-color:var(--saffron);background:rgba(255,255,255,.16)}
+.search-results{position:absolute;top:calc(100% + 10px);right:0;width:min(360px,84vw);
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  box-shadow:var(--shadow-lg);overflow:hidden;z-index:80;max-height:60vh;overflow-y:auto}
+.sr-item{display:block;padding:.7rem .95rem;border-bottom:1px solid var(--line);color:var(--ink)}
+.sr-item:last-child{border-bottom:0}
+.sr-item:hover{background:rgba(255,153,51,.08)}
+.sr-type{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.09em;
+  color:var(--saffron);font-weight:800;margin-bottom:.15rem}
+.sr-title{font-size:.9rem;font-weight:600;line-height:1.4}
+.sr-empty{padding:.9rem 1rem;color:var(--muted);font-size:.88rem}
+html[data-theme="dark"] .top-search input{background:rgba(255,255,255,.07)}
+
+/* ---------- videos page ---------- */
+.video-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.4rem}
+.video-card .vthumb{display:block;position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--navy)}
+.video-card .vthumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.video-card:hover .vthumb img{transform:scale(1.05)}
+.vthumb-fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%;
+  background:linear-gradient(135deg,var(--navy),var(--navy3));color:var(--saffron);font-size:3rem}
+.video-card .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:58px;height:58px;border-radius:50%;background:rgba(255,153,51,.92);color:var(--navy);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);transition:transform .2s;pointer-events:none}
+.video-card:hover .play{transform:translate(-50%,-50%) scale(1.1)}
+.page-head{margin-bottom:1.6rem}
+.page-head h1{font-size:clamp(1.7rem,4vw,2.4rem);color:var(--navy);font-weight:800;margin-bottom:.5rem}
+.page-head .lede{color:var(--muted);max-width:640px;font-size:1.02rem}
+html[data-theme="dark"] .page-head h1{color:#f2f5fc}
+
+/* ---------- newsletter in footer ---------- */
+.nl-block{flex:1 1 280px;max-width:360px}
+.nl-block strong{color:#fff;font-size:.95rem}
+.nl-block p{margin:.35rem 0 .6rem;font-size:.85rem}
+.nl-form{display:flex;gap:.5rem;flex-wrap:wrap}
+.nl-form input{flex:1;min-width:170px;min-height:44px;padding:.55rem .95rem;border-radius:10px;
+  border:1px solid #2a3a63;background:#0d1730;color:#e9edf6;font-size:.9rem;font-family:inherit;outline:none}
+.nl-form input:focus{border-color:var(--saffron)}
+.nl-form .btn{padding:.55rem 1.2rem;min-height:44px;border:0;cursor:pointer;font-size:.9rem}
+.nl-note{font-size:.76rem!important;opacity:.75}
+
+/* ---------- tap targets on touch ---------- */
+@media(pointer:coarse){
+  .share-btn{min-height:44px;display:inline-flex;align-items:center}
+  .navlinks a{padding:.75rem 0}
+  .top-search input{min-height:42px}
+  .sec-link{min-height:44px;display:inline-flex;align-items:center}
+}
 """
 
 JS = """\
@@ -812,6 +898,53 @@ document.addEventListener('input',function(e){
       var t=(el.getAttribute('data-search')||el.textContent).toLowerCase();
       el.style.display=(!q||t.indexOf(q)>-1)?'':'none';
     });
+  }
+});
+/* Site-wide search: topbar box searches assets/search-index.json client-side. */
+(function(){
+  var inp=document.getElementById('topsearch'),box=document.getElementById('search-results');
+  if(!inp||!box||!('fetch' in window))return;
+  var idx=null;
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function load(){
+    if(idx!==null)return Promise.resolve(idx);
+    return fetch(inp.getAttribute('data-index'),{cache:'force-cache'}).then(function(r){
+      if(!r.ok)throw new Error('http '+r.status);return r.json();
+    }).then(function(j){idx=j;return idx;}).catch(function(){idx=[];return idx;});
+  }
+  function render(q){
+    var words=q.toLowerCase().split(/\s+/).filter(Boolean);
+    var res=idx.filter(function(e){
+      var t=((e.title||'')+' '+(e.excerpt||'')).toLowerCase();
+      return words.every(function(w){return t.indexOf(w)>-1;});
+    }).slice(0,8);
+    box.innerHTML=res.length?res.map(function(e){
+      return '<a class="sr-item" href="'+esc(e.url)+'"><span class="sr-type">'+esc(e.type)+'</span><span class="sr-title">'+esc(e.title)+'</span></a>';
+    }).join(''):'<div class="sr-empty">No matches found.</div>';
+    box.hidden=false;
+  }
+  var t=null;
+  inp.addEventListener('input',function(){
+    var q=inp.value.trim();
+    clearTimeout(t);
+    if(!q){box.hidden=true;box.innerHTML='';return;}
+    t=setTimeout(function(){load().then(function(){render(q);});},120);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest||!e.target.closest('.top-search'))box.hidden=true;
+  });
+  inp.addEventListener('keydown',function(e){if(e.key==='Escape'){box.hidden=true;inp.blur();}});
+})();
+/* Newsletter: static-friendly mailto with prefilled subscribe request. */
+document.addEventListener('submit',function(e){
+  var f=e.target;
+  if(f&&f.id==='nl-form'){
+    e.preventDefault();
+    var em=f.querySelector('input[type=email]').value.trim();
+    var to=f.getAttribute('data-email')||'';
+    var href='mailto:'+to+'?subject='+encodeURIComponent('Subscribe to Varta & Samkara')+
+      '&body='+encodeURIComponent('Hi, please subscribe '+em+' to the Varta & Samkara newsletter. Thanks!');
+    window.location.href=href;
   }
 });
 /* Scores Center: pulsing dot on the Scores nav link when something is live.
@@ -1296,8 +1429,9 @@ def topbar(depth, active):
         return f'<a href="{r}{href}"{cls}{extra}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('blog.html','Blog','blog')}{link('heroes.html','Heroes','heroes')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('markets.html','Markets','markets')}{link('policy.html','Policy','policy')}{link('study.html','Study','study')}{link('today.html','Today','today')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('videos.html','Videos','videos')}{link('blog.html','Blog','blog')}{link('heroes.html','Heroes','heroes')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('markets.html','Markets','markets')}{link('policy.html','Policy','policy')}{link('study.html','Study','study')}{link('today.html','Today','today')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
+<div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." aria-label="Search the site" autocomplete="off" data-index="{r}assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
@@ -1307,7 +1441,10 @@ def footer(depth):
     r = rel(depth)
     return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="{r}heroes.html">Heroes</a><a href="{r}scores.html">Scores</a><a href="{r}markets.html">Markets</a><a href="{r}policy.html">Policy</a><a href="{r}study.html">Study</a><a href="{r}today.html">Today</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="nl-block"><strong>Newsletter</strong><p>Get the top stories by email. No spam, unsubscribe anytime.</p>
+<form class="nl-form" id="nl-form" data-email="{CONTACT_EMAIL}"><input type="email" required placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit">Subscribe</button></form>
+<p class="nl-note">Opens your email app with a prefilled subscribe request.</p></div>
+<div class="foot-links"><a href="{r}videos.html">Videos</a><a href="{r}heroes.html">Heroes</a><a href="{r}scores.html">Scores</a><a href="{r}markets.html">Markets</a><a href="{r}policy.html">Policy</a><a href="{r}study.html">Study</a><a href="{r}today.html">Today</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
 def head(title, desc, depth, og_image="", extra_jsonld=""):
@@ -1328,6 +1465,8 @@ def head(title, desc, depth, og_image="", extra_jsonld=""):
 {tw}
 <link rel="manifest" href="{r}manifest.json">
 <link rel="stylesheet" href="{r}styles.css">
+<link rel="preconnect" href="https://s3.tradingview.com">
+<link rel="dns-prefetch" href="https://www.instagram.com">
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="{r}feed.xml">
 <script>if('serviceWorker' in navigator){{window.addEventListener('load',function(){{navigator.serviceWorker.register('{r}sw.js').catch(function(){{}});}});}}</script>
 {extra_jsonld}"""
@@ -2469,6 +2608,27 @@ def policy_page():
         "Track compliances, licences, laws and bills, court judgments, policies and upcoming parliamentary bills from 2024 to today.",
         "policy", body, "<script>" + POLICY_JS + "</script>")
 
+def videos_page(videos):
+    cards = []
+    for v in videos:
+        if v["thumb"]:
+            thumb_html = (f'<img src="{v["thumb"]}" alt="{html.escape(v["story"])}" '
+                          'loading="lazy" decoding="async">')
+        else:
+            thumb_html = '<span class="vthumb-fallback">&#9654;</span>'
+        cards.append(f"""<article class="card video-card">
+<a class="vthumb" href="{v['url']}" target="_blank" rel="noopener">{thumb_html}<span class="play" aria-hidden="true">&#9654;</span></a>
+<div class="card-body"><div class="meta"><span class="tag">Reel</span><span>{html.escape(v['date'])}</span></div>
+<h3><a href="{v['url']}" target="_blank" rel="noopener">{html.escape(v['story'])}</a></h3>
+<a class="read" href="{v['url']}" target="_blank" rel="noopener">Watch on Instagram &rarr;</a>
+</div></article>""")
+    grid = "".join(cards) if cards else '<p class="muted">No reels published yet.</p>'
+    body = f"""<div class="page-head"><h1>Videos</h1><p class="lede">Every Instagram reel from Varta &amp; Samkara, newest first. Tap a card to watch it on Instagram.</p></div>
+<div class="video-grid">{grid}</div>"""
+    return page_shell("Videos",
+        "Watch every Varta & Samkara Instagram reel, newest first.",
+        "videos", body)
+
 def study_hub_page(cards):
     grid = "".join(
         f'<a class="study-card" href="{u}"><h3>{t}</h3><p>{d}</p><span class="go">Start reading &rarr;</span></a>'
@@ -2994,6 +3154,53 @@ def build():
         f.write(markets_page())
     with open(os.path.join(SITE, "policy.html"), "w", encoding="utf-8") as f:
         f.write(policy_page())
+
+    # ---------- videos page (Instagram reels) ----------
+    videos = []
+    for i, r_ in enumerate(rows):
+        if r_["format"].lower() != "reel" or "/reel/" not in r_["url"]:
+            continue
+        thumb = ""
+        dname = find_post_dir(r_)
+        if dname:
+            dpath = os.path.join(POSTS, dname)
+            for cn in ("cover.jpg", "cover.jpeg", "cover.png"):
+                cp = os.path.join(dpath, cn)
+                if os.path.isfile(cp):
+                    vslug = slugify(r_["date"] + "-" + r_["story"])[:48] or f"reel-{i}"
+                    thumb = copy_image(cp, f"assets/videos/{vslug}.jpg", 640)
+                    break
+        videos.append({"story": r_["story"], "date": r_["date"],
+                       "url": r_["url"], "thumb": thumb})
+    videos.sort(key=lambda v: v["date"], reverse=True)
+    with open(os.path.join(SITE, "videos.html"), "w", encoding="utf-8") as f:
+        f.write(videos_page(videos))
+
+    # ---------- site-wide search index ----------
+    search_entries = []
+    def _add_search(title, url, typ, excerpt, date=""):
+        search_entries.append({"title": title, "url": url, "type": typ,
+                               "excerpt": (excerpt or "")[:220], "date": date})
+    for p in news:
+        _add_search(p["art"]["title"], f"posts/{p['slug']}/", "news", p["excerpt"], p["date"])
+    for p in blog_posts:
+        _add_search(p["art"]["title"], f"blog/{p['slug']}/",
+                    "opinion" if p["is_blog"] else "news", p["excerpt"], p["date"])
+    for p in hero_posts:
+        _add_search(p["art"]["title"], f"heroes/{p['slug']}/", "hero", p["excerpt"], p["date"])
+    for e in POLICY_ENTRIES:
+        _add_search(e["title"], "policy.html", "policy", e["summary"], e["date"])
+    ca_src = "assets-src/constitution-articles.json"
+    if os.path.exists(ca_src):
+        try:
+            _cadata = json.load(open(ca_src, encoding="utf-8"))
+            for a in _cadata.get("articles", []):
+                _add_search(f"Article {a.get('n')}: {a.get('title', '')}",
+                            "articles.html", "constitution", a.get("s", ""))
+        except Exception:
+            pass
+    with open(os.path.join(SITE, "assets", "search-index.json"), "w", encoding="utf-8") as f:
+        json.dump(search_entries, f, ensure_ascii=False)
     study_defs = [
         ("constitution.html", "Constitution of India: Complete Summary",
          "Preamble, salient features, all 22 Parts, 12 Schedules, rights, duties and landmark amendments, summarised for UPSC and law aspirants.",
@@ -3161,12 +3368,12 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v8";
+    sw = """const CACHE = "vs-cache-v9";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
-              "manifest.json", "assets/placeholder.svg",
+              "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
-              "markets.html", "policy.html", "assets/policy.json", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
+              "markets.html", "policy.html", "assets/policy.json", "videos.html", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
               "history-ancient.html", "history-medieval.html", "history-modern.html", "upsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
@@ -3279,7 +3486,7 @@ self.addEventListener("fetch", (e) => {
         f.write(feed)
 
     sm_urls = (["", "archive.html", "blog.html", "heroes.html", "scores.html", "horoscope.html",
-               "markets.html", "policy.html", "study.html", "constitution.html",
+               "markets.html", "policy.html", "videos.html", "study.html", "constitution.html",
                "articles.html", "economics.html", "geography.html",
                "history-ancient.html", "history-medieval.html", "history-modern.html",
                "upsc-syllabus.html", "quiz.html", "today.html", "feed.xml", "tags/"]

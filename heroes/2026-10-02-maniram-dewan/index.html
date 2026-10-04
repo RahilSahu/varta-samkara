@@ -15,6 +15,8 @@
 <meta name="twitter:image" content="https://rahilsahu.github.io/varta-samkara/assets/og/2026-10-02-maniram-dewan.png">
 <link rel="manifest" href="../../manifest.json">
 <link rel="stylesheet" href="../../styles.css">
+<link rel="preconnect" href="https://s3.tradingview.com">
+<link rel="dns-prefetch" href="https://www.instagram.com">
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="../../feed.xml">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('../../sw.js').catch(function(){});});}</script>
 <script type="application/ld+json">
@@ -25,8 +27,9 @@
 <div class="progress" id="progress"></div>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks"><a href="../../index.html">Home</a><a href="../../archive.html">News</a><a href="../../blog.html">Blog</a><a href="../../heroes.html" class="active">Heroes</a><a href="../../scores.html" data-scores-nav>Scores</a><a href="../../markets.html">Markets</a><a href="../../policy.html">Policy</a><a href="../../study.html">Study</a><a href="../../today.html">Today</a><a href="../../horoscope.html">Horoscope</a><a href="../../tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks"><a href="../../index.html">Home</a><a href="../../archive.html">News</a><a href="../../videos.html">Videos</a><a href="../../blog.html">Blog</a><a href="../../heroes.html" class="active">Heroes</a><a href="../../scores.html" data-scores-nav>Scores</a><a href="../../markets.html">Markets</a><a href="../../policy.html">Policy</a><a href="../../study.html">Study</a><a href="../../today.html">Today</a><a href="../../horoscope.html">Horoscope</a><a href="../../tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
+<div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." aria-label="Search the site" autocomplete="off" data-index="../../assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
@@ -91,7 +94,10 @@
 </main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="foot-links"><a href="../../heroes.html">Heroes</a><a href="../../scores.html">Scores</a><a href="../../markets.html">Markets</a><a href="../../policy.html">Policy</a><a href="../../study.html">Study</a><a href="../../today.html">Today</a><a href="../../horoscope.html">Horoscope</a><a href="../../tags/">Tags</a><a href="../../archive.html">Archive</a><a href="../../feed.xml">RSS</a><a href="../../sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
+<div class="nl-block"><strong>Newsletter</strong><p>Get the top stories by email. No spam, unsubscribe anytime.</p>
+<form class="nl-form" id="nl-form" data-email="rahilsahu2000@gmail.com"><input type="email" required placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit">Subscribe</button></form>
+<p class="nl-note">Opens your email app with a prefilled subscribe request.</p></div>
+<div class="foot-links"><a href="../../videos.html">Videos</a><a href="../../heroes.html">Heroes</a><a href="../../scores.html">Scores</a><a href="../../markets.html">Markets</a><a href="../../policy.html">Policy</a><a href="../../study.html">Study</a><a href="../../today.html">Today</a><a href="../../horoscope.html">Horoscope</a><a href="../../tags/">Tags</a><a href="../../archive.html">Archive</a><a href="../../feed.xml">RSS</a><a href="../../sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 <script src="../../assets/readaloud.js" defer></script>
@@ -138,6 +144,53 @@ document.addEventListener('input',function(e){
       var t=(el.getAttribute('data-search')||el.textContent).toLowerCase();
       el.style.display=(!q||t.indexOf(q)>-1)?'':'none';
     });
+  }
+});
+/* Site-wide search: topbar box searches assets/search-index.json client-side. */
+(function(){
+  var inp=document.getElementById('topsearch'),box=document.getElementById('search-results');
+  if(!inp||!box||!('fetch' in window))return;
+  var idx=null;
+  function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+  function load(){
+    if(idx!==null)return Promise.resolve(idx);
+    return fetch(inp.getAttribute('data-index'),{cache:'force-cache'}).then(function(r){
+      if(!r.ok)throw new Error('http '+r.status);return r.json();
+    }).then(function(j){idx=j;return idx;}).catch(function(){idx=[];return idx;});
+  }
+  function render(q){
+    var words=q.toLowerCase().split(/\s+/).filter(Boolean);
+    var res=idx.filter(function(e){
+      var t=((e.title||'')+' '+(e.excerpt||'')).toLowerCase();
+      return words.every(function(w){return t.indexOf(w)>-1;});
+    }).slice(0,8);
+    box.innerHTML=res.length?res.map(function(e){
+      return '<a class="sr-item" href="'+esc(e.url)+'"><span class="sr-type">'+esc(e.type)+'</span><span class="sr-title">'+esc(e.title)+'</span></a>';
+    }).join(''):'<div class="sr-empty">No matches found.</div>';
+    box.hidden=false;
+  }
+  var t=null;
+  inp.addEventListener('input',function(){
+    var q=inp.value.trim();
+    clearTimeout(t);
+    if(!q){box.hidden=true;box.innerHTML='';return;}
+    t=setTimeout(function(){load().then(function(){render(q);});},120);
+  });
+  document.addEventListener('click',function(e){
+    if(!e.target.closest||!e.target.closest('.top-search'))box.hidden=true;
+  });
+  inp.addEventListener('keydown',function(e){if(e.key==='Escape'){box.hidden=true;inp.blur();}});
+})();
+/* Newsletter: static-friendly mailto with prefilled subscribe request. */
+document.addEventListener('submit',function(e){
+  var f=e.target;
+  if(f&&f.id==='nl-form'){
+    e.preventDefault();
+    var em=f.querySelector('input[type=email]').value.trim();
+    var to=f.getAttribute('data-email')||'';
+    var href='mailto:'+to+'?subject='+encodeURIComponent('Subscribe to Varta & Samkara')+
+      '&body='+encodeURIComponent('Hi, please subscribe '+em+' to the Varta & Samkara newsletter. Thanks!');
+    window.location.href=href;
   }
 });
 /* Scores Center: pulsing dot on the Scores nav link when something is live.
