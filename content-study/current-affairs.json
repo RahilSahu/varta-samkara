@@ -1,6 +1,119 @@
 {
  "days": [
   {
+   "date": "2026-10-04",
+   "points": [
+    {
+     "t": "RBI MPC meet Oct 5-7: economists expect 25 bps repo rate hike to 5.50%, first since Feb 2023",
+     "s": "The RBI's Monetary Policy Committee meets October 5 to 7 to decide the benchmark repo rate. Economists now expect a 25-basis-point hike to 5.50%, brought forward from December, amid higher energy prices, broadening food inflation and CPI inflation rising to 4.82% in August from 4.45% in July, with Brent crude above $100 per barrel.",
+     "why": "RBI policy cycle questions are a staple of banking and SSC exams; note the sequence of the hike cycle (last hike Feb 2023, hike resumed Oct 2026).",
+     "src": [
+      "Mint",
+      "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
+     ]
+    },
+    {
+     "t": "August 2026 IIP grows 8.0% y-o-y; manufacturing up 9.0%, electricity 12.3%",
+     "s": "The Index of Industrial Production recorded 8.0% year-on-year growth in August 2026 (index level 123.3 vs 114.2 a year ago), up from the revised 7.4% in July, per MoSPI quick estimates released September 28. Manufacturing grew 9.0% (third straight month at 8% or more), electricity and gas supply 12.3%, capital goods 16.9%, while mining contracted 5.6%.",
+     "why": "IIP sector composition, base-year revisions and MoSPI release data recur in UPSC/SSC prelims economy sections.",
+     "src": [
+      "The Times of India",
+      "https://timesofindia.indiatimes.com/business/india-business/indias-industrial-production-grows-8-in-august-manufacturing-up-9/articleshow/134542628.cms"
+     ]
+    },
+    {
+     "t": "Cabinet hikes MSP of rapeseed and mustard by Rs 413 per quintal to Rs 6,613 for rabi 2027-28",
+     "s": "The Union Cabinet on September 30 raised the minimum support price of rapeseed and mustard by Rs 413 per quintal to Rs 6,613 for the 2027-28 rabi season, about a 6.7% increase. Lentil rises Rs 390 to Rs 7,390; wheat rises Rs 25 to Rs 2,610. PIB Release ID 2316956.",
+     "why": "MSP amounts and percentage increases are favourite one-mark facts in agriculture and economy questions.",
+     "src": [
+      "Blitz India",
+      "https://blitzindiamedia.com/news/india-weekly-news-economy-energy-sports-2026/"
+     ]
+    },
+    {
+     "t": "Anti-CEC protests continue; Rahul Gandhi launches 'Satyagraha' digital platform",
+     "s": "As protests seeking the removal of Chief Election Commissioner Gyanesh Kumar continued on October 4, LoP Rahul Gandhi launched the 'Satyagraha' digital platform to map resistance movements across the country. Delhi Police detained around 150 protesters marching from Patel Chowk to Jantar Mantar, and three FIRs were registered over the October 2 protests under Section 223 of the Bharatiya Nyaya Sanhita.",
+     "why": "ECI's role, electoral-roll revisions (SIR) and protest-related legal provisions are frequent polity questions.",
+     "src": [
+      "The Hindu",
+      "https://www.thehindu.com/news/morning-digest-october-4-2026/article71541679.ece"
+     ]
+    },
+    {
+     "t": "India and Pakistan summon each other's diplomats over BSF killing of two 'infiltrators' in Punjab",
+     "s": "India and Pakistan summoned each other's diplomats after the Border Security Force killed two Pakistani men attempting to infiltrate through the International Border along Punjab's Tarn Taran district. Pakistan's MoFA summoned the Indian Charge d'Affaires on October 3, calling them unarmed civilians; India summoned the Pakistan CdA to protest continued facilitation of cross-border infiltration.",
+     "why": "India-Pakistan border incidents test knowledge of the International Border, the BSF's role and diplomatic instruments like summoning a Charge d'Affaires.",
+     "src": [
+      "The Hindu",
+      "https://www.thehindu.com/news/morning-digest-october-4-2026/article71541679.ece"
+     ]
+    },
+    {
+     "t": "India demonstrates first 5.56-km free-space Quantum Key Distribution link",
+     "s": "QNu Labs, in collaboration with BISAG-N and IIT Gandhinagar, demonstrated India's first free-space QKD link over 5.56 km on the night of September 27-28, between BISAG-N and IIT Gandhinagar. It achieved a Quantum Bit Error Rate below 5% with keys at 230-260 bps, integrated with BISAG-N's post-quantum cryptography platform Vedic Kavach for end-to-end encrypted test messages.",
+     "why": "Quantum communication milestones link to the National Quantum Mission; expect questions on QKD, QBER and post-quantum cryptography.",
+     "src": [
+      "DD India",
+      "https://ddindia.co.in/2026/10/india-demonstrates-first-5-56-km-free-space-quantum-key-distribution-link/"
+     ]
+    },
+    {
+     "t": "Apple Pay launches in India in partnership with Axis Bank",
+     "s": "Apple Pay has officially entered the Indian market through a partnership with Axis Bank. Initially, eligible Axis Bank Visa and Mastercard credit card holders can use Apple Pay on compatible Apple devices for contactless, online and in-app payments.",
+     "why": "Fintech and digital-payment launches are standard banking-awareness material; note the partner bank (Axis Bank).",
+     "src": [
+      "CareerIndia",
+      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
+     ]
+    },
+    {
+     "t": "Nobel Prize week begins October 5; GLP-1 therapy research among possible contenders",
+     "s": "Nobel Prize announcements begin on October 5, with research on GLP-1 therapies for diabetes and obesity among the possible contenders. The 2026 prizes will be closely watched for breakthroughs in medicine, physics and chemistry.",
+     "why": "Nobel Prize subjects and winners are evergreen static-plus-current GK for all exams.",
+     "src": [
+      "Mint",
+      "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
+     ]
+    },
+    {
+     "t": "National Mental Health Survey report to release on October 10, first in nine years",
+     "s": "India will observe World Mental Health Day on October 10 and release its National Mental Health Survey report after a nine-year gap, amid growing mental health concerns among young people. The previous national survey dates back to 2016-17.",
+     "why": "Health surveys and their gaps are favourite prelims facts; link it to the NMHS 2016-17 baseline.",
+     "src": [
+      "Mint",
+      "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
+     ]
+    },
+    {
+     "t": "Education Ministry approves five Centres of Excellence in classical languages",
+     "s": "The Union Education Ministry has approved setting up five Centres of Excellence in classical languages, a major institutional step for the study, research and promotion of India's classical languages.",
+     "why": "Classical language status (11 languages currently recognised) and related institutions are recurring culture questions.",
+     "src": [
+      "CareerIndia",
+      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
+     ]
+    },
+    {
+     "t": "Delhi launches AI-based pollution monitoring command centre ahead of winter smog",
+     "s": "The Delhi government launched an Integrated Command and Control Centre that uses artificial intelligence to analyse air-quality data, identify pollution hotspots and monitor pollution sources in real time. Over 700 construction sites are being monitored with AI and CCTV technology.",
+     "why": "Pollution-control measures (GRAP, AI monitoring, CAQM) appear regularly in environment questions.",
+     "src": [
+      "CareerIndia",
+      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
+     ]
+    },
+    {
+     "t": "Nagaon Lok Sabha by-election: campaigning ends October 5; BJP's Debashis Sharma faces test",
+     "s": "With one day left for campaigning to end for the Nagaon Lok Sabha by-election, the NDA intensified its grassroots campaign across all eight Assembly segments in support of BJP candidate Debashis Sharma. Assam Chief Minister Himanta Biswa Sarma addressed 15 major public meetings across the constituency.",
+     "why": "By-elections, constituency names and states are tested in polity and current-affairs sections.",
+     "src": [
+      "The Times of India",
+      "https://timesofindia.indiatimes.com/india/india-international-breaking-news-today-october-4/liveblog/134665475.cms"
+     ]
+    }
+   ]
+  },
+  {
    "date": "2026-10-03",
    "points": [
     {
