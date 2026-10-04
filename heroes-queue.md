@@ -5,7 +5,6 @@ published in heroes/, researches and writes the article, then deletes the line.
 Add new lesser-known names at the end as needed. Keep every entry verifiable:
 a real Indian freedom fighter with at least two independent sources.
 
-- K. Kelappan (Kerala, Vaikom Satyagraha)
 - P. Krishna Pillai (Kerala, communist organiser)
 - Swadeshabhimani Ramakrishna Pillai (Kerala, journalist deported 1910)
 - Mohammed Abdul Rahiman (Kerala, Khilafat and Congress)
