@@ -93,6 +93,21 @@ def keywords(s):
     return {w.lower() for w in re.findall(r"[A-Za-z0-9&]+", s)
             if w.lower() not in STOP and len(w) > 2}
 
+_SLOT_HOURS = {"morning": 8, "midday": 11, "afternoon": 14, "evening": 17,
+               "night": 20, "manual": 12}
+
+def rel_time(p):
+    day = datetime.strptime(p["date"], "%Y-%m-%d").replace(tzinfo=IST)
+    m = re.match(r"(morning|midday|afternoon|evening|night)", p["slot"].lower())
+    posted = day.replace(hour=_SLOT_HOURS[m.group(1)] if m else 12)
+    delta = datetime.now(IST) - posted
+    mins = max(0, int(delta.total_seconds() // 60))
+    if mins < 60:
+        return f"{max(mins, 1)}m ago"
+    if mins < 1440:
+        return f"{mins // 60}h ago"
+    return f"{mins // 1440}d ago"
+
 def _cap_title(d):
     p = os.path.join(POSTS, d, "caption.txt")
     if not os.path.exists(p):
@@ -919,6 +934,105 @@ html[data-theme="dark"] .page-head h1{color:#f2f5fc}
   .top-search input{min-height:42px}
   .sec-link{min-height:44px;display:inline-flex;align-items:center}
 }
+/* ---------- language toggle ---------- */
+.lang-toggle{display:inline-flex;align-items:center;gap:.3rem;background:transparent;
+border:1.5px solid var(--saffron);color:#fff;border-radius:999px;padding:.3rem .7rem;
+font:inherit;font-size:.82rem;font-weight:800;cursor:pointer;white-space:nowrap}
+.lang-toggle .lt-en,.lang-toggle .lt-hi{opacity:.5;transition:opacity .2s}
+.lang-toggle .lt-sep{opacity:.4}
+.lang-toggle[data-lang="en"] .lt-en{opacity:1;color:var(--saffron)}
+.lang-toggle[data-lang="hi"] .lt-hi{opacity:1;color:var(--saffron)}
+.lang-toggle:hover{border-color:var(--saffron2)}
+@media(max-width:720px){.lang-toggle{padding:.25rem .55rem;font-size:.75rem}}
+/* ---------- trending strip ---------- */
+.trend-strip{margin:1.4rem 0 .4rem}
+.trend-head{display:flex;align-items:center;gap:.6rem;margin:0 .2rem .8rem}
+.trend-label{background:var(--saffron);color:var(--navy);font-weight:800;
+  font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.3rem .8rem;border-radius:20px}
+.trend-scroll{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;padding:.2rem .2rem 1rem;
+  scrollbar-width:thin}
+.trend-scroll::-webkit-scrollbar{height:6px}
+.trend-scroll::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px}
+.trend-item{flex:0 0 240px;scroll-snap-align:start;display:flex;gap:.7rem;
+  background:var(--card);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);text-decoration:none;color:inherit;
+  border-left:4px solid var(--saffron)}
+.trend-item img{width:86px;min-width:86px;height:86px;object-fit:cover;
+  background:var(--navy)}
+.trend-body{display:flex;flex-direction:column;justify-content:center;
+  gap:.35rem;padding:.5rem .7rem .5rem 0;min-width:0}
+.trend-body p{font-size:.82rem;line-height:1.35;font-weight:600;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;
+  overflow:hidden;margin:0}
+.trend-time{font-size:.72rem;color:var(--saffron);font-weight:700;
+  text-transform:uppercase;letter-spacing:.05em}
+.trend-item:hover{transform:translateY(-3px)}
+@media(min-width:760px){.trend-item{flex-basis:280px}}
+/* ---------- fact check verdicts ---------- */
+.verdict{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;border-radius:999px;padding:.25rem .8rem;color:#fff}
+.verdict-true{background:#1e7f3f}
+.verdict-misleading,.verdict-unverified{background:#b25f09}
+.verdict-false{background:#b3212c}
+html[data-theme="dark"] .verdict-true{color:#2fa85c;background:rgba(47,168,92,.15);border:1px solid #2fa85c}
+html[data-theme="dark"] .verdict-misleading,html[data-theme="dark"] .verdict-unverified{color:#f5a623;background:rgba(245,166,35,.12);border:1px solid #f5a623}
+html[data-theme="dark"] .verdict-false{color:#ff6b6b;background:rgba(255,107,107,.12);border:1px solid #ff6b6b}
+.verdict-legend{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.6rem}
+.fc-card{margin-bottom:1.4rem}
+.fc-card details{margin-top:.8rem}
+.fc-card summary{cursor:pointer;font-weight:700;color:var(--saffron);min-height:44px;display:inline-flex;align-items:center}
+.fc-card ul{margin:.5rem 0}
+/* ---------- timeline ---------- */
+.dev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.1rem}
+.dev-card{display:block;background:var(--card);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:1.1rem 1.2rem;text-decoration:none;color:inherit;
+  border-top:4px solid var(--saffron)}
+.dev-card:hover{transform:translateY(-4px)}
+.dev-count{font-size:.72rem;font-weight:800;color:var(--saffron);
+  text-transform:uppercase;letter-spacing:.06em}
+.dev-card h3{font-size:1.02rem;margin:.3rem 0;color:var(--navy)}
+html[data-theme="dark"] .dev-card h3{color:#f2f5fc}
+.dev-card p{font-size:.85rem;color:var(--muted);margin:.2rem 0}
+.dev-date{font-size:.74rem;color:var(--muted)}
+.thread{margin-top:2.6rem}
+.tl{list-style:none;margin:1.2rem 0 0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:3px;
+  background:var(--navy);border-radius:2px;opacity:.25}
+.tl-item{position:relative;padding:0 0 1.3rem 2.4rem}
+.tl-dot{position:absolute;left:2px;top:4px;width:17px;height:17px;border-radius:50%;
+  background:var(--saffron);border:3px solid var(--navy)}
+.tl-card{background:var(--card);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:1rem 1.2rem}
+.tl-card h4{font-size:.98rem;margin:.25rem 0 .4rem}
+.tl-card p{font-size:.86rem;color:var(--muted);margin:0}
+.tl-date{font-size:.74rem;font-weight:800;color:var(--saffron);
+  text-transform:uppercase;letter-spacing:.06em}
+/* ---------- topics ---------- */
+.topic-cloud{display:flex;flex-wrap:wrap;gap:.7rem;margin:2rem 0 1rem}
+.topic-cloud .tagchip{font-size:.85rem;padding:.4rem 1rem}
+/* ---------- reader: bookmarks + progress ---------- */
+#read-progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:70;
+  background:linear-gradient(90deg,var(--saffron),var(--saffron2));}
+.vs-bookmark-slot{display:inline-flex;vertical-align:middle;}
+.vs-bookmark{display:inline-flex;align-items:center;justify-content:center;
+  min-width:44px;min-height:44px;padding:0;border:0;background:transparent;
+  color:var(--navy);cursor:pointer;border-radius:8px;}
+.vs-bookmark:hover{background:rgba(255,153,51,.12);}
+.vs-bookmark svg{display:block;}
+.vs-bookmark.on{color:var(--saffron);}
+.vs-bookmark.on svg path{fill:currentColor;}
+.vs-bookmark-list .vs-remove,
+.vs-bookmark-actions .vs-clear{display:inline-block;margin-top:.6rem;
+  padding:.6rem 1rem;min-height:44px;border:1px solid var(--saffron);
+  background:transparent;color:var(--saffron);border-radius:8px;
+  font-size:.85rem;cursor:pointer;}
+.vs-bookmark-list .vs-remove:hover,
+.vs-bookmark-actions .vs-clear:hover{background:rgba(255,153,51,.12);}
+.vs-bookmark-actions{margin-top:1rem;}
+/* ---------- Hindi (Devanagari) ---------- */
+html[lang="hi"] body{font-family:'Noto Sans Devanagari','Noto Sans','Segoe UI',system-ui,-apple-system,Roboto,Arial,sans-serif;}
 """
 
 JS = """\
@@ -1491,14 +1605,16 @@ def rel(depth):
 
 def topbar(depth, active):
     r = rel(depth)
-    def link(href, label, key, extra=""):
+    def link(href, label, key, extra="", i18n=""):
         cls = ' class="active"' if active == key else ""
-        return f'<a href="{r}{href}"{cls}{extra}>{label}</a>'
+        i18n_attr = f' data-i18n="{i18n}"' if i18n else ""
+        return f'<a href="{r}{href}"{cls}{extra}{i18n_attr}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home')}{link('archive.html','News','news')}{link('videos.html','Videos','videos')}{link('blog.html','Blog','blog')}{link('heroes.html','Heroes','heroes')}{link('scores.html','Scores','scores',' data-scores-nav')}{link('markets.html','Markets','markets')}{link('policy.html','Policy','policy')}{link('study.html','Study','study')}{link('today.html','Today','today')}{link('horoscope.html','Horoscope','horoscope')}{link('tags/','Tags','tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home', i18n='nav_home')}{link('archive.html','News','news', i18n='nav_news')}{link('videos.html','Videos','videos', i18n='nav_videos')}{link('blog.html','Blog','blog', i18n='nav_blog')}{link('factcheck.html','Fact Check','factcheck', i18n='nav_fact_check')}{link('heroes.html','Heroes','heroes', i18n='nav_heroes')}{link('scores.html','Scores','scores',' data-scores-nav', i18n='nav_scores')}{link('markets.html','Markets','markets', i18n='nav_markets')}{link('policy.html','Policy','policy', i18n='nav_policy')}{link('study.html','Study','study', i18n='nav_study')}{link('today.html','Today','today', i18n='nav_today')}{link('topics/','Topics','topics', i18n='nav_topics')}{link('timeline.html','Timeline','timeline', i18n='nav_timeline')}{link('horoscope.html','Horoscope','horoscope', i18n='nav_horoscope')}{link('tags/','Tags','tags', i18n='nav_tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
-<div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." aria-label="Search the site" autocomplete="off" data-index="{r}assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
+<button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" data-lang="en"><span class="lt-en" aria-hidden="true">EN</span><span class="lt-sep" aria-hidden="true">|</span><span class="lt-hi" aria-hidden="true">&#2361;&#2367;&#2306;</span></button>
+<div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." data-i18n-ph="search_placeholder" aria-label="Search the site" autocomplete="off" data-index="{r}assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
@@ -1508,26 +1624,35 @@ def footer(depth):
     r = rel(depth)
     return f"""<footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="nl-block"><strong>Newsletter</strong><p>Get the top stories by email. No spam, unsubscribe anytime.</p>
-<form class="nl-form" id="nl-form" data-email="{CONTACT_EMAIL}"><input type="email" required placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit">Subscribe</button></form>
-<p class="nl-note">Opens your email app with a prefilled subscribe request.</p></div>
-<div class="foot-links"><a href="{r}videos.html">Videos</a><a href="{r}heroes.html">Heroes</a><a href="{r}scores.html">Scores</a><a href="{r}markets.html">Markets</a><a href="{r}policy.html">Policy</a><a href="{r}study.html">Study</a><a href="{r}today.html">Today</a><a href="{r}horoscope.html">Horoscope</a><a href="{r}tags/">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="nl-block"><strong data-i18n="newsletter">Newsletter</strong><p data-i18n="newsletter_sub">Get the top stories by email. No spam, unsubscribe anytime.</p>
+<form class="nl-form" id="nl-form" data-email="{CONTACT_EMAIL}"><input type="email" required data-i18n-ph="email_placeholder" placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit" data-i18n="subscribe">Subscribe</button></form>
+<p class="nl-note" data-i18n="newsletter_note">Opens your email app with a prefilled subscribe request.</p></div>
+<div class="foot-links"><a href="{r}videos.html" data-i18n="nav_videos">Videos</a><a href="{r}heroes.html" data-i18n="nav_heroes">Heroes</a><a href="{r}scores.html" data-i18n="nav_scores">Scores</a><a href="{r}markets.html" data-i18n="nav_markets">Markets</a><a href="{r}policy.html" data-i18n="nav_policy">Policy</a><a href="{r}study.html" data-i18n="nav_study">Study</a><a href="{r}today.html" data-i18n="nav_today">Today</a><a href="{r}horoscope.html" data-i18n="nav_horoscope">Horoscope</a><a href="{r}factcheck.html" data-i18n="nav_fact_check">Fact Check</a><a href="{r}topics/" data-i18n="nav_topics">Topics</a><a href="{r}timeline.html" data-i18n="nav_timeline">Timeline</a><a href="{r}tags/" data-i18n="nav_tags">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
-def head(title, desc, depth, og_image="", extra_jsonld=""):
+def head(title, desc, depth, og_image="", extra_jsonld="", canonical="", og_type="article"):
     r = rel(depth)
-    og = (f'<meta property="og:image" content="{html.escape(og_image)}">' if og_image else "")
+    canon = f'<link rel="canonical" href="{html.escape(canonical)}">' if canonical else ""
+    og_img = html.escape(og_image) if og_image else SITE_URL + "assets/og-default.png"
+    og = f'<meta property="og:image" content="{og_img}">\n<meta property="og:image:width" content="1200">\n<meta property="og:image:height" content="630">'
+    og_url = f'<meta property="og:url" content="{html.escape(canonical)}">' if canonical else ""
     tw = (f'<meta name="twitter:card" content="summary_large_image">\n'
-          f'<meta name="twitter:image" content="{html.escape(og_image)}">' if og_image else "")
+          f'<meta name="twitter:title" content="{html.escape(title)}">\n'
+          f'<meta name="twitter:description" content="{html.escape(desc)}">\n'
+          f'<meta name="twitter:image" content="{og_img}">')
     return f"""<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a1a3c">
 <title>{html.escape(title)} | Varta &amp; Samkara</title>
-<script>(function(){{try{{var t=localStorage.getItem('vs-theme');if(!t){{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}}document.documentElement.setAttribute('data-theme',t);}}catch(e){{}}}})();</script>
+<script>(function(){{try{{var t=localStorage.getItem('vs-theme');if(!t){{t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('vs-lang')||'en';document.documentElement.setAttribute('lang',l);}}catch(e){{}}}})();</script>
 <meta name="description" content="{html.escape(desc)}">
+{canon}
+<meta property="og:site_name" content="Varta &amp; Samkara">
+<meta property="og:locale" content="en_IN">
 <meta property="og:title" content="{html.escape(title)}">
 <meta property="og:description" content="{html.escape(desc)}">
-<meta property="og:type" content="article">
+<meta property="og:type" content="{og_type}">
+{og_url}
 {og}
 {tw}
 <link rel="manifest" href="{r}manifest.json">
@@ -1536,6 +1661,8 @@ def head(title, desc, depth, og_image="", extra_jsonld=""):
 <link rel="dns-prefetch" href="https://www.instagram.com">
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="{r}feed.xml">
 <script>if('serviceWorker' in navigator){{window.addEventListener('load',function(){{navigator.serviceWorker.register('{r}sw.js').catch(function(){{}});}});}}</script>
+<script src="{r}assets/lang-toggle.js" defer></script>
+<script src="{r}assets/js/vs-reader.js" defer></script>
 {extra_jsonld}"""
 
 def excerpt_of(blocks, story):
@@ -1589,14 +1716,21 @@ def jsonld_article(p):
         "@context": "https://schema.org",
         "@type": atype,
         "headline": p["art"]["title"],
-        "datePublished": p["date"],
-        "author": {"@type": "Organization", "name": "Varta & Samkara"},
-        "publisher": {"@type": "Organization", "name": "Varta & Samkara"},
+        "datePublished": f"{p['date']}T00:00:00+05:30",
+        "dateModified": f"{p['date']}T00:00:00+05:30",
+        "inLanguage": "en-IN",
+        "author": {"@type": "Organization", "name": "Varta & Samkara",
+                   "url": SITE_URL},
+        "publisher": {"@type": "Organization", "name": "Varta & Samkara",
+                      "url": SITE_URL,
+                      "logo": {"@type": "ImageObject",
+                               "url": SITE_URL + "assets/icon-512.png",
+                               "width": 512, "height": 512}},
         "description": p["excerpt"],
-        "mainEntityOfPage": page_url(p),
+        "mainEntityOfPage": {"@type": "WebPage", "@id": page_url(p)},
     }
     if img:
-        data["image"] = img
+        data["image"] = {"@type": "ImageObject", "url": img}
     return ('<script type="application/ld+json">\n'
             + json.dumps(data, ensure_ascii=False) + '\n</script>')
 
@@ -1667,6 +1801,126 @@ def assign_topic_tags(p):
         if len(tags) < 2 and fb not in tags:
             tags.append(fb)
     return tags[:4]
+
+
+TOPIC_KEYWORDS = {
+    "Politics": ["election", "elections", "vote", "voter", "ballot", "poll",
+        "lok sabha", "rajya sabha", "parliament", "minister", "cabinet",
+        "government", "bjp", "congress", "aap", "shiv sena", "mns",
+        "cec", "election commission", "satyagraha", "protest", "protests",
+        "march", "detained", "detention", "police", "court", "supreme court",
+        "high court", "fir", "bar association", "lawyers", "strike",
+        "jail bharo", "rally", "dharna", "jantar mantar", "shivaji park",
+        "suspended", "suspension", "resignation", "mp", "mla", "assembly",
+        "ordinance", "regulation", "trai"],
+    "Economy": ["economy", "gdp", "growth", "sensex", "nifty", "rupee",
+        "rbi", "inflation", "budget", "msp", "crore", "lakh", "billion",
+        "trade", "tariff", "jobs", "employment", "unemployment",
+        "bank", "banking", "upi", "mdr", "gold", "silver", "steel",
+        "investment", "investments", "funding", "startup", "acquisition",
+        "merger", "profit", "revenue", "quarter", "oil", "crude",
+        "diesel", "petrol", "barrels", "coal", "power plant", "price",
+        "prices", "market", "markets", "stock"],
+    "Science & Tech": ["space", "isro", "satellite", "orbital", "rocket",
+        "falcon 9", "ai", "artificial intelligence", "quantum", "qkd",
+        "data centre", "health", "vaccine", "vaccination", "hpv",
+        "cervavac", "prequalification", "monsoon", "imd", "climate",
+        "exoplanet", "radio signal", "meerkat", "chip", "chips",
+        "oracle", "tencent", "iphone", "apple", "research", "discovery",
+        "genome", "magnetic field", "nuclear"],
+    "Sports": ["cricket", "olympics", "asian games", "athletes", "medal",
+        "gold", "silver", "bronze", "hockey", "boxing", "archery",
+        "recurve", "wrestling", "badminton", "football", "match",
+        "tournament", "innings", "runs", "wickets", "bcci", "final",
+        "semi-final", "semifinal", "shoot-off", "tally"],
+    "World": ["trump", "white house", "xi jinping", "china", "united states",
+        "us forces", "russia", "ukraine", "israel", "iran", "hormuz",
+        "pakistan", "gaza", "nato", "unga", "un general assembly",
+        "security council", "brazil", "lula", "bolsonaro", "japan",
+        "okinawa", "swiss", "switzerland", "europe", "european", "iraq",
+        "syria", "canada", "australia", "fbi", "fugitive", "bounty",
+        "g7", "midterms"],
+}
+INDIA_MARKERS = ["india", "indian", "bharat", "delhi", "mumbai",
+    "bengaluru", "kerala", "punjab", "gujarat", "jodhpur", "kanpur",
+    "raigad", "tamil", "assam", "rajasthan", "kolkata", "hyderabad",
+    "lucknow", "patna", "bhopal", "sagar", "indore", "nagpur", "pune",
+    "amritsar", "jammu", "kashmir", "bihar", "odisha", "west bengal",
+    "uttar pradesh", "madhya pradesh", "ladakh"]
+
+_TOPIC_PRIORITY = ("Politics", "Economy", "Science & Tech", "Sports")
+TOPIC_SLUGS = {
+    "Politics": "politics", "Economy": "economy",
+    "Science & Tech": "science-tech", "Sports": "sports",
+    "World": "world", "India": "india",
+}
+TOPIC_LEDES = {
+    "Politics": "Elections, Parliament, protests and the courts.",
+    "Economy": "Markets, the RBI, budgets, jobs and trade.",
+    "Science & Tech": "Space, ISRO, AI, health and the research shaping tomorrow.",
+    "Sports": "Cricket, the Olympics and every athlete making India proud.",
+    "World": "International stories from beyond India's borders.",
+    "India": "India-centric stories, from every corner of the country.",
+}
+
+def classify_topic(story_text, caption_text):
+    text = (" " + (story_text or "") + " " + (caption_text or "") + " ").lower()
+    def hits(kws):
+        return sum(1 for k in kws
+                   if re.search(r"(?<![a-z])" + re.escape(k) + r"(?![a-z])", text))
+    scores = {t: hits(TOPIC_KEYWORDS[t]) for t in _TOPIC_PRIORITY}
+    world = hits(TOPIC_KEYWORDS["World"])
+    india = hits(INDIA_MARKERS)
+    ranked = sorted(_TOPIC_PRIORITY, key=lambda t: (-scores[t], _TOPIC_PRIORITY.index(t)))
+    if scores[ranked[0]] >= 1:
+        return ranked[0]
+    if world >= 1 and (india == 0 or world >= 2):
+        return "World"
+    return "India"
+
+
+_THREAD_BLOCKLIST = {"india", "indian", "news", "today", "reel", "carousel",
+    "post", "video", "watch", "read", "story", "full", "gold", "silver",
+    "bronze", "medal", "golden"}
+
+def _thread_keys(p):
+    return {w for w in keywords(p["art"]["title"] + " " + p["excerpt"])
+            if len(w) >= 5 and w not in _THREAD_BLOCKLIST}
+
+def cluster_threads(news):
+    from collections import Counter
+    keys = {p["slug"]: _thread_keys(p) for p in news}
+    parent = {p["slug"]: p["slug"] for p in news}
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+    for a in news:
+        for b in news:
+            if a["slug"] >= b["slug"]:
+                continue
+            da = datetime.strptime(a["date"], "%Y-%m-%d")
+            db = datetime.strptime(b["date"], "%Y-%m-%d")
+            if abs((da - db).days) > 14:
+                continue
+            if len(keys[a["slug"]] & keys[b["slug"]]) >= 2:
+                parent[find(a["slug"])] = find(b["slug"])
+    groups = {}
+    for p in news:
+        groups.setdefault(find(p["slug"]), []).append(p)
+    threads = []
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        members.sort(key=lambda p: (p["date"], p["slot"]), reverse=True)
+        cnt = Counter()
+        for p in members:
+            cnt.update(keys[p["slug"]])
+        title = cnt.most_common(1)[0][0].title() + " thread" if cnt else "Story thread"
+        threads.append({"title": title, "items": members})
+    threads.sort(key=lambda t: (len(t["items"]), t["items"][0]["date"]), reverse=True)
+    return threads
 
 def tag_slug(t):
     return slugify(t)
@@ -1869,13 +2123,17 @@ def card_html(p, depth=0):
         for t in p.get("topic_tags", [])[:2])
     section = sec_of(p)
     rt = reading_time(p.get("blocks"))
-    return f"""<article class="card reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['excerpt'])}">
+    words = sum(len(b.split()) for b in (p.get("blocks") or []))
+    data_ig = f' data-ig-url="{html.escape(p["ig_url"])}"' if p.get("ig_url") else ""
+    bm = (f'<span class="vs-bookmark-slot" data-bookmark-id="{html.escape(p["ig_url"] if p.get("ig_url") else section + "/" + p["slug"] + "/")}"'
+          f' data-bookmark-title="{html.escape(p["art"]["title"])}" data-bookmark-url="{html.escape(section + "/" + p["slug"] + "/")}"></span>')
+    return f"""<article class="card reveal" data-search="{html.escape(p['art']['title'])} {html.escape(p['excerpt'])}"{data_ig}>
 <a class="thumb" href="{r}{section}/{p['slug']}/"><img src="{r}{p['thumb']}" alt="{html.escape(p['art']['title'])}" loading="lazy" decoding="async"></a>
 <div class="card-body">
-<div class="meta">{tag}{chips}<span>{p['date']}</span><span>{rt} min read</span></div>
+<div class="meta">{tag}{chips}<span>{p['date']}</span><span data-readtime data-words="{words}" data-i18n-num="min_read">{rt} min read</span>{bm}</div>
 <h3><a href="{r}{section}/{p['slug']}/">{html.escape(p['art']['title'])}</a></h3>
 <p>{html.escape(p['excerpt'])}</p>
-<a class="read" href="{r}{section}/{p['slug']}/">Read full story &rarr;</a>
+<a class="read" href="{r}{section}/{p['slug']}/" data-i18n="read_full_story">Read full story &rarr;</a>
 </div></article>"""
 
 def article_page(p, prev_p, next_p, related=None, latest=None):
@@ -1886,11 +2144,12 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
         body = f"<p class='body'>{html.escape(p['story'])}</p>"
     r = rel(2)
     rt = reading_time(p.get("blocks"))
+    words = sum(len(b.split()) for b in (p.get("blocks") or []))
     toc = toc_of(p["blocks"])
     toc_html = ""
     if len(toc) >= 3:
         lis = "".join(f'<li><a href="#{a}">{html.escape(t)}</a></li>' for a, t in toc)
-        toc_html = f"""<nav class="toc" aria-label="On this page"><strong>On this page</strong><ul>{lis}</ul></nav>"""
+        toc_html = f"""<nav class="toc" aria-label="On this page"><strong data-i18n="on_this_page">On this page</strong><ul>{lis}</ul></nav>"""
     purl = page_url(p)
     share_txt = urllib.parse.quote(f"{art['title']} - Varta & Samkara")
     share_url = urllib.parse.quote(purl, safe="")
@@ -1955,7 +2214,7 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
 <a class="thumb" href="{r}{qsec}/{q['slug']}/"><img src="{r}{q['thumb']}" alt="{html.escape(q['art']['title'])}" loading="lazy" decoding="async"></a>
 <div class="card-body"><div class="meta"><span>{q['date']}</span></div>
 <h3><a href="{r}{qsec}/{q['slug']}/">{html.escape(q['art']['title'])}</a></h3></div></article>""")
-        related_html = f"""<section class="related"><h2>Keep reading</h2><div class="grid">{"".join(cards)}</div></section>"""
+        related_html = f"""<section class="related"><h2 data-i18n="related_stories">Keep reading</h2><div class="grid">{"".join(cards)}</div></section>"""
     sidebar_html = ""
     if latest:
         items = []
@@ -1964,18 +2223,18 @@ def article_page(p, prev_p, next_p, related=None, latest=None):
             items.append(f"""<a class="side-item" href="{r}{qsec}/{q['slug']}/">
 <img src="{r}{q['thumb']}" alt="" loading="lazy" decoding="async">
 <div><h4>{html.escape(q['art']['title'])}</h4><span class="sdate">{q['date']}</span></div></a>""")
-        sidebar_html = f"""<aside class="latest-sidebar"><h2>Latest stories</h2>{"".join(items)}</aside>"""
+        sidebar_html = f"""<aside class="latest-sidebar"><h2 data-i18n="latest_news">Latest stories</h2>{"".join(items)}</aside>"""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{head(art['title'], desc, 2, og_img, jsonld_article(p))}
+{head(art['title'], desc, 2, og_img, jsonld_article(p), canonical=purl)}
 </head>
 <body>
-<div class="progress" id="progress"></div>
+<div id="read-progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100"></div>
 {topbar(2, 'heroes' if p.get('is_hero') else ('blog' if p['is_blog'] else 'news'))}
 <main class="wrap article-layout">
-<div class="article-col article">
-<div class="meta" style="margin-top:1rem">{meta_tag}<span>{p['date']}</span><span>{html.escape(p['slot'])}</span><span>{rt} min read</span></div>
+<div class="article-col article" data-article-id="{sec_of(p)}/{p['slug']}/" data-article-title="{html.escape(art['title'])}" data-article-url="{sec_of(p)}/{p['slug']}/" data-article-body>
+<div class="meta" style="margin-top:1rem">{meta_tag}<span>{p['date']}</span><span>{html.escape(p['slot'])}</span><span data-readtime data-words="{words}" data-i18n-num="min_read">{rt} min read</span><span class="vs-bookmark-slot" data-bookmark-id="{sec_of(p)}/{p['slug']}/" data-bookmark-title="{html.escape(art['title'])}" data-bookmark-url="{sec_of(p)}/{p['slug']}/"></span></div>
 {badge}
 <h1>{html.escape(art['title'])}</h1>
 {byline}
@@ -2497,11 +2756,11 @@ def jsonld_page(name, desc, url):
             + json.dumps(data, ensure_ascii=False) + '\n</script>')
 
 def page_shell(title, desc, active, main_html, extra_js=""):
-    url = SITE + ("" if active == "home" else active + ".html")
+    url = SITE_URL + ("" if active == "home" else active + ".html")
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{head(title, desc, 0, "", jsonld_page(title, desc, url))}
+{head(title, desc, 0, "", jsonld_page(title, desc, url), canonical=url, og_type="website")}
 </head>
 <body>
 {topbar(0, active)}
@@ -2512,6 +2771,74 @@ def page_shell(title, desc, active, main_html, extra_js=""):
 {extra_js}
 </body>
 </html>"""
+
+
+def factcheck_page(entries):
+    cards = []
+    for e in entries:
+        verdict_class = "verdict-" + e["verdict"].lower().replace(" ", "-")
+        details = "".join(f"<li>{html.escape(d)}</li>" for d in e["details"])
+        sources = "".join(f'<li><a href="{html.escape(s["url"])}" target="_blank" rel="noopener">{html.escape(s["name"])}</a></li>' for s in e["sources"])
+        rel = " ".join(f'<a class="tagchip" href="{html.escape(u)}">{html.escape(t)}</a>' for t, u in zip(e.get("related_titles", []), e.get("related_urls", [])))
+        cards.append(f"""<article class="card fc-card" data-search="{html.escape(e['claim'])} {html.escape(e['summary'])}">
+<div class="card-body"><span class="verdict {verdict_class}">{html.escape(e['verdict'])}</span>
+<h3>{html.escape(e['claim'])}</h3>
+<p><strong>Verdict:</strong> {html.escape(e['summary'])}</p>
+<details><summary data-i18n="fc_details">Why this verdict</summary><ul>{details}</ul></details>
+<div class="sources"><h4 data-i18n="sources">Sources</h4><ul>{sources}</ul></div>
+{f'<div class="rel-links">{rel}</div>' if rel else ""}
+<div class="card-meta"><span>{html.escape(e['date'])}</span></div></div></article>""")
+    legend = """<div class="verdict-legend"><span class="verdict verdict-true">True</span><span class="verdict verdict-misleading">Misleading</span><span class="verdict verdict-unverified">Unverified</span><span class="verdict verdict-false">False</span></div>"""
+    main = f"""<div class="page-head"><h1 data-i18n="fc_title">Fact Check</h1>
+<p class="lede" data-i18n="fc_lede">Claims checked against our own verified reporting. No rumours, no forwards, just evidence.</p></div>{legend}<div class="grid">{"".join(cards)}</div>"""
+    return page_shell("Fact Check", "Fact-checked claims from Varta & Samkara reporting. True, Misleading, Unverified and False verdicts with evidence.", "factcheck", main)
+
+
+def timeline_page(threads):
+    dev = []
+    for i, t in enumerate(threads[:5], 1):
+        latest = t["items"][0]
+        dev.append(f"""<a class="dev-card" href="#thread-{i}"><span class="dev-count">{len(t['items'])} updates</span>
+<h3>{html.escape(t['title'])}</h3><p>{html.escape(latest['art']['title'])}</p><span class="dev-date">{html.escape(latest['date'])}</span></a>""")
+    dev_html = f"""<section class="dev-stories"><div class="sec-head"><h2 class="sec-title" data-i18n="dev_stories">Developing stories</h2></div>
+<div class="dev-grid">{"".join(dev)}</div></section>""" if dev else ""
+    blocks = []
+    for i, t in enumerate(threads, 1):
+        items = []
+        for p in t["items"]:
+            sec = sec_of(p)
+            items.append(f"""<li class="tl-item"><span class="tl-dot" aria-hidden="true"></span>
+<div class="tl-card"><span class="tl-date">{html.escape(p['date'])}</span>
+<h4><a href="{sec}/{p['slug']}/">{html.escape(p['art']['title'])}</a></h4>
+<p>{html.escape(p['excerpt'])}</p></div></li>""")
+        date_range = f"{t['items'][-1]['date']} to {t['items'][0]['date']}" if len(t['items']) > 1 else t['items'][0]['date']
+        blocks.append(f"""<section class="thread" id="thread-{i}"><div class="sec-head"><h2 class="sec-title">{html.escape(t['title'])}</h2>
+<span class="tag">{len(t['items'])} updates, {html.escape(date_range)}</span></div>
+<ol class="tl">{"".join(items)}</ol></section>""")
+    main = f"""<div class="page-head"><h1 data-i18n="timeline_title">Timeline</h1>
+<p class="lede" data-i18n="timeline_lede">Follow developing stories across days, newest update first.</p></div>
+{dev_html}{"".join(blocks)}"""
+    return page_shell("Timeline", "Developing stories on Varta & Samkara, tracked across days in timeline view.", "timeline", main)
+
+
+def topic_page(topic, posts, counts):
+    slug = TOPIC_SLUGS[topic]
+    cards = "".join(card_html(p, depth=1) for p in posts)
+    cloud = "".join(f'<a class="tagchip" href="{TOPIC_SLUGS[t]}.html">{html.escape(t)} ({counts[t]})</a>' for t in TOPIC_SLUGS)
+    main = f"""<div class="page-head"><h1>{html.escape(topic)}</h1>
+<p class="lede">{html.escape(TOPIC_LEDES[topic])} {len(posts)} stories.</p></div>
+<div class="grid">{cards}</div>
+<div class="topic-cloud">{cloud}<a class="tagchip" href="index.html">All topics</a></div>"""
+    return page_shell(topic, f"{topic} news from Varta & Samkara: {TOPIC_LEDES[topic]}", "topics", main)
+
+
+def topics_index_page(counts):
+    chips = "".join(f'<a class="tagchip" href="{TOPIC_SLUGS[t]}.html">{html.escape(t)} ({counts[t]})</a>' for t in TOPIC_SLUGS)
+    main = f"""<div class="page-head"><h1>Topics</h1>
+<p class="lede">Browse every story by topic.</p></div>
+<h2 class="sec-title">Browse by topic</h2>
+<div class="tag-cloud">{chips}</div>"""
+    return page_shell("Topics", "Browse Varta & Samkara stories by topic: Politics, Economy, Science & Tech, Sports, World, India.", "topics", main)
 
 def markets_page():
     tape = """<div class="tv-wrap"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
@@ -2743,7 +3070,7 @@ def study_article_page(slug, title, desc, md_path):
     toc_html = ""
     if len(toc) >= 3:
         lis = "".join(f'<li><a href="#{a}">{html.escape(t)}</a></li>' for a, t in toc)
-        toc_html = f"""<nav class="toc" aria-label="On this page"><strong>On this page</strong><ul>{lis}</ul></nav>"""
+        toc_html = f"""<nav class="toc" aria-label="On this page"><strong data-i18n="on_this_page">On this page</strong><ul>{lis}</ul></nav>"""
     url = SITE_URL + slug + ".html"
     share_txt = urllib.parse.quote(title)
     share_url = urllib.parse.quote(url, safe="")
@@ -3117,37 +3444,46 @@ def build():
     tick_seq = "".join(
         f"""<a href="{'blog' if p['is_blog'] else 'posts'}/{p['slug']}/">{html.escape(p['art']['title'])}</a><span class="tick-sep">&nbsp;&bull;&nbsp;</span>"""
         for p in latest_news[:5])
-    ticker = f"""<div class="ticker" aria-label="Latest headlines"><span class="ticker-label">Latest</span><div class="ticker-view"><div class="ticker-track">{tick_seq}{tick_seq}</div></div></div>"""
+    ticker = f"""<div class="ticker" aria-label="Latest headlines"><span class="ticker-label" data-i18n="ticker_latest">Latest</span><div class="ticker-view"><div class="ticker-track">{tick_seq}{tick_seq}</div></div></div>"""
+    trend_items = "".join(
+        f"""<a class="trend-item" href="{'blog' if p['is_blog'] else 'posts'}/{p['slug']}/"{f' data-ig-url="{html.escape(p["ig_url"])}"' if p.get('ig_url') else ''}>
+<img src="{p['thumb']}" alt="" loading="lazy" decoding="async">
+<div class="trend-body"><p>{html.escape(p['art']['title'])}</p><span class="trend-time">{rel_time(p)}</span></div></a>"""
+        for p in all_sorted[:8])
+    trend_strip = f"""<div class="trend-strip" aria-label="Trending now"><div class="trend-head"><span class="trend-label" data-i18n="trending_now">Trending now</span></div><div class="trend-scroll">{trend_items}</div></div>"""
+    reading_html = """<section aria-label="Your reading" style="margin-top:2.8rem"><div class="sec-head"><h2 class="sec-title" data-i18n="your_reading">Your reading</h2></div><section id="bookmarks"><h2 class="sec-title" data-i18n="bookmarks">Your bookmarks</h2></section><section id="recently-viewed"><h2 class="sec-title" data-i18n="recently_viewed">Recently viewed</h2></section></section>"""
     index = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 {head("News, Analysis & Opinions from India",
-      "Varta and Samkara: verified news reels, explainers and opinion pieces from India. Every story verified against at least two independent sources.", 0, "", jsonld_home())}
+      "Varta and Samkara: verified news reels, explainers and opinion pieces from India. Every story verified against at least two independent sources.", 0, "", jsonld_home(), canonical=SITE_URL, og_type="website")}
 </head>
 <body>
 {topbar(0, 'home')}
 {ticker}
+{trend_strip}
 <section class="hero">
 <div class="hero-inner">
-<div class="kicker">Top story &bull; {hero['date']}</div>
+<div class="kicker"{f' data-ig-url="{html.escape(hero["ig_url"])}"' if hero.get('ig_url') else ''}><span data-i18n="top_story">Top story</span> &bull; {hero['date']}</div>
 <h2>{html.escape(hero['art']['title'])}</h2>
 <p>{html.escape(hero['excerpt'])}</p>
 <div class="cta-row">
-<a class="btn" href="posts/{hero['slug']}/">Read full story</a>
-<a class="btn ghost" href="{hero['url']}" target="_blank" rel="noopener">Watch on Instagram</a>
+<a class="btn" href="posts/{hero['slug']}/" data-i18n="read_full_story">Read full story</a>
+<a class="btn ghost" href="{hero['url']}" target="_blank" rel="noopener" data-i18n="watch_instagram">Watch on Instagram</a>
 </div>
 </div>
 </section>
 <main class="wrap">
-<div class="sec-head"><h2 class="sec-title">Latest News</h2><a class="sec-link" href="archive.html">All news &rarr;</a></div>
+<div class="sec-head"><h2 class="sec-title" data-i18n="latest_news">Latest News</h2><a class="sec-link" href="archive.html"><span data-i18n="all_news">All news</span> &rarr;</a></div>
 <div class="grid">
 {''.join(card_html(p) for p in latest_news)}
 </div>
-<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title">From the Blog</h2><a class="sec-link" href="blog.html">All opinions &rarr;</a></div>
+<div class="sec-head" style="margin-top:2.8rem"><h2 class="sec-title" data-i18n="from_blog">From the Blog</h2><a class="sec-link" href="blog.html"><span data-i18n="all_opinions">All opinions</span> &rarr;</a></div>
 <div class="grid">
 {''.join(card_html(p) for p in latest_blog)}
 </div>
 {hero_spot}
+{reading_html}
 <section class="about reveal">
 <h2>About <span>Varta &amp; Samkara</span></h2>
 <p><strong>Varta</strong> means discourse, <strong>Samkara</strong> means impression. Verified news, sharp explainers and honest opinion from India, five posts a day.</p>
@@ -3197,6 +3533,10 @@ def build():
 </html>"""
     with open(os.path.join(SITE, "archive.html"), "w", encoding="utf-8") as f:
         f.write(archive)
+
+    # ---------- timeline ----------
+    with open(os.path.join(SITE, "timeline.html"), "w", encoding="utf-8") as f:
+        f.write(timeline_page(cluster_threads(news)))
 
     # ---------- blog index ----------
     bgroups = {}
@@ -3280,8 +3620,15 @@ def build():
                     "opinion" if p["is_blog"] else "news", p["excerpt"], p["date"])
     for p in hero_posts:
         _add_search(p["art"]["title"], f"heroes/{p['slug']}/", "hero", p["excerpt"], p["date"])
+    try:
+        with open(os.path.join(SITE, "assets", "factchecks.json"), encoding="utf-8") as jf:
+            fc_entries = json.load(jf)
+    except Exception:
+        fc_entries = []
     for e in POLICY_ENTRIES:
         _add_search(e["title"], "policy.html", "policy", e["summary"], e["date"])
+    for e in fc_entries:
+        _add_search(f"Fact Check: {e['claim']}", "factcheck.html", "factcheck", e["summary"], e["date"])
     ca_src = "assets-src/constitution-articles.json"
     if os.path.exists(ca_src):
         try:
@@ -3440,6 +3787,32 @@ def build():
     with open(os.path.join(tags_root, "index.html"), "w", encoding="utf-8") as f:
         f.write(tagsidx)
 
+    # ---------- topic hub pages ----------
+    topic_groups = {t: [] for t in TOPIC_SLUGS}
+    for p in news + blog_posts:
+        txt = p.get("story", "") or ""
+        cap = (p["art"]["paras"][0] if p["art"]["paras"] else p.get("excerpt", ""))
+        topic_groups[classify_topic(txt, cap)].append(p)
+    topics_root = os.path.join(SITE, "topics")
+    os.makedirs(topics_root, exist_ok=True)
+    for fname in os.listdir(topics_root):
+        if fname.endswith(".html") and fname not in {TOPIC_SLUGS[t] + ".html" for t in TOPIC_SLUGS} and fname != "index.html":
+            os.remove(os.path.join(topics_root, fname))
+    counts = {}
+    for t in TOPIC_SLUGS:
+        tposts = sorted(topic_groups[t], key=lambda p: (p["date"], p["slot"]), reverse=True)
+        counts[t] = len(tposts)
+    for t in TOPIC_SLUGS:
+        tposts = sorted(topic_groups[t], key=lambda p: (p["date"], p["slot"]), reverse=True)
+        with open(os.path.join(topics_root, TOPIC_SLUGS[t] + ".html"), "w", encoding="utf-8") as f:
+            f.write(topic_page(t, tposts, counts))
+    with open(os.path.join(topics_root, "index.html"), "w", encoding="utf-8") as f:
+        f.write(topics_index_page(counts))
+
+    # ---------- fact check ----------
+    with open(os.path.join(SITE, "factcheck.html"), "w", encoding="utf-8") as f:
+        f.write(factcheck_page(fc_entries))
+
     # ---------- pwa: manifest, service worker, offline page ----------
     make_icon(192)
     make_icon(512)
@@ -3460,7 +3833,7 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v9";
+    sw = """const CACHE = "vs-cache-v10";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
@@ -3469,6 +3842,9 @@ const CORE = ["./", "index.html", "offline.html", "styles.css",
               "history-ancient.html", "history-medieval.html", "history-modern.html", "upsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
+              "factcheck.html", "timeline.html", "topics/index.html",
+              "assets/i18n.json", "assets/headlines-hi.json", "assets/factchecks.json",
+              "assets/lang-toggle.js", "assets/js/vs-reader.js", "assets/og-default.png",
               "today.html",
               "assets/readaloud.js"];
 self.addEventListener("install", (e) => {
@@ -3581,7 +3957,10 @@ self.addEventListener("fetch", (e) => {
                "markets.html", "policy.html", "videos.html", "study.html", "constitution.html",
                "articles.html", "economics.html", "geography.html",
                "history-ancient.html", "history-medieval.html", "history-modern.html",
-               "upsc-syllabus.html", "quiz.html", "today.html", "feed.xml", "tags/"]
+               "upsc-syllabus.html", "quiz.html", "today.html", "current-affairs.html", "tags/",
+               "factcheck.html", "timeline.html", "topics/",
+               "topics/politics.html", "topics/economy.html", "topics/science-tech.html",
+               "topics/sports.html", "topics/world.html", "topics/india.html"]
                + [f"tags/{tag_slug(t)}/" for t in sorted(tag_map)]
                + [f"posts/{p['slug']}/" for p in news]
                + [f"blog/{p['slug']}/" for p in blog_posts]
@@ -3593,6 +3972,8 @@ self.addEventListener("fetch", (e) => {
                f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
     with open(os.path.join(SITE, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write(sitemap)
+    with open(os.path.join(SITE, "robots.txt"), "w", encoding="utf-8") as f:
+        f.write("User-agent: *\nAllow: /\nSitemap: https://rahilsahu.github.io/varta-samkara/sitemap.xml\n")
 
     print(f"news: {len(news)}, blog: {len(blog_posts)} "
           f"({len(user_blogs)} user blogs), heroes: {len(hero_posts)} published")

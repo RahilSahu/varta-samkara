@@ -1,0 +1,73 @@
+<!-- SEO snippets for the Varta & Samkara static generator.
+     Copy into generate_site.py's head() and the JSON-LD builders.
+     Placeholders in {BRACE} style are filled by the generator at build time.
+     Base site URL: https://rahilsahu.github.io/varta-samkara/ -->
+
+<!-- (a) JSON-LD NewsArticle block for article pages.
+     Generator fills: {HEADLINE}, {PAGE_URL}, {IMAGE_URL}, {IMAGE_WIDTH},
+     {IMAGE_HEIGHT}, {DATE_PUBLISHED} (ISO 8601 with timezone, e.g. 2026-10-05T07:30:00+05:30),
+     {DATE_MODIFIED}, {DESCRIPTION}. Logo path is fixed. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "{HEADLINE}",
+  "description": "{DESCRIPTION}",
+  "image": {
+    "@type": "ImageObject",
+    "url": "{IMAGE_URL}",
+    "width": {IMAGE_WIDTH},
+    "height": {IMAGE_HEIGHT}
+  },
+  "datePublished": "{DATE_PUBLISHED}",
+  "dateModified": "{DATE_MODIFIED}",
+  "inLanguage": "en-IN",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "name": "Varta & Samkara",
+    "url": "https://rahilsahu.github.io/varta-samkara/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Varta & Samkara",
+    "url": "https://rahilsahu.github.io/varta-samkara/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://rahilsahu.github.io/varta-samkara/assets/icon-512.png",
+      "width": 512,
+      "height": 512
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{PAGE_URL}"
+  }
+}
+</script>
+
+<!-- (b) Standard OG / Twitter meta block.
+     Generator fills: {TITLE}, {DESCRIPTION}, {PAGE_URL}, {OG_TYPE}
+     ("website" for homepage and section pages, "article" for posts),
+     {OG_IMAGE_URL} (page image, or the default brand image). -->
+<meta property="og:site_name" content="Varta & Samkara">
+<meta property="og:locale" content="en_IN">
+<meta property="og:title" content="{TITLE}">
+<meta property="og:description" content="{DESCRIPTION}">
+<meta property="og:type" content="{OG_TYPE}">
+<meta property="og:url" content="{PAGE_URL}">
+<meta property="og:image" content="{OG_IMAGE_URL}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{TITLE}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{TITLE}">
+<meta name="twitter:description" content="{DESCRIPTION}">
+<meta name="twitter:image" content="{OG_IMAGE_URL}">
+
+<!-- (c) Canonical link pattern.
+     Generator fills: {PAGE_URL} with the absolute public URL,
+     e.g. https://rahilsahu.github.io/varta-samkara/ for the homepage,
+     https://rahilsahu.github.io/varta-samkara/posts/{slug}/ for articles.
+     Trailing slash style must match the sitemap. -->
+<link rel="canonical" href="{PAGE_URL}">

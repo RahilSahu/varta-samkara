@@ -5,29 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0a1a3c">
 <title>Today in India | Varta &amp; Samkara</title>
-<script>(function(){try{var t=localStorage.getItem('vs-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('vs-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);var l=localStorage.getItem('vs-lang')||'en';document.documentElement.setAttribute('lang',l);}catch(e){}})();</script>
 <meta name="description" content="Live weather and air quality across Indian cities, plus on-this-day history.">
+<link rel="canonical" href="https://rahilsahu.github.io/varta-samkara/today.html">
+<meta property="og:site_name" content="Varta &amp; Samkara">
+<meta property="og:locale" content="en_IN">
 <meta property="og:title" content="Today in India">
 <meta property="og:description" content="Live weather and air quality across Indian cities, plus on-this-day history.">
-<meta property="og:type" content="article">
-
-
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rahilsahu.github.io/varta-samkara/today.html">
+<meta property="og:image" content="https://rahilsahu.github.io/varta-samkara/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Today in India">
+<meta name="twitter:description" content="Live weather and air quality across Indian cities, plus on-this-day history.">
+<meta name="twitter:image" content="https://rahilsahu.github.io/varta-samkara/assets/og-default.png">
 <link rel="manifest" href="manifest.json">
 <link rel="stylesheet" href="styles.css">
 <link rel="preconnect" href="https://s3.tradingview.com">
 <link rel="dns-prefetch" href="https://www.instagram.com">
 <link rel="alternate" type="application/rss+xml" title="Varta &amp; Samkara" href="feed.xml">
 <script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+<script src="assets/lang-toggle.js" defer></script>
+<script src="assets/js/vs-reader.js" defer></script>
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@type": "WebPage", "name": "Today in India", "url": "/home/hatch/workspace/varta-samkara-websitetoday.html", "description": "Live weather and air quality across Indian cities, plus on-this-day history.", "publisher": {"@type": "Organization", "name": "Varta & Samkara"}}
+{"@context": "https://schema.org", "@type": "WebPage", "name": "Today in India", "url": "https://rahilsahu.github.io/varta-samkara/today.html", "description": "Live weather and air quality across Indian cities, plus on-this-day history.", "publisher": {"@type": "Organization", "name": "Varta & Samkara"}}
 </script>
 </head>
 <body>
 <header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks"><a href="index.html">Home</a><a href="archive.html">News</a><a href="videos.html">Videos</a><a href="blog.html">Blog</a><a href="heroes.html">Heroes</a><a href="scores.html" data-scores-nav>Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html" class="active">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks"><a href="index.html" data-i18n="nav_home">Home</a><a href="archive.html" data-i18n="nav_news">News</a><a href="videos.html" data-i18n="nav_videos">Videos</a><a href="blog.html" data-i18n="nav_blog">Blog</a><a href="factcheck.html" data-i18n="nav_fact_check">Fact Check</a><a href="heroes.html" data-i18n="nav_heroes">Heroes</a><a href="scores.html" data-scores-nav data-i18n="nav_scores">Scores</a><a href="markets.html" data-i18n="nav_markets">Markets</a><a href="policy.html" data-i18n="nav_policy">Policy</a><a href="study.html" data-i18n="nav_study">Study</a><a href="today.html" class="active" data-i18n="nav_today">Today</a><a href="topics/" data-i18n="nav_topics">Topics</a><a href="timeline.html" data-i18n="nav_timeline">Timeline</a><a href="horoscope.html" data-i18n="nav_horoscope">Horoscope</a><a href="tags/" data-i18n="nav_tags">Tags</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
-<div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." aria-label="Search the site" autocomplete="off" data-index="assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
+<button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" data-lang="en"><span class="lt-en" aria-hidden="true">EN</span><span class="lt-sep" aria-hidden="true">|</span><span class="lt-hi" aria-hidden="true">&#2361;&#2367;&#2306;</span></button>
+<div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." data-i18n-ph="search_placeholder" aria-label="Search the site" autocomplete="off" data-index="assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9789;</span></button>
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
@@ -41,10 +53,10 @@
 <p class="muted">Events via Wikipedia.</p></main>
 <footer><div class="foot-inner">
 <div>&copy; 2026 Varta &amp; Samkara. News verified, opinions owned.</div>
-<div class="nl-block"><strong>Newsletter</strong><p>Get the top stories by email. No spam, unsubscribe anytime.</p>
-<form class="nl-form" id="nl-form" data-email="rahilsahu2000@gmail.com"><input type="email" required placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit">Subscribe</button></form>
-<p class="nl-note">Opens your email app with a prefilled subscribe request.</p></div>
-<div class="foot-links"><a href="videos.html">Videos</a><a href="heroes.html">Heroes</a><a href="scores.html">Scores</a><a href="markets.html">Markets</a><a href="policy.html">Policy</a><a href="study.html">Study</a><a href="today.html">Today</a><a href="horoscope.html">Horoscope</a><a href="tags/">Tags</a><a href="archive.html">Archive</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
+<div class="nl-block"><strong data-i18n="newsletter">Newsletter</strong><p data-i18n="newsletter_sub">Get the top stories by email. No spam, unsubscribe anytime.</p>
+<form class="nl-form" id="nl-form" data-email="rahilsahu2000@gmail.com"><input type="email" required data-i18n-ph="email_placeholder" placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit" data-i18n="subscribe">Subscribe</button></form>
+<p class="nl-note" data-i18n="newsletter_note">Opens your email app with a prefilled subscribe request.</p></div>
+<div class="foot-links"><a href="videos.html" data-i18n="nav_videos">Videos</a><a href="heroes.html" data-i18n="nav_heroes">Heroes</a><a href="scores.html" data-i18n="nav_scores">Scores</a><a href="markets.html" data-i18n="nav_markets">Markets</a><a href="policy.html" data-i18n="nav_policy">Policy</a><a href="study.html" data-i18n="nav_study">Study</a><a href="today.html" data-i18n="nav_today">Today</a><a href="horoscope.html" data-i18n="nav_horoscope">Horoscope</a><a href="factcheck.html" data-i18n="nav_fact_check">Fact Check</a><a href="topics/" data-i18n="nav_topics">Topics</a><a href="timeline.html" data-i18n="nav_timeline">Timeline</a><a href="tags/" data-i18n="nav_tags">Tags</a><a href="archive.html">Archive</a><a href="feed.xml">RSS</a><a href="sitemap.xml">Sitemap</a><a href="https://www.instagram.com/vartaandsamkaraindia/" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 <script>

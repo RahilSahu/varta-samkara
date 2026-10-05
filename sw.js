@@ -1,4 +1,4 @@
-const CACHE = "vs-cache-v9";
+const CACHE = "vs-cache-v10";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
@@ -7,6 +7,9 @@ const CORE = ["./", "index.html", "offline.html", "styles.css",
               "history-ancient.html", "history-medieval.html", "history-modern.html", "upsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
+              "factcheck.html", "timeline.html", "topics/index.html",
+              "assets/i18n.json", "assets/headlines-hi.json", "assets/factchecks.json",
+              "assets/lang-toggle.js", "assets/js/vs-reader.js", "assets/og-default.png",
               "today.html",
               "assets/readaloud.js"];
 self.addEventListener("install", (e) => {
