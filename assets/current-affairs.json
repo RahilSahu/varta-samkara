@@ -1,343 +1,456 @@
 {
- "days": [
-  {
-   "date": "2026-10-04",
-   "points": [
+  "days": [
     {
-     "t": "RBI MPC meet Oct 5-7: economists expect 25 bps repo rate hike to 5.50%, first since Feb 2023",
-     "s": "The RBI's Monetary Policy Committee meets October 5 to 7 to decide the benchmark repo rate. Economists now expect a 25-basis-point hike to 5.50%, brought forward from December, amid higher energy prices, broadening food inflation and CPI inflation rising to 4.82% in August from 4.45% in July, with Brent crude above $100 per barrel.",
-     "why": "RBI policy cycle questions are a staple of banking and SSC exams; note the sequence of the hike cycle (last hike Feb 2023, hike resumed Oct 2026).",
-     "src": [
-      "Mint",
-      "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
-     ]
+      "date": "2026-10-05",
+      "points": [
+        {
+          "t": "Asian Games 2026 conclude: India finish 4th with 85 medals, golden sweep in cricket, hockey and kabaddi",
+          "s": "The 20th Asian Games (Aichi-Nagoya 2026) concluded on 4 October 2026. India finished 4th overall with 85 medals (21 gold, 27 silver, 37 bronze), its second-highest haul ever after the 107 medals at Hangzhou 2023. Both the men's and women's teams won gold in cricket, hockey and kabaddi; China topped the table with 169 gold.",
+          "why": "Medal tallies, ranks and team-sport sweeps are frequent sports GK questions in SSC, banking and state exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "Finance Ministry projects 7.3% GDP growth for Q2 FY27 in September Monthly Economic Review",
+          "s": "The Ministry of Finance's Monthly Economic Review for September 2026 projected real GDP growth of 7.3% for Q2 FY27 (July to September 2026) using its nowcasting model, after 7.8% in Q1 FY27. Merchandise exports were nearly USD 400 billion in the first five months of FY27, with full-year exports possibly approaching USD 1 trillion.",
+          "why": "GDP growth figures and Monthly Economic Review data are asked in the economy sections of UPSC, SSC and banking exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "RoDTEP and RoSCTL export schemes extended till 31 December 2026",
+          "s": "The Department of Commerce (Ministry of Commerce and Industry) and the Ministry of Textiles extended the RoDTEP (Remission of Duties and Taxes on Exported Products) and RoSCTL (Rebate of State and Central Taxes and Levies) schemes till 31 December 2026 amid geopolitical disruptions in West Asia. RoDTEP refunds embedded Central, State and local duties to improve export competitiveness, while RoSCTL supports apparel, garments and made-ups.",
+          "why": "Export scheme names, ministries and extension dates are common one-marker questions in SSC and banking exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "Power Ministry notifies CAFE-III fuel economy norms effective 1 April 2027 to 31 March 2032",
+          "s": "The Ministry of Power notified Corporate Average Fuel Economy (CAFE)-III norms for passenger vehicles (M1 category), tightening the fuel-consumption target from 3.996 litres per 100 km in 2027-28 to 3.3273 litres per 100 km in 2031-32, an improvement of about 16.7%. Super credits apply for EVs (3x), plug-in hybrids (2.5x) and strong hybrids (1.6x), with carbon neutrality factors for ethanol-blended petrol, flex-fuel and CNG vehicles.",
+          "why": "Environmental norms like CAFE appear in UPSC prelims environment sections and SSC current affairs.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "HDFC Bank appoints Anup Bagchi as MD and CEO, first external candidate to lead the bank",
+          "s": "HDFC Bank appointed Anup Bagchi as MD and CEO for three years after RBI approval. He assumes charge on 27 October 2026, succeeding Sashidhar Jagdishan whose term ends 26 October 2026. Bagchi was previously MD and CEO of ICICI Prudential Life Insurance and held senior roles at ICICI Bank and ICICI Securities.",
+          "why": "Bank leadership appointments are standard banking-awareness questions in IBPS, SBI and RBI exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "Department of Pharmaceuticals launches New Discovery Track under PRIP scheme with Rs 50 crore per project",
+          "s": "The Department of Pharmaceuticals launched a New Discovery Track under the Promotion of Research and Innovation in Pharma and MedTech (PRIP) Scheme, supporting startups and MSMEs with up to Rs 50 crore per project for early-stage drug discovery, with mandatory 25% co-funding. Under the first call, 41 projects were approved with Rs 1,600 crore funding; PRIP was launched on 17 August 2023 with a total outlay of Rs 5,000 crore.",
+          "why": "Scheme outlays, launch years and funding caps recur as one-markers in UPSC and SSC exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "Digital Bharat Nidhi signs Rs 10,520 crore agreement for Amended BharatNet Programme in Maharashtra",
+          "s": "Digital Bharat Nidhi (DBN), under the Department of Telecommunications, signed an agreement with the Government of Maharashtra, MahaNet Digital Infrastructure Limited, BSNL and MahaIT to implement the Amended BharatNet Programme in Maharashtra under the state-led model, with Rs 10,520 crore in Central support. It covers 28,237 Gram Panchayats, including upgrades from linear to ring topology.",
+          "why": "Digital-infrastructure schemes and Gram Panchayat coverage numbers are asked in prelims and banking exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "India reaffirms whale conservation commitment at IWC-70 in Hobart; Hobart Declaration adopted",
+          "s": "India reaffirmed its commitment to cetacean conservation at the 70th Meeting of the International Whaling Commission (IWC-70), held in Hobart, Australia from 28 September to 2 October 2026, marking the 80th anniversary of the International Convention for the Regulation of Whaling. India joined the IWC in 1981 and protects cetaceans under the Wild Life (Protection) Act, 1972 and Project Dolphin.",
+          "why": "International conventions, host cities and India's membership years are classic UPSC prelims facts.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "CAG launches CAG-BHASHINI Anuvaad, an AI-based translation tool for audit documents",
+          "s": "The Digital India BHASHINI Division, with the Office of the Comptroller and Auditor General of India, launched CAG-BHASHINI Anuvaad, an AI-based translation tool for official documents and audit reports, during the closing ceremony of the 74th Hindi Diwas and Hindi Pakhwada 2026.",
+          "why": "New digital initiatives of constitutional bodies like the CAG are asked in SSC and state exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        },
+        {
+          "t": "Swiss President Guy Parmelin visits India October 5 to 7; India-EFTA Prosperity Summit on October 7",
+          "s": "Swiss President Guy Parmelin visits India from October 5 to 7 at Prime Minister Narendra Modi's invitation. His programme includes bilateral discussions with Modi on October 5 on trade, investment, science and technology, mobility and the India-EFTA economic partnership, and he will attend the India-EFTA Prosperity Summit on October 7.",
+          "why": "State visits and bilateral summits regularly appear in the current-affairs sections of competitive exams.",
+          "src": [
+            "Dainik Jagran",
+            "https://english.dainikjagranmpcg.com/top-stories/october-5-2026-top-india-and-world-news-headlines/article-36084"
+          ]
+        },
+        {
+          "t": "Two captive-bred Great Indian Bustards released in Desert National Park, Jaisalmer",
+          "s": "Union Environment Minister Bhupender Yadav, with scientists from the Wildlife Institute of India, released two captive-bred male Great Indian Bustards into Rajasthan's Desert National Park under Project Great Indian Bustard, supporting the recovery of one of India's most endangered bird species in its natural habitat.",
+          "why": "Flagship conservation projects and species locations are frequently asked in UPSC prelims and state exams.",
+          "src": [
+            "CareerIndia",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-5-2026-national-international-education-sports-066595.html"
+          ]
+        },
+        {
+          "t": "THE World University Rankings 2027: IISc Bengaluru India's highest-ranked institution at 254th",
+          "s": "Times Higher Education released the THE World University Rankings 2027. The Indian Institute of Science, Bengaluru, is India's highest-ranked institution at 254th globally. The University of Oxford retained the top spot for the 11th consecutive year, followed by MIT. India had 143 universities represented, second only to the US with 168.",
+          "why": "Rankings, India's top institutions and country representation numbers are common one-markers.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-5-october-2026-10454"
+          ]
+        }
+      ]
     },
     {
-     "t": "August 2026 IIP grows 8.0% y-o-y; manufacturing up 9.0%, electricity 12.3%",
-     "s": "The Index of Industrial Production recorded 8.0% year-on-year growth in August 2026 (index level 123.3 vs 114.2 a year ago), up from the revised 7.4% in July, per MoSPI quick estimates released September 28. Manufacturing grew 9.0% (third straight month at 8% or more), electricity and gas supply 12.3%, capital goods 16.9%, while mining contracted 5.6%.",
-     "why": "IIP sector composition, base-year revisions and MoSPI release data recur in UPSC/SSC prelims economy sections.",
-     "src": [
-      "The Times of India",
-      "https://timesofindia.indiatimes.com/business/india-business/indias-industrial-production-grows-8-in-august-manufacturing-up-9/articleshow/134542628.cms"
-     ]
+      "date": "2026-10-04",
+      "points": [
+        {
+          "t": "RBI MPC meet Oct 5-7: economists expect 25 bps repo rate hike to 5.50%, first since Feb 2023",
+          "s": "The RBI's Monetary Policy Committee meets October 5 to 7 to decide the benchmark repo rate. Economists now expect a 25-basis-point hike to 5.50%, brought forward from December, amid higher energy prices, broadening food inflation and CPI inflation rising to 4.82% in August from 4.45% in July, with Brent crude above $100 per barrel.",
+          "why": "RBI policy cycle questions are a staple of banking and SSC exams; note the sequence of the hike cycle (last hike Feb 2023, hike resumed Oct 2026).",
+          "src": [
+            "Mint",
+            "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
+          ]
+        },
+        {
+          "t": "August 2026 IIP grows 8.0% y-o-y; manufacturing up 9.0%, electricity 12.3%",
+          "s": "The Index of Industrial Production recorded 8.0% year-on-year growth in August 2026 (index level 123.3 vs 114.2 a year ago), up from the revised 7.4% in July, per MoSPI quick estimates released September 28. Manufacturing grew 9.0% (third straight month at 8% or more), electricity and gas supply 12.3%, capital goods 16.9%, while mining contracted 5.6%.",
+          "why": "IIP sector composition, base-year revisions and MoSPI release data recur in UPSC/SSC prelims economy sections.",
+          "src": [
+            "The Times of India",
+            "https://timesofindia.indiatimes.com/business/india-business/indias-industrial-production-grows-8-in-august-manufacturing-up-9/articleshow/134542628.cms"
+          ]
+        },
+        {
+          "t": "Cabinet hikes MSP of rapeseed and mustard by Rs 413 per quintal to Rs 6,613 for rabi 2027-28",
+          "s": "The Union Cabinet on September 30 raised the minimum support price of rapeseed and mustard by Rs 413 per quintal to Rs 6,613 for the 2027-28 rabi season, about a 6.7% increase. Lentil rises Rs 390 to Rs 7,390; wheat rises Rs 25 to Rs 2,610. PIB Release ID 2316956.",
+          "why": "MSP amounts and percentage increases are favourite one-mark facts in agriculture and economy questions.",
+          "src": [
+            "Blitz India",
+            "https://blitzindiamedia.com/news/india-weekly-news-economy-energy-sports-2026/"
+          ]
+        },
+        {
+          "t": "Anti-CEC protests continue; Rahul Gandhi launches 'Satyagraha' digital platform",
+          "s": "As protests seeking the removal of Chief Election Commissioner Gyanesh Kumar continued on October 4, LoP Rahul Gandhi launched the 'Satyagraha' digital platform to map resistance movements across the country. Delhi Police detained around 150 protesters marching from Patel Chowk to Jantar Mantar, and three FIRs were registered over the October 2 protests under Section 223 of the Bharatiya Nyaya Sanhita.",
+          "why": "ECI's role, electoral-roll revisions (SIR) and protest-related legal provisions are frequent polity questions.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/morning-digest-october-4-2026/article71541679.ece"
+          ]
+        },
+        {
+          "t": "India and Pakistan summon each other's diplomats over BSF killing of two 'infiltrators' in Punjab",
+          "s": "India and Pakistan summoned each other's diplomats after the Border Security Force killed two Pakistani men attempting to infiltrate through the International Border along Punjab's Tarn Taran district. Pakistan's MoFA summoned the Indian Charge d'Affaires on October 3, calling them unarmed civilians; India summoned the Pakistan CdA to protest continued facilitation of cross-border infiltration.",
+          "why": "India-Pakistan border incidents test knowledge of the International Border, the BSF's role and diplomatic instruments like summoning a Charge d'Affaires.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/morning-digest-october-4-2026/article71541679.ece"
+          ]
+        },
+        {
+          "t": "India demonstrates first 5.56-km free-space Quantum Key Distribution link",
+          "s": "QNu Labs, in collaboration with BISAG-N and IIT Gandhinagar, demonstrated India's first free-space QKD link over 5.56 km on the night of September 27-28, between BISAG-N and IIT Gandhinagar. It achieved a Quantum Bit Error Rate below 5% with keys at 230-260 bps, integrated with BISAG-N's post-quantum cryptography platform Vedic Kavach for end-to-end encrypted test messages.",
+          "why": "Quantum communication milestones link to the National Quantum Mission; expect questions on QKD, QBER and post-quantum cryptography.",
+          "src": [
+            "DD India",
+            "https://ddindia.co.in/2026/10/india-demonstrates-first-5-56-km-free-space-quantum-key-distribution-link/"
+          ]
+        },
+        {
+          "t": "Apple Pay launches in India in partnership with Axis Bank",
+          "s": "Apple Pay has officially entered the Indian market through a partnership with Axis Bank. Initially, eligible Axis Bank Visa and Mastercard credit card holders can use Apple Pay on compatible Apple devices for contactless, online and in-app payments.",
+          "why": "Fintech and digital-payment launches are standard banking-awareness material; note the partner bank (Axis Bank).",
+          "src": [
+            "CareerIndia",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
+          ]
+        },
+        {
+          "t": "Nobel Prize week begins October 5; GLP-1 therapy research among possible contenders",
+          "s": "Nobel Prize announcements begin on October 5, with research on GLP-1 therapies for diabetes and obesity among the possible contenders. The 2026 prizes will be closely watched for breakthroughs in medicine, physics and chemistry.",
+          "why": "Nobel Prize subjects and winners are evergreen static-plus-current GK for all exams.",
+          "src": [
+            "Mint",
+            "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
+          ]
+        },
+        {
+          "t": "National Mental Health Survey report to release on October 10, first in nine years",
+          "s": "India will observe World Mental Health Day on October 10 and release its National Mental Health Survey report after a nine-year gap, amid growing mental health concerns among young people. The previous national survey dates back to 2016-17.",
+          "why": "Health surveys and their gaps are favourite prelims facts; link it to the NMHS 2016-17 baseline.",
+          "src": [
+            "Mint",
+            "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
+          ]
+        },
+        {
+          "t": "Education Ministry approves five Centres of Excellence in classical languages",
+          "s": "The Union Education Ministry has approved setting up five Centres of Excellence in classical languages, a major institutional step for the study, research and promotion of India's classical languages.",
+          "why": "Classical language status (11 languages currently recognised) and related institutions are recurring culture questions.",
+          "src": [
+            "CareerIndia",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
+          ]
+        },
+        {
+          "t": "Delhi launches AI-based pollution monitoring command centre ahead of winter smog",
+          "s": "The Delhi government launched an Integrated Command and Control Centre that uses artificial intelligence to analyse air-quality data, identify pollution hotspots and monitor pollution sources in real time. Over 700 construction sites are being monitored with AI and CCTV technology.",
+          "why": "Pollution-control measures (GRAP, AI monitoring, CAQM) appear regularly in environment questions.",
+          "src": [
+            "CareerIndia",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
+          ]
+        },
+        {
+          "t": "Nagaon Lok Sabha by-election: campaigning ends October 5; BJP's Debashis Sharma faces test",
+          "s": "With one day left for campaigning to end for the Nagaon Lok Sabha by-election, the NDA intensified its grassroots campaign across all eight Assembly segments in support of BJP candidate Debashis Sharma. Assam Chief Minister Himanta Biswa Sarma addressed 15 major public meetings across the constituency.",
+          "why": "By-elections, constituency names and states are tested in polity and current-affairs sections.",
+          "src": [
+            "The Times of India",
+            "https://timesofindia.indiatimes.com/india/india-international-breaking-news-today-october-4/liveblog/134665475.cms"
+          ]
+        }
+      ]
     },
     {
-     "t": "Cabinet hikes MSP of rapeseed and mustard by Rs 413 per quintal to Rs 6,613 for rabi 2027-28",
-     "s": "The Union Cabinet on September 30 raised the minimum support price of rapeseed and mustard by Rs 413 per quintal to Rs 6,613 for the 2027-28 rabi season, about a 6.7% increase. Lentil rises Rs 390 to Rs 7,390; wheat rises Rs 25 to Rs 2,610. PIB Release ID 2316956.",
-     "why": "MSP amounts and percentage increases are favourite one-mark facts in agriculture and economy questions.",
-     "src": [
-      "Blitz India",
-      "https://blitzindiamedia.com/news/india-weekly-news-economy-energy-sports-2026/"
-     ]
+      "date": "2026-10-03",
+      "points": [
+        {
+          "t": "Asian Games 2026: India finishes 4th with 85 medals after golden Day 15",
+          "s": "India closed the Aichi-Nagoya Asian Games on October 3 with 21 gold, 27 silver and 37 bronze (85 total), finishing fourth overall. Historic golds: 17-year-old Kumkum Mohod (first Indian woman to win individual recurve archery gold, beating South Korea's Oh Yejin 6-5 in a shoot-off, and an LA 2028 quota) and Pranavi Urs (first Indian woman to win individual Asian Games golf gold, 15-under 265, plus team silver with Aditi Ashok and Diksha Dagar). India retained the men's cricket gold, beating Pakistan by 19 runs (India 211/6; Abhishek Sharma 61 off 28, Tilak Varma 51* off 22), and the men's hockey gold, beating Malaysia 5-1 to secure direct qualification for the Los Angeles 2028 Olympics. Aman Sehrawat won wrestling gold and Antim Panghal took silver.",
+          "why": "Firsts are the most asked sports GK facts: first Indian woman individual recurve gold, first Indian woman golf gold, retained cricket and hockey titles, and the Olympic quota link for LA 2028.",
+          "src": [
+            "Outlook India",
+            "https://www.outlookindia.com/sports/others/asian-games-2026-day-15-wrap-october-3-india-mens-hockey-cricket-team-kumkum-mohod-aditi-ashok-aman-sehrawat-antim-panghal"
+          ]
+        },
+        {
+          "t": "Union Cabinet clears Green Energy Corridor Phase-III (PM Dhara), outlay Rs 1.86 lakh crore",
+          "s": "The Union Cabinet on September 30 approved the Green Energy Corridor Phase-III (GEC-III) scheme, branded PM Dhara (Developing Harmonised and Accelerated Renewable Energy Access). It strengthens India's Intra-State Transmission System (InSTS) to evacuate up to 135 GW of renewable energy across states and UTs, and deploys 50 GWh of Battery Energy Storage Systems (BESS) for grid flexibility. Total outlay: Rs 1,86,405 crore (Rs 1,36,378 crore for InSTS, Rs 50,000 crore for BESS), with Rs 54,082 crore of Central Financial Assistance, targeted for completion by FY 2032-33. Greenfield projects go through Tariff Based Competitive Bidding (TBCB), brownfield upgrades on cost-plus basis, with State Transmission Utilities as implementing agencies.",
+          "why": "Scheme-plus-numbers question: name, acronym PM Dhara, 135 GW, 50 GWh BESS, outlay, CFA, and target year; supports the 500 GW by 2030 and 900 GW non-fossil by 2035 goals.",
+          "src": [
+            "NDTV",
+            "https://www.ndtv.com/india-news/centre-approves-rs-1-86-lakh-crore-green-energy-corridor-phase-iii-12120013"
+          ]
+        },
+        {
+          "t": "Uttarakhand publishes final electoral roll after SIR: 71,58,949 voters",
+          "s": "The Election Commission published Uttarakhand's final electoral roll on October 3 after the Special Intensive Revision (SIR) that began June 8 with July 1, 2026 as the qualifying date. The final roll lists 71,58,949 electors (37,37,701 men, 34,21,036 women, 212 third gender) across 12,543 polling stations. During claims and objections, 1,29,872 new voters were added and 1,04,708 names deleted. It includes 72,656 voters aged 18-19 and 1,22,892 voters above 80. Those left out can still apply via Form 6 on the ECI Net app or through BLOs.",
+          "why": "SIR is the election-process theme of 2026: know the qualifying date, the draft-to-final timeline (July 14 draft, October 3 final), and Form 6 as the correction mechanism.",
+          "src": [
+            "ETV Bharat",
+            "https://www.etvbharat.com/en/bharat/uttarakhand-sir-campaign-adds-129-872-new-electors-removes-104-708-enn26100302873"
+          ]
+        },
+        {
+          "t": "Sitharaman at Kautilya Economic Conclave: fundamentals intact amid global shocks",
+          "s": "Finance Minister Nirmala Sitharaman said India has navigated recent global shocks with its fundamentals intact and strengthening, citing 7.8% real GDP growth in Q1 FY27, 4.82% CPI inflation in August, and $766 billion in forex reserves. She attributed the resilience to a decade of fiscal prudence, infrastructure creation, banking reforms and last-mile delivery, defining resilience as absorbing shocks while maintaining growth and retaining policy space for future disruptions.",
+          "why": "Macro-economy numbers are direct current-affairs targets: GDP 7.8%, CPI 4.82%, forex $766 billion, and the Kautilya Economic Conclave as the venue.",
+          "src": [
+            "Economic Times",
+            "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+          ]
+        },
+        {
+          "t": "NCW submits 37-point report: gender-neutral child care leave, paid paternity leave, 5 lakh creches by 2030",
+          "s": "The National Commission for Women submitted a 37-point recommendatory report on laws relating to maternity and child care to the Department of Personnel and Training, the Ministry of Women and Child Development, and the Ministry of Labour and Employment. Key recommendations: extend gender-neutral Child Care Leave to the private sector, introduce mandatory paid paternity leave in the private and unorganised sectors, create 5 lakh creche seats by 2030 through a proposed National Childcare Infrastructure Mission, and extend maternity and childcare benefits to informal, gig and platform workers.",
+          "why": "Statutory-body recommendations feed social-policy questions: NCW's legal basis (NCW Act 1990, Section 10), the 5-lakh-creche mission, and the private-sector coverage push.",
+          "src": [
+            "Lokmat Times",
+            "https://www.lokmattimes.com/national/ncw-suggests-gender-neutral-child-care-leave-in-private-sector-5-lakh-new-creches/"
+          ]
+        },
+        {
+          "t": "Katra-Banihal rail speed raised to 100 kmph; Vande Bharat crosses Chenab and Anji bridges",
+          "s": "The Railway Ministry raised the maximum permissible speed on the 111-km Shri Mata Vaishno Devi Katra-Banihal broad-gauge section (part of the Udhampur-Srinagar-Baramulla Rail Link) from 75 kmph to 100 kmph, successfully tested on October 1. Vande Bharat Express (26401/26404) set a record by crossing both the world's highest railway arch bridge, the Chenab Bridge (359 metres above the riverbed), and India's first cable-stayed railway bridge, the Anji Khad Bridge, at 100 kmph.",
+          "why": "Infrastructure facts are fixed GK: Chenab Bridge's 359-metre height, Anji Khad as India's first cable-stayed rail bridge, and the USBRL connection to Kashmir Valley rail link.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/vande-bharat-crosses-chenab-anji-bridges-at-100-kmph-as-katra-banihal-train-speed-limit-raised/article71539493.ece"
+          ]
+        },
+        {
+          "t": "Centre officially names 28 locations and features in Ladakh on Survey of India map",
+          "s": "The Government of India and the UT of Ladakh officially named 28 geographical locations and features in Ladakh according to standard place and feature names on the Survey of India map. The list includes areas such as Gogra and Hot Spring, which were associated with the India-China border tensions. The move aims at accurate identification and public awareness of strategically important geographical features.",
+          "why": "Official naming of strategic border geography is classic India-China border question fodder: note Gogra and Hot Spring and the Survey of India as the naming authority.",
+          "src": [
+            "CareerIndia",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-3-2026-national-international-education-sports-066505.html"
+          ]
+        },
+        {
+          "t": "Taiwan receives first two F-16V Block 70 jets from the US",
+          "s": "Taiwan took delivery of the first two of 66 F-16V Block 70 fighter jets from the United States, landing at Chihhang Air Base in Taitung on October 2. The jets are part of a 2019-approved $8 billion deal for 66 new-build F-16s from Lockheed Martin, delayed by software and production issues. Taiwan's Defence Minister Wellington Koo said more will arrive before year-end; the delivery came about a week after US President Donald Trump met Chinese President Xi Jinping in Washington.",
+          "why": "Defence-procurement current affairs: order year (2019), deal value ($8 billion), manufacturer (Lockheed Martin), and the Taiwan-China-US strategic context.",
+          "src": [
+            "Al Jazeera",
+            "https://www.aljazeera.com/amp/news/2026/10/2/us-delivers-f-16v-fighter-jets-to-taiwan-as-island-eyes-threat-from-china"
+          ]
+        },
+        {
+          "t": "Over 700 detained at Jantar Mantar protest demanding CEC's ouster over SIR",
+          "s": "Delhi Police detained more than 700 protesters from Jantar Mantar and nearby areas on Gandhi Jayanti as opposition parties and student organisations demanded the resignation of Chief Election Commissioner Gyanesh Kumar over the Special Intensive Revision (SIR) of electoral rolls. Former Delhi Chief Minister Atishi was among those detained, and opposition leaders denounced the police action.",
+          "why": "Protest-and-commission questions tie together: the Election Commission's composition (CEC plus ECs), Article 324, and the controversy around SIR.",
+          "src": [
+            "Mathrubhumi",
+            "https://english.mathrubhumi.com/news/india/school-assembly-headlines-october-3-2026-tgtryay0"
+          ]
+        },
+        {
+          "t": "Gujarat UCC Bill gets presidential assent; BJP MP backs nationwide Uniform Civil Code",
+          "s": "BJP MP Rahul Sinha backed a nationwide Uniform Civil Code after the Gujarat UCC Bill, 2026 received presidential assent, saying it would first be implemented in BJP-ruled states and then extended. He argued that the country is one and laws should be uniform across it.",
+          "why": "UCC sits at the intersection of Directive Principles (Article 44) and current politics: know which states have enacted UCC-linked bills and the presidential-assent requirement for state bills.",
+          "src": [
+            "Economic Times",
+            "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+          ]
+        },
+        {
+          "t": "IAF flies 15 sorties to air-drop 28 tonnes of food in Bihar's Saran amid floods",
+          "s": "The Indian Air Force flew 15 sorties to air-drop 28 tonnes of food packets in Saran district of Bihar as floods affected the region, part of ongoing disaster relief operations.",
+          "why": "Disaster-relief roles of the armed forces recur in exams: IAF's air-drop and HADR (Humanitarian Assistance and Disaster Relief) role, and flood-prone Bihar's river geography.",
+          "src": [
+            "Economic Times",
+            "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+          ]
+        },
+        {
+          "t": "Pargat Singh appointed Punjab Congress president as Warring resigns",
+          "s": "Newly appointed Punjab Congress president Pargat Singh met Punjab in-charge Sachin Pilot at his Delhi residence. Outgoing chief Amarinder Singh Raja Warring handed his formal resignation to Rahul Gandhi, reportedly blaming Sachin Pilot for the change.",
+          "why": "State-unit leadership changes appear in polity current affairs: Pargat Singh is the new Punjab Congress chief, succeeding Amarinder Singh Raja Warring.",
+          "src": [
+            "Economic Times",
+            "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
+          ]
+        }
+      ]
     },
     {
-     "t": "Anti-CEC protests continue; Rahul Gandhi launches 'Satyagraha' digital platform",
-     "s": "As protests seeking the removal of Chief Election Commissioner Gyanesh Kumar continued on October 4, LoP Rahul Gandhi launched the 'Satyagraha' digital platform to map resistance movements across the country. Delhi Police detained around 150 protesters marching from Patel Chowk to Jantar Mantar, and three FIRs were registered over the October 2 protests under Section 223 of the Bharatiya Nyaya Sanhita.",
-     "why": "ECI's role, electoral-roll revisions (SIR) and protest-related legal provisions are frequent polity questions.",
-     "src": [
-      "The Hindu",
-      "https://www.thehindu.com/news/morning-digest-october-4-2026/article71541679.ece"
-     ]
-    },
-    {
-     "t": "India and Pakistan summon each other's diplomats over BSF killing of two 'infiltrators' in Punjab",
-     "s": "India and Pakistan summoned each other's diplomats after the Border Security Force killed two Pakistani men attempting to infiltrate through the International Border along Punjab's Tarn Taran district. Pakistan's MoFA summoned the Indian Charge d'Affaires on October 3, calling them unarmed civilians; India summoned the Pakistan CdA to protest continued facilitation of cross-border infiltration.",
-     "why": "India-Pakistan border incidents test knowledge of the International Border, the BSF's role and diplomatic instruments like summoning a Charge d'Affaires.",
-     "src": [
-      "The Hindu",
-      "https://www.thehindu.com/news/morning-digest-october-4-2026/article71541679.ece"
-     ]
-    },
-    {
-     "t": "India demonstrates first 5.56-km free-space Quantum Key Distribution link",
-     "s": "QNu Labs, in collaboration with BISAG-N and IIT Gandhinagar, demonstrated India's first free-space QKD link over 5.56 km on the night of September 27-28, between BISAG-N and IIT Gandhinagar. It achieved a Quantum Bit Error Rate below 5% with keys at 230-260 bps, integrated with BISAG-N's post-quantum cryptography platform Vedic Kavach for end-to-end encrypted test messages.",
-     "why": "Quantum communication milestones link to the National Quantum Mission; expect questions on QKD, QBER and post-quantum cryptography.",
-     "src": [
-      "DD India",
-      "https://ddindia.co.in/2026/10/india-demonstrates-first-5-56-km-free-space-quantum-key-distribution-link/"
-     ]
-    },
-    {
-     "t": "Apple Pay launches in India in partnership with Axis Bank",
-     "s": "Apple Pay has officially entered the Indian market through a partnership with Axis Bank. Initially, eligible Axis Bank Visa and Mastercard credit card holders can use Apple Pay on compatible Apple devices for contactless, online and in-app payments.",
-     "why": "Fintech and digital-payment launches are standard banking-awareness material; note the partner bank (Axis Bank).",
-     "src": [
-      "CareerIndia",
-      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
-     ]
-    },
-    {
-     "t": "Nobel Prize week begins October 5; GLP-1 therapy research among possible contenders",
-     "s": "Nobel Prize announcements begin on October 5, with research on GLP-1 therapies for diabetes and obesity among the possible contenders. The 2026 prizes will be closely watched for breakthroughs in medicine, physics and chemistry.",
-     "why": "Nobel Prize subjects and winners are evergreen static-plus-current GK for all exams.",
-     "src": [
-      "Mint",
-      "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
-     ]
-    },
-    {
-     "t": "National Mental Health Survey report to release on October 10, first in nine years",
-     "s": "India will observe World Mental Health Day on October 10 and release its National Mental Health Survey report after a nine-year gap, amid growing mental health concerns among young people. The previous national survey dates back to 2016-17.",
-     "why": "Health surveys and their gaps are favourite prelims facts; link it to the NMHS 2016-17 baseline.",
-     "src": [
-      "Mint",
-      "https://www.tradingview.com/news/moodys:4736b52bae87e:0-the-week-ahead-in-numbers-rbi-policy-tcs-q2-results-nobel-prizes/"
-     ]
-    },
-    {
-     "t": "Education Ministry approves five Centres of Excellence in classical languages",
-     "s": "The Union Education Ministry has approved setting up five Centres of Excellence in classical languages, a major institutional step for the study, research and promotion of India's classical languages.",
-     "why": "Classical language status (11 languages currently recognised) and related institutions are recurring culture questions.",
-     "src": [
-      "CareerIndia",
-      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
-     ]
-    },
-    {
-     "t": "Delhi launches AI-based pollution monitoring command centre ahead of winter smog",
-     "s": "The Delhi government launched an Integrated Command and Control Centre that uses artificial intelligence to analyse air-quality data, identify pollution hotspots and monitor pollution sources in real time. Over 700 construction sites are being monitored with AI and CCTV technology.",
-     "why": "Pollution-control measures (GRAP, AI monitoring, CAQM) appear regularly in environment questions.",
-     "src": [
-      "CareerIndia",
-      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-4-2026-national-international-education-sports-066557.html"
-     ]
-    },
-    {
-     "t": "Nagaon Lok Sabha by-election: campaigning ends October 5; BJP's Debashis Sharma faces test",
-     "s": "With one day left for campaigning to end for the Nagaon Lok Sabha by-election, the NDA intensified its grassroots campaign across all eight Assembly segments in support of BJP candidate Debashis Sharma. Assam Chief Minister Himanta Biswa Sarma addressed 15 major public meetings across the constituency.",
-     "why": "By-elections, constituency names and states are tested in polity and current-affairs sections.",
-     "src": [
-      "The Times of India",
-      "https://timesofindia.indiatimes.com/india/india-international-breaking-news-today-october-4/liveblog/134665475.cms"
-     ]
+      "date": "2026-10-02",
+      "points": [
+        {
+          "t": "Asian Games Day 13: India reaches 16 gold and 76 medals, stays 5th",
+          "s": "India closed October 2 at the Nagoya Asian Games with 16 gold, 25 silver and 35 bronze (76 total), fifth in the standings. Highlights: the women's hockey team beat China 1-0 (Lalremsiami, 10th minute; Savita Punia saved a penalty stroke) to end a 44-year wait for the women's hockey title and secure an LA 2028 Olympic quota; boxing won a record three golds (Lovlina Borgohain 75kg, Parveen Hooda 65kg, Ankush Panghal 80kg); Ankita Bhakat, Kirti Sharma and 17-year-old Kumkum Mohod beat South Korea 5-3 for India's first-ever women's recurve team archery gold; and wrestler Sujeet Kalkal came back from 9-2 down to win 65kg gold 10-9.",
+          "why": "Multi-sport results dominate sports GK: note the firsts (women's recurve team gold, three boxing golds), the 44-year hockey gap since 1982, and the Olympic quota link.",
+          "src": [
+            "Economic Times",
+            "https://m.economictimes.com/news/newsblogs/asian-games-2026-live-day-13-october-2-india-schedule-today-live-updates-results-medal-tally-fixtures-timings-medal-hunt-intensifies-on-day-13-as-nagoya-games-enter-decisive-stretch/amp_liveblog/134629927.cms"
+          ]
+        },
+        {
+          "t": "September GST collections surge 14.7% to Rs 2.04 lakh crore",
+          "s": "Gross GST revenue reached Rs 2.04 lakh crore in September 2026, up 14.7% year-on-year, driven by steady economic activity and pre-festive inventory build-up by businesses ahead of the festive season.",
+          "why": "GST collection figures are recurring economy data points. Remember the amount, the growth rate, and the stated driver (festive inventory build-up).",
+          "src": [
+            "Flash Finance",
+            "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
+          ]
+        },
+        {
+          "t": "Rupee breaches 96 per dollar, hits two-month low",
+          "s": "The rupee fell 0.5% to 96.3150 against the US dollar on October 2, a two-month low, as surging US Treasury yields and persistent foreign institutional investor selling pressured emerging-market currencies broadly.",
+          "why": "Exchange-rate movements test the link between US yields, FPI flows, and the rupee. Note the drivers and the 96-per-dollar breach.",
+          "src": [
+            "Flash Finance",
+            "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
+          ]
+        },
+        {
+          "t": "Q1 FY27 FDI equity inflows rise 6% to $19.8 billion, led by Japan",
+          "s": "Foreign direct investment into Indian equity grew 6% year-on-year to $19.8 billion in the April-June 2026 quarter, led by investments from Japan even as inflows from the United States contracted.",
+          "why": "FDI source-country data is a prelims favourite. Note the quarter, the amount, and that Japan led while US inflows shrank.",
+          "src": [
+            "Flash Finance",
+            "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
+          ]
+        },
+        {
+          "t": "Embraer and Mahindra pick Nagpur for C-390 assembly facility",
+          "s": "Brazil's Embraer and the Mahindra Group have zeroed in on Nagpur as the preferred hub for a prospective assembly line for the C-390 Millennium multi-mission aircraft in India, a boost for the Make in India defence-manufacturing push.",
+          "why": "Defence-industrial partnerships and their locations appear in current-affairs sections. Note the aircraft name, the partners, and the city.",
+          "src": [
+            "Flash Finance",
+            "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
+          ]
+        },
+        {
+          "t": "Goyal meets USTR Greer in Milwaukee as India-US trade deal enters final phase",
+          "s": "Commerce Minister Piyush Goyal met US Trade Representative Jamieson Greer on the sidelines of the G20 Trade Ministers' meeting in Milwaukee for a productive discussion on an early interim agreement under the India-US Bilateral Trade Agreement. Greer said the talks are in the short strokes with the sticking points identified, and that PM Modi and President Trump may speak very soon; the two leaders had already reviewed bilateral progress on October 1.",
+          "why": "Bilateral trade negotiations link IR and economy: note the forum (G20 Trade Ministers' meet), the BTA framework announced in February, and the interim-deal goal.",
+          "src": [
+            "Deccan Herald",
+            "https://www.deccanherald.com/amp/story/india/nothing-imminent-india-us-trade-deal-in-short-strokes-ustr-greer-says-modi-trump-to-talk-soon-4167685"
+          ]
+        },
+        {
+          "t": "Centre launches three-month 'Reforms Utsav' drive from October 2",
+          "s": "The central government began 'Reforms Utsav', a three-month nationwide drive showcasing about 1,300 reforms of the last 12 years through 1,639 events, starting October 2. Around 454 events are planned for October and 349 for November, with ministries running beneficiary-specific outreach to vulnerable sections such as fishermen, street vendors, coal mine workers and pensioners. Separately, Jal Shakti Minister C.R. Paatil launched the 16-day JJM Reform Utsav (October 2-17) for community upkeep of Jal Jeevan Mission assets.",
+          "why": "New government campaigns with names, durations, and targets are staple prelims material. Remember the 1,300 reforms, 1,639 events, and the Jal Jeevan link.",
+          "src": [
+            "Rediff",
+            "https://www.rediff.com/news/report/reforms-utsav-to-showcase-1300-reforms/20260925.htm"
+          ]
+        },
+        {
+          "t": "Special Gram Sabhas nationwide launch People's Plan Campaign 2026-27",
+          "s": "Special Gram Sabhas were held across the country on October 2, launching the People's Plan Campaign 2026-27 themed 'Sabki Yojana, Sabka Vikas', under which Gram Panchayats will prepare Gram Panchayat Development Plans for 2027-28 through participatory, evidence-based planning. The Ministry of Panchayati Raj said the meetings would review Finance Commission grants, Rashtriya Gram Swaraj Abhiyan, eGramSwaraj and AuditOnline digital governance, own-source revenue, SVAMITVA property cards, and the Panchayat Advancement Index; the Rural Development Department will highlight the Viksit Bharat-Guarantee for Rozgar and Ajeevika Mission (Gramin) with its statutory 125-day wage employment guarantee.",
+          "why": "Panchayati Raj questions hinge on Article 243G, GPDPs, and scheme names. Remember the campaign theme, the target year (GPDPs for 2027-28), SVAMITVA, eGramSwaraj, and the 125-day wage guarantee.",
+          "src": [
+            "Utkarsh Classes",
+            "https://utkarsh.com/current-affairs/national/government-initiative/peoples-plan-campaign-202627-special-gram-sabhas-launch-sabki-yojana-sabka-vikas-on-2-october"
+          ]
+        },
+        {
+          "t": "SIR row escalates: ECI extends revision dates as AAP protests hit Delhi Metro",
+          "s": "The Election Commission of India extended the Special Intensive Revision (SIR) schedule for electoral rolls in Andhra Pradesh and Meghalaya. Meanwhile, AAP and student groups protested over SIR and alleged mass voter deletions, prompting Delhi Metro to close entry and exit at 11 stations including Rajiv Chowk and Central Secretariat; the INDIA bloc separately announced district-level 'Save Democracy' marches from October 2 to 8 demanding elections through ballot papers.",
+          "why": "Electoral roll revision connects Article 324, the Representation of the People Acts, and EVM debates. Note the two states with extended dates and the ballot-paper demand.",
+          "src": [
+            "Career India",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-2-2026-national-international-education-sports-066459.html"
+          ]
+        },
+        {
+          "t": "HDFC Bank appoints Anup Bagchi as CEO for three years",
+          "s": "HDFC Bank, India's largest private lender, will appoint Anup Bagchi as its next chief executive for a period of three years.",
+          "why": "Banking-awareness sections test top appointments. Note the bank (largest private lender) and the three-year term.",
+          "src": [
+            "Economic Times",
+            "https://m.economictimes.com/news/newsblogs/breaking-news-live-updates-india-pm-modi-congress-protest-cec-gyanesh-kumar-resignation-cjp-flydubai-october-1-2026-tarang-shakti-weather-update-today-lng-prices/amp_liveblog/134606866.cms"
+          ]
+        },
+        {
+          "t": "Festive season: Maruti and Hero post strong September dispatches",
+          "s": "Automakers reported strong pre-festive dispatches for September: Maruti Suzuki India's total monthly sales rose 24% to 2.36 lakh units, while Hero MotoCorp posted a 12% rise to 7.66 lakh units.",
+          "why": "Auto sales are used as a high-frequency indicator of domestic demand. Remember the two companies, the growth rates, and the festive-season context.",
+          "src": [
+            "Flash Finance",
+            "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
+          ]
+        },
+        {
+          "t": "Gandhi Jayanti observed on October 2",
+          "s": "October 2 is Gandhi Jayanti, the birth anniversary of Mahatma Gandhi (born 1869 in Porbandar), observed as the International Day of Non-Violence. It is one of India's three national holidays; PM Modi paid tribute at Rajghat.",
+          "why": "Static GK that repeats yearly: birth year and place, associated movements, and the UN observance (International Day of Non-Violence, adopted 2007).",
+          "src": [
+            "Career India",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-2-2026-national-international-education-sports-066459.html"
+          ]
+        }
+      ]
     }
-   ]
-  },
-  {
-   "date": "2026-10-03",
-   "points": [
-    {
-     "t": "Asian Games 2026: India finishes 4th with 85 medals after golden Day 15",
-     "s": "India closed the Aichi-Nagoya Asian Games on October 3 with 21 gold, 27 silver and 37 bronze (85 total), finishing fourth overall. Historic golds: 17-year-old Kumkum Mohod (first Indian woman to win individual recurve archery gold, beating South Korea's Oh Yejin 6-5 in a shoot-off, and an LA 2028 quota) and Pranavi Urs (first Indian woman to win individual Asian Games golf gold, 15-under 265, plus team silver with Aditi Ashok and Diksha Dagar). India retained the men's cricket gold, beating Pakistan by 19 runs (India 211/6; Abhishek Sharma 61 off 28, Tilak Varma 51* off 22), and the men's hockey gold, beating Malaysia 5-1 to secure direct qualification for the Los Angeles 2028 Olympics. Aman Sehrawat won wrestling gold and Antim Panghal took silver.",
-     "why": "Firsts are the most asked sports GK facts: first Indian woman individual recurve gold, first Indian woman golf gold, retained cricket and hockey titles, and the Olympic quota link for LA 2028.",
-     "src": [
-      "Outlook India",
-      "https://www.outlookindia.com/sports/others/asian-games-2026-day-15-wrap-october-3-india-mens-hockey-cricket-team-kumkum-mohod-aditi-ashok-aman-sehrawat-antim-panghal"
-     ]
-    },
-    {
-     "t": "Union Cabinet clears Green Energy Corridor Phase-III (PM Dhara), outlay Rs 1.86 lakh crore",
-     "s": "The Union Cabinet on September 30 approved the Green Energy Corridor Phase-III (GEC-III) scheme, branded PM Dhara (Developing Harmonised and Accelerated Renewable Energy Access). It strengthens India's Intra-State Transmission System (InSTS) to evacuate up to 135 GW of renewable energy across states and UTs, and deploys 50 GWh of Battery Energy Storage Systems (BESS) for grid flexibility. Total outlay: Rs 1,86,405 crore (Rs 1,36,378 crore for InSTS, Rs 50,000 crore for BESS), with Rs 54,082 crore of Central Financial Assistance, targeted for completion by FY 2032-33. Greenfield projects go through Tariff Based Competitive Bidding (TBCB), brownfield upgrades on cost-plus basis, with State Transmission Utilities as implementing agencies.",
-     "why": "Scheme-plus-numbers question: name, acronym PM Dhara, 135 GW, 50 GWh BESS, outlay, CFA, and target year; supports the 500 GW by 2030 and 900 GW non-fossil by 2035 goals.",
-     "src": [
-      "NDTV",
-      "https://www.ndtv.com/india-news/centre-approves-rs-1-86-lakh-crore-green-energy-corridor-phase-iii-12120013"
-     ]
-    },
-    {
-     "t": "Uttarakhand publishes final electoral roll after SIR: 71,58,949 voters",
-     "s": "The Election Commission published Uttarakhand's final electoral roll on October 3 after the Special Intensive Revision (SIR) that began June 8 with July 1, 2026 as the qualifying date. The final roll lists 71,58,949 electors (37,37,701 men, 34,21,036 women, 212 third gender) across 12,543 polling stations. During claims and objections, 1,29,872 new voters were added and 1,04,708 names deleted. It includes 72,656 voters aged 18-19 and 1,22,892 voters above 80. Those left out can still apply via Form 6 on the ECI Net app or through BLOs.",
-     "why": "SIR is the election-process theme of 2026: know the qualifying date, the draft-to-final timeline (July 14 draft, October 3 final), and Form 6 as the correction mechanism.",
-     "src": [
-      "ETV Bharat",
-      "https://www.etvbharat.com/en/bharat/uttarakhand-sir-campaign-adds-129-872-new-electors-removes-104-708-enn26100302873"
-     ]
-    },
-    {
-     "t": "Sitharaman at Kautilya Economic Conclave: fundamentals intact amid global shocks",
-     "s": "Finance Minister Nirmala Sitharaman said India has navigated recent global shocks with its fundamentals intact and strengthening, citing 7.8% real GDP growth in Q1 FY27, 4.82% CPI inflation in August, and $766 billion in forex reserves. She attributed the resilience to a decade of fiscal prudence, infrastructure creation, banking reforms and last-mile delivery, defining resilience as absorbing shocks while maintaining growth and retaining policy space for future disruptions.",
-     "why": "Macro-economy numbers are direct current-affairs targets: GDP 7.8%, CPI 4.82%, forex $766 billion, and the Kautilya Economic Conclave as the venue.",
-     "src": [
-      "Economic Times",
-      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
-     ]
-    },
-    {
-     "t": "NCW submits 37-point report: gender-neutral child care leave, paid paternity leave, 5 lakh creches by 2030",
-     "s": "The National Commission for Women submitted a 37-point recommendatory report on laws relating to maternity and child care to the Department of Personnel and Training, the Ministry of Women and Child Development, and the Ministry of Labour and Employment. Key recommendations: extend gender-neutral Child Care Leave to the private sector, introduce mandatory paid paternity leave in the private and unorganised sectors, create 5 lakh creche seats by 2030 through a proposed National Childcare Infrastructure Mission, and extend maternity and childcare benefits to informal, gig and platform workers.",
-     "why": "Statutory-body recommendations feed social-policy questions: NCW's legal basis (NCW Act 1990, Section 10), the 5-lakh-creche mission, and the private-sector coverage push.",
-     "src": [
-      "Lokmat Times",
-      "https://www.lokmattimes.com/national/ncw-suggests-gender-neutral-child-care-leave-in-private-sector-5-lakh-new-creches/"
-     ]
-    },
-    {
-     "t": "Katra-Banihal rail speed raised to 100 kmph; Vande Bharat crosses Chenab and Anji bridges",
-     "s": "The Railway Ministry raised the maximum permissible speed on the 111-km Shri Mata Vaishno Devi Katra-Banihal broad-gauge section (part of the Udhampur-Srinagar-Baramulla Rail Link) from 75 kmph to 100 kmph, successfully tested on October 1. Vande Bharat Express (26401/26404) set a record by crossing both the world's highest railway arch bridge, the Chenab Bridge (359 metres above the riverbed), and India's first cable-stayed railway bridge, the Anji Khad Bridge, at 100 kmph.",
-     "why": "Infrastructure facts are fixed GK: Chenab Bridge's 359-metre height, Anji Khad as India's first cable-stayed rail bridge, and the USBRL connection to Kashmir Valley rail link.",
-     "src": [
-      "The Hindu",
-      "https://www.thehindu.com/news/national/vande-bharat-crosses-chenab-anji-bridges-at-100-kmph-as-katra-banihal-train-speed-limit-raised/article71539493.ece"
-     ]
-    },
-    {
-     "t": "Centre officially names 28 locations and features in Ladakh on Survey of India map",
-     "s": "The Government of India and the UT of Ladakh officially named 28 geographical locations and features in Ladakh according to standard place and feature names on the Survey of India map. The list includes areas such as Gogra and Hot Spring, which were associated with the India-China border tensions. The move aims at accurate identification and public awareness of strategically important geographical features.",
-     "why": "Official naming of strategic border geography is classic India-China border question fodder: note Gogra and Hot Spring and the Survey of India as the naming authority.",
-     "src": [
-      "CareerIndia",
-      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-3-2026-national-international-education-sports-066505.html"
-     ]
-    },
-    {
-     "t": "Taiwan receives first two F-16V Block 70 jets from the US",
-     "s": "Taiwan took delivery of the first two of 66 F-16V Block 70 fighter jets from the United States, landing at Chihhang Air Base in Taitung on October 2. The jets are part of a 2019-approved $8 billion deal for 66 new-build F-16s from Lockheed Martin, delayed by software and production issues. Taiwan's Defence Minister Wellington Koo said more will arrive before year-end; the delivery came about a week after US President Donald Trump met Chinese President Xi Jinping in Washington.",
-     "why": "Defence-procurement current affairs: order year (2019), deal value ($8 billion), manufacturer (Lockheed Martin), and the Taiwan-China-US strategic context.",
-     "src": [
-      "Al Jazeera",
-      "https://www.aljazeera.com/amp/news/2026/10/2/us-delivers-f-16v-fighter-jets-to-taiwan-as-island-eyes-threat-from-china"
-     ]
-    },
-    {
-     "t": "Over 700 detained at Jantar Mantar protest demanding CEC's ouster over SIR",
-     "s": "Delhi Police detained more than 700 protesters from Jantar Mantar and nearby areas on Gandhi Jayanti as opposition parties and student organisations demanded the resignation of Chief Election Commissioner Gyanesh Kumar over the Special Intensive Revision (SIR) of electoral rolls. Former Delhi Chief Minister Atishi was among those detained, and opposition leaders denounced the police action.",
-     "why": "Protest-and-commission questions tie together: the Election Commission's composition (CEC plus ECs), Article 324, and the controversy around SIR.",
-     "src": [
-      "Mathrubhumi",
-      "https://english.mathrubhumi.com/news/india/school-assembly-headlines-october-3-2026-tgtryay0"
-     ]
-    },
-    {
-     "t": "Gujarat UCC Bill gets presidential assent; BJP MP backs nationwide Uniform Civil Code",
-     "s": "BJP MP Rahul Sinha backed a nationwide Uniform Civil Code after the Gujarat UCC Bill, 2026 received presidential assent, saying it would first be implemented in BJP-ruled states and then extended. He argued that the country is one and laws should be uniform across it.",
-     "why": "UCC sits at the intersection of Directive Principles (Article 44) and current politics: know which states have enacted UCC-linked bills and the presidential-assent requirement for state bills.",
-     "src": [
-      "Economic Times",
-      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
-     ]
-    },
-    {
-     "t": "IAF flies 15 sorties to air-drop 28 tonnes of food in Bihar's Saran amid floods",
-     "s": "The Indian Air Force flew 15 sorties to air-drop 28 tonnes of food packets in Saran district of Bihar as floods affected the region, part of ongoing disaster relief operations.",
-     "why": "Disaster-relief roles of the armed forces recur in exams: IAF's air-drop and HADR (Humanitarian Assistance and Disaster Relief) role, and flood-prone Bihar's river geography.",
-     "src": [
-      "Economic Times",
-      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
-     ]
-    },
-    {
-     "t": "Pargat Singh appointed Punjab Congress president as Warring resigns",
-     "s": "Newly appointed Punjab Congress president Pargat Singh met Punjab in-charge Sachin Pilot at his Delhi residence. Outgoing chief Amarinder Singh Raja Warring handed his formal resignation to Rahul Gandhi, reportedly blaming Sachin Pilot for the change.",
-     "why": "State-unit leadership changes appear in polity current affairs: Pargat Singh is the new Punjab Congress chief, succeeding Amarinder Singh Raja Warring.",
-     "src": [
-      "Economic Times",
-      "https://m.economictimes.com/news/newsblogs/india-latest-news-updates-today-october-3-politics-kautilya-conclave-industry/amp_liveblog/134651843.cms"
-     ]
-    }
-   ]
-  },
-  {
-   "date": "2026-10-02",
-   "points": [
-    {
-     "t": "Asian Games Day 13: India reaches 16 gold and 76 medals, stays 5th",
-     "s": "India closed October 2 at the Nagoya Asian Games with 16 gold, 25 silver and 35 bronze (76 total), fifth in the standings. Highlights: the women's hockey team beat China 1-0 (Lalremsiami, 10th minute; Savita Punia saved a penalty stroke) to end a 44-year wait for the women's hockey title and secure an LA 2028 Olympic quota; boxing won a record three golds (Lovlina Borgohain 75kg, Parveen Hooda 65kg, Ankush Panghal 80kg); Ankita Bhakat, Kirti Sharma and 17-year-old Kumkum Mohod beat South Korea 5-3 for India's first-ever women's recurve team archery gold; and wrestler Sujeet Kalkal came back from 9-2 down to win 65kg gold 10-9.",
-     "why": "Multi-sport results dominate sports GK: note the firsts (women's recurve team gold, three boxing golds), the 44-year hockey gap since 1982, and the Olympic quota link.",
-     "src": [
-      "Economic Times",
-      "https://m.economictimes.com/news/newsblogs/asian-games-2026-live-day-13-october-2-india-schedule-today-live-updates-results-medal-tally-fixtures-timings-medal-hunt-intensifies-on-day-13-as-nagoya-games-enter-decisive-stretch/amp_liveblog/134629927.cms"
-     ]
-    },
-    {
-     "t": "September GST collections surge 14.7% to Rs 2.04 lakh crore",
-     "s": "Gross GST revenue reached Rs 2.04 lakh crore in September 2026, up 14.7% year-on-year, driven by steady economic activity and pre-festive inventory build-up by businesses ahead of the festive season.",
-     "why": "GST collection figures are recurring economy data points. Remember the amount, the growth rate, and the stated driver (festive inventory build-up).",
-     "src": [
-      "Flash Finance",
-      "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
-     ]
-    },
-    {
-     "t": "Rupee breaches 96 per dollar, hits two-month low",
-     "s": "The rupee fell 0.5% to 96.3150 against the US dollar on October 2, a two-month low, as surging US Treasury yields and persistent foreign institutional investor selling pressured emerging-market currencies broadly.",
-     "why": "Exchange-rate movements test the link between US yields, FPI flows, and the rupee. Note the drivers and the 96-per-dollar breach.",
-     "src": [
-      "Flash Finance",
-      "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
-     ]
-    },
-    {
-     "t": "Q1 FY27 FDI equity inflows rise 6% to $19.8 billion, led by Japan",
-     "s": "Foreign direct investment into Indian equity grew 6% year-on-year to $19.8 billion in the April-June 2026 quarter, led by investments from Japan even as inflows from the United States contracted.",
-     "why": "FDI source-country data is a prelims favourite. Note the quarter, the amount, and that Japan led while US inflows shrank.",
-     "src": [
-      "Flash Finance",
-      "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
-     ]
-    },
-    {
-     "t": "Embraer and Mahindra pick Nagpur for C-390 assembly facility",
-     "s": "Brazil's Embraer and the Mahindra Group have zeroed in on Nagpur as the preferred hub for a prospective assembly line for the C-390 Millennium multi-mission aircraft in India, a boost for the Make in India defence-manufacturing push.",
-     "why": "Defence-industrial partnerships and their locations appear in current-affairs sections. Note the aircraft name, the partners, and the city.",
-     "src": [
-      "Flash Finance",
-      "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
-     ]
-    },
-    {
-     "t": "Goyal meets USTR Greer in Milwaukee as India-US trade deal enters final phase",
-     "s": "Commerce Minister Piyush Goyal met US Trade Representative Jamieson Greer on the sidelines of the G20 Trade Ministers' meeting in Milwaukee for a productive discussion on an early interim agreement under the India-US Bilateral Trade Agreement. Greer said the talks are in the short strokes with the sticking points identified, and that PM Modi and President Trump may speak very soon; the two leaders had already reviewed bilateral progress on October 1.",
-     "why": "Bilateral trade negotiations link IR and economy: note the forum (G20 Trade Ministers' meet), the BTA framework announced in February, and the interim-deal goal.",
-     "src": [
-      "Deccan Herald",
-      "https://www.deccanherald.com/amp/story/india/nothing-imminent-india-us-trade-deal-in-short-strokes-ustr-greer-says-modi-trump-to-talk-soon-4167685"
-     ]
-    },
-    {
-     "t": "Centre launches three-month 'Reforms Utsav' drive from October 2",
-     "s": "The central government began 'Reforms Utsav', a three-month nationwide drive showcasing about 1,300 reforms of the last 12 years through 1,639 events, starting October 2. Around 454 events are planned for October and 349 for November, with ministries running beneficiary-specific outreach to vulnerable sections such as fishermen, street vendors, coal mine workers and pensioners. Separately, Jal Shakti Minister C.R. Paatil launched the 16-day JJM Reform Utsav (October 2-17) for community upkeep of Jal Jeevan Mission assets.",
-     "why": "New government campaigns with names, durations, and targets are staple prelims material. Remember the 1,300 reforms, 1,639 events, and the Jal Jeevan link.",
-     "src": [
-      "Rediff",
-      "https://www.rediff.com/news/report/reforms-utsav-to-showcase-1300-reforms/20260925.htm"
-     ]
-    },
-    {
-     "t": "Special Gram Sabhas nationwide launch People's Plan Campaign 2026-27",
-     "s": "Special Gram Sabhas were held across the country on October 2, launching the People's Plan Campaign 2026-27 themed 'Sabki Yojana, Sabka Vikas', under which Gram Panchayats will prepare Gram Panchayat Development Plans for 2027-28 through participatory, evidence-based planning. The Ministry of Panchayati Raj said the meetings would review Finance Commission grants, Rashtriya Gram Swaraj Abhiyan, eGramSwaraj and AuditOnline digital governance, own-source revenue, SVAMITVA property cards, and the Panchayat Advancement Index; the Rural Development Department will highlight the Viksit Bharat-Guarantee for Rozgar and Ajeevika Mission (Gramin) with its statutory 125-day wage employment guarantee.",
-     "why": "Panchayati Raj questions hinge on Article 243G, GPDPs, and scheme names. Remember the campaign theme, the target year (GPDPs for 2027-28), SVAMITVA, eGramSwaraj, and the 125-day wage guarantee.",
-     "src": [
-      "Utkarsh Classes",
-      "https://utkarsh.com/current-affairs/national/government-initiative/peoples-plan-campaign-202627-special-gram-sabhas-launch-sabki-yojana-sabka-vikas-on-2-october"
-     ]
-    },
-    {
-     "t": "SIR row escalates: ECI extends revision dates as AAP protests hit Delhi Metro",
-     "s": "The Election Commission of India extended the Special Intensive Revision (SIR) schedule for electoral rolls in Andhra Pradesh and Meghalaya. Meanwhile, AAP and student groups protested over SIR and alleged mass voter deletions, prompting Delhi Metro to close entry and exit at 11 stations including Rajiv Chowk and Central Secretariat; the INDIA bloc separately announced district-level 'Save Democracy' marches from October 2 to 8 demanding elections through ballot papers.",
-     "why": "Electoral roll revision connects Article 324, the Representation of the People Acts, and EVM debates. Note the two states with extended dates and the ballot-paper demand.",
-     "src": [
-      "Career India",
-      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-2-2026-national-international-education-sports-066459.html"
-     ]
-    },
-    {
-     "t": "HDFC Bank appoints Anup Bagchi as CEO for three years",
-     "s": "HDFC Bank, India's largest private lender, will appoint Anup Bagchi as its next chief executive for a period of three years.",
-     "why": "Banking-awareness sections test top appointments. Note the bank (largest private lender) and the three-year term.",
-     "src": [
-      "Economic Times",
-      "https://m.economictimes.com/news/newsblogs/breaking-news-live-updates-india-pm-modi-congress-protest-cec-gyanesh-kumar-resignation-cjp-flydubai-october-1-2026-tarang-shakti-weather-update-today-lng-prices/amp_liveblog/134606866.cms"
-     ]
-    },
-    {
-     "t": "Festive season: Maruti and Hero post strong September dispatches",
-     "s": "Automakers reported strong pre-festive dispatches for September: Maruti Suzuki India's total monthly sales rose 24% to 2.36 lakh units, while Hero MotoCorp posted a 12% rise to 7.66 lakh units.",
-     "why": "Auto sales are used as a high-frequency indicator of domestic demand. Remember the two companies, the growth rates, and the festive-season context.",
-     "src": [
-      "Flash Finance",
-      "https://flashfinance.news/article/2652-india-business-brief-top-headlines-for-october-02-2026"
-     ]
-    },
-    {
-     "t": "Gandhi Jayanti observed on October 2",
-     "s": "October 2 is Gandhi Jayanti, the birth anniversary of Mahatma Gandhi (born 1869 in Porbandar), observed as the International Day of Non-Violence. It is one of India's three national holidays; PM Modi paid tribute at Rajghat.",
-     "why": "Static GK that repeats yearly: birth year and place, associated movements, and the UN observance (International Day of Non-Violence, adopted 2007).",
-     "src": [
-      "Career India",
-      "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-2-2026-national-international-education-sports-066459.html"
-     ]
-    }
-   ]
-  }
- ]
+  ]
 }
