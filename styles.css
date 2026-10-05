@@ -7,10 +7,10 @@
   --shadow-lg:0 12px 32px rgba(10,26,60,.16);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Noto Sans',Arial,sans-serif;
   background:var(--bg);color:var(--ink);line-height:1.65;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  -webkit-font-smoothing:antialiased;overflow-x:clip}
 img{max-width:100%}
 a{color:inherit;text-decoration:none}
 
@@ -203,6 +203,19 @@ html[data-theme="dark"] .article ul.md-list{color:#c2cadd}
   .grid{grid-template-columns:1fr}
   .card h3{font-size:1rem}
 }
+/* ---------- very small phones: keep the topbar inside 360px ---------- */
+@media(max-width:480px){
+  .topbar{padding:.55rem .7rem}
+  .topbar>*{min-width:0}
+  .brand{gap:.5rem}
+  .brand .wm{width:34px;height:34px;font-size:1.2rem;flex-shrink:0}
+  .brand h1{font-size:.78rem;white-space:nowrap}
+  .top-actions{gap:.35rem}
+  .top-search{display:none}
+  .theme-toggle{width:34px;height:34px;font-size:.95rem}
+  .hamburger{padding:.25rem .4rem}
+  .lang-toggle{padding:.22rem .5rem;font-size:.72rem}
+}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -263,11 +276,11 @@ html[data-theme="dark"] .byline{color:#9aa4bd}
 
 /* ---------- breaking news ticker ---------- */
 .ticker{display:flex;align-items:stretch;background:#060d20;color:#fff;overflow:hidden;
-  border-bottom:2px solid var(--saffron)}
+  border-bottom:2px solid var(--saffron);max-width:100%}
 .ticker-label{background:var(--saffron);color:var(--navy);font-weight:800;font-size:.78rem;
   text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;
   padding:.5rem .9rem;flex-shrink:0}
-.ticker-view{overflow:hidden;flex:1;display:flex;align-items:center}
+.ticker-view{overflow:hidden;flex:1;min-width:0;display:flex;align-items:center}
 .ticker-track{display:inline-block;white-space:nowrap;max-width:max-content;
   padding:.5rem 0;animation:tickmove 25s linear infinite;color:#ffd9a3;font-size:.92rem;font-weight:600}
 .ticker-track:hover{animation-play-state:paused;color:var(--saffron)}
@@ -632,14 +645,14 @@ font:inherit;font-size:.82rem;font-weight:800;cursor:pointer;white-space:nowrap}
 .lang-toggle:hover{border-color:var(--saffron2)}
 @media(max-width:720px){.lang-toggle{padding:.25rem .55rem;font-size:.75rem}}
 /* ---------- trending strip ---------- */
-.trend-strip{margin:1.4rem 0 .4rem}
+.trend-strip{margin:1.4rem 0 .4rem;min-width:0;max-width:100%}
 .trend-head{display:flex;align-items:center;gap:.6rem;margin:0 .2rem .8rem}
 .trend-label{background:var(--saffron);color:var(--navy);font-weight:800;
   font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
   padding:.3rem .8rem;border-radius:20px}
 .trend-scroll{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;padding:.2rem .2rem 1rem;
-  scrollbar-width:thin}
+  scrollbar-width:thin;max-width:100%}
 .trend-scroll::-webkit-scrollbar{height:6px}
 .trend-scroll::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px}
 .trend-item{flex:0 0 240px;scroll-snap-align:start;display:flex;gap:.7rem;

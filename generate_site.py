@@ -320,10 +320,10 @@ BASE_CSS = """\
   --shadow-lg:0 12px 32px rgba(10,26,60,.16);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:clip}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,'Noto Sans',Arial,sans-serif;
   background:var(--bg);color:var(--ink);line-height:1.65;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  -webkit-font-smoothing:antialiased;overflow-x:clip}
 img{max-width:100%}
 a{color:inherit;text-decoration:none}
 
@@ -516,6 +516,19 @@ html[data-theme="dark"] .article ul.md-list{color:#c2cadd}
   .grid{grid-template-columns:1fr}
   .card h3{font-size:1rem}
 }
+/* ---------- very small phones: keep the topbar inside 360px ---------- */
+@media(max-width:480px){
+  .topbar{padding:.55rem .7rem}
+  .topbar>*{min-width:0}
+  .brand{gap:.5rem}
+  .brand .wm{width:34px;height:34px;font-size:1.2rem;flex-shrink:0}
+  .brand h1{font-size:.78rem;white-space:nowrap}
+  .top-actions{gap:.35rem}
+  .top-search{display:none}
+  .theme-toggle{width:34px;height:34px;font-size:.95rem}
+  .hamburger{padding:.25rem .4rem}
+  .lang-toggle{padding:.22rem .5rem;font-size:.72rem}
+}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
@@ -576,11 +589,11 @@ html[data-theme="dark"] .byline{color:#9aa4bd}
 
 /* ---------- breaking news ticker ---------- */
 .ticker{display:flex;align-items:stretch;background:#060d20;color:#fff;overflow:hidden;
-  border-bottom:2px solid var(--saffron)}
+  border-bottom:2px solid var(--saffron);max-width:100%}
 .ticker-label{background:var(--saffron);color:var(--navy);font-weight:800;font-size:.78rem;
   text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;
   padding:.5rem .9rem;flex-shrink:0}
-.ticker-view{overflow:hidden;flex:1;display:flex;align-items:center}
+.ticker-view{overflow:hidden;flex:1;min-width:0;display:flex;align-items:center}
 .ticker-track{display:inline-block;white-space:nowrap;max-width:max-content;
   padding:.5rem 0;animation:tickmove 25s linear infinite;color:#ffd9a3;font-size:.92rem;font-weight:600}
 .ticker-track:hover{animation-play-state:paused;color:var(--saffron)}
@@ -945,14 +958,14 @@ font:inherit;font-size:.82rem;font-weight:800;cursor:pointer;white-space:nowrap}
 .lang-toggle:hover{border-color:var(--saffron2)}
 @media(max-width:720px){.lang-toggle{padding:.25rem .55rem;font-size:.75rem}}
 /* ---------- trending strip ---------- */
-.trend-strip{margin:1.4rem 0 .4rem}
+.trend-strip{margin:1.4rem 0 .4rem;min-width:0;max-width:100%}
 .trend-head{display:flex;align-items:center;gap:.6rem;margin:0 .2rem .8rem}
 .trend-label{background:var(--saffron);color:var(--navy);font-weight:800;
   font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;
   padding:.3rem .8rem;border-radius:20px}
 .trend-scroll{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;
   -webkit-overflow-scrolling:touch;padding:.2rem .2rem 1rem;
-  scrollbar-width:thin}
+  scrollbar-width:thin;max-width:100%}
 .trend-scroll::-webkit-scrollbar{height:6px}
 .trend-scroll::-webkit-scrollbar-thumb{background:var(--saffron);border-radius:3px}
 .trend-item{flex:0 0 240px;scroll-snap-align:start;display:flex;gap:.7rem;
@@ -2643,6 +2656,7 @@ MARKETS_JS = r"""(function(){
 var OZ=31.1034768;
 function $(id){return document.getElementById(id);}
 function fmt(n,d){return Number(n).toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function istTime(){try{return new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
 function setStatus(){
   try{
     var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
@@ -2659,17 +2673,17 @@ async function load(){
     var r=await Promise.all([
       fetch('https://api.gold-api.com/price/XAU').then(function(x){return x.json();}),
       fetch('https://api.gold-api.com/price/XAG').then(function(x){return x.json();}),
-      fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=INR').then(function(x){return x.json();})
+      fetch('https://open.er-api.com/v6/latest/USD').then(function(x){return x.json();})
     ]);
-    var xau=r[0].price, xag=r[1].price, usdinr=r[2].rates.INR;
+    var xau=r[0].price, xag=r[1].price, usdinr=r[2].rates&&r[2].rates.INR;
+    if(!(xau>0&&xag>0&&usdinr>0))throw new Error('bad feed data');
     $('gold-usd').textContent='$'+fmt(xau,2)+' / oz';
     $('gold-inr').textContent='\u20B9'+fmt(xau/OZ*10*usdinr,0)+' / 10g';
     $('silver-usd').textContent='$'+fmt(xag,2)+' / oz';
     $('silver-inr').textContent='\u20B9'+fmt(xag/OZ*1000*usdinr,0)+' / kg';
     $('fx-rate').textContent='1 USD = \u20B9'+fmt(usdinr,2);
-    var t=r[0].updatedAtReadable||'';
-    $('pm-note').textContent='Live from public feeds'+(t?' \u00B7 gold feed: '+t:'')+' \u00B7 refreshes every minute. Not investment advice.';
-  }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams.');}
+    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Not investment advice.';
+  }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams. Not investment advice.');}
 }
 setStatus(); setInterval(setStatus,60000); load(); setInterval(load,60000);
 var fxRates=null;
@@ -2680,7 +2694,7 @@ function fxCalc(){
   try{out=amt/eur[from]*eur[to];}catch(e){$('fx-out').textContent='Rate unavailable';return;}
   $('fx-out').textContent=fmt(amt,2)+' '+from+' = '+fmt(out,2)+' '+to;
 }
-fetch('https://api.frankfurter.dev/v1/latest?from=EUR').then(function(r){return r.json();})
+fetch('https://open.er-api.com/v6/latest/EUR').then(function(r){return r.json();})
 .then(function(j){fxRates=j;['fx-amt','fx-from','fx-to'].forEach(function(id){$(id).addEventListener('input',fxCalc);$(id).addEventListener('change',fxCalc);});fxCalc();})
 .catch(function(){$('fx-out').textContent='Converter offline';});
 })();"""
@@ -2755,17 +2769,17 @@ def jsonld_page(name, desc, url):
     return ('<script type="application/ld+json">\n'
             + json.dumps(data, ensure_ascii=False) + '\n</script>')
 
-def page_shell(title, desc, active, main_html, extra_js=""):
-    url = SITE_URL + ("" if active == "home" else active + ".html")
+def page_shell(title, desc, active, main_html, extra_js="", depth=0, canonical=None):
+    url = canonical or (SITE_URL + ("" if active == "home" else active + ".html"))
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
-{head(title, desc, 0, "", jsonld_page(title, desc, url), canonical=url, og_type="website")}
+{head(title, desc, depth, "", jsonld_page(title, desc, url), canonical=url, og_type="website")}
 </head>
 <body>
-{topbar(0, active)}
+{topbar(depth, active)}
 <main class="wrap">{main_html}</main>
-{footer(0)}
+{footer(depth)}
 <button class="totop" id="totop" aria-label="Back to top">&uarr;</button>
 {JS}
 {extra_js}
@@ -2829,7 +2843,8 @@ def topic_page(topic, posts, counts):
 <p class="lede">{html.escape(TOPIC_LEDES[topic])} {len(posts)} stories.</p></div>
 <div class="grid">{cards}</div>
 <div class="topic-cloud">{cloud}<a class="tagchip" href="index.html">All topics</a></div>"""
-    return page_shell(topic, f"{topic} news from Varta & Samkara: {TOPIC_LEDES[topic]}", "topics", main)
+    return page_shell(topic, f"{topic} news from Varta & Samkara: {TOPIC_LEDES[topic]}", "topics", main,
+                      depth=1, canonical=SITE_URL + "topics/" + TOPIC_SLUGS[topic] + ".html")
 
 
 def topics_index_page(counts):
@@ -2838,19 +2853,20 @@ def topics_index_page(counts):
 <p class="lede">Browse every story by topic.</p></div>
 <h2 class="sec-title">Browse by topic</h2>
 <div class="tag-cloud">{chips}</div>"""
-    return page_shell("Topics", "Browse Varta & Samkara stories by topic: Politics, Economy, Science & Tech, Sports, World, India.", "topics", main)
+    return page_shell("Topics", "Browse Varta & Samkara stories by topic: Politics, Economy, Science & Tech, Sports, World, India.", "topics", main,
+                      depth=1, canonical=SITE_URL + "topics/")
 
 def markets_page():
     tape = """<div class="tv-wrap"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-{"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"TVC:SPX","title":"S&P 500"},{"proName":"TVC:NDX","title":"Nasdaq 100"},{"proName":"TVC:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
+{"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"SP:SPX","title":"S&P 500"},{"proName":"NASDAQ:NDX","title":"Nasdaq 100"},{"proName":"DJ:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
 </script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>"""
-    body = f"""<div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus gold and silver prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
+    body = f"""<div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus international gold and silver spot prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
 {tape}
 <h2>Gold and Silver <span class="live-dot"></span></h2>
 <div class="pm-grid">
 <div class="pm-card"><div class="pm-name">Gold</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
 <div class="pm-card"><div class="pm-name">Silver</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
-<div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">NSE currency market</div></div>
+<div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">Interbank reference rate</div></div>
 </div>
 <p class="muted" id="pm-note">Loading live prices...</p>
 <h2>Currency Converter</h2>
@@ -3833,7 +3849,7 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v10";
+    sw = """const CACHE = "vs-cache-v11";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",

@@ -44,15 +44,15 @@
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
 </header>
-<main class="wrap"><div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus gold and silver prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
+<main class="wrap"><div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus international gold and silver spot prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
 <div class="tv-wrap"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-{"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"TVC:SPX","title":"S&P 500"},{"proName":"TVC:NDX","title":"Nasdaq 100"},{"proName":"TVC:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
+{"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"SP:SPX","title":"S&P 500"},{"proName":"NASDAQ:NDX","title":"Nasdaq 100"},{"proName":"DJ:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
 </script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>
 <h2>Gold and Silver <span class="live-dot"></span></h2>
 <div class="pm-grid">
 <div class="pm-card"><div class="pm-name">Gold</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
 <div class="pm-card"><div class="pm-name">Silver</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
-<div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">NSE currency market</div></div>
+<div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">Interbank reference rate</div></div>
 </div>
 <p class="muted" id="pm-note">Loading live prices...</p>
 <h2>Currency Converter</h2>
@@ -192,6 +192,7 @@ window.addEventListener('load',function(){
 var OZ=31.1034768;
 function $(id){return document.getElementById(id);}
 function fmt(n,d){return Number(n).toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function istTime(){try{return new Date().toLocaleTimeString('en-IN',{timeZone:'Asia/Kolkata',hour:'2-digit',minute:'2-digit'});}catch(e){return '';}}
 function setStatus(){
   try{
     var now=new Date(new Date().toLocaleString('en-US',{timeZone:'Asia/Kolkata'}));
@@ -208,17 +209,17 @@ async function load(){
     var r=await Promise.all([
       fetch('https://api.gold-api.com/price/XAU').then(function(x){return x.json();}),
       fetch('https://api.gold-api.com/price/XAG').then(function(x){return x.json();}),
-      fetch('https://api.frankfurter.dev/v1/latest?from=USD&to=INR').then(function(x){return x.json();})
+      fetch('https://open.er-api.com/v6/latest/USD').then(function(x){return x.json();})
     ]);
-    var xau=r[0].price, xag=r[1].price, usdinr=r[2].rates.INR;
+    var xau=r[0].price, xag=r[1].price, usdinr=r[2].rates&&r[2].rates.INR;
+    if(!(xau>0&&xag>0&&usdinr>0))throw new Error('bad feed data');
     $('gold-usd').textContent='$'+fmt(xau,2)+' / oz';
     $('gold-inr').textContent='\u20B9'+fmt(xau/OZ*10*usdinr,0)+' / 10g';
     $('silver-usd').textContent='$'+fmt(xag,2)+' / oz';
     $('silver-inr').textContent='\u20B9'+fmt(xag/OZ*1000*usdinr,0)+' / kg';
     $('fx-rate').textContent='1 USD = \u20B9'+fmt(usdinr,2);
-    var t=r[0].updatedAtReadable||'';
-    $('pm-note').textContent='Live from public feeds'+(t?' \u00B7 gold feed: '+t:'')+' \u00B7 refreshes every minute. Not investment advice.';
-  }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams.');}
+    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Not investment advice.';
+  }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams. Not investment advice.');}
 }
 setStatus(); setInterval(setStatus,60000); load(); setInterval(load,60000);
 var fxRates=null;
@@ -229,7 +230,7 @@ function fxCalc(){
   try{out=amt/eur[from]*eur[to];}catch(e){$('fx-out').textContent='Rate unavailable';return;}
   $('fx-out').textContent=fmt(amt,2)+' '+from+' = '+fmt(out,2)+' '+to;
 }
-fetch('https://api.frankfurter.dev/v1/latest?from=EUR').then(function(r){return r.json();})
+fetch('https://open.er-api.com/v6/latest/EUR').then(function(r){return r.json();})
 .then(function(j){fxRates=j;['fx-amt','fx-from','fx-to'].forEach(function(id){$(id).addEventListener('input',fxCalc);$(id).addEventListener('change',fxCalc);});fxCalc();})
 .catch(function(){$('fx-out').textContent='Converter offline';});
 })();</script>
