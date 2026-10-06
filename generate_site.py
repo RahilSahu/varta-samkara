@@ -3332,7 +3332,7 @@ def build():
         posts.append({"date": dm.group(1), "slot": "website", "format": "article",
                       "story": wtitle, "sources": wsource, "media": "",
                       "url": "", "is_blog": False, "slug": wslug, "art": wart,
-                      "blocks": wbody,
+                      "blocks": wparas,
                       "hero": "assets/placeholder.svg",
                       "thumb": "assets/placeholder.svg", "gallery": [],
                       "excerpt": excerpt_of(wbody, wtitle),
