@@ -3303,6 +3303,40 @@ def build():
                       "hero": hero, "thumb": thumb, "gallery": gallery,
                       "excerpt": excerpt_of(blocks, r["story"]),
                       "og_srcs": og_srcs})
+    # website-only articles: content/<date>-<slug>.md with no posts-log row
+    # (the daily 20-news website edition). First line = title, rest = body.
+    for fn in sorted(os.listdir(CONTENT)):
+        if not fn.endswith(".md"):
+            continue
+        wslug = fn[:-3]
+        if wslug in used_slugs:
+            continue
+        dm = re.match(r"(\d{4}-\d{2}-\d{2})-", wslug)
+        if not dm:
+            continue
+        wblocks = load_body_md(wslug)
+        if not wblocks or len(wblocks) < 2:
+            continue
+        wtitle = wblocks[0].strip()
+        wbody = wblocks[1:]
+        wsource = ""
+        wparas = []
+        for b in wbody:
+            if b.startswith("Source:"):
+                wsource = b[len("Source:"):].strip()
+            else:
+                wparas.append(b)
+        used_slugs.add(wslug)
+        wart = {"title": wtitle, "paras": wparas, "source": wsource,
+                "visuals": "", "tags": []}
+        posts.append({"date": dm.group(1), "slot": "website", "format": "article",
+                      "story": wtitle, "sources": wsource, "media": "",
+                      "url": "", "is_blog": False, "slug": wslug, "art": wart,
+                      "blocks": wbody,
+                      "hero": "assets/placeholder.svg",
+                      "thumb": "assets/placeholder.svg", "gallery": [],
+                      "excerpt": excerpt_of(wbody, wtitle),
+                      "og_srcs": [os.path.join(CONTENT, fn)]})
     # user blogs from blogs/*.md (full articles; absorb matching thin caption pages)
     user_blogs = []
     for fn in user_files:
