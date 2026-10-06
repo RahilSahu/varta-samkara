@@ -1,6 +1,101 @@
 {
   "days": [
     {
+      "date": "2026-10-06",
+      "points": [
+        {
+          "t": "Francis Halzen wins 2026 Nobel Prize in Physics for IceCube Neutrino Observatory",
+          "s": "Belgian-American scientist Francis Halzen (82), University of Wisconsin-Madison, was awarded the 2026 Nobel Prize in Physics for decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin. The prize money is 12 million Swedish kronor (about USD 1.2 million); the chemistry prize will be announced on 7 October.",
+          "why": "Nobel laureates, their fields and prize money are staple GK questions in UPSC, SSC and banking exams.",
+          "src": [
+            "Reuters",
+            "https://www.reuters.com/science/francis-halzen-wins-2026-nobel-prize-physics-2026-10-06/"
+          ]
+        },
+        {
+          "t": "2026 Nobel Prize in Physiology or Medicine awarded to Deisseroth, Hegemann and Nagel",
+          "s": "The Nobel Assembly at Karolinska Institutet announced on 5 October 2026 that Karl Deisseroth, Peter Hegemann and Georg Nagel will share the 2026 Nobel Prize in Physiology or Medicine.",
+          "why": "Nobel Prize winners are recurring one-marker questions across UPSC, SSC and state PSC exams.",
+          "src": [
+            "Indian Express",
+            "https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-october-6-2026-cji-surya-kant-says-supreme-court-did-not-approve-form-6-modifications-10907058/"
+          ]
+        },
+        {
+          "t": "Supreme Court refuses to suspend CEC Gyanesh Kumar, issues notice to Centre and ECI",
+          "s": "On 5 October 2026, a bench of CJI Surya Kant and Justices Joymalya Bagchi and V Mohana refused interim suspension of Chief Election Commissioner Gyanesh Kumar. The Court issued notice to the Centre, the ECI, the CEC and both Election Commissioners, seeking replies within a week.",
+          "why": "Supreme Court rulings and ECI appointments are core polity questions in UPSC and state exams.",
+          "src": [
+            "Indian Express",
+            "https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-october-6-2026-cji-surya-kant-says-supreme-court-did-not-approve-form-6-modifications-10907058/"
+          ]
+        },
+        {
+          "t": "Bypolls held on 6 October for five Assembly seats and the Nagaon Lok Sabha seat, counting on 9 October",
+          "s": "Bye-elections were held on 6 October 2026 for five Assembly constituencies across West Bengal, Tamil Nadu and Puducherry, plus the Nagaon Lok Sabha seat in Assam. Counting of votes is scheduled for 9 October.",
+          "why": "Bye-election constituencies and counting dates are asked in polity and current-affairs sections of SSC and banking exams.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/morning-digest-october-6-2026/article71548693.ece"
+          ]
+        },
+        {
+          "t": "India and Switzerland sign Migration and Mobility Partnership agreement",
+          "s": "India and Switzerland signed a Migration and Mobility Partnership agreement during Swiss President Guy Parmelin's visit to India. The talks covered trade, investment, mobility, critical technologies, nuclear energy and defence.",
+          "why": "India's bilateral agreements and visiting heads of state are frequent questions in UPSC international relations and GK.",
+          "src": [
+            "Economic Times",
+            "https://economictimes.indiatimes.com/news/new-updates/school-assembly-news-headlines-october-6-2026-top-national-international-business-sports-updates-and-thought-of-the-day/articleshow/134703423.cms"
+          ]
+        },
+        {
+          "t": "India-US trade talks hit a plateau; India-EU FTA to be signed in December 2026",
+          "s": "Finance Minister Nirmala Sitharaman said India-US trade deal negotiations have reached a plateau where further concessions will be very difficult. She also stated the India-EU free trade agreement is set to be signed in December 2026.",
+          "why": "FTA status and trade negotiation developments are recurring topics in UPSC and banking economy sections.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/morning-digest-october-6-2026/article71548693.ece"
+          ]
+        },
+        {
+          "t": "Jio Platforms IPO to open on 21 October, listing likely on 28 October",
+          "s": "The Jio Platforms IPO is scheduled to open on 21 October 2026, with the listing likely on 28 October, making it one of the largest public issues in India.",
+          "why": "Major IPO dates and market milestones feature in banking and SSC financial-awareness questions.",
+          "src": [
+            "Times Now",
+            "https://www.timesnownews.com/education/school-assembly-news-headlines-today-oct-6-top-national-international-sports-updates-thought-of-the-day-article-156281259"
+          ]
+        },
+        {
+          "t": "India wins four gold and one silver at 19th International Olympiad on Astronomy and Astrophysics",
+          "s": "India won four gold medals and one silver medal at the 19th International Olympiad on Astronomy and Astrophysics (IOAA), a standout performance by the Indian contingent.",
+          "why": "India's medal tallies at international olympiads are regular sports/science GK questions in SSC and state exams.",
+          "src": [
+            "Indian Express",
+            "https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-october-6-2026-cji-surya-kant-says-supreme-court-did-not-approve-form-6-modifications-10907058/"
+          ]
+        },
+        {
+          "t": "GST Council may allow single GST registration for e-commerce-only small sellers with Rs 2.5 lakh monthly ITC cap",
+          "s": "The GST Council is likely to consider a single GST registration for small businesses selling exclusively through e-commerce platforms, with a monthly input tax credit limit of Rs 2.5 lakh.",
+          "why": "GST Council decisions and registration thresholds are standard economy questions in SSC and banking exams.",
+          "src": [
+            "BusinessLine",
+            "https://www.thehindubusinessline.com/multimedia/audio/bl-morning-report-october-6-2026/article71546990.ece"
+          ]
+        },
+        {
+          "t": "CJI Surya Kant: Supreme Court did not approve any modifications to voter Form 6",
+          "s": "Chief Justice of India Surya Kant clarified that the Supreme Court had not approved any modifications to voter Form 6, amid the Election Commission of India's fact-checks on the issue.",
+          "why": "Supreme Court observations on electoral processes are important for UPSC and SSC polity sections.",
+          "src": [
+            "Indian Express",
+            "https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-october-6-2026-cji-surya-kant-says-supreme-court-did-not-approve-form-6-modifications-10907058/"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-05",
       "points": [
         {
