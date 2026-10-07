@@ -1,6 +1,110 @@
 {
   "days": [
     {
+      "date": "2026-10-07",
+      "points": [
+        {
+          "t": "RBI MPC hikes repo rate to 5.5%, raises FY27 GDP forecast to 7.1%",
+          "s": "The RBI Monetary Policy Committee raised the repo rate by 25 basis points to 5.5% and shifted its stance to 'calibrated tightening'. Governor Malhotra projected real GDP growth at 7.1% for FY27 (a 40 bps upward revision), with core inflation at 4.4% and system liquidity at Rs 5.9 lakh crore daily. The hike follows supply-side inflation pressure, with food inflation broadening into sugar and onion prices.",
+          "why": "Monetary policy decisions, repo rate changes, and growth/inflation projections are core Banking, SSC, and UPSC Economy questions.",
+          "src": [
+            "The Hindu BusinessLine",
+            "https://www.thehindubusinessline.com/money-and-banking/rbi-monetary-policy-committee-mpc-meeting-octobe-7-2026-highlights-updates/article71551632.ece"
+          ]
+        },
+        {
+          "t": "2026 Nobel Prize in Physics awarded to Francis Halzen",
+          "s": "Belgian-American astrophysicist Francis Halzen (University of Wisconsin-Madison) won the 2026 Nobel Prize in Physics for his decisive contributions to the IceCube Neutrino Observatory and the discovery of high-energy neutrinos of astrophysical origin. The observatory, built in Antarctic ice, detects 'ghost' particles that reveal extreme cosmic events like exploding stars and distant galaxies.",
+          "why": "Nobel laureates and their cited discoveries are perennial one-mark questions across UPSC, SSC, and Banking exams.",
+          "src": [
+            "Reuters",
+            "https://www.reuters.com/science/francis-halzen-wins-2026-nobel-prize-physics-2026-10-06/"
+          ]
+        },
+        {
+          "t": "Air Marshal Ashutosh Dixit named 29th Chief of the Air Staff",
+          "s": "Air Marshal Ashutosh Dixit will take charge as the 29th Chief of the Air Staff in the rank of Air Chief Marshal on the afternoon of October 31, 2026, succeeding Air Chief Marshal Amar Preet Singh, with tenure up to December 31, 2028. An experimental test pilot with over 3,500 flying hours, he has taken part in Operation Safed Sagar, Operation Rakshak, and Operation Sindoor.",
+          "why": "Service chief appointments are standard defence/GK questions in SSC, NDA/CDS, and UPSC current-affairs sections.",
+          "src": [
+            "The Week",
+            "https://www.theweek.in/news/defence/2026/10/06/3500-flying-hours-three-major-operations-meet-indias-next-air-force-chief-air-marshal-ashutosh-dixit.html"
+          ]
+        },
+        {
+          "t": "Defence Ministry signs Rs 661.50 crore BrahMos contract for Navy ships",
+          "s": "The Defence Ministry signed a Rs 661.50 crore contract to procure BrahMos fire-control systems and launchers for Indian Navy ships. BrahMos is a supersonic cruise missile jointly developed by India and Russia, with versions across land, sea, and air launch platforms.",
+          "why": "Defence contracts and indigenous weapons systems are frequent questions in SSC GD, CDS/AFCAT, and UPSC defence topics.",
+          "src": [
+            "Mathrubhumi English",
+            "https://english.mathrubhumi.com/education/news/school-assembly-headlines-october-7-2026-national-international-defence-news-exdjdjva"
+          ]
+        },
+        {
+          "t": "India launches first indigenously built Fleet Support Ship 'Surya' at Visakhapatnam",
+          "s": "India launched its first indigenously built Fleet Support Ship, INS Surya, at Visakhapatnam. Fleet Support Ships replenish fuel, ammunition, and stores for warships at sea, extending the Navy's blue-water endurance. The launch fits the Navy's atmanirbhar shipbuilding push ahead of Air Force Day on October 8.",
+          "why": "Indigenous naval vessels and shipbuilding milestones regularly appear in UPSC and defence-exam GK.",
+          "src": [
+            "JagranJosh",
+            "https://www.jagranjosh.com/articles/school-assembly-news-headlines-october-7-2026-top-national-international-world-sports-business-education-news-1800017466-1"
+          ]
+        },
+        {
+          "t": "PM Modi completes 25 years as head of government; Union Cabinet passes resolution",
+          "s": "Prime Minister Narendra Modi completed 25 years as head of government on October 7, 2026, a tenure that began as Gujarat Chief Minister on October 7, 2001 and continued in New Delhi from 2014. The Union Cabinet passed a resolution congratulating him, citing three Gujarat mandates and three successive Lok Sabha victories, and a PIB release noted schemes like SWAGAT and PRAGATI.",
+          "why": "Milestone tenures and constitutional/political GK are favourite polity and general-awareness question sources.",
+          "src": [
+            "NDTV Profit",
+            "https://www.ndtvprofit.com/india/from-gujarat-cm-to-indias-prime-minister-pm-modi-completed-25-years-in-public-life-timeline-12149073"
+          ]
+        },
+        {
+          "t": "India condemns projectile attack on Panama-flagged vessel in Strait of Hormuz; 11 Indian crew injured",
+          "s": "Eleven Indian crew members were injured after a Panama-flagged commercial vessel was hit by a projectile while transiting the Strait of Hormuz, prompting a strong condemnation from India. The Strait of Hormuz is the world's most critical oil transit chokepoint, linking the Persian Gulf to the Arabian Sea.",
+          "why": "Maritime security incidents in strategic chokepoints link international relations and energy security, key UPSC GS-II/GS-III themes.",
+          "src": [
+            "Mathrubhumi English",
+            "https://english.mathrubhumi.com/education/news/school-assembly-headlines-october-7-2026-national-international-defence-news-exdjdjva"
+          ]
+        },
+        {
+          "t": "India and Switzerland sign pacts on migration, research, and nuclear energy",
+          "s": "India and Switzerland signed pacts on migration, young professionals, transport, and research and innovation as PM Modi met Swiss President Guy Parmelin in Delhi, agreeing to deepen cooperation in defence production and nuclear energy. India also offered coastal-monitoring expertise to Pacific partners at Pre-COP31, urging balanced climate action.",
+          "why": "Bilateral agreements with heads of state are staple international-relations questions for UPSC and SSC.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/education/today-news-headlines-for-school-assembly-october-7-2026-harmanpreet-kaur-steps-down-as-india-womens-cricket-captain-francis-halzen-wins-nobel-prize-in-physics-10908701/"
+          ]
+        },
+        {
+          "t": "eSanjeevani crosses 50 crore online consultations",
+          "s": "The Health Ministry reported that eSanjeevani, the national telemedicine platform, crossed 50 crore (500 million) online medical consultations on September 15, 2026. It is one of the world's largest free telemedicine services, offering doctor-to-doctor and patient-to-doctor consultations.",
+          "why": "Flagship government schemes and their achievement numbers are directly asked in Banking and SSC awareness tests.",
+          "src": [
+            "JagranJosh",
+            "https://www.jagranjosh.com/articles/school-assembly-news-headlines-october-7-2026-top-national-international-world-sports-business-education-news-1800017466-1"
+          ]
+        },
+        {
+          "t": "IOC confirms India among seven bidders for 2036 Olympics",
+          "s": "The International Olympic Committee confirmed India is among seven bidders for the 2036 Olympic Games. India has proposed hosting at Ahmedabad, and a successful bid would make India the first South Asian country to host the Olympics. The host city decision is expected in the coming years.",
+          "why": "Sports mega-event bids involving India are high-frequency one-liner questions in SSC, Banking, and state exams.",
+          "src": [
+            "Times Now",
+            "https://www.timesnownews.com/education/school-assembly-news-headlines-today-oct-7-national-world-sports-update-for-students-article-156287727"
+          ]
+        },
+        {
+          "t": "World Bank projects South Asia growth at 6.9% in 2026",
+          "s": "The World Bank projects South Asia's economy to grow by 6.9% in 2026, while warning of energy and weather risks. It separately raised its India FY27 GDP forecast to 7.1% from 6.6%, citing better-than-expected performance despite trade and geopolitical uncertainty, in line with Moody's upward revision.",
+          "why": "Institutional growth forecasts (World Bank, IMF, RBI, Moody's) are classic Banking and UPSC prelims economy questions.",
+          "src": [
+            "JagranJosh",
+            "https://www.jagranjosh.com/articles/school-assembly-news-headlines-october-7-2026-top-national-international-world-sports-business-education-news-1800017466-1"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-06",
       "points": [
         {
