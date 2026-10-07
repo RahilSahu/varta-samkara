@@ -5,7 +5,6 @@ published in heroes/, researches and writes the article, then deletes the line.
 Add new lesser-known names at the end as needed. Keep every entry verifiable:
 a real Indian freedom fighter with at least two independent sources.
 
-- Mohammed Abdul Rahiman (Kerala, Khilafat and Congress)
 - Ayyankali (Kerala, Dalit reformer and reform movement)
 - T.K. Madhavan (Kerala, Vaikom Satyagraha organiser)
 - S. Satyamurti (Tamil Nadu, Congress orator)
