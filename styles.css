@@ -412,6 +412,7 @@ html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
 .pm-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.2rem}
 .pm-name{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#666)}
 .pm-inr{font-size:1.7rem;font-weight:800;margin:.3rem 0 .1rem}
+.pm-inr-sub{font-size:1.2rem;font-weight:700;margin:.15rem 0 .35rem}
 .pm-usd{font-size:.85rem;color:var(--muted,#666)}
 .pm-tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#666);vertical-align:middle}
 .pm-grid-sm .pm-inr{font-size:1.15rem}

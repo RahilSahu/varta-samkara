@@ -50,9 +50,9 @@
 </script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>
 <h2>Indian Bullion Rates (IBJA)</h2>
 <div class="pm-grid">
-<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr" id="g999-gst">₹15,220.00 / g <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="g999-ex">IBJA benchmark ₹14,776.70 / g excl. GST</div></div>
-<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr" id="g916-gst">₹13,941.57 / g <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="g916-ex">IBJA benchmark ₹13,535.50 / g excl. GST</div></div>
-<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr" id="s999-gst">₹2,27,492 / kg <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="s999-ex">IBJA benchmark ₹2,20,866 / kg excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr" id="g999-gst">₹15,220.00 / g <span class="pm-tag">with GST</span></div><div class="pm-inr-sub" id="g999-ex">₹14,776.70 / g <span class="pm-tag">without GST</span></div><div class="pm-usd">IBJA benchmark · Mumbai</div></div>
+<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr" id="g916-gst">₹13,941.57 / g <span class="pm-tag">with GST</span></div><div class="pm-inr-sub" id="g916-ex">₹13,535.50 / g <span class="pm-tag">without GST</span></div><div class="pm-usd">IBJA benchmark · Mumbai</div></div>
+<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr" id="s999-gst">₹2,27,492 / kg <span class="pm-tag">with GST</span></div><div class="pm-inr-sub" id="s999-ex">₹2,20,866 / kg <span class="pm-tag">without GST</span></div><div class="pm-usd">IBJA benchmark · Mumbai</div></div>
 </div>
 <p class="muted" id="ibja-note">IBJA PM rates for 07/10/2026, from the daily site build. IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Not investment advice.</p>
 <h2 class="sec-sub">International Spot (live reference)</h2>
@@ -233,12 +233,12 @@ function paintIbja(j){
   try{
     var g999=parseFloat(j.gold_999_g), g916=parseFloat(j.gold_916_g), s999=parseFloat(j.silver_999_kg);
     if(!(g999>10000&&g999<25000&&g916>9000&&g916<23000&&s999>150000&&s999<400000))throw new Error('bad ibja data');
-    $('g999-gst').innerHTML='\u20B9'+fmt(g999*1.03,2)+' / g <span class="pm-tag">incl. GST</span>';
-    $('g999-ex').textContent='IBJA benchmark \u20B9'+fmt(g999,2)+' / g excl. GST';
-    $('g916-gst').innerHTML='\u20B9'+fmt(g916*1.03,2)+' / g <span class="pm-tag">incl. GST</span>';
-    $('g916-ex').textContent='IBJA benchmark \u20B9'+fmt(g916,2)+' / g excl. GST';
-    $('s999-gst').innerHTML='\u20B9'+fmt(s999*1.03,0)+' / kg <span class="pm-tag">incl. GST</span>';
-    $('s999-ex').textContent='IBJA benchmark \u20B9'+fmt(s999,0)+' / kg excl. GST';
+    $('g999-gst').innerHTML='\u20B9'+fmt(g999*1.03,2)+' / g <span class="pm-tag">with GST</span>';
+    $('g999-ex').innerHTML='\u20B9'+fmt(g999,2)+' / g <span class="pm-tag">without GST</span>';
+    $('g916-gst').innerHTML='\u20B9'+fmt(g916*1.03,2)+' / g <span class="pm-tag">with GST</span>';
+    $('g916-ex').innerHTML='\u20B9'+fmt(g916,2)+' / g <span class="pm-tag">without GST</span>';
+    $('s999-gst').innerHTML='\u20B9'+fmt(s999*1.03,0)+' / kg <span class="pm-tag">with GST</span>';
+    $('s999-ex').innerHTML='\u20B9'+fmt(s999,0)+' / kg <span class="pm-tag">without GST</span>';
     $('ibja-note').textContent='IBJA '+j.session+' rates for '+j.date+' \u00B7 refreshed '+istTime()+' IST \u00B7 IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Not investment advice.';
   }catch(e){}
 }

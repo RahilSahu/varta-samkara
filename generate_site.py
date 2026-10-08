@@ -725,6 +725,7 @@ html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
 .pm-card{border:1px solid var(--line,#e2e2e2);border-radius:14px;background:var(--card,#fff);padding:1.1rem 1.2rem}
 .pm-name{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#666)}
 .pm-inr{font-size:1.7rem;font-weight:800;margin:.3rem 0 .1rem}
+.pm-inr-sub{font-size:1.2rem;font-weight:700;margin:.15rem 0 .35rem}
 .pm-usd{font-size:.85rem;color:var(--muted,#666)}
 .pm-tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#666);vertical-align:middle}
 .pm-grid-sm .pm-inr{font-size:1.15rem}
@@ -2783,12 +2784,12 @@ function paintIbja(j){
   try{
     var g999=parseFloat(j.gold_999_g), g916=parseFloat(j.gold_916_g), s999=parseFloat(j.silver_999_kg);
     if(!(g999>10000&&g999<25000&&g916>9000&&g916<23000&&s999>150000&&s999<400000))throw new Error('bad ibja data');
-    $('g999-gst').innerHTML='\u20B9'+fmt(g999*1.03,2)+' / g <span class="pm-tag">incl. GST</span>';
-    $('g999-ex').textContent='IBJA benchmark \u20B9'+fmt(g999,2)+' / g excl. GST';
-    $('g916-gst').innerHTML='\u20B9'+fmt(g916*1.03,2)+' / g <span class="pm-tag">incl. GST</span>';
-    $('g916-ex').textContent='IBJA benchmark \u20B9'+fmt(g916,2)+' / g excl. GST';
-    $('s999-gst').innerHTML='\u20B9'+fmt(s999*1.03,0)+' / kg <span class="pm-tag">incl. GST</span>';
-    $('s999-ex').textContent='IBJA benchmark \u20B9'+fmt(s999,0)+' / kg excl. GST';
+    $('g999-gst').innerHTML='\u20B9'+fmt(g999*1.03,2)+' / g <span class="pm-tag">with GST</span>';
+    $('g999-ex').innerHTML='\u20B9'+fmt(g999,2)+' / g <span class="pm-tag">without GST</span>';
+    $('g916-gst').innerHTML='\u20B9'+fmt(g916*1.03,2)+' / g <span class="pm-tag">with GST</span>';
+    $('g916-ex').innerHTML='\u20B9'+fmt(g916,2)+' / g <span class="pm-tag">without GST</span>';
+    $('s999-gst').innerHTML='\u20B9'+fmt(s999*1.03,0)+' / kg <span class="pm-tag">with GST</span>';
+    $('s999-ex').innerHTML='\u20B9'+fmt(s999,0)+' / kg <span class="pm-tag">without GST</span>';
     $('ibja-note').textContent='IBJA '+j.session+' rates for '+j.date+' \u00B7 refreshed '+istTime()+' IST \u00B7 IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Not investment advice.';
   }catch(e){}
 }
@@ -2979,9 +2980,9 @@ def markets_page(ibja=None):
         silv_gst = silv * 1.03
         ibja_block = f"""<h2>Indian Bullion Rates (IBJA)</h2>
 <div class="pm-grid">
-<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr" id="g999-gst">₹{fmt_inr(g999_gst)} / g <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="g999-ex">IBJA benchmark ₹{fmt_inr(g999)} / g excl. GST</div></div>
-<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr" id="g916-gst">₹{fmt_inr(g916_gst)} / g <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="g916-ex">IBJA benchmark ₹{fmt_inr(g916)} / g excl. GST</div></div>
-<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr" id="s999-gst">₹{fmt_inr(silv_gst, 0)} / kg <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="s999-ex">IBJA benchmark ₹{fmt_inr(silv, 0)} / kg excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr" id="g999-gst">₹{fmt_inr(g999_gst)} / g <span class="pm-tag">with GST</span></div><div class="pm-inr-sub" id="g999-ex">₹{fmt_inr(g999)} / g <span class="pm-tag">without GST</span></div><div class="pm-usd">IBJA benchmark · Mumbai</div></div>
+<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr" id="g916-gst">₹{fmt_inr(g916_gst)} / g <span class="pm-tag">with GST</span></div><div class="pm-inr-sub" id="g916-ex">₹{fmt_inr(g916)} / g <span class="pm-tag">without GST</span></div><div class="pm-usd">IBJA benchmark · Mumbai</div></div>
+<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr" id="s999-gst">₹{fmt_inr(silv_gst, 0)} / kg <span class="pm-tag">with GST</span></div><div class="pm-inr-sub" id="s999-ex">₹{fmt_inr(silv, 0)} / kg <span class="pm-tag">without GST</span></div><div class="pm-usd">IBJA benchmark · Mumbai</div></div>
 </div>
 <p class="muted" id="ibja-note">IBJA {html.escape(ibja['session'])} rates for {html.escape(ibja['date'])}, from the daily site build. IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Not investment advice.</p>"""
     else:
@@ -4012,7 +4013,7 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v12";
+    sw = """const CACHE = "vs-cache-v13";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
