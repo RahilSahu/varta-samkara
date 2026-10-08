@@ -1,6 +1,119 @@
 {
   "days": [
     {
+      "date": "2026-10-08",
+      "points": [
+        {
+          "t": "57th GST Council scraps arrest powers, raises prosecution threshold to Rs 5 crore",
+          "s": "At its 57th meeting on October 8, the GST Council recommended removing arrest powers of GST officers and raising the prosecution threshold from Rs 1 crore to Rs 5 crore. The general penalty was cut from Rs 25,000 to Rs 10,000, minimum punishment removed, and rate changes will now be taken up once a year.",
+          "why": "GST Council decisions are staple prelims/mains questions on indirect tax reform and cooperative federalism.",
+          "src": [
+            "Economic Times",
+            "https://economictimes.indiatimes.com/news/newsblogs/57th-gst-council-meeting-live-updates-nirmala-sitharaman-gst-rates-slabs-rate-cuts-cheaper-costlier-2026/liveblog/134780076.cms?from=mdr"
+          ]
+        },
+        {
+          "t": "Andhra Pradesh declares early drought in 21 districts for Kharif 2026",
+          "s": "388 of 688 mandals across 21 districts declared drought-affected, with 283 severely and 105 moderately affected. June-August rainfall was 197.6 mm against a normal 424.3 mm, a 53.4% deficit, amplified by El Nino. The October 1 order followed the Manual for Drought Management, 2016.",
+          "why": "Drought management framework, El Nino linkages, and state disaster declarations recur in geography and governance papers.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/india/andhra-government-declares-drought-in-21-districts-10909939/"
+          ]
+        },
+        {
+          "t": "Anne Carson wins 2026 Nobel Prize in Literature",
+          "s": "Canadian poet and essayist Anne Carson, 76, won the Literature Nobel for a bold and inventive oeuvre in playful dialogue with the classical tradition. The Swedish Academy singled out her poem Nox. She was in Iceland, listening to the wind, when the call came.",
+          "why": "Nobel laureates are standard current-affairs fodder for prelims and interviews.",
+          "src": [
+            "Reuters via GMA News",
+            "https://www.gmanetwork.com/news/lifestyle/artandculture/1005267/canadian-poet-and-writer-anne-carson-wins-2026-nobel-prize-in-literature/story/?just_in"
+          ]
+        },
+        {
+          "t": "PM Modi calls for global framework against cyber fraud and deepfakes",
+          "s": "Inaugurating the 10th India Mobile Congress 2026 in New Delhi, Modi urged governments, tech companies, telecom operators and financial institutions to build a global mechanism that stops fraud before it reaches people. He announced 5G now runs on 5.5 lakh base stations covering every district.",
+          "why": "Cybersecurity governance and digital public infrastructure are high-frequency topics in GS papers III and IV.",
+          "src": [
+            "Business Standard",
+            "https://www.business-standard.com/industry/news/pm-modi-calls-for-global-framework-to-tackle-cyber-fraud-deepfakes-126100800402_1.html"
+          ]
+        },
+        {
+          "t": "India joins 15-country US-led initiative on manufacturing overcapacity",
+          "s": "India signed a joint ministerial statement with the US and 13 other economies covering autos and EVs, batteries, chemicals, foundational semiconductors and solar panels. Technical-level talks are to begin before December 2026. This comes amid a USTR Section 301 probe covering India, with findings due March 11, 2027.",
+          "why": "Trade policy, non-market practices and India-US economic ties are frequent IR and economy questions.",
+          "src": [
+            "The New Indian Express",
+            "https://www.newindianexpress.com/business/2026/Oct/08/india-joins-us-led-bloc-to-tackle-excess-capacity-in-evs-batteries-chips-and-solar"
+          ]
+        },
+        {
+          "t": "Union Cabinet approves Rs 10,000 crore SME Growth Fund",
+          "s": "The Cabinet approved Rs 10,000 crore of central commitment for the SME Growth Fund announced in Budget 2026-27, aimed at growth-equity capital for small and medium enterprises, with a majority of allocation to manufacturing-focused SMEs and Tier II-III city clusters.",
+          "why": "MSME financing schemes and budget announcements are direct prelims and mains material.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/business/Economy/union-cabinet-approves-10000-cr-sme-growth-fund-to-boost-manufacturing/article71551392.ece"
+          ]
+        },
+        {
+          "t": "IMF reaches staff-level deal with Pakistan, unlocking about $1.21 billion",
+          "s": "The IMF agreed on the fourth EFF review and third Resilience and Sustainability Facility review with Pakistan, pending board approval. About $1 billion under EFF and $210 million under RSF would bring total disbursements to $5.7 billion. Pakistan agreed to scrap its Rs 75 billion cheap-petrol scheme.",
+          "why": "Neighbourhood economy and IMF programmes appear in IR current-affairs questions.",
+          "src": [
+            "Reuters",
+            "https://www.reuters.com/world/asia-pacific/imf-reaches-staff-deal-with-pakistan-potentially-unlocking-12-billion-2026-10-07/"
+          ]
+        },
+        {
+          "t": "WMO warns El Nino will peak in December, among strongest since 1950",
+          "s": "The World Meteorological Organization said El Nino will keep intensifying to a December peak and is nearly 100% likely to persist through February 2027. Sea-surface temperatures in the central and eastern tropical Pacific are forecast at a record 3.7C above normal for October-December.",
+          "why": "El Nino-Indian monsoon linkage is a core physical geography and environment topic.",
+          "src": [
+            "Reuters via GMA News",
+            "https://www.gmanetwork.com/news/weather/content/1005275/un-weather-body-el-ni-o-set-to-intensify-and-last-until-february-2027/story/?just_in"
+          ]
+        },
+        {
+          "t": "IT Minister: AI regulation consultation paper within a month",
+          "s": "IT Minister Ashwini Vaishnaw said the government will release a consultation paper on AI regulations within a month, with safety, deepfakes, skilling and industry responsibility as key focus areas.",
+          "why": "Emerging-tech regulation is a current topic for governance and ethics papers.",
+          "src": [
+            "ThePrint",
+            "https://theprint.in/category/economy/"
+          ]
+        },
+        {
+          "t": "Rebel TMC MPs seek 15 more days to reply to disqualification notices",
+          "s": "Twenty rebel TMC MPs aligned with the NCPI sought 15 more days to respond to Lok Sabha Speaker Om Birla's notices on a disqualification petition under the anti-defection law, with the deadline expiring on October 8.",
+          "why": "Anti-defection law (Tenth Schedule) cases are classic polity questions.",
+          "src": [
+            "News9live",
+            "https://www.news9live.com/india/breaking-news-live-updates-todays-news-headlines-october-8-2026-pm-narendra-modi-donald-trump-congress-protests-cjp-protest-bengaluru-jantar-mantar-nana-patekar-3014094"
+          ]
+        },
+        {
+          "t": "Indian Air Force completes 94 years on October 8",
+          "s": "October 8 marks Indian Air Force Day, commemorating the IAF's establishment on October 8, 1932. The service completed 94 years in 2026.",
+          "why": "Defence services' raising days and institutional history are easy prelims marks.",
+          "src": [
+            "CareerIndia",
+            "https://www.careerindia.com/news/school-assembly-news-headlines-today-october-8-2026-national-international-education-sports-066753.html"
+          ]
+        },
+        {
+          "t": "TCS Q2 FY27: net profit Rs 13,884 crore, AI revenue tops $3.1 billion annualised",
+          "s": "TCS posted 15% YoY profit growth to Rs 13,884 crore on revenue of Rs 73,188 crore and declared a Rs 12 second interim dividend. Annualised AI revenue crossed $3.1 billion, over 10% of revenue, with Q2 deal wins worth $9.6 billion.",
+          "why": "Big corporate results and AI-economy markers feature in economy and current-affairs sections.",
+          "src": [
+            "Economic Times",
+            "https://economictimes.indiatimes.com/markets/stocks/live-blog/tcs-q2-results-live-tata-consultancy-services-q2-fy27-revenue-earnings-profit-loss-bonus-shares-date-time-8-october-2026/liveblog/134779808.cms?from=mdr"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-07",
       "points": [
         {
