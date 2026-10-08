@@ -1,4 +1,4 @@
-const CACHE = "vs-cache-v11";
+const CACHE = "vs-cache-v12";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
@@ -24,6 +24,7 @@ self.addEventListener("activate", (e) => {
 });
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
+  if (e.request.url.indexOf("markets_rates.json") !== -1) return; // network-only: always fresh bullion rates
   e.respondWith(
     caches.match(e.request).then((hit) => {
       const net = fetch(e.request).then((res) => {

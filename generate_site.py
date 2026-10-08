@@ -726,6 +726,7 @@ html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
 .pm-name{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#666)}
 .pm-inr{font-size:1.7rem;font-weight:800;margin:.3rem 0 .1rem}
 .pm-usd{font-size:.85rem;color:var(--muted,#666)}
+.pm-tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--muted,#666);vertical-align:middle}
 .pm-grid-sm .pm-inr{font-size:1.15rem}
 .pm-grid-sm .pm-card{padding:.8rem .9rem}
 .sec-sub{font-size:1.05rem;margin:1.6rem 0 .4rem}
@@ -2774,10 +2775,27 @@ async function load(){
     $('silver-usd').textContent='$'+fmt(xag,2)+' / oz';
     $('silver-inr').textContent='\u20B9'+fmt(xag/OZ*1000*usdinr,0)+' / kg';
     $('fx-rate').textContent='1 USD = \u20B9'+fmt(usdinr,2);
-    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Indian bullion rates above are IBJA figures from the daily site build. Not investment advice.';
+    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Indian bullion rates above refresh hourly from IBJA. Not investment advice.';
   }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams. Not investment advice.');}
 }
 setStatus(); setInterval(setStatus,60000); load(); setInterval(load,60000);
+function paintIbja(j){
+  try{
+    var g999=parseFloat(j.gold_999_g), g916=parseFloat(j.gold_916_g), s999=parseFloat(j.silver_999_kg);
+    if(!(g999>10000&&g999<25000&&g916>9000&&g916<23000&&s999>150000&&s999<400000))throw new Error('bad ibja data');
+    $('g999-gst').innerHTML='\u20B9'+fmt(g999*1.03,2)+' / g <span class="pm-tag">incl. GST</span>';
+    $('g999-ex').textContent='IBJA benchmark \u20B9'+fmt(g999,2)+' / g excl. GST';
+    $('g916-gst').innerHTML='\u20B9'+fmt(g916*1.03,2)+' / g <span class="pm-tag">incl. GST</span>';
+    $('g916-ex').textContent='IBJA benchmark \u20B9'+fmt(g916,2)+' / g excl. GST';
+    $('s999-gst').innerHTML='\u20B9'+fmt(s999*1.03,0)+' / kg <span class="pm-tag">incl. GST</span>';
+    $('s999-ex').textContent='IBJA benchmark \u20B9'+fmt(s999,0)+' / kg excl. GST';
+    $('ibja-note').textContent='IBJA '+j.session+' rates for '+j.date+' \u00B7 refreshed '+istTime()+' IST \u00B7 IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Not investment advice.';
+  }catch(e){}
+}
+function loadIbja(){
+  fetch('markets_rates.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('http '+r.status);return r.json();}).then(paintIbja).catch(function(){});
+}
+loadIbja(); setInterval(loadIbja,60000);
 var fxRates=null;
 function fxCalc(){
   var amt=parseFloat($('fx-amt').value)||0, from=$('fx-from').value, to=$('fx-to').value;
@@ -2953,18 +2971,19 @@ def markets_page(ibja=None):
 {"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"SP:SPX","title":"S&P 500"},{"proName":"NASDAQ:NDX","title":"Nasdaq 100"},{"proName":"DJ:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
 </script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>"""
     if ibja:
-        g999 = fmt_inr(ibja["gold_999_g"])
-        g916 = fmt_inr(ibja["gold_916_g"])
-        silv = fmt_inr(ibja["silver_999_kg"], 0)
-        g999_gst = fmt_inr(ibja["gold_999_g"] * 1.03)
-        g916_gst = fmt_inr(ibja["gold_916_g"] * 1.03)
+        g999 = ibja["gold_999_g"]
+        g916 = ibja["gold_916_g"]
+        silv = ibja["silver_999_kg"]
+        g999_gst = g999 * 1.03
+        g916_gst = g916 * 1.03
+        silv_gst = silv * 1.03
         ibja_block = f"""<h2>Indian Bullion Rates (IBJA)</h2>
 <div class="pm-grid">
-<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr">\u20B9{g999} / g</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
-<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr">\u20B9{g916} / g</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
-<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr">\u20B9{silv} / kg</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr" id="g999-gst">₹{fmt_inr(g999_gst)} / g <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="g999-ex">IBJA benchmark ₹{fmt_inr(g999)} / g excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr" id="g916-gst">₹{fmt_inr(g916_gst)} / g <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="g916-ex">IBJA benchmark ₹{fmt_inr(g916)} / g excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr" id="s999-gst">₹{fmt_inr(silv_gst, 0)} / kg <span class="pm-tag">incl. GST</span></div><div class="pm-usd" id="s999-ex">IBJA benchmark ₹{fmt_inr(silv, 0)} / kg excl. GST</div></div>
 </div>
-<p class="muted">IBJA rates for {html.escape(ibja['date'])} ({html.escape(ibja['session'])} session), set at the daily site build. IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Incl. 3% GST (indicative): 24K \u20B9{g999_gst}/g, 22K \u20B9{g916_gst}/g.</p>"""
+<p class="muted" id="ibja-note">IBJA {html.escape(ibja['session'])} rates for {html.escape(ibja['date'])}, from the daily site build. IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Not investment advice.</p>"""
     else:
         ibja_block = """<h2>Indian Bullion Rates (IBJA)</h2>
 <p class="muted">Indian bullion rates are temporarily unavailable. International spot reference below.</p>"""
@@ -3993,7 +4012,7 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v11";
+    sw = """const CACHE = "vs-cache-v12";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
@@ -4019,6 +4038,7 @@ self.addEventListener("activate", (e) => {
 });
 self.addEventListener("fetch", (e) => {
   if (e.request.method !== "GET") return;
+  if (e.request.url.indexOf("markets_rates.json") !== -1) return; // network-only: always fresh bullion rates
   e.respondWith(
     caches.match(e.request).then((hit) => {
       const net = fetch(e.request).then((res) => {
