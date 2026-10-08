@@ -44,14 +44,21 @@
 <button class="hamburger" id="burger" aria-label="Menu">&#9776;</button>
 </div>
 </header>
-<main class="wrap"><div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus international gold and silver spot prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
+<main class="wrap"><div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus official IBJA Indian bullion rates for gold and silver. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
 <div class="tv-wrap"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
 {"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"SP:SPX","title":"S&P 500"},{"proName":"NASDAQ:NDX","title":"Nasdaq 100"},{"proName":"DJ:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
 </script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>
-<h2>Gold and Silver <span class="live-dot"></span></h2>
+<h2>Indian Bullion Rates (IBJA)</h2>
 <div class="pm-grid">
-<div class="pm-card"><div class="pm-name">Gold</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
-<div class="pm-card"><div class="pm-name">Silver</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
+<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr">₹14,776.70 / g</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr">₹13,535.50 / g</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr">₹2,20,866 / kg</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+</div>
+<p class="muted">IBJA rates for 07/10/2026 (PM session), set at the daily site build. IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Incl. 3% GST (indicative): 24K ₹15,220.00/g, 22K ₹13,941.57/g.</p>
+<h2 class="sec-sub">International Spot (live reference)</h2>
+<div class="pm-grid pm-grid-sm">
+<div class="pm-card"><div class="pm-name">Gold spot</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
+<div class="pm-card"><div class="pm-name">Silver spot</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
 <div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">Interbank reference rate</div></div>
 </div>
 <p class="muted" id="pm-note">Loading live prices...</p>
@@ -218,7 +225,7 @@ async function load(){
     $('silver-usd').textContent='$'+fmt(xag,2)+' / oz';
     $('silver-inr').textContent='\u20B9'+fmt(xag/OZ*1000*usdinr,0)+' / kg';
     $('fx-rate').textContent='1 USD = \u20B9'+fmt(usdinr,2);
-    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Not investment advice.';
+    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Indian bullion rates above are IBJA figures from the daily site build. Not investment advice.';
   }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams. Not investment advice.');}
 }
 setStatus(); setInterval(setStatus,60000); load(); setInterval(load,60000);

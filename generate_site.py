@@ -726,6 +726,9 @@ html[data-theme="dark"] .scores-subhead{color:#f2f5fc}
 .pm-name{font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted,#666)}
 .pm-inr{font-size:1.7rem;font-weight:800;margin:.3rem 0 .1rem}
 .pm-usd{font-size:.85rem;color:var(--muted,#666)}
+.pm-grid-sm .pm-inr{font-size:1.15rem}
+.pm-grid-sm .pm-card{padding:.8rem .9rem}
+.sec-sub{font-size:1.05rem;margin:1.6rem 0 .4rem}
 .mkt-badge{display:inline-block;font-size:.75rem;font-weight:700;padding:.2rem .7rem;border-radius:999px;background:#eee;color:#555;vertical-align:middle}
 .mkt-badge.open{background:#e5f6ec;color:#0d7a3f}
 .mkt-badge.closed{background:#f3e8e8;color:#a33}
@@ -2009,6 +2012,95 @@ def make_icon(size):
 
 # ---------------------------------------------------------------- motogp data (server-side; api.motogp.com sends no CORS headers)
 
+def fmt_inr(n, decimals=2):
+    """Format a number with Indian digit grouping, e.g. 14776.7 -> '14,776.70'."""
+    try:
+        n = float(n)
+    except (TypeError, ValueError):
+        return "NA"
+    neg = n < 0
+    n = abs(n)
+    s = f"{n:.{decimals}f}"
+    intpart, _, frac = s.partition(".")
+    if len(intpart) > 3:
+        head, tail = intpart[:-3], intpart[-3:]
+        groups = []
+        while len(head) > 2:
+            groups.insert(0, head[-2:])
+            head = head[:-2]
+        if head:
+            groups.insert(0, head)
+        intpart = ",".join(groups) + "," + tail
+    out = intpart + ("." + frac if decimals else "")
+    return ("-" if neg else "") + out
+
+
+IBJA_RATES_FILE = os.path.join(SITE, "markets_rates.json")
+
+
+def fetch_ibja_rates():
+    """Fetch official Indian bullion rates from IBJA at build time.
+
+    IBJA gold values are per 10 grams, silver per kg, exclusive of GST
+    (Mumbai benchmark). Picks the latest date across am/pm, preferring pm.
+    Writes successful fetches to markets_rates.json; on failure falls back
+    to that cache. Never raises: returns None if no data is available.
+    """
+    def pick(entries):
+        am = {e["date"]: e for e in (entries.get("am") or []) if e.get("date")}
+        pm = {e["date"]: e for e in (entries.get("pm") or []) if e.get("date")}
+        try:
+            dates = sorted(set(am) | set(pm),
+                           key=lambda d: datetime.strptime(d, "%d/%m/%Y"))
+        except Exception:
+            return None, None, None
+        if not dates:
+            return None, None, None
+        latest = dates[-1]
+        if latest in pm:
+            return latest, pm[latest], "PM"
+        return latest, am[latest], "AM"
+
+    data = None
+    try:
+        import urllib.request
+        req = urllib.request.Request(
+            "https://ibja-api.vercel.app/history",
+            headers={"User-Agent": "Mozilla/5.0",
+                     "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.load(resp)
+    except Exception:
+        data = None
+
+    rates = None
+    if data:
+        try:
+            date, entry, session = pick(data)
+            rates = {
+                "date": date,
+                "session": session,
+                "gold_999_g": round(float(entry["gold_999"]) / 10, 2),
+                "gold_916_g": round(float(entry["gold_916"]) / 10, 2),
+                "silver_999_kg": int(float(entry["silver_999"])),
+                "fetched_at": datetime.now(timezone.utc).isoformat(),
+            }
+        except Exception:
+            rates = None
+    if rates:
+        try:
+            with open(IBJA_RATES_FILE, "w", encoding="utf-8") as f:
+                json.dump(rates, f, ensure_ascii=False, indent=1)
+        except Exception:
+            pass
+        return rates
+    try:
+        with open(IBJA_RATES_FILE, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+
 def fetch_motogp():
     """Bake the 2026 MotoGP premier-class rider lineup into assets/motogp.json.
 
@@ -2682,7 +2774,7 @@ async function load(){
     $('silver-usd').textContent='$'+fmt(xag,2)+' / oz';
     $('silver-inr').textContent='\u20B9'+fmt(xag/OZ*1000*usdinr,0)+' / kg';
     $('fx-rate').textContent='1 USD = \u20B9'+fmt(usdinr,2);
-    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Not investment advice.';
+    $('pm-note').textContent='International spot prices converted to INR at the interbank rate \u00B7 updated '+istTime()+' IST \u00B7 refreshes every minute. Indian bullion rates above are IBJA figures from the daily site build. Not investment advice.';
   }catch(e){fail('Could not reach the live price feeds. Indices tape below still streams. Not investment advice.');}
 }
 setStatus(); setInterval(setStatus,60000); load(); setInterval(load,60000);
@@ -2856,16 +2948,33 @@ def topics_index_page(counts):
     return page_shell("Topics", "Browse Varta & Samkara stories by topic: Politics, Economy, Science & Tech, Sports, World, India.", "topics", main,
                       depth=1, canonical=SITE_URL + "topics/")
 
-def markets_page():
+def markets_page(ibja=None):
     tape = """<div class="tv-wrap"><div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div><script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
 {"symbols":[{"proName":"NSE:NIFTY","title":"Nifty 50"},{"proName":"BSE:SENSEX","title":"Sensex"},{"proName":"NSE:BANKNIFTY","title":"Bank Nifty"},{"proName":"NSE:INDIAVIX","title":"India VIX"},{"proName":"SP:SPX","title":"S&P 500"},{"proName":"NASDAQ:NDX","title":"Nasdaq 100"},{"proName":"DJ:DJI","title":"Dow 30"},{"proName":"TVC:UKX","title":"FTSE 100"},{"proName":"TVC:DEU40","title":"DAX"},{"proName":"TVC:NI225","title":"Nikkei 225"},{"proName":"TVC:HSI","title":"Hang Seng"},{"proName":"FX:USDINR","title":"USD/INR"}],"showSymbolLogo":true,"colorTheme":"dark","isTransparent":true,"displayMode":"adaptive","locale":"en"}
 </script></div><div class="tv-cap">Live streaming indices via TradingView</div></div>"""
-    body = f"""<div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus international gold and silver spot prices converted to rupees. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
-{tape}
-<h2>Gold and Silver <span class="live-dot"></span></h2>
+    if ibja:
+        g999 = fmt_inr(ibja["gold_999_g"])
+        g916 = fmt_inr(ibja["gold_916_g"])
+        silv = fmt_inr(ibja["silver_999_kg"], 0)
+        g999_gst = fmt_inr(ibja["gold_999_g"] * 1.03)
+        g916_gst = fmt_inr(ibja["gold_916_g"] * 1.03)
+        ibja_block = f"""<h2>Indian Bullion Rates (IBJA)</h2>
 <div class="pm-grid">
-<div class="pm-card"><div class="pm-name">Gold</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
-<div class="pm-card"><div class="pm-name">Silver</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
+<div class="pm-card"><div class="pm-name">Gold 24K (999)</div><div class="pm-inr">\u20B9{g999} / g</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Gold 22K (916)</div><div class="pm-inr">\u20B9{g916} / g</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+<div class="pm-card"><div class="pm-name">Silver (999)</div><div class="pm-inr">\u20B9{silv} / kg</div><div class="pm-usd">Mumbai benchmark, excl. GST</div></div>
+</div>
+<p class="muted">IBJA rates for {html.escape(ibja['date'])} ({html.escape(ibja['session'])} session), set at the daily site build. IBJA benchmark rates are exclusive of GST; jeweller prices add 3% GST plus making charges. Incl. 3% GST (indicative): 24K \u20B9{g999_gst}/g, 22K \u20B9{g916_gst}/g.</p>"""
+    else:
+        ibja_block = """<h2>Indian Bullion Rates (IBJA)</h2>
+<p class="muted">Indian bullion rates are temporarily unavailable. International spot reference below.</p>"""
+    body = f"""<div class="page-head"><h1>Markets</h1><p class="lede">Live Indian and global market indices, plus official IBJA Indian bullion rates for gold and silver. <span id="mkt-status" class="mkt-badge">Checking market hours</span></p></div>
+{tape}
+{ibja_block}
+<h2 class="sec-sub">International Spot (live reference)</h2>
+<div class="pm-grid pm-grid-sm">
+<div class="pm-card"><div class="pm-name">Gold spot</div><div class="pm-inr" id="gold-inr">...</div><div class="pm-usd" id="gold-usd"></div></div>
+<div class="pm-card"><div class="pm-name">Silver spot</div><div class="pm-inr" id="silver-inr">...</div><div class="pm-usd" id="silver-usd"></div></div>
 <div class="pm-card"><div class="pm-name">US Dollar</div><div class="pm-inr" id="fx-rate">...</div><div class="pm-usd">Interbank reference rate</div></div>
 </div>
 <p class="muted" id="pm-note">Loading live prices...</p>
@@ -3247,6 +3356,7 @@ def build():
     os.makedirs(BLOGSDIR, exist_ok=True)
     fetch_motogp()  # server-side; api.motogp.com has no CORS headers for browsers
     fetch_horoscope()  # server-side; freehoroscopeapi.com has no CORS headers
+    ibja_rates = fetch_ibja_rates()  # server-side; IBJA bullion rates at build time
     rows = parse_log()
     posts = []
     used_slugs = set()
@@ -3633,7 +3743,7 @@ def build():
     with open(os.path.join(SITE, "assets", "policy.json"), "w", encoding="utf-8") as f:
         json.dump(POLICY_ENTRIES, f, ensure_ascii=False, indent=1)
     with open(os.path.join(SITE, "markets.html"), "w", encoding="utf-8") as f:
-        f.write(markets_page())
+        f.write(markets_page(ibja_rates))
     with open(os.path.join(SITE, "policy.html"), "w", encoding="utf-8") as f:
         f.write(policy_page())
 
