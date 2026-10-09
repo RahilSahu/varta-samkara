@@ -1,6 +1,110 @@
 {
   "days": [
     {
+      "date": "2026-10-09",
+      "points": [
+        {
+          "t": "RBI hikes repo rate 25 bps to 5.5 percent, shifts stance to calibrated tightening",
+          "s": "The six-member Monetary Policy Committee unanimously raised the repo rate from 5.25 percent to 5.5 percent on Oct 8, the first hike since February 2023. It shifted the stance from neutral to calibrated tightening, raised the FY27 GDP growth forecast from 6.7 percent to 7.1 percent (Q1 growth was 7.8 percent) and the inflation forecast to 5.2 percent.",
+          "why": "Repo rate, MPC, stance and inflation-targeting are standard UPSC/SSC/Banking prelims topics; the calibrated-tightening stance last used eight years ago is a key fact.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/opinion/editorials/rbi-repo-rate-hike-india-economy-calibrated-tightening-10911498/"
+          ]
+        },
+        {
+          "t": "57th GST Council scraps arrest powers, raises prosecution threshold to Rs 5 crore",
+          "s": "The GST Council on Oct 8 recommended removing arrest powers under Section 69, raising the prosecution threshold from Rs 1 crore to Rs 5 crore, removing the minimum punishment, and cutting the general penalty from Rs 25,000 to Rs 10,000. It allowed ITC on employee health and life insurance, telecom towers, outside-factory pipelines, free samples and expired stock; no rates changed and decisions take effect April 1, 2027.",
+          "why": "GST Council decisions, Section 132, prosecution limits and ITC rules are recurring indirect-tax questions in government exams.",
+          "src": [
+            "ET Now",
+            "https://www.etnownews.com/economy/gst-council-approves-major-reforms-arrest-powers-scrapped-itc-rules-eased-softer-penalties-details-article-156297880"
+          ]
+        },
+        {
+          "t": "NPPA caps trade margins on non-scheduled anti-cancer drugs at 30 percent of MRP",
+          "s": "At its 151st meeting under DPCO 2013 (283rd overall) on Oct 8, chaired by Manoj Joshi, NPPA approved in principle a 30 percent-of-MRP trade margin cap for identified non-scheduled anti-cancer drugs. MRPs are expected to fall 20-70 percent with annual patient savings of about Rs 2,500 crore; a DGHS expert committee will finalise the drug list by Oct 14.",
+          "why": "NPPA, DPCO 2013, NLEM 2022 and Paragraph 19 extraordinary powers are frequent health-economy questions; the 2019 precedent (42 drugs, Rs 984 crore saved) is a cited comparison.",
+          "src": [
+            "Medical Dialogues",
+            "https://medicaldialogues.in/news/industry/pharma/cancer-drug-mrps-could-fall-20-70-under-nppas-proposed-trade-margin-cap-180844"
+          ]
+        },
+        {
+          "t": "Oct 9 bypolls: BJP sweeps WB, TVK wins both TN seats, AINRC holds Puducherry, BJP takes Nagaon LS",
+          "s": "Counting on Oct 9 for five assembly seats and one Lok Sabha seat gave Nandigram (Hasirani Rath, margin 1,22,753) and Rejinagar (Shankharavh Sarkar, 1,29,914 votes) to the BJP; Madurantakam (Maragatham Kumaravel) and Dharapuram (P Sathyabama) to Vijay-led TVK; Thattanchavady to AINRC's Ashok Anand (margin 8,482); and Assam's Nagaon Lok Sabha to BJP's Devasish Sharma over AIUDF's Badruddin Ajmal by 1,10,629 votes.",
+          "why": "Byelection outcomes and winning candidates are standard current-affairs and polity questions.",
+          "src": [
+            "Oneindia",
+            "https://www.oneindia.com/india/by-election-results-2026-live-nandigram-nagaon-rejinagar-madurantakam-thattanchavady-vote-counti-8229309.html"
+          ]
+        },
+        {
+          "t": "2026 Nobel Peace Prize to Navanethem 'Navi' Pillay of South Africa",
+          "s": "The Norwegian Nobel Committee on Oct 9 awarded the 2026 Peace Prize to Indian-origin South African jurist Navanethem Pillay for her efforts to promote peace and international law. Pillay, 85, served as UN High Commissioner for Human Rights (2008-2014), as an ICC judge and as ICTR President; the prize of 12 million Swedish crowns (about $1.2 million) will be presented in Oslo on Dec 10.",
+          "why": "Nobel laureates, the awarding bodies and citations are staple GK questions; her UN and ICC background links to international-law topics.",
+          "src": [
+            "The Jerusalem Post",
+            "https://www.jpost.com/international/article-911163"
+          ]
+        },
+        {
+          "t": "2026 Nobel Prize in Literature to Canadian writer Anne Carson",
+          "s": "The Swedish Academy on Oct 8 awarded the 2026 Literature Prize to Canadian writer and classicist Anne Carson, 76, for her bold and inventive oeuvre that, in playful dialogue with the classical tradition, has created new forms for contemporary literature. The prize carries 12 million Swedish kronor (about $1.2 million); her key works include Autobiography of Red, The Beauty of the Husband and Nox.",
+          "why": "Nobel Literature winners and their nationalities are recurring exam GK; Carson is the 19th woman among 122 literature laureates.",
+          "src": [
+            "CNN",
+            "https://www.cnn.com/2026/10/08/style/nobel-prize-literature-anne-carson-winner-2026-intl?cid=external-feeds_iluminar_meta"
+          ]
+        },
+        {
+          "t": "India joins 15-economy joint statement on global excess manufacturing capacity",
+          "s": "India joined the US and 13 other economies in a joint ministerial statement, released by USTR after the G20 Trade Ministers' meeting in Milwaukee on Sept 30-Oct 1, calling for steps to eliminate structural excess capacity and production and end non-market policies that distort markets. Initial focus sectors are autos and EVs, batteries, chemicals, foundational semiconductors and solar panels; officials meet again before Dec 2026.",
+          "why": "Multilateral trade initiatives, G20 outcomes and signatory groupings are important IR/economy topics; the 15 signatories are an exam-ready list.",
+          "src": [
+            "The Economic Times",
+            "https://economictimes.indiatimes.com/news/india/india-joins-us-13-economies-in-joint-statement-to-address-global-excess-capacity-after-g20-meeting/articleshow/134777654.cms?from=mdr"
+          ]
+        },
+        {
+          "t": "Rajya Sabha biennial elections: Oct 9 last date for withdrawal, polling Oct 16",
+          "s": "Under the ECI schedule announced Sept 22, the last date for withdrawal of candidatures for the biennial elections to 11 Rajya Sabha seats (10 Uttar Pradesh, 1 Uttarakhand, terms ending Nov 25) and the West Bengal bye-election is Oct 9. Polling is on Oct 16 (9 am to 4 pm) with counting from 5 pm the same day; the process must be completed by Oct 19.",
+          "why": "ECI election schedules, biennial elections and the Rajya Sabha election process are core Indian polity facts.",
+          "src": [
+            "UNI India",
+            "https://www.uniindia.com/national/eci-sets-october-16-rs-polls-legislative-council-elections-for-october-23/188130"
+          ]
+        },
+        {
+          "t": "MoSPI releases Strategy for Environmental Economic Accounts in India 2026-2030",
+          "s": "MoSPI released a five-year strategy to measure India's natural wealth alongside economic indicators, succeeding the 2022-2026 strategy. It lists about 10 priority areas including forests, water, land, soil, minerals, carbon stock, biodiversity and pollination services, follows the UN SEEA framework and SNA 2025, and can evaluate around 40 indicators across nine SDGs.",
+          "why": "SEEA, SNA 2025, green accounting and MoSPI's environmental accounts are GS3 (environment-economy) and prelims-friendly topics.",
+          "src": [
+            "Adda247 Current Affairs",
+            "https://currentaffairs.adda247.com/government-unveils-2026-2030-strategy-to-measure-indias-natural-wealth/"
+          ]
+        },
+        {
+          "t": "NSO releases first-ever National Household Travel Survey findings",
+          "s": "NSO under MoSPI released the first NHTS on Oct 5, covering July 2025-June 2026 with 4,92,023 households and 20,34,371 persons across 14,274 villages and 10,377 urban blocks (trip defined as over 1 km). Workers spend Rs 785 a month on fixed-workplace commutes (Rs 1,044 urban, Rs 612 rural); two-wheelers are the primary mode for 42.6 percent of workers; 83.4 percent reach work within 30 minutes (average 25 minutes); a gender gap persists (61.9 percent male vs 41.9 percent female workers commuting daily).",
+          "why": "First-of-its-kind national surveys, their methodology and headline numbers are classic prelims facts.",
+          "src": [
+            "The Peoples Board",
+            "https://www.thepeoplesboard.com/news/nso-national-household-travel-survey-workers-commute-cost-india-2026/"
+          ]
+        },
+        {
+          "t": "World Post Day observed Oct 9; India Post celebrates National Postal Week Oct 9-15",
+          "s": "World Post Day was observed on Oct 9, commemorating the establishment of the Universal Postal Union in Bern in 1874; India became the first Asian country to join the UPU in 1876. India Post is celebrating National Postal Week 2026 from Oct 9 to 15, with the World Post Day theme 'One Postal Network, Infinite Possibilities' and themed days including philately (Oct 12), financial inclusion (Oct 13) and technology (Oct 15).",
+          "why": "International days, their themes and the UPU facts are regular static-cum-current-affairs questions.",
+          "src": [
+            "Mathrubhumi English",
+            "https://english.mathrubhumi.com/news/india/national-postal-week-2026-world-post-day-october-9-15-india-post-oic9b714"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-08",
       "points": [
         {
