@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Sync with latest main before updating
+        run: git pull --rebase origin main
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -22,11 +24,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add markets_rates.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "Auto-update: IBJA bullion rates"
+            git pull --rebase --autostash origin main
             git push
           fi
