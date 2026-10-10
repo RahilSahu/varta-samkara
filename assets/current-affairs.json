@@ -1,6 +1,101 @@
 {
   "days": [
     {
+      "date": "2026-10-10",
+      "points": [
+        {
+          "t": "RBI opens special dollar window for IOC, HPCL, BPCL",
+          "s": "The RBI announced a special window to meet the entire daily dollar requirements of Indian Oil, HPCL and BPCL through designated banks from October 12, till further notice. The move shifts a large source of dollar demand away from the spot forex market to support the rupee.",
+          "why": "Direct RBI forex-market intervention steps are a staple in Banking and UPSC economy questions.",
+          "src": [
+            "IANS Live",
+            "https://ianslive.in/rbi-launches-special-dollar-window-for-psu-omcs-to-support-rupee--20261010130351"
+          ]
+        },
+        {
+          "t": "RBI tightens forex derivative rules: threshold cut to $5 million",
+          "s": "RBI cut the threshold for rupee-linked derivative positions without proof of underlying exposure from $100 million to $5 million, barred rebooking of cancelled rupee derivative contracts, and introduced a 20 percent Foreign Exchange Risk Reserve (FERR) on eligible contracts above $2 million.",
+          "why": "FEMA and forex-market regulation questions appear in Banking, RBI Grade B and UPSC exams.",
+          "src": [
+            "Ten News",
+            "https://tennews.in/rbi-bars-rebooking-of-cancelled-rupee-derivative-contracts-cuts-threshold-to-5-million/"
+          ]
+        },
+        {
+          "t": "RBI raises minimum daily CRR maintenance to 99 percent",
+          "s": "The RBI raised the minimum daily Cash Reserve Ratio maintenance requirement for scheduled banks to 99 percent from 90 percent, effective from the fortnight beginning October 16, 2026. Banks will have much less flexibility in managing daily reserve balances.",
+          "why": "CRR mechanics and RBI liquidity measures are core Banking and SSC/UPSC economy syllabus topics.",
+          "src": [
+            "ET CFO (ANI)",
+            "https://cfo.economictimes.indiatimes.com/news/rbi-raises-banks-daily-minimum-crr-maintenance-requirement-to-99-from-90/134846516"
+          ]
+        },
+        {
+          "t": "BRICS Traditional and Indigenous Demonstration Games in Ahmedabad",
+          "s": "The Sports Ministry announced that the BRICS Traditional and Indigenous Sports Demonstration Games 2026 will be held at the Veer Savarkar Sports Complex, Ahmedabad, on October 12 under India's BRICS Chairship. Sports Minister Mansukh Mandaviya will inaugurate the non-competitive event; India will showcase Mallakhamb, Yogasana and Kalaripayattu.",
+          "why": "India's BRICS Chairship and associated events are current-affairs staples for UPSC and SSC.",
+          "src": [
+            "The Tribune (ANI)",
+            "https://www.tribuneindia.com/news/sports/brics-traditional-and-indigenous-demonstration-games-2026-to-be-held-in-ahmedabad/amp/"
+          ]
+        },
+        {
+          "t": "India finishes in WorldSkills top 10 for the first time",
+          "s": "India secured 10th place at the 48th WorldSkills Competition in Shanghai 2026 with six silver medals and 20 Medals for Excellence, its first-ever top-10 finish (up from 13th at Lyon 2024). The Ministry of Skill Development and Entrepreneurship felicitated Team India in New Delhi.",
+          "why": "India's sports and skilling achievements at global platforms are frequent exam facts.",
+          "src": [
+            "The Tribune (ANI)",
+            "https://www.tribuneindia.com/news/world/skill-development-ministry-felicitates-team-india-for-historic-worldskills-shanghai-performance/"
+          ]
+        },
+        {
+          "t": "ShuruKar district entrepreneurship movement launched in Patna",
+          "s": "The Bharat Project by YourStory launched ShuruKar at the Dr. APJ Abdul Kalam Science City in Patna, developed in partnership with DPIIT and Startup India. It is billed as the first nationwide district-level movement to help youth build enterprises around local problems, with the ShuruKar Challenge announced alongside.",
+          "why": "Startup India, DPIIT schemes and Bihar-centric initiatives are asked in UPSC, SSC and state exams.",
+          "src": [
+            "YourStory",
+            "https://yourstory.com/2026/10/shurukar-bihar-patna-district-entrepreneurship-startup-india"
+          ]
+        },
+        {
+          "t": "Bhagat and Patel named flagbearers for Asian Para Games",
+          "s": "Paralympic champions Pramod Bhagat (para badminton) and Bhavina Patel (para table tennis) were named India's flagbearers for the opening ceremony of the Aichi-Nagoya 2026 Asian Para Games in Japan on October 18. The fifth Asian Para Games run from October 18 to 24.",
+          "why": "Flagbearers, venues and dates of major multi-sport events are standard sports current-affairs questions.",
+          "src": [
+            "The Statesman",
+            "https://www.thestatesman.com/sports/pramod-bhagat-bhavina-patel-named-indias-flag-bearers-for-asian-para-games-1503648325.html/amp"
+          ]
+        },
+        {
+          "t": "World Space Week 2026 theme: Rocket Revolution",
+          "s": "ISRO centres in Thiruvananthapuram observed World Space Week from October 4 to 10 on the theme 'Rocket Revolution', with a public outreach event on October 10 at the Kerala State Science and Technology Museum. The week commemorates the Sputnik launch of October 4, 1957, and the Outer Space Treaty that entered into force on October 10, 1967.",
+          "why": "ISRO events, themes and space-treaty dates recur in UPSC prelims science-tech sections.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/kerala/isro-centres-in-keralam-to-celebrate-world-space-week-2026/article71532929.ece"
+          ]
+        },
+        {
+          "t": "Dhananjaya de Silva steps down as Sri Lanka Test captain",
+          "s": "Sri Lanka all-rounder Dhananjaya de Silva stepped down as Test captain with immediate effect but remains available for selection. He led Sri Lanka in 18 Tests since January 2024, winning seven. Sri Lanka Cricket named Kusal Mendis, already the ODI and T20I skipper, as his successor.",
+          "why": "Captaincy changes in international cricket are regular one-liner questions in SSC and Banking exams.",
+          "src": [
+            "NDTV Sports (PTI)",
+            "https://sports.ndtv.com/cricket/sri-lanka-cricket-appoints-kusal-mendis-as-test-captain-after-dhananjaya-de-silva-steps-down-12156403"
+          ]
+        },
+        {
+          "t": "Messi ends 21-year Argentina career against Benin",
+          "s": "Lionel Messi played his final international for Argentina in a 3-0 friendly win over Benin on October 6, scoring a goal and giving two assists. He retires as Argentina's most-capped player and all-time top scorer with 126 goals, the second-highest international goals tally among men after Cristiano Ronaldo.",
+          "why": "Record-holders and retirements of global sports icons appear in sports current-affairs sections.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/sports/football/most-goals-international-football-messi-ronaldo-10909992/"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-09",
       "points": [
         {
