@@ -1,6 +1,110 @@
 {
   "days": [
     {
+      "date": "2026-10-11",
+      "points": [
+        {
+          "t": "Supreme Court Sunday hearing: no illegal detention of peaceful protesters",
+          "s": "In a special Sunday sitting on October 11, a bench of Justices Joymalya Bagchi and V Mohana directed that peaceful protesters must not be detained except by procedure established by law, and that Metro and rail services should function normally subject to public order. Notices were issued to the Union Home Secretary, Delhi Police Commissioner and DMRC in contempt proceedings.",
+          "why": "Article 19, Section 163 BNSS and contempt powers are high yield polity topics for UPSC and judiciary linked exams.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/india/supreme-court-cjp-protests-delhi-jantar-mantar-illegal-detention-10916644/"
+          ]
+        },
+        {
+          "t": "Chennai Metro Phase 2 first stretch opened: Poonamallee to Vadapalani",
+          "s": "PM Modi and Tamil Nadu CM C. Joseph Vijay flagged off the first Phase 2 train on October 11 from Porur Bypass. The network grew from 54 km to 68 km with this stretch, part of the 118.9 km Phase 2 project, and passenger services began at 4 p.m. the same day.",
+          "why": "Major urban infrastructure projects, costs and corridor details are asked in SSC, Banking and state exams.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/cities/chennai/pm-modi-and-tn-cm-vijay-flag-off-chennai-metro-rails-first-train-for-phase-ii-project-take-a-ride-between-porur-poonamallee/article71570925.ece"
+          ]
+        },
+        {
+          "t": "Mission for Aatmanirbharta in Pulses completes one year",
+          "s": "PIB marked the first anniversary on October 11 of the mission launched on October 11, 2025 with Rs 11,440 crore for 2025-26 to 2030-31. Production rose to 274.09 lakh tonnes in 2025-26, imports fell 31.52 percent, and the target is nearly 350 lakh tonnes with 1,130 kg per hectare yield by 2030-31.",
+          "why": "Agriculture missions, MSP crops tur, urad and masoor, and self sufficiency targets recur in UPSC and Banking exams.",
+          "src": [
+            "Press Information Bureau",
+            "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2321892&reg=48&lang=2"
+          ]
+        },
+        {
+          "t": "India reaches 1,000 km quantum secure communication, bioeconomy near $196 billion",
+          "s": "Science and Technology Minister Jitendra Singh told the PHD Chamber session that India achieved 1,000 km of quantum secure communication in three years against an eight year target of 2,000 km under the National Quantum Mission. He said the bioeconomy grew from about $10 billion in 2014 to about $196 billion, with a $300 billion target by 2030.",
+          "why": "National Quantum Mission and bioeconomy figures are current science and economy facts tested in prelims.",
+          "src": [
+            "DD India",
+            "https://ddindia.co.in/2026/10/jitendra-singh-urges-industry-to-accelerate-commercialisation-of-indian-research/"
+          ]
+        },
+        {
+          "t": "India condemns Riyadh airport attack that killed 12 and injured over 300",
+          "s": "Saudi aviation authority said an October 10 attack on King Khalid International Airport killed 12 people, including four Saudis and eight foreign residents, and injured 309. India MEA condemned repeated attacks on civilians and civilian infrastructure as completely unacceptable and expressed solidarity with Saudi Arabia.",
+          "why": "India West Asia ties, MEA statements and major global incidents are standard international relations current affairs.",
+          "src": [
+            "NDTV",
+            "https://www.ndtv.com/world-news/india-condemns-houthis-missile-attack-on-saudis-riyadh-airport-that-killed-12-injured-over-300-calls-it-unacceptable-12168451?pfrom=home-ndtv_mainnavigation"
+          ]
+        },
+        {
+          "t": "Trump announces Russia Ukraine energy ceasefire, Kyiv seeks details",
+          "s": "US President Donald Trump announced on October 11 an energy ceasefire effective immediately between Russia and Ukraine covering attacks on energy infrastructure. Ukrainian officials said they had no prior information, while President Zelenskyy said Ukraine was ready to accept it if reciprocal and said he would organise elections under a 60 day total ceasefire.",
+          "why": "Ceasefire formats and energy infrastructure targeting are key to UPSC international relations and world geography questions.",
+          "src": [
+            "Al Jazeera",
+            "https://www.aljazeera.com/news/2026/10/11/trump-says-ukraine-russia-agree-to-energy-ceasefire-2"
+          ]
+        },
+        {
+          "t": "Flash flood on Budhi Gandaki river forces evacuations in Nepal",
+          "s": "Nepal disaster authority evacuated villages along the Budhi Gandaki in north central Nepal on October 11 after flash flooding destroyed homes and structures. The river merges into the Trishuli and is a key waterway near Kathmandu, and authorities warned residents to stay on alert until late Sunday.",
+          "why": "Transboundary rivers, Himalayan flash floods and disaster management are linked geography and GS paper topics.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/international/villages-evacuated-as-flash-flood-from-budhi-gandaki-river-hits-northern-nepal/article71570887.ece"
+          ]
+        },
+        {
+          "t": "124 former officers defend Election Commission and SIR in open letter",
+          "s": "A total of 124 former IAS, IFS, IPS and allied services officers defended the ECI and the Special Intensive Revision, saying suspicion is not proof and citing safeguards such as EVM sealing and VVPAT verification. They noted the BJP lost several state polls and its Lok Sabha majority in 2024 under the same Commission.",
+          "why": "ECI independence, SIR and electoral roll revision are central polity debates for UPSC and state PSC exams.",
+          "src": [
+            "The Statesman",
+            "https://www.thestatesman.com/india/ex-ias-ifs-officers-defend-sir-and-ec-question-rigging-charges-1503649581.html/amp"
+          ]
+        },
+        {
+          "t": "India at UN: will not bow to nuclear blackmail",
+          "s": "Exercising its Right of Reply at the UNGA First Committee, First Secretary Anmol Sher Singh Bedi said nuclear weapons must not be routine instruments of statecraft. He stated three points: terror attacks will get a fitting response, India will not bow to nuclear blackmail, and no distinction will be made between sponsors and masterminds of terrorism.",
+          "why": "India nuclear doctrine, Right of Reply and UNGA First Committee functions are asked in UPSC IR sections.",
+          "src": [
+            "The Tribune (ANI)",
+            "https://www.tribuneindia.com/news/usa-news/lectures-others-on-rule-of-law-yet-at-home-army-is-rule-and-law-india-slams-pak-at-un-over-accusations-on-minority-rights/"
+          ]
+        },
+        {
+          "t": "94th Fit India Sundays on Cycle held in Varanasi",
+          "s": "PIB said the 94th edition of Fit India Sundays on Cycle was organised in Varanasi on October 11 from Namo Ghat to Sampurnanand Sanskrit University on the theme Nasha Mukt Yuva for Viksit Bharat. Sports Minister Mansukh Mandaviya was chief guest, with Asian Games medallists among participants.",
+          "why": "Fit India Movement editions, themes and venues are frequent one liner questions in SSC and sports sections.",
+          "src": [
+            "Press Information Bureau",
+            "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2321675&reg=48&lang=2"
+          ]
+        },
+        {
+          "t": "UN rights office concerned over Delhi detentions, India rejects remarks",
+          "s": "OHCHR spokesperson Thameen Al-Kheetan on October 10 expressed concern over mass detentions in Delhi and said restrictions on peaceful protest must meet necessity and proportionality tests. India Permanent Mission in Geneva rejected the concerns as misplaced and as unwarranted interference in internal affairs.",
+          "why": "OHCHR role, right to peaceful assembly and India responses to UN bodies are important for polity and IR exams.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/un-human-rights-body-expresses-concern-over-delhi-detentions-urges-immediate-release/article71569288.ece"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-10",
       "points": [
         {
