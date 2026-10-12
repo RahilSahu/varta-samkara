@@ -1,6 +1,101 @@
 {
   "days": [
     {
+      "date": "2026-10-12",
+      "points": [
+        {
+          "t": "Draft National Steel Policy Vision 2047 targets 604 MT capacity",
+          "s": "The draft released for consultation targets crude steel capacity of 604 million tonnes by 2047 from about 220 MT now, finished steel demand of 505 MT and per capita use of 302 kg from 116 kg. Coking coal demand is seen rising to 236 MT and iron ore demand to 772 MT.",
+          "why": "Steel capacity, raw material import dependence and emission intensity figures are frequent economy and industry questions in UPSC, SSC and Banking exams.",
+          "src": [
+            "The New Indian Express",
+            "https://www.newindianexpress.com/business/2026/Oct/11/draft-steel-policy-targets-604-mt-capacity-by-2047-coking-coal-demand-to-triple"
+          ]
+        },
+        {
+          "t": "Nobel Economics Prize 2026 to Robert Hall and Michael Woodford",
+          "s": "The Royal Swedish Academy of Sciences awarded the 2026 prize, worth 12 million Swedish crowns, to Americans Robert Hall of Stanford and Michael Woodford of Columbia. It recognised their work on microeconomic foundations of macroeconomic stabilisation used by central banks.",
+          "why": "Nobel prizes, laureates, institutions and the stated citation are standard one line current affairs in all major exams.",
+          "src": [
+            "Reuters",
+            "https://www.reuters.com/world/hall-woodford-win-2026-nobel-economics-prize-2026-10-12/"
+          ]
+        },
+        {
+          "t": "TDB commits Rs 86 crore to Peptris VIGOR AI drug discovery programme",
+          "s": "The Technology Development Board under the Department of Science and Technology signed an agreement with Bengaluru based Peptris Technologies for Rs 86 crore under the RDI Fund, through optionally convertible debt. The Rs 172 crore VIGOR project aims to take four AI discovered candidates from TRL 4 to TRL 6 in three years.",
+          "why": "DST bodies, RDI Fund, TRL levels and AI in pharma link science, health and economy topics for prelims.",
+          "src": [
+            "The Hindu BusinessLine",
+            "https://www.thehindubusinessline.com/news/science/ministry-of-science-signs-mou-with-peptris-for-collab-in-ai-based-drug-discovery-and-development/article71574672.ece/amp/"
+          ]
+        },
+        {
+          "t": "INS Sahyadri at Vladivostok for India Russia naval exercise INDRA 2026",
+          "s": "INS Sahyadri arrived at Vladivostok on October 10 for the bilateral naval exercise INDRA 2026 scheduled from October 13 to 18. The exercise has harbour and sea phases and is linked to India MAHASAGAR vision for maritime cooperation.",
+          "why": "Bilateral exercises, partner country, dates and venue are a high yield defence current affairs category.",
+          "src": [
+            "The Statesman",
+            "https://www.thestatesman.com/india/ins-sahyadri-reaches-russia-for-india-russia-naval-exercise-indra-2026-1503649853.html/amp"
+          ]
+        },
+        {
+          "t": "BRICS Traditional and Indigenous Demonstration Games held in Ahmedabad",
+          "s": "The games were held on October 12 at Veer Savarkar Sports Complex, Ahmedabad, with 10 BRICS nations demonstrating traditional sports. India showed Mallakhamb, Yogasana and Kalaripayattu, and Sports Minister Mansukh Mandaviya proposed a BRICS repository, expert exchanges and periodic demonstrations.",
+          "why": "India BRICS Chairship events, venue and Indian traditional sports are relevant for culture and international relations sections.",
+          "src": [
+            "Press Information Bureau",
+            "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322256&reg=48&lang=1"
+          ]
+        },
+        {
+          "t": "Services athletes win record 27 medals at Asian Games in Japan",
+          "s": "Services sportspersons won 27 medals, 6 gold, 11 silver and 10 bronze, from 92 athletes in 19 disciplines. India won 85 medals overall and finished fourth, with Services athletes contributing 32 percent of the total tally.",
+          "why": "Asian Games medal tally, host country and standout records are regularly asked in SSC, Banking and state exams.",
+          "src": [
+            "Press Information Bureau",
+            "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2322172&reg=48&lang=1"
+          ]
+        },
+        {
+          "t": "Defence Secretary Rajesh Kumar Singh visits Cyprus and Greece, October 12 to 15",
+          "s": "Defence Secretary Rajesh Kumar Singh is visiting Cyprus on October 12 to 13 and then Greece to discuss maritime security and defence industrial cooperation. The tour follows the Cyprus President visit to India in May 2026 and the signing of the India and EU Security and Defence Partnership.",
+          "why": "Defence diplomacy with EU partners and strategic partnerships are key international relations facts for UPSC.",
+          "src": [
+            "India Blooms",
+            "https://www.indiablooms.com/news/indias-defence-secretary-rajesh-kumar-singh-to-visit-cyprus-greece-from-october-12-15-whats-on-agenda/details"
+          ]
+        },
+        {
+          "t": "INDIA bloc files Supreme Court petition against CEC over SIR",
+          "s": "Opposition leaders marched in Delhi on October 12 and filed a petition in the Supreme Court challenging voter deletions in the Special Intensive Revision and seeking removal of CEC Gyanesh Kumar. CJI Surya Kant had declined a private meeting and said parties could approach the court judicially, with related matters listed on October 13.",
+          "why": "Article 324, Election Commission powers, SIR and judicial review are core polity topics for UPSC and judiciary linked exams.",
+          "src": [
+            "The New Indian Express",
+            "https://www.newindianexpress.com/amp/story/live/2026/Oct/12/delhi-protest-day-3-live-rahul-gandhi-heads-to-supreme-court-with-opposition-mps"
+          ]
+        },
+        {
+          "t": "PM Modi Chennai programme: projects worth over Rs 13,000 crore and five Amrit stations",
+          "s": "At the Chennai programme on October 11, the Prime Minister dedicated and laid foundation stones for projects worth over Rs 13,000 crore and inaugurated five redeveloped Amrit stations: Palani, Namakkal, Paramakudi, Ambasamudram and Vellore Cantonment. Tamil Nadu CM C. Joseph Vijay sought faster approval for Chennai Metro Phase 3.",
+          "why": "Amrit Bharat Station Scheme, major project values and Centre state infrastructure demands appear in SSC and state exams.",
+          "src": [
+            "ETV Bharat",
+            "https://www.etvbharat.com/en/bharat/tamil-nadu-cm-vijay-pushes-for-phase-3-of-chennai-metro-as-pm-modi-pledges-teamwork-enn26101103649"
+          ]
+        },
+        {
+          "t": "IOM reports 139 dead in Djibouti boat capsize on Eastern Route",
+          "s": "IOM said a boat carrying 305 people from Djibouti to Yemen capsized near Guhere on the night of October 8 to 9, leaving at least 139 dead, including 15 children, and 84 missing, with about 82 survivors. The Eastern Route crosses the Bab el-Mandeb Strait towards Yemen and Gulf countries.",
+          "why": "IOM, migration routes and Bab el-Mandeb geography connect international organisations and mapping topics in UPSC prelims.",
+          "src": [
+            "CNN",
+            "https://www.cnn.com/2026/10/11/africa/djibouti-boat-capsize-dead-latam-intl?cid=external-feeds_iluminar_meta"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-11",
       "points": [
         {
