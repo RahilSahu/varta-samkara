@@ -1,6 +1,119 @@
 {
   "days": [
     {
+      "date": "2026-10-13",
+      "points": [
+        {
+          "t": "L. Murugan resigns from Union Cabinet and Rajya Sabha",
+          "s": "Union Minister of State for Information and Broadcasting and Parliamentary Affairs L. Murugan resigned on 13 October 2026, writing to PM Modi that he wants to return to grassroots work in Tamil Nadu. He also gave up his Rajya Sabha membership. The move has added to talk of a Union Cabinet reshuffle.",
+          "why": "Union Council of Ministers changes and collective responsibility are standard Polity questions.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/india/l-murugan-resigns-as-minister-of-state-rajya-sabha-member-10919970/"
+          ]
+        },
+        {
+          "t": "First BIMSTEC Home Ministers' Meeting held in New Delhi; Delhi Declaration adopted",
+          "s": "Chaired by Amit Shah on 13 October 2026 with all seven member states, the meeting approved five initiatives: a convention against trafficking in persons, a drug control plan of action, an MoU on combating money laundering and terror financing, a plan on illicit financial flows, and a disaster preparedness plan.",
+          "why": "BIMSTEC (founded 1997; 7 members: Bangladesh, Bhutan, India, Myanmar, Nepal, Sri Lanka, Thailand) is a favourite in international relations questions.",
+          "src": [
+            "Lokmat Times",
+            "https://www.lokmattimes.com/international/india-committed-to-bimstec-convention-to-tackle-terrorism-organised-crime-drug-trafficking-amit-shah-at-1st-bimstec-hmm/"
+          ]
+        },
+        {
+          "t": "India and Czech Republic agree to expand defence industrial cooperation",
+          "s": "Defence Minister Rajnath Singh held talks with Czech Deputy PM Karel Havlicek in New Delhi on 13 October 2026. The two sides agreed to expand cooperation through joint ventures and the India-Czech Joint Defence Committee, linked to Make in India and Aatmanirbhar Bharat.",
+          "why": "Defence diplomacy and joint defence committee frameworks appear in current-affairs and IR questions.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/india-czech-republic-to-expand-defence-industrial-cooperation/article71579664.ece"
+          ]
+        },
+        {
+          "t": "PM-SETU: Rs 440 crore approved to upgrade ITI clusters in Gujarat and Andhra Pradesh",
+          "s": "Shareholders' Agreements were signed between the Centre, the two state governments and ArcelorMittal Nippon Steel India for the Surat cluster (Rs 240 crore, five ITIs) and the Visakhapatnam cluster (Rs 200 crore, four ITIs). AM/NS India will hold a 51% stake in the SPVs managing the clusters.",
+          "why": "PM-SETU (Rs 60,000 crore outlay, 1,000 ITIs to be upgraded) is a key government skilling scheme for exams.",
+          "src": [
+            "DD India",
+            "https://ddindia.co.in/2026/10/pm-setu-%E2%82%B9440-crore-investment-to-upgrade-iti-clusters-in-gujarat-andhra-pradesh/"
+          ]
+        },
+        {
+          "t": "Delhi Police de-notifies Jantar Mantar as designated protest site",
+          "s": "On 12 October 2026, Delhi Police Commissioner Anurag Kumar de-notified Jantar Mantar and named Ramlila Ground, Burari Ground and CBD Ground (East Delhi) as new protest venues, following a Home Ministry committee's recommendations and the Supreme Court's 9 October order on identifying suitable alternative protest sites.",
+          "why": "Right to protest under Article 19(1)(b) and reasonable restrictions are core Polity topics.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/cities/delhi/jantar-mantar-denotified-protest-site-delhi-police-supreme-court-order-10920035/"
+          ]
+        },
+        {
+          "t": "RBI removes Paytm Payments Bank from scheduled banks list",
+          "s": "The RBI excluded Paytm Payments Bank Ltd from the Second Schedule of the RBI Act, 1934, via a notification dated 31 July 2026 gazetted on 7 September 2026, following the cancellation of its banking licence in April 2026 and a Delhi High Court winding-up order.",
+          "why": "The concept of scheduled banks and RBI's licensing powers is a repeat Banking-awareness topic.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/business/rbi-removes-paytm-payments-bank-from-the-official-list-of-scheduled-banks/article71558512.ece"
+          ]
+        },
+        {
+          "t": "Retail inflation rises to 5.54% in September 2026",
+          "s": "CPI-based inflation rose to 5.54% in September from 4.83% in August, the highest this year, per NSO provisional data. Food inflation climbed to 7.74%; rural inflation was 6.08% and urban 4.88%.",
+          "why": "CPI measurement by NSO and the RBI's 2-6% tolerance band are standard Economy questions.",
+          "src": [
+            "NDTV",
+            "https://www.ndtv.com/india-news/retail-inflation-cpi-inflation-shoots-up-to-5-54-in-september-onion-prices-double-12173936"
+          ]
+        },
+        {
+          "t": "DRDO flight-tests indigenous high-altitude airship (HAPS)",
+          "s": "On 6 October 2026, DRDO's Aerial Delivery Research and Development Establishment (ADRDE), Agra, flight-tested a lighter-than-air high-altitude platform that reached 21 km AMSL and stayed at 20 km for over 30 minutes. It is being developed as a long-endurance stratospheric aerial surveillance platform.",
+          "why": "Defence technology milestones and DRDO laboratories are asked in Science-Tech and defence sections.",
+          "src": [
+            "Business Standard",
+            "https://www.business-standard.com/external-affairs-defence-security/news/drdo-flight-tests-high-altitude-airship-platform-20-km-above-sea-level-126100601278_1.html"
+          ]
+        },
+        {
+          "t": "President appoints new Governors in six states",
+          "s": "On 12 October 2026, President Droupadi Murmu appointed new Governors: O.P. Mathur to Kerala (from Sikkim), R.V. Arlekar to Tamil Nadu (full-time), Braj Mohan Ram to Odisha, Sudha Yadav to Karnataka, Dhal Singh Bisen to Uttarakhand, and Dushyant Gautam to Sikkim.",
+          "why": "Gubernatorial appointments under Article 155 and the Governor's constitutional role are frequent Polity questions.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/keralam-odisha-karnataka-uttarakhand-sikkim-tamil-nadu-get-new-governors/article71576452.ece"
+          ]
+        },
+        {
+          "t": "Central Armed Police Forces (General Administration) Act, 2026 comes into force",
+          "s": "The Act came into force on 8 October 2026 and governs recruitment, promotion and deputation in the CRPF, BSF, CISF, ITBP and SSB. It reserves 50% of Inspector General posts for IPS deputation; its validity is being challenged in the Supreme Court.",
+          "why": "CAPF structure and the IPS-versus-cadre officers debate are current Polity/security topics.",
+          "src": [
+            "FreeJobAlert Current Affairs",
+            "https://www.freejobalert.com/articles/daily-current-affairs-13-october-2026-10463"
+          ]
+        },
+        {
+          "t": "Health Minister launches JOSH teams for TB elimination",
+          "s": "J.P. Nadda launched JOSH (Joint Squad for Health) teams under the Pradhan Mantri TB Mukt Bharat Abhiyaan at Bharat Mandapam. Each team has five MY Bharat volunteers and five NCC cadets led by a Class-I officer; the first phase covers 55 districts across 11 states/UTs.",
+          "why": "Government health schemes and their targets are asked in General Awareness sections.",
+          "src": [
+            "FreeJobAlert Current Affairs",
+            "https://www.freejobalert.com/articles/daily-current-affairs-13-october-2026-10463"
+          ]
+        },
+        {
+          "t": "Navy to commission indigenous warship Samarthak on 16 October",
+          "s": "The Navy will commission Samarthak, the first of four multi-purpose vessels, at Naval Base Karwar on 16 October 2026. Built by Larsen and Toubro under Make in India, it will do maritime surveillance, low-intensity maritime operations and HADR; its motto is 'Victory is Our Sole Aim'.",
+          "why": "Indigenous naval platforms and their builders are asked in defence current-affairs questions.",
+          "src": [
+            "The Economic Times",
+            "https://m.economictimes.com/news/defence/indian-navy-to-commission-indigenous-warship-samarthak-on-october-16/amp_articleshow/134917249.cms"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-12",
       "points": [
         {
