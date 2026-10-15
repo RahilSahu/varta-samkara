@@ -1,6 +1,119 @@
 {
   "days": [
     {
+      "date": "2026-10-15",
+      "points": [
+        {
+          "s": "The Ministry of Defence signed two contracts worth Rs 4,106 crore on 15 October 2026. The Rs 2,563 crore GSAT-7C agreement with New Space India Limited, Bengaluru, covers a dedicated communication satellite capability for the Indian Air Force. The Rs 1,543 crore Varunastra agreement with Bharat Dynamics Limited, Hyderabad, covers indigenous heavyweight torpedoes for the Indian Navy. Varunastra was developed by the Naval Science and Technological Laboratory of DRDO.",
+          "src": [
+            "Vitorr Classes",
+            "https://vitorrclasses.in/article/india-signs-4-106-crore-defence-contracts-for-gsat-7c-satellite-and-varu"
+          ],
+          "t": "Defence signs Rs 4,106 crore contracts for GSAT-7C satellite and Varunastra torpedoes",
+          "why": "Defence procurement, military satellites and indigenous weapon systems are standard Prelims and CDS/AFCAT questions."
+        },
+        {
+          "s": "Prime Minister Narendra Modi inaugurated five projects worth about Rs 3,350 crore in Ladakh on 15 October 2026 via video conferencing. These include the new passenger terminal at Kushok Bakula Rimpochee Airport in Leh built for Rs 640 crore, designed for 35 lakh passengers a year and using geothermal energy, the 298-km Nimmu-Padum-Darcha road, and India's first petroglyph conservation park in Leh.",
+          "src": [
+            "The Times of India",
+            "https://timesofindia.indiatimes.com/city/srinagar/pm-narendra-modi-to-inaugurate-rs-3350-crore-projects-in-ladakh-on-oct-15-airport-strategic-road-among-key-works/articleshow/134948656.cms"
+          ],
+          "t": "PM Modi inaugurates Rs 3,350 crore projects in Ladakh, including Leh airport terminal",
+          "why": "Infrastructure projects with cost, location and capacity figures are asked in Banking GA and state PSC papers."
+        },
+        {
+          "s": "The Supreme Court is scheduled to hear a joint petition by Opposition leaders led by Rahul Gandhi seeking disclosure of Election Commission records on the special intensive revision of electoral rolls, which has deleted about 13 crore voters across India. The plea targets the records of Election Commissioners Sukhbir Singh Sandhu and Vivek Joshi and the conduct of Chief Election Commissioner Gyanesh Kumar.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/morning-digest-october-15-2026/article71585486.ece"
+          ],
+          "t": "Supreme Court to hear Opposition plea on SIR voter deletions on 15 October",
+          "why": "Election Commission, voter-roll revision and landmark SC hearings are core Polity topics for UPSC and SSC."
+        },
+        {
+          "s": "President Droupadi Murmu accepted Dr L Murugan's resignation from the Union Council of Ministers with immediate effect, on the advice of Prime Minister Narendra Modi under Article 75(2) of the Constitution. Rashtrapati Bhavan did not state a reason for the resignation.",
+          "src": [
+            "News9 Live",
+            "https://www.news9live.com/india/breaking-news-live-updates-todays-news-headlines-october-15-2026-3016113"
+          ],
+          "t": "President accepts L Murugan's resignation from the Union Council of Ministers",
+          "why": "Article 75 and ministerial appointments/resignations are asked directly in Prelims Polity."
+        },
+        {
+          "s": "The government has postponed the rollout of the proposed 0.4 percent Merchant Discount Rate on UPI merchant transactions exceeding Rs 2,000, which was to take effect from October 15, 2026. Existing low-cost digital payment norms continue.",
+          "src": [
+            "Flash Finance",
+            "https://flashfinance.news/article/3087-india-business-brief-top-headlines-for-october-15-2026"
+          ],
+          "t": "Centre defers proposed 0.4 percent UPI merchant discount rate",
+          "why": "UPI, MDR and digital-payment policy are recurring Economy and Banking-awareness topics."
+        },
+        {
+          "s": "The Finance Ministry has amended the India-Mauritius tax treaty to curb treaty abuse by introducing a Principal Purpose Test, allowing tax authorities to deny treaty benefits if obtaining them was a principal purpose of a transaction. Investments made before April 1, 2017 remain outside the test's scope.",
+          "src": [
+            "The Hindu BusinessLine",
+            "https://www.thehindubusinessline.com/multimedia/audio/bl-morning-report-october-15-2026/article71584468.ece"
+          ],
+          "t": "India-Mauritius tax treaty amended with Principal Purpose Test",
+          "why": "DTAA provisions and treaty-shopping questions appear in Economy and Finance sections."
+        },
+        {
+          "s": "The Confederation of Indian Industry released a white paper, The New Economics of Media and Entertainment, outlining a roadmap for the Indian M&E sector to reach $100 billion by the early 2030s. It was released at the CII Big Picture Summit 2026, where I&B Secretary Chanchal Kumar linked the theme to the Prime Minister's WAVES 2025 vision of 'Create In India, Create For The World'.",
+          "src": [
+            "PIB",
+            "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2323867&reg=48&lang=2"
+          ],
+          "t": "CII white paper gives roadmap for a $100 billion Indian media and entertainment sector",
+          "why": "Sector targets and government visions (WAVES, IICT, India Cine Hub) are noted for culture and economy current affairs."
+        },
+        {
+          "s": "The Ministry of Information and Broadcasting extended the last date for media accreditation for the 57th International Film Festival of India 2026 to 17 October 2026. IFFI 2026 will be held in Panaji, Goa, from 20 to 28 November 2026, jointly hosted by the National Film Development Corporation and the Entertainment Society of Goa. Born in 1952, IFFI is South Asia's oldest film festival.",
+          "src": [
+            "PIB",
+            "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2323797&reg=48&lang=2"
+          ],
+          "t": "57th IFFI media accreditation extended to 17 October; festival in Goa from 20 to 28 November",
+          "why": "IFFI edition, venue and host bodies are classic static-plus-current questions."
+        },
+        {
+          "s": "Maharashtra has declared 85 percent of the state drought-hit, and farmers are to receive Rs 5,000 in aid before Diwali, according to Times Now's October 15 headlines roundup.",
+          "src": [
+            "Times Now",
+            "https://www.timesnownews.com/education/school-assembly-news-headlines-today-oct-15-top-national-international-sports-updates-thought-of-the-day-article-156342160/amp"
+          ],
+          "t": "Maharashtra declares 85 percent of state drought-hit, Rs 5,000 aid for farmers before Diwali",
+          "why": "Drought declarations and state relief packages are asked in Geography and state-exam papers."
+        },
+        {
+          "s": "The Supreme Court directed that tickets sold at railway counters across the country must carry travel insurance identical to online bookings, with the order taking effect from 27 October 2026. The order came from a Bench of Justices Ahsanuddin Amanullah and R. Mahadevan.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/morning-digest-october-15-2026/article71585486.ece"
+          ],
+          "t": "Supreme Court mandates travel insurance on offline railway tickets from 27 October",
+          "why": "Court orders affecting public services, with bench names and effective dates, are quoted in current-affairs compilations."
+        },
+        {
+          "s": "The Jio Platforms IPO will open for subscription on 21 October and close on 23 October 2026, with anchor bidding on 19 October. Shares worth up to Rs 500 crore are reserved for eligible employees and Rs 2,500 crore for eligible Reliance Industries shareholders.",
+          "src": [
+            "The Hindu BusinessLine",
+            "https://www.thehindubusinessline.com/multimedia/audio/bl-morning-report-october-15-2026/article71584468.ece"
+          ],
+          "t": "Jio Platforms IPO opens 21 October; anchor bidding on 19 October",
+          "why": "Mega IPOs with dates and reservation quotas feature in Banking and SSC economy awareness."
+        },
+        {
+          "s": "External Affairs Minister S. Jaishankar held talks with his Canadian counterpart Anita Anand on the Middle East conflict, while India and Canada aim to conclude negotiations on the Comprehensive Economic Partnership Agreement this year, signalling a reset in bilateral ties.",
+          "src": [
+            "Times Now",
+            "https://www.timesnownews.com/education/school-assembly-news-headlines-today-oct-15-top-national-international-sports-updates-thought-of-the-day-article-156342160/amp"
+          ],
+          "t": "Jaishankar holds talks with Canadian counterpart; India-Canada aim to conclude CEPA this year",
+          "why": "Bilateral agreements and minister-level talks are staple IR current-affairs questions."
+        }
+      ]
+    },
+    {
       "date": "2026-10-14",
       "points": [
         {
