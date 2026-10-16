@@ -1,6 +1,119 @@
 {
   "days": [
     {
+      "date": "2026-10-16",
+      "points": [
+        {
+          "t": "Cabinet extends NSAP to 2030-31, renames it Pradhan Mantri Samajik Sahayata Yojana",
+          "s": "The Union Cabinet on 14 October 2026 approved continuation of the National Social Assistance Programme for five years (2026-27 to 2030-31) with an outlay of Rs 53,428 crore. The scheme becomes PM Samajik Sahayata Yojana; its sub-schemes are renamed PM Vridhavastha, PM Vidhawa, PM Divyangjan and PM Parivar Labh Yojana. Disability pension norms were eased: threshold cut from 80% to 40% disability, minimum age removed, assistance raised to Rs 375 (up to 79) and Rs 625 (80+) per month, benefiting about 3.20 crore people.",
+          "why": "Scheme renaming and disability-norm changes are classic exam topics linking current policy with Article 41 and the RPwD Act, 2016.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/cabinet-clears-53428-crore-for-social-assistance-scheme-revises-disability-pension-norms/article71583600.ece"
+          ]
+        },
+        {
+          "t": "Government revises fuel windfall taxes from 16 October",
+          "s": "The export duty on petrol was raised to Rs 2.5 per litre from Rs 0.5 per litre, while the duty on diesel exports was cut to Rs 8.5 per litre from Rs 16 per litre, effective 16 October 2026. The duties are reviewed every fortnight against international crude and product prices. Windfall taxes on fuel exports were first imposed in July 2022 and reintroduced in March 2026.",
+          "why": "Windfall taxation and its policy history are asked in economy sections of banking and civil services exams.",
+          "src": [
+            "The Hindu BusinessLine",
+            "https://www.thehindubusinessline.com/markets/commodities/india-revises-fuel-export-duties-raises-petrol-tax-and-cuts-diesel-levy/article71590077.ece"
+          ]
+        },
+        {
+          "t": "Navy commissions INS Samarthak, first private-built warship",
+          "s": "Samarthak, India's first multi-purpose vessel built by a private shipyard, was commissioned into the Navy at Naval Base Karwar on 16 October 2026 in the presence of Vice-President C P Radhakrishnan and CNS Admiral Krishna Swaminathan. Built by L&T at Kattupalli with over 75% indigenous content, it is the first of four multi-purpose vessels. The Defence Ministry signed a Rs 887 crore contract with L&T in March 2022 for two vessels (Samarthak and Utkarsh).",
+          "why": "Defence indigenisation milestones and vessel roles (weapons trials, unmanned systems, HADR) fit defence and Atmanirbhar Bharat questions.",
+          "src": [
+            "ThePrint",
+            "https://theprint.in/india/indian-navy-inducts-indigenous-multi-purpose-warship-samarthak/3073567/"
+          ]
+        },
+        {
+          "t": "India's Ramsar tally rises to 103",
+          "s": "Environment Minister Bhupender Yadav announced on 15 October 2026 that Sukhna Wetland (Chandigarh, Ramsar Site No. 2602) and Sauj Jheel (Mainpuri, Uttar Pradesh, Site No. 2603) have been designated Ramsar sites, taking India's tally from 101 to 103. Sukhna is Chandigarh's first Ramsar site; Sauj Jheel makes Mainpuri the only UP district with two Ramsar sites. The Ramsar Convention was adopted in 1971 in Iran and India joined on 1 February 1982.",
+          "why": "Ramsar numbers, new sites and Convention dates are recurring environment static-GK questions.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        },
+        {
+          "t": "Merchandise exports jump 23.04% to USD 44.40 billion in September",
+          "s": "Commerce Ministry data released 15 October 2026 show merchandise exports rose 23.04% year-on-year to USD 44.40 billion in September 2026, a four-month high, led by electronics, petroleum products, engineering goods, chemicals and agriculture. Imports were USD 74.61 billion and the merchandise trade deficit USD 30.21 billion. Commerce Secretary Rajesh Agrawal said the India-New Zealand FTA takes effect on 20 October.",
+          "why": "Trade data, deficit figures and FTA timelines are core for UPSC economics and banking GA sections.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        },
+        {
+          "t": "All 12 Rajya Sabha seats in the October round filled unopposed",
+          "s": "No polling was needed on 16 October 2026 as all 12 Rajya Sabha candidates were declared elected unopposed after the 9 October withdrawal deadline: Uttar Pradesh 10 (BJP 8, Samajwadi Party 2 including Ram Gopal Yadav), Uttarakhand 1 (BJP's Dinesh Arya) and a West Bengal by-election seat (BJP's Rukmini 'Koel' Mallik). Under Section 53(2) of the Representation of the People Act, 1951, candidates are declared elected when numbers match seats. BSP loses its Rajya Sabha representation from UP as Ramji Gautam retires on 25 November.",
+          "why": "Section 53(2) RPA provisions and unopposed elections are standard polity questions.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        },
+        {
+          "t": "India launches contested UNSC bid for 2028-29 with 'SHANTI' manifesto",
+          "s": "India is contesting a non-permanent seat on the UN Security Council for 2028-29. EAM S Jaishankar launched the campaign at UN Headquarters on 14 July 2026 with a six-point 'SHANTI' manifesto (Securing Holistic Advancement through Norms, Trust, Integrity). The General Assembly vote is in June 2027 and needs a two-thirds majority. Rival Tajikistan is contesting the single Asia-Pacific seat. If elected, it would be India's ninth term.",
+          "why": "UNSC membership terms, election procedure and India's past terms are asked in international relations questions.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        },
+        {
+          "t": "SDAL delivers 450 Nagastra-1R loitering munitions to the Army",
+          "s": "Solar Defence and Aerospace Limited (SDAL), a subsidiary of Solar Industries India, delivered 450 Nagastra-1R loitering munitions to the Indian Army, reported as the largest such supply so far.",
+          "why": "Indigenous loitering munitions and private-sector defence production are frequent defence-current-affairs topics.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        },
+        {
+          "t": "PM Modi to visit Canada on December 11-12",
+          "s": "The High Commission of India in Ottawa announced on 16 October 2026 that PM Narendra Modi will visit Canada on 11-12 December 2026, following a phone call with Canadian PM Mark Carney. The visit will likely cover Ottawa and Toronto, focus on a Comprehensive Economic Partnership Agreement (fifth round of talks concluded in Ottawa last week), and aim to double two-way trade by 2030. It will be Modi's first bilateral trip to Canada since 2015.",
+          "why": "Bilateral summits and trade agreements with countries like Canada feature in India-foreign-relations questions.",
+          "src": [
+            "Hindustan Times",
+            "https://www.hindustantimes.com/india-news/pm-modi-to-visit-canada-on-december-11-12-as-delhi-ottawa-push-to-boost-ties-101792113693048.html"
+          ]
+        },
+        {
+          "t": "DGCA probes false hijack alert on Air India AI2030 Frankfurt-Delhi flight",
+          "s": "Air India flight AI2030 (Frankfurt to Delhi, Boeing 787-9) was diverted to Jaipur on 14 October 2026 after Code 7500 (unlawful interference) was transmitted due to a technical glitch, with no actual hijack threat. The aircraft carried about 293 passengers and 13 crew and resumed its journey after security checks. Civil Aviation Minister K Rammohan Naidu said on 15 October that changes to security norms would wait for the DGCA's final report.",
+          "why": "Aviation incidents and the DGCA's regulatory role are asked in transport and current-affairs sections.",
+          "src": [
+            "The Hindu BusinessLine",
+            "https://www.thehindubusinessline.com/economy/logistics/dgca-probing-air-india-plane-incident-will-wait-for-final-report-naidu/article71590961.ece"
+          ]
+        },
+        {
+          "t": "WPI inflation at 11.39% in September, a 49-month high",
+          "s": "Wholesale Price Index inflation was 11.39% in September 2026, a 49-month high, while CPI inflation was 5.54%. Net direct tax collections are up 13.21% at Rs 13.38 lakh crore so far in FY27.",
+          "why": "WPI vs CPI inflation figures and tax-collection data are standard macro-economy questions for banking and SSC exams.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        },
+        {
+          "t": "World Food Day observed on 16 October",
+          "s": "World Food Day is observed every year on 16 October, the date the Food and Agriculture Organization (FAO) was founded in 1945. It was established by the FAO Conference and first observed in 1981 to raise awareness of hunger, nutrition and sustainable food systems. FAO is headquartered in Rome.",
+          "why": "International days and the founding details of UN agencies are routine one-mark static GK questions.",
+          "src": [
+            "FreeJobAlert",
+            "https://www.freejobalert.com/articles/daily-current-affairs-16-october-2026-10466"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-15",
       "points": [
         {
