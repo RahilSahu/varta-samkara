@@ -1,6 +1,119 @@
 {
   "days": [
     {
+      "date": "2026-10-17",
+      "points": [
+        {
+          "t": "Supreme Court: children have fundamental right to internet access",
+          "s": "A Bench of Justices J.B. Pardiwala and Vinod K. Chandran held that the right to access and use the internet is a fundamental right of every individual under Article 21 read with Article 19(1)(a), and that children, irrespective of age, enjoy the same rights. The court cautioned that blanket restrictions on children's internet access in the name of safety risk undermining their freedom, privacy, and ability to seek help against online abuse.",
+          "why": "Extends the Article 21 internet-access jurisprudence to minors; likely in polity and rights-based questions.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/top-news-of-the-day-on-october-17-2026/article71596132.ece"
+          ]
+        },
+        {
+          "t": "CJP founder Abhijeet Dipke granted conditional bail after arrest",
+          "s": "Cockroach Janta Party (CJP) founder Abhijeet Dipke was detained on 16 October while heading to the 'Lehra Do Tiranga' protest at Connaught Place, Delhi, and arrested on 17 October for allegedly violating a peace bond furnished on 10 October. A special executive magistrate granted him conditional bail requiring him to sign a bond and to ensure no breach of peace for one year.",
+          "why": "Tests knowledge of bail and peace-bond procedure under BNSS alongside the electoral-roll protest movement.",
+          "src": [
+            "Hindustan Times",
+            "https://www.hindustantimes.com/india-news/ht-evening-brief-october-17-abhijeet-dipke-gets-conditional-bail-supreme-court-backs-children-s-internet-rights-101792238164017.html"
+          ]
+        },
+        {
+          "t": "ED summons former Kerala CM Pinarayi Vijayan for questioning on 23 October",
+          "s": "The Enforcement Directorate issued a summons under the Prevention of Money Laundering Act to former Keralam Chief Minister Pinarayi Vijayan in the CMRL-Exalogic money-laundering case, directing him to appear at its Kochi zonal office on 23 October. The ED alleges Cochin Minerals and Rutile Limited made fraudulent payments to Vijayan's daughter T. Veena's now-defunct firm Exalogic Solutions under the guise of IT consultancy. The Keralam VACB registered FIRs after the Kerala High Court ordered it to do so on 9 October; Vijayan moved the Supreme Court against the order.",
+          "why": "PMLA summons procedure, ED functions, and centre-state probe overlaps are recurring governance questions.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/national/kerala/cmrl-money-laundering-case-ed-summons-ex-kerala-cm-pinarayi-vijayan-for-questioning-on-october-23/article71591648.ece"
+          ]
+        },
+        {
+          "t": "National Steering Committee approves Rs 1,194.92 crore under PM-SETU for five ITI clusters",
+          "s": "The National Steering Committee of the Ministry of Skill Development and Entrepreneurship approved Rs 1,194.92 crore under PM-SETU (Pradhan Mantri Skilling and Employability Transformation for Upgrading ITIs) for five ITI clusters across Maharashtra, Odisha, and Jammu & Kashmir. Industry partners include Tata Steel Foundation, BVG India, and Belrise Industries, with the goal of turning traditional ITIs into modern multi-skill hubs.",
+          "why": "New centrally named skilling schemes with precise outlays are favourite one-mark questions.",
+          "src": [
+            "PIB release (via The Brokencap)",
+            "https://thebrokencap.wordpress.com/2026/10/17/daily-current-affairs-17-october-2026-upsc-gk-highlights/"
+          ]
+        },
+        {
+          "t": "Two-day National Conference on e-Governance Reforms concludes in Dharamshala",
+          "s": "The Department of Administrative Reforms and Public Grievances, with the Himachal Pradesh government, organised the National Conference on e-Governance Reforms on 16-17 October 2026 in Dharamshala. Technical sessions highlighted AgriStack (digital public infrastructure for agriculture), e-Jagriti (consumer dispute redressal portal), the AI-powered Clinical Decision Support System in e-Sanjeevani Telemedicine, and Himachal platforms such as Him Parivar and Sukh Aashraya.",
+          "why": "Digital DPI initiatives and their full names appear in governance and e-governance questions.",
+          "src": [
+            "PIB release (via The Brokencap)",
+            "https://thebrokencap.wordpress.com/2026/10/17/daily-current-affairs-17-october-2026-upsc-gk-highlights/"
+          ]
+        },
+        {
+          "t": "SafaiMitra Suraksha Evam Samman Shivir held in New Delhi under NAMASTE",
+          "s": "Concluding the Swachhata Hi Seva 2026 campaign on 17 October 2026, the Ministry of Social Justice and Empowerment organised the SafaiMitra Suraksha Evam Samman Shivir in New Delhi. The initiative is a single-window delivery mechanism under the NAMASTE scheme, distributing personal protective equipment, mechanised sewer-cleaning machinery loans, and Ayushman Bharat health cards to sanitation workers.",
+          "why": "Links the NAMASTE scheme's mechanisation mandate with welfare delivery for safai mitras.",
+          "src": [
+            "PIB release (via The Brokencap)",
+            "https://thebrokencap.wordpress.com/2026/10/17/daily-current-affairs-17-october-2026-upsc-gk-highlights/"
+          ]
+        },
+        {
+          "t": "Trump waives law that threatened 100% tariffs on Russian-oil buyers",
+          "s": "US President Donald Trump issued waivers on the sanctions law that gave the administration authority to levy up to 100% tariffs on countries importing Russian-origin crude oil or natural gas, including India. The move came nearly six days after Trump allowed Russian diesel imports into the US, and followed an agreement with Russian President Vladimir Putin under which Moscow will supply diesel to stabilise global energy markets. The tariffs were set to take effect on 18 October.",
+          "why": "Direct relief for India's Russian crude imports; ties to tariff diplomacy and energy-security questions.",
+          "src": [
+            "The Indian Express",
+            "https://indianexpress.com/article/india/today-india-breaking-news-live-updates-17-october-2026-us-lawmakers-marco-rubio-cjp-protests-donald-trump-russia-sanctions-lk-advani-cockroach-janta-party-abhijeet-dipke-neha-bora-10925374/"
+          ]
+        },
+        {
+          "t": "DMK demands removal of CEC Gyanesh Kumar, return to paper ballots",
+          "s": "A meeting of DMK MPs chaired by party president M.K. Stalin demanded the removal of Chief Election Commissioner Gyanesh Kumar, alleging he oversaw deletion of voters' names under the Special Intensive Revision of electoral rolls while overriding the objections of the other two Election Commissioners. The party also demanded a return to paper ballots.",
+          "why": "SIR, Election Commission composition, and EVM versus ballot debates are current polity topics.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/top-news-of-the-day-on-october-17-2026/article71596132.ece"
+          ]
+        },
+        {
+          "t": "India-West Indies T20I series decider in Bengaluru rain-delayed",
+          "s": "The fifth and deciding T20I between India and the West Indies at Bengaluru's M. Chinnaswamy Stadium was delayed by rain on 17 October, with the series locked 2-2. Under playing conditions, overs are lost if the match does not start by 7:45 pm IST, and a minimum of five overs per side is required for a result, with a cut-off of 9:41 pm IST. The match is televised on Star Sports and streamed on JioHotstar.",
+          "why": "High-profile sporting events with rule-based details (minimum overs, DLS) suit sports-awareness questions.",
+          "src": [
+            "Times Now",
+            "https://www.timesnownews.com/sports/cricket/what-is-the-cut-off-time-for-india-west-indies-5th-t20i-match-in-bengaluru-to-start-article-156357198"
+          ]
+        },
+        {
+          "t": "Tamil music composer Deva dies aged 75",
+          "s": "Tamil film music composer Deva, who brought Chennai's gaana music into mainstream cinema, died aged 75. His songs and background scores for Rajinikanth-starrers such as Annamalai, Arunachalam, and Baashha became hugely popular. Hospital sources said he had no pulse when he arrived and revival efforts were futile.",
+          "why": "Notable personalities in arts and their signature contributions recur in current-events obituaries.",
+          "src": [
+            "The Hindu",
+            "https://www.thehindu.com/news/top-news-of-the-day-on-october-17-2026/article71596132.ece"
+          ]
+        },
+        {
+          "t": "Houthis strike Aden presidential palace and airport; five killed",
+          "s": "The Iran-backed Houthi group fired five missiles at the Al-Maashiq presidential palace in Aden, Yemen, on 15 October, killing five people and wounding 16; Prime Minister Shaya al-Zindani was present but unharmed. A day later, two missiles landed on the grounds of Aden International Airport as a Yemenia flight prepared to take off for Cairo. Yemen's war, frozen under a 2022 truce, has reignited as another front in the wider regional conflict involving Iran.",
+          "why": "Yemen's conflict, the Strait of Hormuz, and Gulf energy-security shocks are central to international-relations questions.",
+          "src": [
+            "Al Jazeera",
+            "https://www.aljazeera.com/news/2026/10/17/iran-backed-houthis-strike-yemens-aden-what-that-means"
+          ]
+        },
+        {
+          "t": "US Congressman Riley Moore calls H-1B and OPT programmes 'scams'",
+          "s": "US Congressman Riley Moore alleged that H-1B visa holders, mostly from India and China, are replacing American computer science graduates with cheaper foreign labour, calling the H-1B and OPT programmes 'scams'. He claimed about 650,000 Americans graduated with computer science-related degrees last year while over 500,000 H-1B visas were issued. His remarks follow US Vice President JD Vance's description of H-1B workers as 'foreign indentured servants'.",
+          "why": "H-1B policy shifts directly affect Indian professionals, who form the majority of beneficiaries; also relevant to diaspora questions.",
+          "src": [
+            "Hindustan Times",
+            "https://www.hindustantimes.com/world-news/us-congressman-claims-h-1b-holders-from-india-china-replacing-american-graduates-with-cheap-labour-101792213471112.html"
+          ]
+        }
+      ]
+    },
+    {
       "date": "2026-10-16",
       "points": [
         {
