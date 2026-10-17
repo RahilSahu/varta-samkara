@@ -60,7 +60,8 @@
     "fc_details": "Why this verdict",
     "timeline_title": "Timeline",
     "timeline_lede": "Follow developing stories across days, newest update first.",
-    "dev_stories": "Developing stories"
+    "dev_stories": "Developing stories",
+    "nav_stocks": "Stocks"
   },
   "hi": {
     "all_heroes": "सभी नायक",
@@ -123,6 +124,7 @@
     "fc_details": "यह फैसला क्यों",
     "timeline_title": "टाइमलाइन",
     "timeline_lede": "विकसित हो रही कहानियों को दिनों में फॉलो करें, नवीनतम अपडेट पहले।",
-    "dev_stories": "विकसित हो रही कहानियां"
+    "dev_stories": "विकसित हो रही कहानियां",
+    "nav_stocks": "स्टॉक्स"
   }
 }

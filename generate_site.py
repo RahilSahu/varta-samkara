@@ -61,6 +61,7 @@ MANUAL_DIRS = {
     "FROM THE HEART: Saare jahan se accha": "2026-09-25-saare-jahan-se-accha-extended",
     "Same Machchhar/FZ1073 story": "2026-10-01-machchhar-hero",
     "NEWS: India's Russian oil imports fall": "2026-09-25-extra-news-3",
+    "GOVT TO LIST 3 PSUS IN FY27": "2026-10-17-dst-listings",
 }
 
 # ---------------------------------------------------------------- parsing
@@ -1629,7 +1630,7 @@ def topbar(depth, active):
         return f'<a href="{r}{href}"{cls}{extra}{i18n_attr}>{label}</a>'
     return f"""<header class="topbar">
 <div class="brand"><div class="wm">&#2357;</div><h1>VARTA <span>&amp;</span> SAMKARA</h1></div>
-<nav class="navlinks" id="navlinks">{link('index.html','Home','home', i18n='nav_home')}{link('archive.html','News','news', i18n='nav_news')}{link('videos.html','Videos','videos', i18n='nav_videos')}{link('blog.html','Blog','blog', i18n='nav_blog')}{link('factcheck.html','Fact Check','factcheck', i18n='nav_fact_check')}{link('heroes.html','Heroes','heroes', i18n='nav_heroes')}{link('scores.html','Scores','scores',' data-scores-nav', i18n='nav_scores')}{link('markets.html','Markets','markets', i18n='nav_markets')}{link('policy.html','Policy','policy', i18n='nav_policy')}{link('study.html','Study','study', i18n='nav_study')}{link('today.html','Today','today', i18n='nav_today')}{link('topics/','Topics','topics', i18n='nav_topics')}{link('timeline.html','Timeline','timeline', i18n='nav_timeline')}{link('horoscope.html','Horoscope','horoscope', i18n='nav_horoscope')}{link('tags/','Tags','tags', i18n='nav_tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
+<nav class="navlinks" id="navlinks">{link('index.html','Home','home', i18n='nav_home')}{link('archive.html','News','news', i18n='nav_news')}{link('videos.html','Videos','videos', i18n='nav_videos')}{link('blog.html','Blog','blog', i18n='nav_blog')}{link('factcheck.html','Fact Check','factcheck', i18n='nav_fact_check')}{link('heroes.html','Heroes','heroes', i18n='nav_heroes')}{link('scores.html','Scores','scores',' data-scores-nav', i18n='nav_scores')}{link('markets.html','Markets','markets', i18n='nav_markets')}{link('stocks.html','Stocks','stocks', i18n='nav_stocks')}{link('policy.html','Policy','policy', i18n='nav_policy')}{link('study.html','Study','study', i18n='nav_study')}{link('today.html','Today','today', i18n='nav_today')}{link('topics/','Topics','topics', i18n='nav_topics')}{link('timeline.html','Timeline','timeline', i18n='nav_timeline')}{link('horoscope.html','Horoscope','horoscope', i18n='nav_horoscope')}{link('tags/','Tags','tags', i18n='nav_tags')}<a href="{IG}" target="_blank" rel="noopener">Instagram</a></nav>
 <div class="top-actions">
 <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language" data-lang="en"><span class="lt-en" aria-hidden="true">EN</span><span class="lt-sep" aria-hidden="true">|</span><span class="lt-hi" aria-hidden="true">&#2361;&#2367;&#2306;</span></button>
 <div class="top-search"><input id="topsearch" type="search" placeholder="Search stories..." data-i18n-ph="search_placeholder" aria-label="Search the site" autocomplete="off" data-index="{r}assets/search-index.json"><div class="search-results" id="search-results" hidden></div></div>
@@ -1645,7 +1646,7 @@ def footer(depth):
 <div class="nl-block"><strong data-i18n="newsletter">Newsletter</strong><p data-i18n="newsletter_sub">Get the top stories by email. No spam, unsubscribe anytime.</p>
 <form class="nl-form" id="nl-form" data-email="{CONTACT_EMAIL}"><input type="email" required data-i18n-ph="email_placeholder" placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit" data-i18n="subscribe">Subscribe</button></form>
 <p class="nl-note" data-i18n="newsletter_note">Opens your email app with a prefilled subscribe request.</p></div>
-<div class="foot-links"><a href="{r}videos.html" data-i18n="nav_videos">Videos</a><a href="{r}heroes.html" data-i18n="nav_heroes">Heroes</a><a href="{r}scores.html" data-i18n="nav_scores">Scores</a><a href="{r}markets.html" data-i18n="nav_markets">Markets</a><a href="{r}policy.html" data-i18n="nav_policy">Policy</a><a href="{r}study.html" data-i18n="nav_study">Study</a><a href="{r}today.html" data-i18n="nav_today">Today</a><a href="{r}horoscope.html" data-i18n="nav_horoscope">Horoscope</a><a href="{r}factcheck.html" data-i18n="nav_fact_check">Fact Check</a><a href="{r}topics/" data-i18n="nav_topics">Topics</a><a href="{r}timeline.html" data-i18n="nav_timeline">Timeline</a><a href="{r}tags/" data-i18n="nav_tags">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
+<div class="foot-links"><a href="{r}videos.html" data-i18n="nav_videos">Videos</a><a href="{r}heroes.html" data-i18n="nav_heroes">Heroes</a><a href="{r}scores.html" data-i18n="nav_scores">Scores</a><a href="{r}markets.html" data-i18n="nav_markets">Markets</a><a href="{r}stocks.html" data-i18n="nav_stocks">Stocks</a><a href="{r}policy.html" data-i18n="nav_policy">Policy</a><a href="{r}study.html" data-i18n="nav_study">Study</a><a href="{r}today.html" data-i18n="nav_today">Today</a><a href="{r}horoscope.html" data-i18n="nav_horoscope">Horoscope</a><a href="{r}factcheck.html" data-i18n="nav_fact_check">Fact Check</a><a href="{r}topics/" data-i18n="nav_topics">Topics</a><a href="{r}timeline.html" data-i18n="nav_timeline">Timeline</a><a href="{r}tags/" data-i18n="nav_tags">Tags</a><a href="{r}archive.html">Archive</a><a href="{r}feed.xml">RSS</a><a href="{r}sitemap.xml">Sitemap</a><a href="{IG}" target="_blank" rel="noopener">Instagram</a></div>
 </div></footer>"""
 
 def head(title, desc, depth, og_image="", extra_jsonld="", canonical="", og_type="article"):
@@ -2676,6 +2677,12 @@ def horoscope_page():
 # into assets/policy.json at build time. Add new entries here; the page
 # renders them automatically with category tabs and search.
 POLICY_ENTRIES = [
+    {"cat": "compliance", "date": "2026-10-10", "title": "RBI October 2026 forex defence: OMC dollar window, derivative curbs, 20% risk reserve", "summary": "Announced 10 Oct 2026 as the rupee neared record lows. Special window for RBI to sell dollars directly to IOC, HPCL and BPCL through designated banks from 12 Oct 2026 until further notice. Authorised Dealers barred from rebooking cancelled INR derivative contracts; threshold for forex derivative transactions without underlying exposure cut from $100 million to $5 million; new Foreign Exchange Risk Reserve requires 20% cash reserve with RBI on qualifying INR derivative notionals above $2 million. Compliance burden falls on AD banks and corporate treasuries.", "sectors": ["Banking", "Forex", "Oil marketing", "Corporate treasury"], "status": "Announced", "sources": [["Business Standard", "https://www.business-standard.com/amp/finance/news/rbi-dollar-window-oil-companies-rupee-forex-derivatives-rules-126101000232_1.html"], ["Rediff (PTI)", "http://www.rediff.com/business/report/rbi-introduces-special-dollar-window-for-omcs-tightens-forex-rules-to-stabilise-rupee/20261010.htm"]]},
+    {"cat": "compliance", "date": "2026-10-09", "title": "SEBI (Alternative Investment Funds) Third Amendment Regulations, 2026", "summary": "Notified 9 Oct 2026 via SEBI/LAD-NRO/GN/2026/326, amending the 2012 AIF Regulations. Adds securities-market-exposure-based accreditation: individuals qualify with Rs 5 crore exposure, LLPs with Rs 50 crore net worth or Rs 20 crore exposure, body corporates with Rs 50 crore net worth or Rs 20 crore exposure. Expands recognition of accreditation by SEBI-registered entities and revises dispute-resolution provisions between investors, AIFs and managers. In force from gazette publication.", "sectors": ["AIFs", "Wealth management", "Capital markets"], "status": "In force", "sources": [["TaxGuru", "https://taxguru.in/sebi/sebi-aif-amendment-2026-accredited-investor-criteria-dispute-resolution-rules.html"]]},
+    {"cat": "compliance", "date": "2026-10-07", "title": "SEBI: mandatory Credit Risk-o-Meter for debt securities", "summary": "Circular of 7 Oct 2026 makes a colour-coded Credit Risk-o-Meter (green to red) mandatory in offer documents, abridged prospectuses, private placement memorandums, advertisements and on Online Bond Platform Providers' web and mobile platforms. Covers listed and proposed-to-be-listed non-convertible securities, commercial papers, securitised debt, security receipts and structured or market-linked debentures, public or private. Effective 45 days after the circular.", "sectors": ["Debt markets", "Retail investors", "Issuers"], "status": "Effective ~21 Nov 2026", "sources": [["The Hindu BusinessLine", "https://www.thehindubusinessline.com/portfolio/personal-finance/sebi-turns-bond-ratings-into-a-consumer-friendly-traffic-light-system/article71563761.ece"]]},
+    {"cat": "compliance", "date": "2026-10-06", "title": "SEBI notifies Settlement of Administrative and Civil Proceedings Regulations, 2026", "summary": "Notification of 6 Oct 2026 replaces the 2018 settlement framework. Settlement amount now formula-based: a base amount linked to the minimum prescribed penalty, adjusted for stage of proceedings, gravity, aggravating and mitigating factors and legal costs, with disgorgement of wrongful gains computed separately to end double counting. New fast-track route for cases with settlement amounts up to Rs 10 lakh, including certain disclosure violations; early cooperators and whistleblowers can earn up to 90% fee discounts.", "sectors": ["Capital markets", "Listed companies", "Intermediaries"], "status": "Notified", "sources": [["Outlook Money", "https://www.outlookmoney.com/invest/sebi-settlement-regulations-2026-fast-track-windows-stricter-debarments-among-other-changes-for-market-participants"]]},
+    {"cat": "compliance", "date": "2026-10-01", "title": "RBI: one-time approval for institutional stakes up to 10% in banks", "summary": "Four Amendment Directions (RBI/2026-27/275 to 278) of 1 Oct 2026 amend the 2025 shareholding directions. SEBI-registered mutual funds, PFRDA-registered pension funds and IRDAI-registered insurers outside the promoter group can seek a discretionary one-time RBI approval to re-acquire major shareholding up to 10% without fresh prior approval each time the holding dips below 5%. Applies to commercial, small finance, payments and local area banks; applications via the PRAVAAH portal with continuing 5%-threshold reporting.", "sectors": ["Banking", "Mutual funds", "Insurance", "Pension funds"], "status": "In force", "sources": [["Free Press Journal", "https://www.freepressjournal.in/business/rbi-eases-bank-investment-rules-for-mutual-funds-allows-one-time-approval-for-institutional-stake-up-to-10"], ["CorpLawUpdates", "https://www.corplawupdates.in/updates/rbi-one-time-approval-major-shareholding-banks-2026"]]},
+    {"cat": "compliance", "date": "2026-10-01", "title": "RBI: Export Declaration Form (EDF) mandatory for service exporters", "summary": "Under the FEMA export-import regulations effective 1 Oct 2026, service exporters including software must file an Export Declaration Form stating the full export value within 30 days of the end of the month in which the invoice is raised; multiple monthly exports can be clubbed in one EDF. Non-software service exporters, who earlier filed nothing, are now covered. Goods exporters declare at export, except via EDI ports where the shipping bill counts as the EDF.", "sectors": ["Exporters", "IT services", "SaaS", "Forex"], "status": "In force", "sources": [["Business Today", "https://www.businesstoday.in/latest/economy/story/rbi-export-rules-edf-filing-to-become-mandatory-for-service-exporters-from-october-1-559913-2026-10-06"]]},
     {"cat": "policy", "date": "2026-09-30", "title": "Cabinet approves Rs 1.86 lakh crore PM-DHARA green energy transmission scheme", "summary": "The Union Cabinet approved the PM-DHARA (PM-Developing Harmonized and Accelerated Renewable-energy Access) scheme, effectively Green Energy Corridor Phase-III, to build intra-state transmission for evacuating 135 GW of renewable energy plus 50 GWh of battery storage by FY 2032-33. Total outlay Rs 1,86,405 crore with Rs 54,082 crore of central financial support, aimed at the 500 GW non-fossil target by 2030.", "sectors": ["energy", "infrastructure", "climate"], "status": "Announced", "sources": [["Millennium Post", "https://www.millenniumpost.in/business/cabinet-approves-rs-186-lakh-crore-scheme-for-green-energy-evacuation-678054"]]},
     {"cat": "judgment", "date": "2026-09-24", "title": "SC: praying for poll victory is not a corrupt religious appeal; AIMIM MLA's election upheld", "summary": "A three-judge bench (Justices Vikram Nath, Augustine George Masih, Sandeep Mehta) dismissed the election petition against AIMIM MLA Mufti Mohammad Ismail from Malegaon Central, holding that saying a dua for electoral victory is communication with God, not solicitation of votes in the name of religion under Section 123(3) of the Representation of the People Act, 1951. The 72-vote victory stands.", "sectors": ["elections", "judiciary"], "status": "Decided", "sources": [["LawChakra", "https://lawchakra.in/supreme-court/supreme-court-dua-poll-victory-not-soliciting-votes-religion-aimim-mla-election/"]]},
     {"cat": "judgment", "date": "2026-09-23", "title": "SC split verdict on challenge to CEC appointment law; matter to CJI for Constitution Bench", "summary": "A bench of Justices Dipankar Datta and Satish Chandra Sharma split on whether petitions challenging the Chief Election Commissioner and Other Election Commissioners (Appointment, Conditions of Service and Term of Office) Act, 2023 should go to a Constitution Bench. Justice Datta rejected the reference plea and prima facie questioned whether the PM-plus-minister-plus-LoP selection panel inspires public confidence; Justice Sharma favoured reference. Papers placed before the CJI to consider a Constitution Bench.", "sectors": ["polity", "elections", "judiciary"], "status": "Decided (split verdict)", "sources": [["Indian Express", "https://indianexpress.com/article/legal-news/supreme-court-split-verdict-petition-election-commission-sir-chief-appointment-constitution-bench-10890533/"]]},
@@ -3139,6 +3146,102 @@ def parse_article_details(md_path):
             det[cur] += " " + line.strip()
     return det
 
+def stocks_page(data):
+    d = data or {}
+    mkt = d.get("market", {})
+    direction = str(mkt.get("direction", "SIDEWAYS")).upper()
+    dcls = {"UP": "verdict-true", "DOWN": "verdict-false"}.get(direction, "verdict-misleading")
+    dlabel = {"UP": "Bullish", "DOWN": "Bearish"}.get(direction, "Sideways / Cautious")
+
+    def src_list(srcs):
+        if not srcs:
+            return ""
+        items = "".join(f'<li><a href="{html.escape(s.get("url",""))}" target="_blank" rel="noopener">{html.escape(s.get("name","Source"))}</a></li>' for s in srcs)
+        return f'<div class="sources"><h4 data-i18n="sources">Sources</h4><ul>{items}</ul></div>'
+
+    def bullets(items):
+        return "".join(f"<li>{html.escape(x)}</li>" for x in (items or []))
+
+    mkt_cards = f"""<div class="pm-grid">
+<div class="pm-card"><div class="pm-name">Nifty 50</div><div class="pm-inr">{html.escape(str(mkt.get('nifty_level','-')))}</div><div class="pm-usd">Week: {html.escape(str(mkt.get('nifty_week_change_pct','-')))}%</div></div>
+<div class="pm-card"><div class="pm-name">Sensex</div><div class="pm-inr">{html.escape(str(mkt.get('sensex_level','-')))}</div><div class="pm-usd">Week: {html.escape(str(mkt.get('sensex_week_change_pct','-')))}%</div></div>
+<div class="pm-card"><div class="pm-name">India VIX</div><div class="pm-inr">{html.escape(str(mkt.get('india_vix','-')))}</div><div class="pm-usd">Volatility gauge</div></div>
+<div class="pm-card"><div class="pm-name">Nifty range</div><div class="pm-inr" style="font-size:1.05rem">S: {html.escape(str(mkt.get('nifty_support','-')))}</div><div class="pm-usd">R: {html.escape(str(mkt.get('nifty_resistance','-')))}</div></div>
+</div>"""
+
+    penny = d.get("penny_stocks", [])
+    penny_cards = []
+    for p in penny:
+        penny_cards.append(f"""<article class="card"><div class="card-body">
+<div class="meta"><span class="tag">Penny</span><span>{html.escape(p.get('symbol',''))}</span></div>
+<h3>{html.escape(p.get('name',''))}</h3>
+<p><strong>Price:</strong> Rs {html.escape(str(p.get('price_rs','-')))} <span class="muted">(as of {html.escape(p.get('price_as_of',''))})</span> &middot; <strong>Cap:</strong> {html.escape(p.get('market_cap_note','-'))} &middot; <strong>Horizon:</strong> {html.escape(p.get('horizon','-'))}</p>
+<p><strong>Why:</strong> {html.escape(p.get('why',''))}</p>
+<p><strong>Risk:</strong> {html.escape(p.get('risk',''))}</p>
+{src_list(p.get('sources'))}
+</div></article>""")
+
+    major = d.get("major_stocks", [])
+    major_cards = []
+    for s in major:
+        major_cards.append(f"""<article class="card"><div class="card-body">
+<div class="meta"><span class="tag">Large/Mid cap</span><span>{html.escape(s.get('symbol',''))}</span></div>
+<h3>{html.escape(s.get('name',''))}</h3>
+<p><strong>Price:</strong> Rs {html.escape(str(s.get('price_rs','-')))} &middot; <strong>Target:</strong> Rs {html.escape(str(s.get('target_rs','-')))} &middot; <strong>Horizon:</strong> {html.escape(s.get('horizon','-'))}</p>
+<p><strong>Why:</strong> {html.escape(s.get('why',''))}</p>
+<p><strong>Catalyst:</strong> {html.escape(s.get('catalyst','-'))}</p>
+<p><strong>Risk:</strong> {html.escape(s.get('risk',''))}</p>
+{src_list(s.get('sources'))}
+</div></article>""")
+
+    def metal_card(label, md):
+        dirc = str(md.get("direction", "SIDEWAYS")).upper()
+        dc = {"UP": "verdict-true", "DOWN": "verdict-false"}.get(dirc, "verdict-misleading")
+        dl = {"UP": "Bullish", "DOWN": "Bearish"}.get(dirc, "Neutral")
+        return f"""<article class="card"><div class="card-body">
+<span class="verdict {dc}">{dl}</span>
+<h3>{label}</h3>
+<p>{html.escape(md.get('outlook',''))}</p>
+<p><strong>Our view:</strong> {html.escape(md.get('view',''))}</p>
+<details><summary>Drivers</summary><ul>{bullets(md.get('drivers'))}</ul></details>
+{src_list(md.get('sources'))}
+</div></article>"""
+
+    tips = "".join(f"<li>{html.escape(t)}</li>" for t in d.get("trading_tips", []))
+    body = f"""<div class="page-head"><h1>Stock Advice</h1>
+<p class="lede">Nightly market analysis: index outlook, penny and large-cap ideas, gold and silver calls, and trading discipline. Refreshed every night after market close.</p>
+<p class="muted">Last updated: {html.escape(d.get('updated',''))} &middot; {html.escape(d.get('as_of_note',''))}</p></div>
+<div class="card" style="border-left:4px solid #b3212c"><div class="card-body">
+<p><strong>Risk warning:</strong> this page is educational analysis, not investment advice. Penny stocks can be illiquid and volatile; large caps can fall too. Never invest money you cannot afford to lose, do your own research, and consult a SEBI-registered investment adviser before acting.</p>
+</div></div>
+<h2>Market outlook <span class="verdict {dcls}">{dlabel}</span></h2>
+<p>{html.escape(mkt.get('direction_summary',''))}</p>
+{mkt_cards}
+<div class="pm-grid">
+<div class="pm-card"><div class="pm-name">FII flows</div><p class="pm-usd">{html.escape(mkt.get('fii_note','-'))}</p></div>
+<div class="pm-card"><div class="pm-name">DII flows</div><p class="pm-usd">{html.escape(mkt.get('dii_note','-'))}</p></div>
+</div>
+<details open><summary><strong>What is driving the market</strong></summary><ul>{bullets(mkt.get('drivers'))}</ul></details>
+<details><summary><strong>Key risks</strong></summary><ul>{bullets(mkt.get('risks'))}</ul></details>
+{src_list(mkt.get('sources'))}
+<h2>Penny stock ideas (high risk)</h2>
+<p class="muted">Small, low-priced stocks with a visible trigger. Treat every one as speculative: small position sizes, strict stop-losses, and expect sharp swings.</p>
+<div class="grid">{"".join(penny_cards) or '<p class="muted">No penny ideas this cycle.</p>'}</div>
+<h2>Major stock ideas</h2>
+<p class="muted">Large and mid-cap names with stronger fundamentals and clearer catalysts, for 3 to 12 month horizons.</p>
+<div class="grid">{"".join(major_cards) or '<p class="muted">No major-cap ideas this cycle.</p>'}</div>
+<h2>Gold and silver</h2>
+<div class="grid">{metal_card("Gold", d.get("gold", {}))}{metal_card("Silver", d.get("silver", {}))}</div>
+<h2>Trading tips</h2>
+<ol>{tips}</ol>
+<h2>Sources for this edition</h2>
+{src_list(d.get('page_sources'))}
+"""
+    return page_shell("Stock Advice",
+        "Nightly Indian stock market analysis: index outlook, penny and large-cap stock ideas, gold and silver calls, trading tips. Educational only, not investment advice.",
+        "stocks", body)
+
+
 def policy_page():
     body = """<div class="page-head"><h1>Law and Policy Tracker</h1><p class="lede">Compliances, licences, laws and bills, court judgments, policies and upcoming parliamentary business from 2024 to today. Each entry carries its source; verify at the official source before acting on anything here.</p></div>
 <div class="p-tools"><div class="p-tabs" id="p-tabs"></div><input id="p-search" class="p-search" type="search" placeholder="Search the tracker..." aria-label="Search the tracker"></div>
@@ -3150,22 +3253,25 @@ def policy_page():
 def videos_page(videos):
     cards = []
     for v in videos:
+        kind = v.get("kind", "Reel")
         if v["thumb"]:
             thumb_html = (f'<img src="{v["thumb"]}" alt="{html.escape(v["story"])}" '
                           'loading="lazy" decoding="async">')
         else:
             thumb_html = '<span class="vthumb-fallback">&#9654;</span>'
+        overlay = "&#9654;" if kind == "Reel" else "&#10072;"
+        cta = "Watch on Instagram &rarr;" if kind == "Reel" else "View carousel on Instagram &rarr;"
         cards.append(f"""<article class="card video-card">
-<a class="vthumb" href="{v['url']}" target="_blank" rel="noopener">{thumb_html}<span class="play" aria-hidden="true">&#9654;</span></a>
-<div class="card-body"><div class="meta"><span class="tag">Reel</span><span>{html.escape(v['date'])}</span></div>
+<a class="vthumb" href="{v['url']}" target="_blank" rel="noopener">{thumb_html}<span class="play" aria-hidden="true">{overlay}</span></a>
+<div class="card-body"><div class="meta"><span class="tag">{kind}</span><span>{html.escape(v['date'])}</span></div>
 <h3><a href="{v['url']}" target="_blank" rel="noopener">{html.escape(v['story'])}</a></h3>
-<a class="read" href="{v['url']}" target="_blank" rel="noopener">Watch on Instagram &rarr;</a>
+<a class="read" href="{v['url']}" target="_blank" rel="noopener">{cta}</a>
 </div></article>""")
-    grid = "".join(cards) if cards else '<p class="muted">No reels published yet.</p>'
-    body = f"""<div class="page-head"><h1>Videos</h1><p class="lede">Every Instagram reel from Varta &amp; Samkara, newest first. Tap a card to watch it on Instagram.</p></div>
+    grid = "".join(cards) if cards else '<p class="muted">No posts published yet.</p>'
+    body = f"""<div class="page-head"><h1>Posts</h1><p class="lede">Every Instagram reel and carousel from Varta &amp; Samkara, newest first. Tap a card to open it on Instagram.</p></div>
 <div class="video-grid">{grid}</div>"""
-    return page_shell("Videos",
-        "Watch every Varta & Samkara Instagram reel, newest first.",
+    return page_shell("Posts",
+        "Every Varta & Samkara Instagram reel and carousel, newest first.",
         "videos", body)
 
 def study_hub_page(cards):
@@ -3767,23 +3873,39 @@ def build():
     with open(os.path.join(SITE, "policy.html"), "w", encoding="utf-8") as f:
         f.write(policy_page())
 
-    # ---------- videos page (Instagram reels) ----------
+    # ---------- stock advice page (nightly refreshed) ----------
+    try:
+        with open(os.path.join(SITE, "assets", "stocks.json"), encoding="utf-8") as jf:
+            stocks_data = json.load(jf)
+    except (OSError, ValueError):
+        stocks_data = {}
+    with open(os.path.join(SITE, "stocks.html"), "w", encoding="utf-8") as f:
+        f.write(stocks_page(stocks_data))
+
+    # ---------- videos page (Instagram reels + carousels) ----------
     videos = []
     for i, r_ in enumerate(rows):
-        if r_["format"].lower() != "reel" or "/reel/" not in r_["url"]:
+        fmt = r_["format"].lower()
+        is_reel = "reel" in fmt and "/reel/" in r_["url"]
+        is_car = "carousel" in fmt
+        if not (is_reel or is_car):
             continue
+        kind = "Reel" if is_reel else "Carousel"
         thumb = ""
         dname = find_post_dir(r_)
         if dname:
             dpath = os.path.join(POSTS, dname)
-            for cn in ("cover.jpg", "cover.jpeg", "cover.png"):
+            cands = (("cover.jpg", "cover.jpeg", "cover.png") if is_reel
+                     else ("slide-1.jpg", "slide-1.jpeg", "slide-1.png",
+                           "cover.jpg", "cover.jpeg", "cover.png"))
+            for cn in cands:
                 cp = os.path.join(dpath, cn)
                 if os.path.isfile(cp):
-                    vslug = slugify(r_["date"] + "-" + r_["story"])[:48] or f"reel-{i}"
+                    vslug = slugify(r_["date"] + "-" + r_["story"])[:48] or f"post-{i}"
                     thumb = copy_image(cp, f"assets/videos/{vslug}.jpg", 640)
                     break
         videos.append({"story": r_["story"], "date": r_["date"],
-                       "url": r_["url"], "thumb": thumb})
+                       "url": r_["url"], "thumb": thumb, "kind": kind})
     videos.sort(key=lambda v: v["date"], reverse=True)
     with open(os.path.join(SITE, "videos.html"), "w", encoding="utf-8") as f:
         f.write(videos_page(videos))
@@ -3809,6 +3931,19 @@ def build():
         _add_search(e["title"], "policy.html", "policy", e["summary"], e["date"])
     for e in fc_entries:
         _add_search(f"Fact Check: {e['claim']}", "factcheck.html", "factcheck", e["summary"], e["date"])
+    # stock advice page entries
+    try:
+        with open(os.path.join(SITE, "assets", "stocks.json"), encoding="utf-8") as jf:
+            _stocks_idx = json.load(jf)
+    except Exception:
+        _stocks_idx = {}
+    if _stocks_idx:
+        _m = _stocks_idx.get("market", {})
+        _add_search("Stock Advice: market outlook", "stocks.html", "stocks",
+                    str(_m.get("direction_summary", "")), str(_stocks_idx.get("updated", "")))
+        for _s in _stocks_idx.get("penny_stocks", []) + _stocks_idx.get("major_stocks", []):
+            _add_search(f"Stock idea: {_s.get('name', '')}", "stocks.html", "stocks",
+                        str(_s.get("why", "")), str(_stocks_idx.get("updated", "")))
     ca_src = "assets-src/constitution-articles.json"
     if os.path.exists(ca_src):
         try:
@@ -4013,12 +4148,12 @@ def build():
     }
     with open(os.path.join(SITE, "manifest.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    sw = """const CACHE = "vs-cache-v13";
+    sw = """const CACHE = "vs-cache-v14";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
-              "markets.html", "policy.html", "assets/policy.json", "videos.html", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
+              "markets.html", "stocks.html", "assets/stocks.json", "policy.html", "assets/policy.json", "videos.html", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
               "history-ancient.html", "history-medieval.html", "history-modern.html", "upsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",
@@ -4135,7 +4270,7 @@ self.addEventListener("fetch", (e) => {
         f.write(feed)
 
     sm_urls = (["", "archive.html", "blog.html", "heroes.html", "scores.html", "horoscope.html",
-               "markets.html", "policy.html", "videos.html", "study.html", "constitution.html",
+               "markets.html", "stocks.html", "policy.html", "videos.html", "study.html", "constitution.html",
                "articles.html", "economics.html", "geography.html",
                "history-ancient.html", "history-medieval.html", "history-modern.html",
                "upsc-syllabus.html", "quiz.html", "today.html", "current-affairs.html", "tags/",

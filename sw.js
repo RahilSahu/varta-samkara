@@ -1,9 +1,9 @@
-const CACHE = "vs-cache-v13";
+const CACHE = "vs-cache-v14";
 const CORE = ["./", "index.html", "offline.html", "styles.css",
               "manifest.json", "assets/placeholder.svg", "assets/search-index.json",
               "scores.html", "assets/scores.js", "assets/motogp.json",
               "horoscope.html", "assets/horoscope.json",
-              "markets.html", "policy.html", "assets/policy.json", "videos.html", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
+              "markets.html", "stocks.html", "assets/stocks.json", "policy.html", "assets/policy.json", "videos.html", "articles.html", "economics.html", "geography.html", "current-affairs.html", "assets/constitution-articles.json", "assets/current-affairs.json",
               "history-ancient.html", "history-medieval.html", "history-modern.html", "upsc-syllabus.html",
               "study.html", "constitution.html", "articles.html",
               "quiz.html", "assets/quiz.json",

@@ -1,5 +1,124 @@
 [
  {
+  "cat": "compliance",
+  "date": "2026-10-10",
+  "title": "RBI October 2026 forex defence: OMC dollar window, derivative curbs, 20% risk reserve",
+  "summary": "Announced 10 Oct 2026 as the rupee neared record lows. Special window for RBI to sell dollars directly to IOC, HPCL and BPCL through designated banks from 12 Oct 2026 until further notice. Authorised Dealers barred from rebooking cancelled INR derivative contracts; threshold for forex derivative transactions without underlying exposure cut from $100 million to $5 million; new Foreign Exchange Risk Reserve requires 20% cash reserve with RBI on qualifying INR derivative notionals above $2 million. Compliance burden falls on AD banks and corporate treasuries.",
+  "sectors": [
+   "Banking",
+   "Forex",
+   "Oil marketing",
+   "Corporate treasury"
+  ],
+  "status": "Announced",
+  "sources": [
+   [
+    "Business Standard",
+    "https://www.business-standard.com/amp/finance/news/rbi-dollar-window-oil-companies-rupee-forex-derivatives-rules-126101000232_1.html"
+   ],
+   [
+    "Rediff (PTI)",
+    "http://www.rediff.com/business/report/rbi-introduces-special-dollar-window-for-omcs-tightens-forex-rules-to-stabilise-rupee/20261010.htm"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-10-09",
+  "title": "SEBI (Alternative Investment Funds) Third Amendment Regulations, 2026",
+  "summary": "Notified 9 Oct 2026 via SEBI/LAD-NRO/GN/2026/326, amending the 2012 AIF Regulations. Adds securities-market-exposure-based accreditation: individuals qualify with Rs 5 crore exposure, LLPs with Rs 50 crore net worth or Rs 20 crore exposure, body corporates with Rs 50 crore net worth or Rs 20 crore exposure. Expands recognition of accreditation by SEBI-registered entities and revises dispute-resolution provisions between investors, AIFs and managers. In force from gazette publication.",
+  "sectors": [
+   "AIFs",
+   "Wealth management",
+   "Capital markets"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "TaxGuru",
+    "https://taxguru.in/sebi/sebi-aif-amendment-2026-accredited-investor-criteria-dispute-resolution-rules.html"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-10-07",
+  "title": "SEBI: mandatory Credit Risk-o-Meter for debt securities",
+  "summary": "Circular of 7 Oct 2026 makes a colour-coded Credit Risk-o-Meter (green to red) mandatory in offer documents, abridged prospectuses, private placement memorandums, advertisements and on Online Bond Platform Providers' web and mobile platforms. Covers listed and proposed-to-be-listed non-convertible securities, commercial papers, securitised debt, security receipts and structured or market-linked debentures, public or private. Effective 45 days after the circular.",
+  "sectors": [
+   "Debt markets",
+   "Retail investors",
+   "Issuers"
+  ],
+  "status": "Effective ~21 Nov 2026",
+  "sources": [
+   [
+    "The Hindu BusinessLine",
+    "https://www.thehindubusinessline.com/portfolio/personal-finance/sebi-turns-bond-ratings-into-a-consumer-friendly-traffic-light-system/article71563761.ece"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-10-06",
+  "title": "SEBI notifies Settlement of Administrative and Civil Proceedings Regulations, 2026",
+  "summary": "Notification of 6 Oct 2026 replaces the 2018 settlement framework. Settlement amount now formula-based: a base amount linked to the minimum prescribed penalty, adjusted for stage of proceedings, gravity, aggravating and mitigating factors and legal costs, with disgorgement of wrongful gains computed separately to end double counting. New fast-track route for cases with settlement amounts up to Rs 10 lakh, including certain disclosure violations; early cooperators and whistleblowers can earn up to 90% fee discounts.",
+  "sectors": [
+   "Capital markets",
+   "Listed companies",
+   "Intermediaries"
+  ],
+  "status": "Notified",
+  "sources": [
+   [
+    "Outlook Money",
+    "https://www.outlookmoney.com/invest/sebi-settlement-regulations-2026-fast-track-windows-stricter-debarments-among-other-changes-for-market-participants"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-10-01",
+  "title": "RBI: one-time approval for institutional stakes up to 10% in banks",
+  "summary": "Four Amendment Directions (RBI/2026-27/275 to 278) of 1 Oct 2026 amend the 2025 shareholding directions. SEBI-registered mutual funds, PFRDA-registered pension funds and IRDAI-registered insurers outside the promoter group can seek a discretionary one-time RBI approval to re-acquire major shareholding up to 10% without fresh prior approval each time the holding dips below 5%. Applies to commercial, small finance, payments and local area banks; applications via the PRAVAAH portal with continuing 5%-threshold reporting.",
+  "sectors": [
+   "Banking",
+   "Mutual funds",
+   "Insurance",
+   "Pension funds"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Free Press Journal",
+    "https://www.freepressjournal.in/business/rbi-eases-bank-investment-rules-for-mutual-funds-allows-one-time-approval-for-institutional-stake-up-to-10"
+   ],
+   [
+    "CorpLawUpdates",
+    "https://www.corplawupdates.in/updates/rbi-one-time-approval-major-shareholding-banks-2026"
+   ]
+  ]
+ },
+ {
+  "cat": "compliance",
+  "date": "2026-10-01",
+  "title": "RBI: Export Declaration Form (EDF) mandatory for service exporters",
+  "summary": "Under the FEMA export-import regulations effective 1 Oct 2026, service exporters including software must file an Export Declaration Form stating the full export value within 30 days of the end of the month in which the invoice is raised; multiple monthly exports can be clubbed in one EDF. Non-software service exporters, who earlier filed nothing, are now covered. Goods exporters declare at export, except via EDI ports where the shipping bill counts as the EDF.",
+  "sectors": [
+   "Exporters",
+   "IT services",
+   "SaaS",
+   "Forex"
+  ],
+  "status": "In force",
+  "sources": [
+   [
+    "Business Today",
+    "https://www.businesstoday.in/latest/economy/story/rbi-export-rules-edf-filing-to-become-mandatory-for-service-exporters-from-october-1-559913-2026-10-06"
+   ]
+  ]
+ },
+ {
   "cat": "policy",
   "date": "2026-09-30",
   "title": "Cabinet approves Rs 1.86 lakh crore PM-DHARA green energy transmission scheme",
