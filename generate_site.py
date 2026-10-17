@@ -3162,6 +3162,21 @@ def stocks_page(data):
     def bullets(items):
         return "".join(f"<li>{html.escape(x)}</li>" for x in (items or []))
 
+    def _rs(v):
+        try:
+            f = float(v)
+            return f"{f:,.0f}" if f == int(f) else f"{f:,.2f}"
+        except (TypeError, ValueError):
+            return str(v)
+
+    def _target(t):
+        t = str(t).strip()
+        return t if t.lower().startswith("rs") else "Rs " + t
+
+    def _asof(a):
+        a = str(a).strip()
+        return a[1:-1] if a.startswith("(") and a.endswith(")") else a
+
     mkt_cards = f"""<div class="pm-grid">
 <div class="pm-card"><div class="pm-name">Nifty 50</div><div class="pm-inr">{html.escape(str(mkt.get('nifty_level','-')))}</div><div class="pm-usd">Week: {html.escape(str(mkt.get('nifty_week_change_pct','-')))}%</div></div>
 <div class="pm-card"><div class="pm-name">Sensex</div><div class="pm-inr">{html.escape(str(mkt.get('sensex_level','-')))}</div><div class="pm-usd">Week: {html.escape(str(mkt.get('sensex_week_change_pct','-')))}%</div></div>
@@ -3175,7 +3190,7 @@ def stocks_page(data):
         penny_cards.append(f"""<article class="card"><div class="card-body">
 <div class="meta"><span class="tag">Penny</span><span>{html.escape(p.get('symbol',''))}</span></div>
 <h3>{html.escape(p.get('name',''))}</h3>
-<p><strong>Price:</strong> Rs {html.escape(str(p.get('price_rs','-')))} <span class="muted">(as of {html.escape(p.get('price_as_of',''))})</span> &middot; <strong>Cap:</strong> {html.escape(p.get('market_cap_note','-'))} &middot; <strong>Horizon:</strong> {html.escape(p.get('horizon','-'))}</p>
+<p><strong>Price:</strong> Rs {_rs(p.get('price_rs','-'))} <span class="muted">(as of {html.escape(_asof(p.get('price_as_of','')))})</span> &middot; <strong>Cap:</strong> {html.escape(p.get('market_cap_note','-'))} &middot; <strong>Horizon:</strong> {html.escape(p.get('horizon','-'))}</p>
 <p><strong>Why:</strong> {html.escape(p.get('why',''))}</p>
 <p><strong>Risk:</strong> {html.escape(p.get('risk',''))}</p>
 {src_list(p.get('sources'))}
@@ -3187,20 +3202,21 @@ def stocks_page(data):
         major_cards.append(f"""<article class="card"><div class="card-body">
 <div class="meta"><span class="tag">Large/Mid cap</span><span>{html.escape(s.get('symbol',''))}</span></div>
 <h3>{html.escape(s.get('name',''))}</h3>
-<p><strong>Price:</strong> Rs {html.escape(str(s.get('price_rs','-')))} &middot; <strong>Target:</strong> Rs {html.escape(str(s.get('target_rs','-')))} &middot; <strong>Horizon:</strong> {html.escape(s.get('horizon','-'))}</p>
+<p><strong>Price:</strong> Rs {_rs(s.get('price_rs','-'))} &middot; <strong>Target:</strong> {html.escape(_target(s.get('target_rs','-')))} &middot; <strong>Horizon:</strong> {html.escape(s.get('horizon','-'))}</p>
 <p><strong>Why:</strong> {html.escape(s.get('why',''))}</p>
 <p><strong>Catalyst:</strong> {html.escape(s.get('catalyst','-'))}</p>
 <p><strong>Risk:</strong> {html.escape(s.get('risk',''))}</p>
 {src_list(s.get('sources'))}
 </div></article>""")
 
-    def metal_card(label, md):
+    def metal_card(label, md, price_line):
         dirc = str(md.get("direction", "SIDEWAYS")).upper()
         dc = {"UP": "verdict-true", "DOWN": "verdict-false"}.get(dirc, "verdict-misleading")
         dl = {"UP": "Bullish", "DOWN": "Bearish"}.get(dirc, "Neutral")
         return f"""<article class="card"><div class="card-body">
 <span class="verdict {dc}">{dl}</span>
 <h3>{label}</h3>
+<p class="muted">{price_line}</p>
 <p>{html.escape(md.get('outlook',''))}</p>
 <p><strong>Our view:</strong> {html.escape(md.get('view',''))}</p>
 <details><summary>Drivers</summary><ul>{bullets(md.get('drivers'))}</ul></details>
@@ -3231,7 +3247,7 @@ def stocks_page(data):
 <p class="muted">Large and mid-cap names with stronger fundamentals and clearer catalysts, for 3 to 12 month horizons.</p>
 <div class="grid">{"".join(major_cards) or '<p class="muted">No major-cap ideas this cycle.</p>'}</div>
 <h2>Gold and silver</h2>
-<div class="grid">{metal_card("Gold", d.get("gold", {}))}{metal_card("Silver", d.get("silver", {}))}</div>
+<div class="grid">{metal_card("Gold", d.get("gold", {}), f"Domestic 24K: Rs {_rs(d.get('gold', {}).get('domestic_24k_per_g_rs', '-'))}/g &middot; Spot: ${_rs(d.get('gold', {}).get('spot_usd_oz', '-'))}/oz")}{metal_card("Silver", d.get("silver", {}), f"Domestic: Rs {_rs(d.get('silver', {}).get('domestic_per_kg_rs', '-'))}/kg &middot; Spot: ${_rs(d.get('silver', {}).get('spot_usd_oz', '-'))}/oz")}</div>
 <h2>Trading tips</h2>
 <ol>{tips}</ol>
 <h2>Sources for this edition</h2>
